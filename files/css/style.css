@@ -38,7 +38,7 @@
   --font-cap:     'Cinzel', serif;
   --font-body:    'DM Sans', system-ui, sans-serif;
   --w:            1320px;
-  --nav-h:        76px;
+  --nav-h:        72px;
   --mesh: radial-gradient(ellipse 80% 60% at 20% 40%, rgba(30,48,80,0.95) 0%, transparent 70%),
           radial-gradient(ellipse 60% 80% at 80% 20%, rgba(13,27,46,0.9) 0%, transparent 60%),
           radial-gradient(ellipse 70% 50% at 60% 80%, rgba(38,64,112,0.6) 0%, transparent 60%),
@@ -111,7 +111,15 @@ p{color:var(--text-2);line-height:1.75}
   background:linear-gradient(135deg,rgba(200,151,58,0.3) 0%,transparent 60%);
 }
 .nav-logo-icon span{font-family:var(--font-cap);font-size:1rem;font-weight:600;color:var(--gold-light);position:relative;z-index:1;letter-spacing:0.05em}
-.nav-logo-text strong{display:block;font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:var(--navy);letter-spacing:0.01em}
+.nav-logo-text strong {
+  display:block;
+  font-family:var(--font-display);
+  font-size:0.82rem;
+  font-weight:600;
+  color:var(--navy);
+  letter-spacing:0.01em;
+  line-height:1.2;
+}
 .nav-logo-text em{font-style:normal;font-size:0.65rem;color:var(--gold);font-family:var(--font-cap);letter-spacing:0.1em;display:block}
 
 .nav-links{display:flex;align-items:center;gap:2px;flex:1;justify-content:center}
@@ -586,4 +594,25 @@ select.form-control{appearance:none;cursor:pointer;background-image:url("data:im
   .contact-card{border:1px solid #ccc}
   .contact-cards-grid{grid-template-columns:repeat(2,1fr)}
   @page{margin:18mm}
+}
+@media (max-width: 768px) {
+  .nav-logo-text strong {
+    font-size: 0.72rem;
+    line-height: 1.2;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .nav-logo-text em {
+    display: none;
+  }
+  .nav-logo-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+  :root {
+    --nav-h: 60px;
+  }
 }
