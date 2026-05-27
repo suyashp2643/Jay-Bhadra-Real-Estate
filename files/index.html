@@ -40,7 +40,6 @@
       <li><a href="projects.html">Projects</a></li>
       <li><a href="search.html">🔍 Search</a></li>
       <li><a href="about.html">About Us</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="contact.html" class="nav-cta">Enquire Now</a></li>
     </ul>
@@ -53,7 +52,6 @@
   <a href="projects.html">🏢 Projects</a>
   <a href="search.html">🔍 Search Properties</a>
   <a href="about.html">👥 About Us</a>
-  <a href="gallery.html">🖼️ Gallery</a>
   <a href="contact.html">📞 Contact</a>
   <a href="contact.html" style="margin-top:20px;background:var(--gold);color:var(--navy);font-weight:600;border-radius:var(--r-sm);text-align:center;font-family:var(--font-cap);font-size:0.75rem;letter-spacing:0.1em;padding:14px 16px;">ENQUIRE NOW</a>
 </nav>
@@ -186,23 +184,97 @@
   </div>
 </section>
 
-<!-- WHY CHOOSE US -->
-<section class="section">
+<!-- WHY CHOOSE US — 6 CARD GRID -->
+<section class="section" style="background:#f7f8fa;">
   <div class="container">
-    <div class="section-header fade-up">
+    <div class="section-header fade-up" style="text-align:center;margin-bottom:48px;">
       <span class="label">Why Choose Us</span>
-      <h2>The Jay Bhadra Difference</h2>
-      <div class="gold-line"></div>
-      <p>We combine craftsmanship, transparency, and dedication to deliver homes that stand the test of time.</p>
+      <h2>Turning Property Dreams<br/><em>Into Reality</em></h2>
+      <div class="gold-line" style="margin:14px auto 0;"></div>
     </div>
-    <div class="features-grid">
-      <div class="feature-card fade-up"><div class="feature-icon">🏗️</div><h4>Quality Construction</h4><p>IS-certified materials, RCC frame structures built to exceed standards. Every home inspected by qualified engineers.</p></div>
-      <div class="feature-card fade-up stagger-1"><div class="feature-icon">⏱️</div><h4>Timely Possession</h4><p>16+ years of on-schedule delivery. Your keys on the date we promised — every single time.</p></div>
-      <div class="feature-card fade-up stagger-2"><div class="feature-icon">💰</div><h4>Affordable Pricing</h4><p>Transparent pricing with no hidden costs. Flexible payment plans to make your dream home accessible.</p></div>
-      <div class="feature-card fade-up stagger-3"><div class="feature-icon">🔧</div><h4>3-Year Support</h4><p>Post-possession maintenance for 3 full years. We stand behind every brick we lay — long after you move in.</p></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+
+      <div class="jb-feat-card fade-up">
+        <div class="jb-feat-icon" style="background:linear-gradient(135deg,#c8973a,#e6b55a);">🏆</div>
+        <h4>Market Expertise</h4>
+        <p>Strong local knowledge of Nashik's real estate market for accurate and confident property decisions.</p>
+      </div>
+
+      <div class="jb-feat-card fade-up stagger-1">
+        <div class="jb-feat-icon" style="background:linear-gradient(135deg,#0d1b2e,#1e3050);">🤝</div>
+        <h4>Expert Guidance</h4>
+        <p>Backed by 16+ years of real estate expertise to help you make the right choice for your family.</p>
+      </div>
+
+      <div class="jb-feat-card fade-up stagger-2">
+        <div class="jb-feat-icon" style="background:linear-gradient(135deg,#1a6b45,#2a9b65);">💻</div>
+        <h4>Digital Convenience</h4>
+        <p>Search, filter and enquire about properties online — faster, transparent, and hassle-free from anywhere.</p>
+      </div>
+
+      <div class="jb-feat-card fade-up stagger-1">
+        <div class="jb-feat-icon" style="background:linear-gradient(135deg,#c8973a,#e6b55a);">💰</div>
+        <h4>Best Price Assurance</h4>
+        <p>Get the right property at the most competitive market value with no hidden costs or surprise charges.</p>
+      </div>
+
+      <div class="jb-feat-card fade-up stagger-2">
+        <div class="jb-feat-icon" style="background:linear-gradient(135deg,#0d1b2e,#1e3050);">👨‍👩‍👧‍👦</div>
+        <h4>Trusted by Families</h4>
+        <p>Over 500 happy families who found their dream homes with us across Nashik since 2010.</p>
+      </div>
+
+      <div class="jb-feat-card fade-up stagger-3">
+        <div class="jb-feat-icon" style="background:linear-gradient(135deg,#1a6b45,#2a9b65);">🔧</div>
+        <h4>End-to-End Support</h4>
+        <p>From property search to paperwork, loan assistance to 3-year maintenance — we support you at every step.</p>
+      </div>
+
     </div>
   </div>
 </section>
+
+<style>
+.jb-feat-card{
+  background:#fff;
+  border-radius:16px;
+  padding:32px 28px;
+  border:1px solid rgba(13,27,46,0.08);
+  box-shadow:0 2px 16px rgba(13,27,46,0.06);
+  transition:transform .3s,box-shadow .3s;
+  cursor:default;
+}
+.jb-feat-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 16px 40px rgba(13,27,46,0.12);
+}
+.jb-feat-icon{
+  width:60px;height:60px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;margin-bottom:20px;
+  box-shadow:0 4px 16px rgba(0,0,0,0.15);
+}
+.jb-feat-card h4{
+  font-family:var(--font-display);
+  font-size:1.1rem;font-weight:600;
+  color:var(--navy);margin-bottom:10px;
+}
+.jb-feat-card p{
+  font-size:0.85rem;color:var(--text-2);
+  line-height:1.7;
+}
+@media(max-width:900px){
+  .jb-feat-card{padding:24px 20px}
+  section .container div[style*="grid-template-columns:repeat(3"]{
+    grid-template-columns:repeat(2,1fr) !important;
+  }
+}
+@media(max-width:600px){
+  section .container div[style*="grid-template-columns:repeat(3"]{
+    grid-template-columns:1fr !important;
+  }
+}
+</style>
 
 <!-- ABOUT SNAPSHOT -->
 <section class="section bg-cream-2">
@@ -278,7 +350,7 @@
       <div class="footer-col"><h5>Quick Links</h5><ul>
         <li><a href="index.html">→ Home</a></li><li><a href="projects.html">→ Projects</a></li>
         <li><a href="search.html">→ Search Properties</a></li>
-        <li><a href="about.html">→ About Us</a></li><li><a href="gallery.html">→ Gallery</a></li>
+        <li><a href="about.html">→ About Us</a></li>
         <li><a href="contact.html">→ Contact Us</a></li>
       </ul></div>
       <div class="footer-col"><h5>Our Projects</h5><ul>
