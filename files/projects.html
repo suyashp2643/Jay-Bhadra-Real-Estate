@@ -2,21 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Our Projects — Jay Bhadra Builders | Sangamner</title>
-  <meta name="description" content="Browse all residential and commercial projects by Jay Bhadra Builders in Sangamner. 1BHK, 2BHK, 3BHK flats, bungalows, and commercial shops."/>
+  <title>Our Projects — Jay Bhadra Real Estate Solutions | Nashik</title>
+  <meta name="description" content="Browse all residential and commercial projects by Jay Bhadra Real Estate Solutions Pvt. Ltd. in Nashik."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .projects-layout{display:grid;grid-template-columns:1fr;gap:28px}
+    .project-card-v2{background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;display:grid;grid-template-columns:360px 1fr;box-shadow:0 2px 12px rgba(13,27,46,0.07);transition:transform .35s,box-shadow .35s}
+    .project-card-v2:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(13,27,46,0.13)}
+    .pcard-img{position:relative;overflow:hidden;height:100%;min-height:260px}
+    .pcard-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+    .project-card-v2:hover .pcard-img img{transform:scale(1.05)}
+    .pcard-img-placeholder{width:100%;height:100%;min-height:260px;display:flex;align-items:center;justify-content:center;font-size:4rem;color:rgba(255,255,255,0.25)}
+    .pcard-badge{position:absolute;top:14px;left:14px;padding:5px 14px;border-radius:100px;font-family:var(--font-cap);font-size:0.6rem;font-weight:600;letter-spacing:0.12em;backdrop-filter:blur(8px)}
+    .s-ongoing{background:rgba(26,107,69,0.88);color:#b6f0d5}
+    .s-completed{background:rgba(13,27,46,0.88);color:rgba(255,255,255,0.9)}
+    .s-upcoming{background:rgba(200,151,58,0.9);color:#0d1b2e}
+    .pcard-body{padding:28px 32px;display:flex;flex-direction:column;justify-content:center}
+    .pcard-label{font-family:var(--font-cap);font-size:0.6rem;color:var(--gold);letter-spacing:0.16em;text-transform:uppercase;margin-bottom:8px}
+    .pcard-title{font-family:var(--font-display);font-size:1.6rem;font-weight:600;color:var(--navy);margin-bottom:6px;line-height:1.2}
+    .pcard-loc{font-size:0.83rem;color:var(--text-3);margin-bottom:16px}
+    .pcard-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+    .pcard-tag{background:var(--cream-2);border:1px solid var(--border);color:var(--text-2);font-size:0.72rem;padding:4px 12px;border-radius:100px;font-weight:500}
+    .pcard-price{font-family:var(--font-display);font-size:1.4rem;font-weight:600;color:var(--navy);margin-bottom:6px}
+    .pcard-price span{font-size:0.78rem;font-weight:400;color:var(--text-3);font-family:var(--font-body)}
+    .pcard-info{font-size:0.8rem;color:var(--text-3);margin-bottom:20px}
+    .pcard-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .divider-gold{width:40px;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:2px;margin-bottom:16px}
+    @media(max-width:900px){
+      .project-card-v2{grid-template-columns:1fr}
+      .pcard-img{min-height:220px}
+    }
+    @media(max-width:600px){
+      .pcard-body{padding:20px}
+      .pcard-title{font-size:1.3rem}
+    }
+  </style>
 </head>
 <body>
+
 <div class="top-strip"><div class="container">
   <span>📞 <a href="tel:+919765711811">+91-97657-11811</a> &nbsp;|&nbsp; ⏰ Mon–Sat 9AM–7PM</span>
   <button class="strip-dismiss">✕</button>
 </div></div>
+
 <nav class="navbar"><div class="container">
   <a href="index.html" class="nav-logo">
     <div class="nav-logo-icon"><span>JB</span></div>
-    <div class="nav-logo-text"><strong>Jay Bhadra Builders</strong><em>Building Dreams, Delivering Trust</em></div>
+    <div class="nav-logo-text"><strong>Jay Bhadra Real Estate Solutions Pvt. Ltd.</strong><em>Building Dreams, Delivering Trust</em></div>
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li><li><a href="projects.html" class="active">Projects</a></li>
@@ -31,145 +65,250 @@
   <a href="about.html">👥 About Us</a><a href="gallery.html">🖼️ Gallery</a><a href="contact.html">📞 Contact</a>
   <a href="contact.html" style="margin-top:20px;background:var(--gold);color:var(--navy);font-weight:600;border-radius:var(--r-sm);text-align:center;font-family:var(--font-cap);font-size:0.75rem;letter-spacing:0.1em;padding:14px 16px;">ENQUIRE NOW</a>
 </nav>
+
 <main>
 <section class="page-hero">
   <div class="container">
     <nav class="breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><span>Projects</span></nav>
     <h1>Our <em>Projects</em></h1>
-    <p>Explore our 27+ residential & commercial projects across Sangamner</p>
+    <p>Explore our 30+ residential &amp; commercial projects across Nashik</p>
   </div>
 </section>
+
 <section class="section">
   <div class="container">
-    <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start;margin-bottom:40px;">
-      <div>
-        <p style="font-size:0.65rem;font-family:var(--font-cap);letter-spacing:0.15em;color:var(--text-3);text-transform:uppercase;margin-bottom:10px;">Filter Projects</p>
-        <div class="filter-bar">
-          <button class="filter-btn active" data-filter="all">All Projects</button>
-          <button class="filter-btn" data-filter="ongoing">🟢 Ongoing</button>
-          <button class="filter-btn" data-filter="completed">✅ Completed</button>
-          <button class="filter-btn" data-filter="upcoming">🔜 Upcoming</button>
-          <button class="filter-btn" data-filter="residential">🏠 Residential</button>
-          <button class="filter-btn" data-filter="commercial">🏪 Commercial</button>
-        </div>
-      </div>
-      <div>
-        <p style="font-size:0.65rem;font-family:var(--font-cap);letter-spacing:0.15em;color:var(--text-3);text-transform:uppercase;margin-bottom:10px;">Search</p>
-        <div class="search-bar" style="margin-bottom:0;">
-          <span class="search-icon">🔍</span>
-          <input type="search" placeholder="Search by name or location…"/>
-        </div>
-      </div>
+
+    <!-- ═══ FILTER BAR ═══ -->
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;" role="group">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="ongoing">🟢 Ongoing</button>
+      <button class="filter-btn" data-filter="completed">✅ Completed</button>
+      <button class="filter-btn" data-filter="upcoming">🔜 Upcoming</button>
+      <button class="filter-btn" data-filter="residential">🏠 Residential</button>
+      <button class="filter-btn" data-filter="commercial">🏪 Commercial</button>
     </div>
-    <div class="projects-grid" data-filterable>
-      <article class="project-card" data-filter="ongoing residential">
-        <div class="card-image"><div class="card-image-placeholder" style="background:linear-gradient(135deg,#0d1b2e,#1e3050);">🏢</div><span class="card-status status-ongoing">Ongoing</span></div>
-        <div class="card-body">
-          <h3 class="card-title">Jay Bhadra Heights</h3>
-          <div class="card-meta">📍 Near Shri Ram Chowk, Sangamner</div>
-          <div class="card-tags"><span class="card-tag">1BHK</span><span class="card-tag">2BHK</span><span class="card-tag">RCC Structure</span></div>
-          <div class="card-price">₹28 Lakh+ <span>onwards</span></div>
-          <p style="font-size:0.8rem;color:var(--text-3);margin-bottom:16px;">🏗️ Possession: Dec 2025</p>
-          <div class="card-actions">
+
+    <!-- ═══ PROJECTS LIST ═══ -->
+    <!--
+    ╔══════════════════════════════════════════════════════════════╗
+    ║  HOW TO ADD A PHOTO TO ANY PROJECT:                         ║
+    ║                                                              ║
+    ║  1. Upload your photo to Google Drive / WhatsApp Web /       ║
+    ║     any image hosting site (imgbb.com is free & easy)        ║
+    ║                                                              ║
+    ║  2. Copy the direct image link                               ║
+    ║                                                              ║
+    ║  3. In the project card below, find:                         ║
+    ║     data-photo="ADD_PHOTO_LINK_HERE"                         ║
+    ║                                                              ║
+    ║  4. Replace ADD_PHOTO_LINK_HERE with your copied link        ║
+    ║                                                              ║
+    ║  Example:                                                    ║
+    ║  data-photo="https://i.ibb.co/xyz/myproject.jpg"             ║
+    ║                                                              ║
+    ║  That's it! Save and push. Photo appears automatically.      ║
+    ╚══════════════════════════════════════════════════════════════╝
+    -->
+
+    <div class="projects-layout" id="projects-grid">
+
+      <!-- ─── PROJECT 1 ─────────────────────────────────────────── -->
+      <article class="project-card-v2"
+        data-filter="ongoing residential"
+        data-photo="ADD_PHOTO_LINK_HERE">
+        <!--
+          TO ADD PHOTO: Replace ADD_PHOTO_LINK_HERE above with your image URL
+          Example: data-photo="https://i.ibb.co/abc123/heights.jpg"
+        -->
+        <div class="pcard-img" id="img-1">
+          <!-- Photo loads here automatically from data-photo above -->
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-label">Ongoing Project</div>
+          <h3 class="pcard-title">Jay Bhadra Heights</h3>
+          <div class="divider-gold"></div>
+          <div class="pcard-loc">📍 Near Shri Ram Chowk, Nashik</div>
+          <div class="pcard-tags">
+            <span class="pcard-tag">1BHK</span>
+            <span class="pcard-tag">2BHK</span>
+            <span class="pcard-tag">Residential</span>
+            <span class="pcard-tag">RCC Structure</span>
+          </div>
+          <div class="pcard-price">₹28 Lakh+ <span>onwards</span></div>
+          <div class="pcard-info">🏗️ Possession: December 2025</div>
+          <div class="pcard-actions">
             <a href="project-detail.html?project=jay-bhadra-heights" class="btn btn-navy btn-sm">Know More</a>
-            <button class="btn btn-outline-navy btn-sm" data-enquire="Jay Bhadra Heights">📞 Enquire</button>
+            <button class="btn btn-outline-navy btn-sm" data-enquire="Jay Bhadra Heights">📞 Enquire Now</button>
           </div>
         </div>
       </article>
-      <article class="project-card" data-filter="completed residential">
-        <div class="card-image"><div class="card-image-placeholder" style="background:linear-gradient(135deg,#1a4a2e,#0d2e1a);">🏘️</div><span class="card-status status-completed">Completed</span></div>
-        <div class="card-body">
-          <h3 class="card-title">Golden City Residency</h3>
-          <div class="card-meta">📍 Golden City Area, Sangamner</div>
-          <div class="card-tags"><span class="card-tag">1BHK</span><span class="card-tag">2BHK</span><span class="card-tag">3BHK</span></div>
-          <div class="card-price">₹22 Lakh+ <span>onwards</span></div>
-          <p style="font-size:0.8rem;color:var(--success);margin-bottom:16px;">✅ Fully Handed Over — 2022</p>
-          <div class="card-actions">
+
+      <!-- ─── PROJECT 2 ─────────────────────────────────────────── -->
+      <article class="project-card-v2"
+        data-filter="completed residential"
+        data-photo="ADD_PHOTO_LINK_HERE">
+        <div class="pcard-img" id="img-2"></div>
+        <div class="pcard-body">
+          <div class="pcard-label">Completed Project</div>
+          <h3 class="pcard-title">Golden City Residency</h3>
+          <div class="divider-gold"></div>
+          <div class="pcard-loc">📍 Golden City Area, Nashik</div>
+          <div class="pcard-tags">
+            <span class="pcard-tag">1BHK</span>
+            <span class="pcard-tag">2BHK</span>
+            <span class="pcard-tag">3BHK</span>
+          </div>
+          <div class="pcard-price">₹22 Lakh+ <span>onwards</span></div>
+          <div class="pcard-info" style="color:var(--success);">✅ Fully Handed Over — 2022</div>
+          <div class="pcard-actions">
             <a href="project-detail.html?project=golden-city-residency" class="btn btn-navy btn-sm">Know More</a>
-            <button class="btn btn-outline-navy btn-sm" data-enquire="Golden City Residency">📞 Enquire</button>
+            <button class="btn btn-outline-navy btn-sm" data-enquire="Golden City Residency">📞 Enquire Now</button>
           </div>
         </div>
       </article>
-      <article class="project-card" data-filter="completed residential">
-        <div class="card-image"><div class="card-image-placeholder" style="background:linear-gradient(135deg,#2e1a1a,#5c2020);">🏠</div><span class="card-status status-completed">Completed</span></div>
-        <div class="card-body">
-          <h3 class="card-title">Shri Ram Apartments</h3>
-          <div class="card-meta">📍 Shri Ram Chowk, Sangamner</div>
-          <div class="card-tags"><span class="card-tag">2BHK</span><span class="card-tag">3BHK</span></div>
-          <div class="card-price">₹35 Lakh+ <span>onwards</span></div>
-          <p style="font-size:0.8rem;color:var(--success);margin-bottom:16px;">✅ Fully Handed Over — 2021</p>
-          <div class="card-actions">
+
+      <!-- ─── PROJECT 3 ─────────────────────────────────────────── -->
+      <article class="project-card-v2"
+        data-filter="completed residential"
+        data-photo="ADD_PHOTO_LINK_HERE">
+        <div class="pcard-img" id="img-3"></div>
+        <div class="pcard-body">
+          <div class="pcard-label">Completed Project</div>
+          <h3 class="pcard-title">Shri Ram Apartments</h3>
+          <div class="divider-gold"></div>
+          <div class="pcard-loc">📍 Shri Ram Chowk, Nashik</div>
+          <div class="pcard-tags">
+            <span class="pcard-tag">2BHK</span>
+            <span class="pcard-tag">3BHK</span>
+          </div>
+          <div class="pcard-price">₹35 Lakh+ <span>onwards</span></div>
+          <div class="pcard-info" style="color:var(--success);">✅ Fully Handed Over — 2021</div>
+          <div class="pcard-actions">
             <a href="project-detail.html?project=shri-ram-apartments" class="btn btn-navy btn-sm">Know More</a>
-            <button class="btn btn-outline-navy btn-sm" data-enquire="Shri Ram Apartments">📞 Enquire</button>
+            <button class="btn btn-outline-navy btn-sm" data-enquire="Shri Ram Apartments">📞 Enquire Now</button>
           </div>
         </div>
       </article>
-      <article class="project-card" data-filter="ongoing commercial">
-        <div class="card-image"><div class="card-image-placeholder" style="background:linear-gradient(135deg,#0d2e3a,#0d4a5c);">🏪</div><span class="card-status status-ongoing">Ongoing</span></div>
-        <div class="card-body">
-          <h3 class="card-title">Jay Bhadra Commercial Hub</h3>
-          <div class="card-meta">📍 Main Road, Sangamner</div>
-          <div class="card-tags"><span class="card-tag">Commercial</span><span class="card-tag">Shops</span><span class="card-tag">Office</span></div>
-          <div class="card-price">₹15 Lakh+ <span>onwards</span></div>
-          <p style="font-size:0.8rem;color:var(--text-3);margin-bottom:16px;">🏗️ Possession: Mar 2026</p>
-          <div class="card-actions">
+
+      <!-- ─── PROJECT 4 ─────────────────────────────────────────── -->
+      <article class="project-card-v2"
+        data-filter="ongoing commercial"
+        data-photo="ADD_PHOTO_LINK_HERE">
+        <div class="pcard-img" id="img-4"></div>
+        <div class="pcard-body">
+          <div class="pcard-label">Ongoing Project</div>
+          <h3 class="pcard-title">Jay Bhadra Commercial Hub</h3>
+          <div class="divider-gold"></div>
+          <div class="pcard-loc">📍 Main Road, Nashik</div>
+          <div class="pcard-tags">
+            <span class="pcard-tag">Commercial</span>
+            <span class="pcard-tag">Shops</span>
+            <span class="pcard-tag">Office Space</span>
+          </div>
+          <div class="pcard-price">₹15 Lakh+ <span>onwards</span></div>
+          <div class="pcard-info">🏗️ Possession: March 2026</div>
+          <div class="pcard-actions">
             <a href="project-detail.html?project=commercial-hub" class="btn btn-navy btn-sm">Know More</a>
-            <button class="btn btn-outline-navy btn-sm" data-enquire="Jay Bhadra Commercial Hub">📞 Enquire</button>
+            <button class="btn btn-outline-navy btn-sm" data-enquire="Jay Bhadra Commercial Hub">📞 Enquire Now</button>
           </div>
         </div>
       </article>
-      <article class="project-card" data-filter="upcoming residential">
-        <div class="card-image"><div class="card-image-placeholder" style="background:linear-gradient(135deg,#8a6420,#c8973a);">🏡</div><span class="card-status status-upcoming">Upcoming</span></div>
-        <div class="card-body">
-          <h3 class="card-title">Green Valley Bungalows</h3>
-          <div class="card-meta">📍 Sangamner Outskirts</div>
-          <div class="card-tags"><span class="card-tag">Bungalow</span><span class="card-tag">Premium</span><span class="card-tag">Gated</span></div>
-          <div class="card-price">₹65 Lakh+ <span>onwards</span></div>
-          <p style="font-size:0.8rem;color:var(--gold-dim);margin-bottom:16px;">🔜 Launching Q2 2025</p>
-          <div class="card-actions">
+
+      <!-- ─── PROJECT 5 ─────────────────────────────────────────── -->
+      <article class="project-card-v2"
+        data-filter="upcoming residential"
+        data-photo="ADD_PHOTO_LINK_HERE">
+        <div class="pcard-img" id="img-5"></div>
+        <div class="pcard-body">
+          <div class="pcard-label">Upcoming Project</div>
+          <h3 class="pcard-title">Green Valley Bungalows</h3>
+          <div class="divider-gold"></div>
+          <div class="pcard-loc">📍 Nashik Outskirts</div>
+          <div class="pcard-tags">
+            <span class="pcard-tag">Bungalow</span>
+            <span class="pcard-tag">Premium</span>
+            <span class="pcard-tag">Gated Community</span>
+          </div>
+          <div class="pcard-price">₹65 Lakh+ <span>onwards</span></div>
+          <div class="pcard-info" style="color:var(--gold-dim);">🔜 Launching Soon — Register Interest</div>
+          <div class="pcard-actions">
             <a href="project-detail.html?project=green-valley-bungalows" class="btn btn-navy btn-sm">Know More</a>
-            <button class="btn btn-outline-navy btn-sm" data-enquire="Green Valley Bungalows">📞 Enquire</button>
+            <button class="btn btn-outline-navy btn-sm" data-enquire="Green Valley Bungalows">📞 Enquire Now</button>
           </div>
         </div>
       </article>
-      <article class="project-card" data-filter="upcoming residential">
-        <div class="card-image"><div class="card-image-placeholder" style="background:linear-gradient(135deg,#2a1a4a,#402878);">🏗️</div><span class="card-status status-upcoming">Upcoming</span></div>
-        <div class="card-body">
-          <h3 class="card-title">Fatangare Nagar Phase 2</h3>
-          <div class="card-meta">📍 Fatangare Nagar, Sangamner</div>
-          <div class="card-tags"><span class="card-tag">1BHK</span><span class="card-tag">2BHK</span><span class="card-tag">Affordable</span></div>
-          <div class="card-price">₹20 Lakh+ <span>onwards</span></div>
-          <p style="font-size:0.8rem;color:var(--gold-dim);margin-bottom:16px;">🔜 Pre-launch Bookings Open</p>
-          <div class="card-actions">
+
+      <!-- ─── PROJECT 6 ─────────────────────────────────────────── -->
+      <article class="project-card-v2"
+        data-filter="upcoming residential"
+        data-photo="ADD_PHOTO_LINK_HERE">
+        <div class="pcard-img" id="img-6"></div>
+        <div class="pcard-body">
+          <div class="pcard-label">Upcoming Project</div>
+          <h3 class="pcard-title">Fatangare Nagar Phase 2</h3>
+          <div class="divider-gold"></div>
+          <div class="pcard-loc">📍 Fatangare Nagar, Nashik</div>
+          <div class="pcard-tags">
+            <span class="pcard-tag">1BHK</span>
+            <span class="pcard-tag">2BHK</span>
+            <span class="pcard-tag">Affordable</span>
+          </div>
+          <div class="pcard-price">₹20 Lakh+ <span>onwards</span></div>
+          <div class="pcard-info" style="color:var(--gold-dim);">🔜 Pre-launch Bookings Open</div>
+          <div class="pcard-actions">
             <a href="project-detail.html?project=fatangare-nagar-phase2" class="btn btn-navy btn-sm">Know More</a>
-            <button class="btn btn-outline-navy btn-sm" data-enquire="Fatangare Nagar Phase 2">📞 Enquire</button>
+            <button class="btn btn-outline-navy btn-sm" data-enquire="Fatangare Nagar Phase 2">📞 Enquire Now</button>
           </div>
         </div>
       </article>
-    </div>
+
+    </div><!-- end projects-layout -->
+
+    <!-- BOTTOM CTA -->
     <div style="text-align:center;margin-top:56px;padding:44px;background:var(--cream-2);border-radius:var(--r-xl);border:1px solid var(--border);">
       <h3 style="margin-bottom:8px;">Didn't find what you're looking for?</h3>
-      <p style="margin-bottom:28px;">Contact us — we might have the perfect property coming up that matches your requirements.</p>
+      <p style="margin-bottom:28px;">Contact us — we might have the perfect property that matches your requirements.</p>
       <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:14px;">
-        <a href="https://wa.me/919765711811?text=Hello!%20I%20couldn't%20find%20the%20right%20property%20on%20the%20website.%20Can%20you%20help?" class="btn btn-whatsapp" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+        <a href="https://wa.me/919765711811?text=Hello!%20I%20couldn't%20find%20the%20right%20property.%20Can%20you%20help?" class="btn btn-whatsapp" target="_blank" rel="noopener">💬 WhatsApp Us</a>
         <a href="contact.html" class="btn btn-navy">📝 Send Enquiry</a>
       </div>
     </div>
+
   </div>
 </section>
 </main>
+
 <footer class="footer"><div class="container"><div class="footer-grid">
   <div class="footer-brand">
-    <div class="footer-logo"><div class="footer-logo-icon"><span>JB</span></div><div class="footer-logo-text"><strong>Jay Bhadra Builders</strong><em>Building Dreams, Delivering Trust</em></div></div>
-    <p>Sangamner's trusted construction company since 2010. 27+ projects. 500+ families.</p>
+    <div class="footer-logo"><div class="footer-logo-icon"><span>JB</span></div>
+      <div class="footer-logo-text"><strong>Jay Bhadra Real Estate Solutions Pvt. Ltd.</strong><em>Building Dreams, Delivering Trust</em></div>
+    </div>
+    <p>Nashik's trusted real estate company since 2010. 30+ projects. 500+ families.</p>
     <div class="footer-social"><a href="#" class="soc-icon">f</a><a href="#" class="soc-icon">in</a><a href="https://wa.me/919765711811" class="soc-icon" target="_blank">W</a></div>
   </div>
-  <div class="footer-col"><h5>Quick Links</h5><ul><li><a href="index.html">→ Home</a></li><li><a href="projects.html">→ Projects</a></li><li><a href="about.html">→ About Us</a></li><li><a href="gallery.html">→ Gallery</a></li><li><a href="contact.html">→ Contact</a></li></ul></div>
-  <div class="footer-col"><h5>Project Status</h5><ul><li><a href="#">→ Ongoing (2)</a></li><li><a href="#">→ Completed (2)</a></li><li><a href="#">→ Upcoming (2)</a></li></ul></div>
-  <div class="footer-col"><h5>Contact</h5><div class="footer-ci"><span class="ic">📞</span><span class="tx"><a href="tel:+919765711811">+91-97657-11811</a></span></div><div class="footer-ci"><span class="ic">📍</span><span class="tx">Shri Ram Chowk, Sangamner – 422605</span></div><div class="footer-ci"><span class="ic">⏰</span><span class="tx">Mon–Sat: 9AM–7PM</span></div></div>
+  <div class="footer-col"><h5>Quick Links</h5><ul>
+    <li><a href="index.html">→ Home</a></li><li><a href="projects.html">→ Projects</a></li>
+    <li><a href="about.html">→ About Us</a></li><li><a href="gallery.html">→ Gallery</a></li>
+    <li><a href="contact.html">→ Contact</a></li>
+  </ul></div>
+  <div class="footer-col"><h5>Project Status</h5><ul>
+    <li><a href="#">→ Ongoing (2)</a></li><li><a href="#">→ Completed (2)</a></li><li><a href="#">→ Upcoming (2)</a></li>
+  </ul></div>
+  <div class="footer-col"><h5>Contact</h5>
+    <div class="footer-ci"><span class="ic">📞</span><span class="tx"><a href="tel:+919765711811">+91-97657-11811</a></span></div>
+    <div class="footer-ci"><span class="ic">📍</span><span class="tx">Shri Ram Chowk, Nashik – 422005</span></div>
+    <div class="footer-ci"><span class="ic">⏰</span><span class="tx">Mon–Sat: 9AM–7PM</span></div>
+  </div>
 </div></div>
-<div class="container"><div class="footer-bottom"><p>© 2024 Jay Bhadra Builders. All rights reserved.</p><p><a href="index.html">Home</a> · <a href="contact.html">Contact</a></p></div></div></footer>
-<div class="whatsapp-float"><span class="wa-tooltip">Chat with us!</span><a href="https://wa.me/919765711811?text=Hello%20Jay%20Bhadra%20Builders!%20I'm%20interested%20in%20your%20properties." class="whatsapp-btn" target="_blank" rel="noopener">💬</a></div>
+<div class="container"><div class="footer-bottom">
+  <p>© 2024 Jay Bhadra Real Estate Solutions Pvt. Ltd. All rights reserved.</p>
+  <p><a href="index.html">Home</a> · <a href="contact.html">Contact</a></p>
+</div></div></footer>
+
+<div class="whatsapp-float"><span class="wa-tooltip">Chat with us!</span>
+  <a href="https://wa.me/919765711811?text=Hello%20Jay%20Bhadra%20Real%20Estate%20Solutions!%20I'm%20interested%20in%20your%20properties." class="whatsapp-btn" target="_blank" rel="noopener">💬</a>
+</div>
+
 <div class="modal-overlay" role="dialog" aria-modal="true"><div class="modal">
   <button class="modal-close">✕</button>
   <div class="modal-chip">Quick Enquiry</div>
@@ -178,9 +317,72 @@
     <input type="hidden" id="modal-project-name"/>
     <div class="form-group"><label for="modal-name">Your Name <span>*</span></label><input type="text" id="modal-name" class="form-control" placeholder="Full name" required/><div class="form-error"></div></div>
     <div class="form-group"><label for="modal-phone">Phone Number <span>*</span></label><input type="tel" id="modal-phone" class="form-control" placeholder="10-digit number" required/><div class="form-error"></div></div>
-    <div class="form-group"><label for="modal-bhk">Interested In</label><select id="modal-bhk" class="form-control"><option value="">Select type</option><option>1BHK</option><option>2BHK</option><option>3BHK</option><option>Bungalow</option><option>Commercial Shop</option></select></div>
+    <div class="form-group"><label for="modal-bhk">Interested In</label>
+      <select id="modal-bhk" class="form-control"><option value="">Select type</option><option>1BHK</option><option>2BHK</option><option>3BHK</option><option>Bungalow</option><option>Commercial Shop</option></select>
+    </div>
     <button type="submit" class="btn btn-whatsapp form-submit">💬 Send via WhatsApp</button>
   </form>
 </div></div>
+
 <script src="js/main.js"></script>
-</body></html>
+<script>
+/* ═══════════════════════════════════════════════
+   AUTO-LOAD PROJECT PHOTOS FROM data-photo LINK
+   ═══════════════════════════════════════════════ */
+
+// Fallback gradient colours for each project when no photo is added
+var FALLBACK_COLORS = [
+  'linear-gradient(135deg,#0d1b2e,#1e3050)',   /* Project 1 — Navy */
+  'linear-gradient(135deg,#1a4a2e,#0d2e1a)',   /* Project 2 — Green */
+  'linear-gradient(135deg,#2e1a1a,#5c2020)',   /* Project 3 — Dark Red */
+  'linear-gradient(135deg,#0d2e3a,#0d4a5c)',   /* Project 4 — Teal */
+  'linear-gradient(135deg,#8a6420,#c8973a)',   /* Project 5 — Gold */
+  'linear-gradient(135deg,#2a1a4a,#402878)',   /* Project 6 — Purple */
+];
+
+var FALLBACK_ICONS = ['🏢','🏘️','🏠','🏪','🏡','🏗️'];
+
+document.querySelectorAll('.project-card-v2').forEach(function(card, i) {
+  var imgDiv = card.querySelector('.pcard-img');
+  var photo  = card.getAttribute('data-photo');
+
+  // Get status for badge
+  var filter = card.getAttribute('data-filter') || '';
+  var status = filter.includes('ongoing') ? 'ongoing' :
+               filter.includes('completed') ? 'completed' : 'upcoming';
+  var statusLabel = status.charAt(0).toUpperCase() + status.slice(1);
+  var badgeClass  = 's-' + status;
+
+  // Badge HTML
+  var badge = '<span class="pcard-badge ' + badgeClass + '">' + statusLabel + '</span>';
+
+  if (photo && photo !== 'ADD_PHOTO_LINK_HERE' && photo.trim() !== '') {
+    // Real photo provided — show it
+    imgDiv.innerHTML =
+      '<img src="' + photo + '" alt="Project photo" loading="lazy" onerror="this.parentNode.innerHTML=\'<div class=pcard-img-placeholder style=background:' +
+      encodeURIComponent(FALLBACK_COLORS[i] || FALLBACK_COLORS[0]) +
+      '>' + FALLBACK_ICONS[i] + '</div>' + badge + '\'"/>' + badge;
+  } else {
+    // No photo yet — show beautiful gradient placeholder
+    imgDiv.innerHTML =
+      '<div class="pcard-img-placeholder" style="background:' +
+      (FALLBACK_COLORS[i] || FALLBACK_COLORS[0]) + ';min-height:260px;">' +
+      FALLBACK_ICONS[i] + '</div>' + badge;
+  }
+});
+
+/* ═══ FILTER BUTTONS ═══ */
+document.querySelectorAll('.filter-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    var f = btn.getAttribute('data-filter');
+    document.querySelectorAll('.project-card-v2').forEach(function(card) {
+      var tags = card.getAttribute('data-filter') || '';
+      card.style.display = (f === 'all' || tags.includes(f)) ? '' : 'none';
+    });
+  });
+});
+</script>
+</body>
+</html>
