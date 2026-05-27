@@ -30,42 +30,41 @@
     .pcard-info{font-size:0.8rem;color:var(--text-3);margin-bottom:20px}
     .pcard-actions{display:flex;gap:10px;flex-wrap:wrap}
     .divider-gold{width:40px;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:2px;margin-bottom:16px}
-    @media(max-width:900px){
-      .project-card-v2{grid-template-columns:1fr}
-      .pcard-img{min-height:220px}
-    }
-    @media(max-width:600px){
-      .pcard-body{padding:20px}
-      .pcard-title{font-size:1.3rem}
-    }
+    @media(max-width:900px){.project-card-v2{grid-template-columns:1fr}.pcard-img{min-height:220px}}
+    @media(max-width:600px){.pcard-body{padding:20px}.pcard-title{font-size:1.3rem}}
   </style>
 </head>
 <body>
-
 <div class="top-strip"><div class="container">
   <span>📞 <a href="tel:+919765711811">+91-97657-11811</a> &nbsp;|&nbsp; ⏰ Mon–Sat 9AM–7PM</span>
   <button class="strip-dismiss">✕</button>
 </div></div>
-
 <nav class="navbar"><div class="container">
   <a href="index.html" class="nav-logo">
     <div class="nav-logo-icon"><span>JB</span></div>
     <div class="nav-logo-text"><strong>Jay Bhadra Real Estate Solutions Pvt. Ltd.</strong><em>Building Dreams, Delivering Trust</em></div>
   </a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li><li><a href="projects.html" class="active">Projects</a></li>
-    <li><a href="about.html">About Us</a></li><li><a href="gallery.html">Gallery</a></li>
-    <li><a href="contact.html">Contact</a></li><li><a href="contact.html" class="nav-cta">Enquire Now</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="search.html">🔍 Search</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Enquire Now</a></li>
   </ul>
   <button class="hamburger"><span></span><span></span><span></span></button>
 </div></nav>
 <div class="nav-overlay"></div>
 <nav class="nav-drawer">
-  <a href="index.html">🏠 Home</a><a href="projects.html" class="active">🏢 Projects</a>
-  <a href="about.html">👥 About Us</a><a href="gallery.html">🖼️ Gallery</a><a href="contact.html">📞 Contact</a>
+  <a href="index.html">🏠 Home</a>
+  <a href="projects.html" class="active">🏢 Projects</a>
+  <a href="search.html">🔍 Search Properties</a>
+  <a href="about.html">👥 About Us</a>
+  <a href="gallery.html">🖼️ Gallery</a>
+  <a href="contact.html">📞 Contact</a>
   <a href="contact.html" style="margin-top:20px;background:var(--gold);color:var(--navy);font-weight:600;border-radius:var(--r-sm);text-align:center;font-family:var(--font-cap);font-size:0.75rem;letter-spacing:0.1em;padding:14px 16px;">ENQUIRE NOW</a>
 </nav>
-
 <main>
 <section class="page-hero">
   <div class="container">
@@ -74,11 +73,8 @@
     <p>Explore our 30+ residential &amp; commercial projects across Nashik</p>
   </div>
 </section>
-
 <section class="section">
   <div class="container">
-
-    <!-- ═══ FILTER BAR ═══ -->
     <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;" role="group">
       <button class="filter-btn active" data-filter="all">All Projects</button>
       <button class="filter-btn" data-filter="ongoing">🟢 Ongoing</button>
@@ -88,52 +84,26 @@
       <button class="filter-btn" data-filter="commercial">🏪 Commercial</button>
     </div>
 
-    <!-- ═══ PROJECTS LIST ═══ -->
     <!--
     ╔══════════════════════════════════════════════════════════════╗
     ║  HOW TO ADD A PHOTO TO ANY PROJECT:                         ║
-    ║                                                              ║
-    ║  1. Upload your photo to Google Drive / WhatsApp Web /       ║
-    ║     any image hosting site (imgbb.com is free & easy)        ║
-    ║                                                              ║
-    ║  2. Copy the direct image link                               ║
-    ║                                                              ║
-    ║  3. In the project card below, find:                         ║
-    ║     data-photo="ADD_PHOTO_LINK_HERE"                         ║
-    ║                                                              ║
-    ║  4. Replace ADD_PHOTO_LINK_HERE with your copied link        ║
-    ║                                                              ║
-    ║  Example:                                                    ║
-    ║  data-photo="https://i.ibb.co/xyz/myproject.jpg"             ║
-    ║                                                              ║
-    ║  That's it! Save and push. Photo appears automatically.      ║
+    ║  1. Upload photo to imgbb.com (free)                        ║
+    ║  2. Copy the Direct link                                    ║
+    ║  3. Find: data-photo="ADD_PHOTO_LINK_HERE"                  ║
+    ║  4. Replace ADD_PHOTO_LINK_HERE with your copied link       ║
+    ║  Example: data-photo="https://i.ibb.co/xyz/photo.jpg"      ║
     ╚══════════════════════════════════════════════════════════════╝
     -->
-
     <div class="projects-layout" id="projects-grid">
 
-      <!-- ─── PROJECT 1 ─────────────────────────────────────────── -->
-      <article class="project-card-v2"
-        data-filter="ongoing residential"
-        data-photo="ADD_PHOTO_LINK_HERE">
-        <!--
-          TO ADD PHOTO: Replace ADD_PHOTO_LINK_HERE above with your image URL
-          Example: data-photo="https://i.ibb.co/abc123/heights.jpg"
-        -->
-        <div class="pcard-img" id="img-1">
-          <!-- Photo loads here automatically from data-photo above -->
-        </div>
+      <article class="project-card-v2" data-filter="ongoing residential" data-photo="ADD_PHOTO_LINK_HERE">
+        <div class="pcard-img" id="img-1"></div>
         <div class="pcard-body">
           <div class="pcard-label">Ongoing Project</div>
           <h3 class="pcard-title">Jay Bhadra Heights</h3>
           <div class="divider-gold"></div>
           <div class="pcard-loc">📍 Near Shri Ram Chowk, Nashik</div>
-          <div class="pcard-tags">
-            <span class="pcard-tag">1BHK</span>
-            <span class="pcard-tag">2BHK</span>
-            <span class="pcard-tag">Residential</span>
-            <span class="pcard-tag">RCC Structure</span>
-          </div>
+          <div class="pcard-tags"><span class="pcard-tag">1BHK</span><span class="pcard-tag">2BHK</span><span class="pcard-tag">Residential</span><span class="pcard-tag">RCC Structure</span></div>
           <div class="pcard-price">₹28 Lakh+ <span>onwards</span></div>
           <div class="pcard-info">🏗️ Possession: December 2025</div>
           <div class="pcard-actions">
@@ -143,21 +113,14 @@
         </div>
       </article>
 
-      <!-- ─── PROJECT 2 ─────────────────────────────────────────── -->
-      <article class="project-card-v2"
-        data-filter="completed residential"
-        data-photo="ADD_PHOTO_LINK_HERE">
+      <article class="project-card-v2" data-filter="completed residential" data-photo="ADD_PHOTO_LINK_HERE">
         <div class="pcard-img" id="img-2"></div>
         <div class="pcard-body">
           <div class="pcard-label">Completed Project</div>
           <h3 class="pcard-title">Golden City Residency</h3>
           <div class="divider-gold"></div>
           <div class="pcard-loc">📍 Golden City Area, Nashik</div>
-          <div class="pcard-tags">
-            <span class="pcard-tag">1BHK</span>
-            <span class="pcard-tag">2BHK</span>
-            <span class="pcard-tag">3BHK</span>
-          </div>
+          <div class="pcard-tags"><span class="pcard-tag">1BHK</span><span class="pcard-tag">2BHK</span><span class="pcard-tag">3BHK</span></div>
           <div class="pcard-price">₹22 Lakh+ <span>onwards</span></div>
           <div class="pcard-info" style="color:var(--success);">✅ Fully Handed Over — 2022</div>
           <div class="pcard-actions">
@@ -167,20 +130,14 @@
         </div>
       </article>
 
-      <!-- ─── PROJECT 3 ─────────────────────────────────────────── -->
-      <article class="project-card-v2"
-        data-filter="completed residential"
-        data-photo="ADD_PHOTO_LINK_HERE">
+      <article class="project-card-v2" data-filter="completed residential" data-photo="ADD_PHOTO_LINK_HERE">
         <div class="pcard-img" id="img-3"></div>
         <div class="pcard-body">
           <div class="pcard-label">Completed Project</div>
           <h3 class="pcard-title">Shri Ram Apartments</h3>
           <div class="divider-gold"></div>
           <div class="pcard-loc">📍 Shri Ram Chowk, Nashik</div>
-          <div class="pcard-tags">
-            <span class="pcard-tag">2BHK</span>
-            <span class="pcard-tag">3BHK</span>
-          </div>
+          <div class="pcard-tags"><span class="pcard-tag">2BHK</span><span class="pcard-tag">3BHK</span></div>
           <div class="pcard-price">₹35 Lakh+ <span>onwards</span></div>
           <div class="pcard-info" style="color:var(--success);">✅ Fully Handed Over — 2021</div>
           <div class="pcard-actions">
@@ -190,21 +147,14 @@
         </div>
       </article>
 
-      <!-- ─── PROJECT 4 ─────────────────────────────────────────── -->
-      <article class="project-card-v2"
-        data-filter="ongoing commercial"
-        data-photo="ADD_PHOTO_LINK_HERE">
+      <article class="project-card-v2" data-filter="ongoing commercial" data-photo="ADD_PHOTO_LINK_HERE">
         <div class="pcard-img" id="img-4"></div>
         <div class="pcard-body">
           <div class="pcard-label">Ongoing Project</div>
           <h3 class="pcard-title">Jay Bhadra Commercial Hub</h3>
           <div class="divider-gold"></div>
           <div class="pcard-loc">📍 Main Road, Nashik</div>
-          <div class="pcard-tags">
-            <span class="pcard-tag">Commercial</span>
-            <span class="pcard-tag">Shops</span>
-            <span class="pcard-tag">Office Space</span>
-          </div>
+          <div class="pcard-tags"><span class="pcard-tag">Commercial</span><span class="pcard-tag">Shops</span><span class="pcard-tag">Office Space</span></div>
           <div class="pcard-price">₹15 Lakh+ <span>onwards</span></div>
           <div class="pcard-info">🏗️ Possession: March 2026</div>
           <div class="pcard-actions">
@@ -214,21 +164,14 @@
         </div>
       </article>
 
-      <!-- ─── PROJECT 5 ─────────────────────────────────────────── -->
-      <article class="project-card-v2"
-        data-filter="upcoming residential"
-        data-photo="ADD_PHOTO_LINK_HERE">
+      <article class="project-card-v2" data-filter="upcoming residential" data-photo="ADD_PHOTO_LINK_HERE">
         <div class="pcard-img" id="img-5"></div>
         <div class="pcard-body">
           <div class="pcard-label">Upcoming Project</div>
           <h3 class="pcard-title">Green Valley Bungalows</h3>
           <div class="divider-gold"></div>
           <div class="pcard-loc">📍 Nashik Outskirts</div>
-          <div class="pcard-tags">
-            <span class="pcard-tag">Bungalow</span>
-            <span class="pcard-tag">Premium</span>
-            <span class="pcard-tag">Gated Community</span>
-          </div>
+          <div class="pcard-tags"><span class="pcard-tag">Bungalow</span><span class="pcard-tag">Premium</span><span class="pcard-tag">Gated Community</span></div>
           <div class="pcard-price">₹65 Lakh+ <span>onwards</span></div>
           <div class="pcard-info" style="color:var(--gold-dim);">🔜 Launching Soon — Register Interest</div>
           <div class="pcard-actions">
@@ -238,21 +181,14 @@
         </div>
       </article>
 
-      <!-- ─── PROJECT 6 ─────────────────────────────────────────── -->
-      <article class="project-card-v2"
-        data-filter="upcoming residential"
-        data-photo="ADD_PHOTO_LINK_HERE">
+      <article class="project-card-v2" data-filter="upcoming residential" data-photo="ADD_PHOTO_LINK_HERE">
         <div class="pcard-img" id="img-6"></div>
         <div class="pcard-body">
           <div class="pcard-label">Upcoming Project</div>
           <h3 class="pcard-title">Fatangare Nagar Phase 2</h3>
           <div class="divider-gold"></div>
           <div class="pcard-loc">📍 Fatangare Nagar, Nashik</div>
-          <div class="pcard-tags">
-            <span class="pcard-tag">1BHK</span>
-            <span class="pcard-tag">2BHK</span>
-            <span class="pcard-tag">Affordable</span>
-          </div>
+          <div class="pcard-tags"><span class="pcard-tag">1BHK</span><span class="pcard-tag">2BHK</span><span class="pcard-tag">Affordable</span></div>
           <div class="pcard-price">₹20 Lakh+ <span>onwards</span></div>
           <div class="pcard-info" style="color:var(--gold-dim);">🔜 Pre-launch Bookings Open</div>
           <div class="pcard-actions">
@@ -264,16 +200,15 @@
 
     </div><!-- end projects-layout -->
 
-    <!-- BOTTOM CTA -->
     <div style="text-align:center;margin-top:56px;padding:44px;background:var(--cream-2);border-radius:var(--r-xl);border:1px solid var(--border);">
       <h3 style="margin-bottom:8px;">Didn't find what you're looking for?</h3>
       <p style="margin-bottom:28px;">Contact us — we might have the perfect property that matches your requirements.</p>
       <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:14px;">
         <a href="https://wa.me/919765711811?text=Hello!%20I%20couldn't%20find%20the%20right%20property.%20Can%20you%20help?" class="btn btn-whatsapp" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+        <a href="search.html" class="btn btn-outline-navy">🔍 Advanced Search</a>
         <a href="contact.html" class="btn btn-navy">📝 Send Enquiry</a>
       </div>
     </div>
-
   </div>
 </section>
 </main>
@@ -288,6 +223,7 @@
   </div>
   <div class="footer-col"><h5>Quick Links</h5><ul>
     <li><a href="index.html">→ Home</a></li><li><a href="projects.html">→ Projects</a></li>
+    <li><a href="search.html">→ Search Properties</a></li>
     <li><a href="about.html">→ About Us</a></li><li><a href="gallery.html">→ Gallery</a></li>
     <li><a href="contact.html">→ Contact</a></li>
   </ul></div>
@@ -308,7 +244,6 @@
 <div class="whatsapp-float"><span class="wa-tooltip">Chat with us!</span>
   <a href="https://wa.me/919765711811?text=Hello%20Jay%20Bhadra%20Real%20Estate%20Solutions!%20I'm%20interested%20in%20your%20properties." class="whatsapp-btn" target="_blank" rel="noopener">💬</a>
 </div>
-
 <div class="modal-overlay" role="dialog" aria-modal="true"><div class="modal">
   <button class="modal-close">✕</button>
   <div class="modal-chip">Quick Enquiry</div>
@@ -323,66 +258,31 @@
     <button type="submit" class="btn btn-whatsapp form-submit">💬 Send via WhatsApp</button>
   </form>
 </div></div>
-
 <script src="js/main.js"></script>
 <script>
-/* ═══════════════════════════════════════════════
-   AUTO-LOAD PROJECT PHOTOS FROM data-photo LINK
-   ═══════════════════════════════════════════════ */
-
-// Fallback gradient colours for each project when no photo is added
-var FALLBACK_COLORS = [
-  'linear-gradient(135deg,#0d1b2e,#1e3050)',   /* Project 1 — Navy */
-  'linear-gradient(135deg,#1a4a2e,#0d2e1a)',   /* Project 2 — Green */
-  'linear-gradient(135deg,#2e1a1a,#5c2020)',   /* Project 3 — Dark Red */
-  'linear-gradient(135deg,#0d2e3a,#0d4a5c)',   /* Project 4 — Teal */
-  'linear-gradient(135deg,#8a6420,#c8973a)',   /* Project 5 — Gold */
-  'linear-gradient(135deg,#2a1a4a,#402878)',   /* Project 6 — Purple */
-];
-
-var FALLBACK_ICONS = ['🏢','🏘️','🏠','🏪','🏡','🏗️'];
-
-document.querySelectorAll('.project-card-v2').forEach(function(card, i) {
-  var imgDiv = card.querySelector('.pcard-img');
-  var photo  = card.getAttribute('data-photo');
-
-  // Get status for badge
-  var filter = card.getAttribute('data-filter') || '';
-  var status = filter.includes('ongoing') ? 'ongoing' :
-               filter.includes('completed') ? 'completed' : 'upcoming';
-  var statusLabel = status.charAt(0).toUpperCase() + status.slice(1);
-  var badgeClass  = 's-' + status;
-
-  // Badge HTML
-  var badge = '<span class="pcard-badge ' + badgeClass + '">' + statusLabel + '</span>';
-
-  if (photo && photo !== 'ADD_PHOTO_LINK_HERE' && photo.trim() !== '') {
-    // Real photo provided — show it
-    imgDiv.innerHTML =
-      '<img src="' + photo + '" alt="Project photo" loading="lazy" onerror="this.parentNode.innerHTML=\'<div class=pcard-img-placeholder style=background:' +
-      encodeURIComponent(FALLBACK_COLORS[i] || FALLBACK_COLORS[0]) +
-      '>' + FALLBACK_ICONS[i] + '</div>' + badge + '\'"/>' + badge;
+var FALLBACK_COLORS=['linear-gradient(135deg,#0d1b2e,#1e3050)','linear-gradient(135deg,#1a4a2e,#0d2e1a)','linear-gradient(135deg,#2e1a1a,#5c2020)','linear-gradient(135deg,#0d2e3a,#0d4a5c)','linear-gradient(135deg,#8a6420,#c8973a)','linear-gradient(135deg,#2a1a4a,#402878)'];
+var FALLBACK_ICONS=['🏢','🏘️','🏠','🏪','🏡','🏗️'];
+document.querySelectorAll('.project-card-v2').forEach(function(card,i){
+  var imgDiv=card.querySelector('.pcard-img');
+  var photo=card.getAttribute('data-photo');
+  var filter=card.getAttribute('data-filter')||'';
+  var status=filter.includes('ongoing')?'ongoing':filter.includes('completed')?'completed':'upcoming';
+  var badge='<span class="pcard-badge s-'+status+'">'+status.charAt(0).toUpperCase()+status.slice(1)+'</span>';
+  if(photo&&photo!=='ADD_PHOTO_LINK_HERE'&&photo.trim()!==''){
+    imgDiv.innerHTML='<img src="'+photo+'" alt="Project photo" loading="lazy" onerror="this.style.display=\'none\'"/>'+badge;
   } else {
-    // No photo yet — show beautiful gradient placeholder
-    imgDiv.innerHTML =
-      '<div class="pcard-img-placeholder" style="background:' +
-      (FALLBACK_COLORS[i] || FALLBACK_COLORS[0]) + ';min-height:260px;">' +
-      FALLBACK_ICONS[i] + '</div>' + badge;
+    imgDiv.innerHTML='<div class="pcard-img-placeholder" style="background:'+(FALLBACK_COLORS[i]||FALLBACK_COLORS[0])+';min-height:260px;">'+FALLBACK_ICONS[i]+'</div>'+badge;
   }
 });
-
-/* ═══ FILTER BUTTONS ═══ */
-document.querySelectorAll('.filter-btn').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+document.querySelectorAll('.filter-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
     btn.classList.add('active');
-    var f = btn.getAttribute('data-filter');
-    document.querySelectorAll('.project-card-v2').forEach(function(card) {
-      var tags = card.getAttribute('data-filter') || '';
-      card.style.display = (f === 'all' || tags.includes(f)) ? '' : 'none';
+    var f=btn.getAttribute('data-filter');
+    document.querySelectorAll('.project-card-v2').forEach(function(card){
+      card.style.display=(f==='all'||card.getAttribute('data-filter').includes(f))?'':'none';
     });
   });
 });
 </script>
-</body>
-</html>
+</body></html>
