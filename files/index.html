@@ -241,7 +241,7 @@
 /* ── JOURNEY SECTION ── */
 .journey{
   position:relative;overflow:hidden;
-  background:#060d1a;
+  background:linear-gradient(180deg,#f8f5f0 0%,#faf7f2 50%,#f0ece4 100%);
   padding:0;
 }
 
@@ -261,9 +261,9 @@
 /* Header */
 .jny-header{text-align:center;margin-bottom:64px;}
 .jny-chip{display:inline-flex;align-items:center;gap:8px;padding:6px 18px;border:1px solid rgba(200,151,58,0.4);border-radius:100px;font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.2em;color:rgba(200,151,58,0.8);margin-bottom:20px;background:rgba(200,151,58,0.05);}
-.jny-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:400;color:#fff;line-height:1.15;margin-bottom:14px;}
+.jny-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:400;color:#0d1b2e;line-height:1.15;margin-bottom:14px;}
 .jny-title em{font-style:italic;color:#e6b55a;}
-.jny-sub{font-size:0.9rem;color:rgba(255,255,255,0.4);max-width:520px;margin:0 auto;}
+.jny-sub{font-size:0.9rem;color:rgba(13,27,46,0.55);max-width:520px;margin:0 auto;}
 
 /* Journey steps — horizontal timeline */
 .jny-steps{
@@ -279,7 +279,7 @@
   content:'';position:absolute;
   top:52px;left:12.5%;right:12.5%;
   height:1px;
-  background:linear-gradient(90deg,transparent,rgba(200,151,58,0.4),rgba(200,151,58,0.7),rgba(200,151,58,0.4),transparent);
+  background:linear-gradient(90deg,transparent,rgba(200,151,58,0.5),rgba(200,151,58,0.9),rgba(200,151,58,0.5),transparent);
   z-index:0;
 }
 
@@ -292,14 +292,14 @@
 }
 .jny-step:hover{transform:translateY(-8px);}
 .jny-step.active .jny-icon-wrap{background:linear-gradient(135deg,#c8973a,#e6b55a);box-shadow:0 0 40px rgba(200,151,58,0.6);}
-.jny-step.active .jny-step-num{color:#e6b55a;}
-.jny-step.active .jny-step-title{color:#fff;}
+.jny-step.active .jny-step-num{color:#c8973a;}
+.jny-step.active .jny-step-title{color:#0d1b2e;}
 
 /* Icon circle */
 .jny-icon-wrap{
   width:80px;height:80px;border-radius:50%;
-  background:rgba(255,255,255,0.05);
-  border:1.5px solid rgba(200,151,58,0.25);
+  background:rgba(255,255,255,0.9);
+  border:1.5px solid rgba(200,151,58,0.4);box-shadow:0 4px 20px rgba(200,151,58,0.12);
   display:flex;align-items:center;justify-content:center;
   font-size:2rem;margin-bottom:16px;
   transition:all .5s cubic-bezier(.34,1.56,.64,1);
@@ -313,16 +313,17 @@
 @keyframes jnyrot{to{transform:rotate(360deg)}}
 .jny-step.active .jny-icon-wrap::after{border-color:rgba(200,151,58,0.6);animation-duration:4s;}
 
-.jny-step-num{font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.15em;color:rgba(255,255,255,0.25);margin-bottom:6px;transition:color .4s;}
-.jny-step-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.05rem;font-weight:600;color:rgba(255,255,255,0.55);text-align:center;margin-bottom:6px;transition:color .4s;line-height:1.3;}
-.jny-step-desc{font-size:0.72rem;color:rgba(255,255,255,0.25);text-align:center;line-height:1.6;transition:color .4s;}
-.jny-step.active .jny-step-desc{color:rgba(255,255,255,0.5);}
+.jny-step-num{font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.15em;color:rgba(13,27,46,0.35);margin-bottom:6px;transition:color .4s;}
+.jny-step-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.05rem;font-weight:600;color:rgba(13,27,46,0.6);text-align:center;margin-bottom:6px;transition:color .4s;line-height:1.3;}
+.jny-step-desc{font-size:0.72rem;color:rgba(13,27,46,0.4);text-align:center;line-height:1.6;transition:color .4s;}
+.jny-step.active .jny-step-desc{color:rgba(13,27,46,0.6);}
 
 /* Detail panel */
 .jny-panel{
-  border:1px solid rgba(200,151,58,0.15);
+  border:1px solid rgba(200,151,58,0.25);
   border-radius:20px;
-  background:rgba(255,255,255,0.03);
+  background:rgba(255,255,255,0.95);
+  box-shadow:0 8px 48px rgba(13,27,46,0.1);
   backdrop-filter:blur(12px);
   padding:48px;
   display:none;
@@ -341,19 +342,19 @@
 }
 
 .jny-panel-icon{font-size:5rem;line-height:1;margin-bottom:16px;display:block;filter:drop-shadow(0 0 20px rgba(200,151,58,0.4));}
-.jny-panel-label{font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.2em;color:#e6b55a;margin-bottom:12px;display:block;}
-.jny-panel-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:2rem;font-weight:400;color:#fff;margin-bottom:16px;line-height:1.2;}
+.jny-panel-label{font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.2em;color:#c8973a;margin-bottom:12px;display:block;}
+.jny-panel-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:2rem;font-weight:400;color:#0d1b2e;margin-bottom:16px;line-height:1.2;}
 .jny-panel-title em{font-style:italic;color:#e6b55a;}
-.jny-panel-text{font-size:0.88rem;color:rgba(255,255,255,0.55);line-height:1.8;margin-bottom:28px;}
+.jny-panel-text{font-size:0.88rem;color:rgba(13,27,46,0.6);line-height:1.8;margin-bottom:28px;}
 
 /* Checklist */
 .jny-checks{display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
-.jny-check{display:flex;align-items:center;gap:12px;font-size:0.82rem;color:rgba(255,255,255,0.7);}
+.jny-check{display:flex;align-items:center;gap:12px;font-size:0.82rem;color:rgba(13,27,46,0.7);}
 .jny-check-icon{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#c8973a,#e6b55a);display:flex;align-items:center;justify-content:center;font-size:0.65rem;flex-shrink:0;color:#0d1b2e;font-weight:700;}
 
 /* Visual side */
 .jny-visual{position:relative;height:300px;border-radius:16px;overflow:hidden;}
-.jny-visual-img{width:100%;height:100%;object-fit:cover;border-radius:16px;filter:brightness(0.8);}
+.jny-visual-img{width:100%;height:100%;object-fit:cover;border-radius:16px;filter:brightness(0.92);}
 .jny-visual-badge{
   position:absolute;bottom:20px;left:20px;
   background:rgba(8,14,26,0.85);backdrop-filter:blur(8px);
@@ -365,21 +366,21 @@
 
 /* Progress bar */
 .jny-progress{margin-top:48px;position:relative;}
-.jny-progress-bar{height:3px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;}
+.jny-progress-bar{height:3px;background:rgba(13,27,46,0.1);border-radius:2px;overflow:hidden;}
 .jny-progress-fill{height:100%;background:linear-gradient(90deg,#c8973a,#e6b55a);border-radius:2px;transition:width 1s cubic-bezier(.77,0,.18,1);}
 .jny-progress-labels{display:flex;justify-content:space-between;margin-top:8px;}
-.jny-prog-lbl{font-size:0.6rem;font-family:'Cinzel',serif;color:rgba(255,255,255,0.2);letter-spacing:0.1em;}
-.jny-prog-lbl.on{color:rgba(200,151,58,0.8);}
+.jny-prog-lbl{font-size:0.6rem;font-family:'Cinzel',serif;color:rgba(13,27,46,0.3);letter-spacing:0.1em;}
+.jny-prog-lbl.on{color:#c8973a;}
 
 /* CTA */
 .jny-cta{margin-top:56px;text-align:center;position:relative;}
-.jny-cta-text{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.6rem;color:rgba(255,255,255,0.7);margin-bottom:24px;}
-.jny-cta-text strong{color:#fff;}
+.jny-cta-text{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.6rem;color:rgba(13,27,46,0.7);margin-bottom:24px;}
+.jny-cta-text strong{color:#0d1b2e;}
 .jny-cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
 .jny-cta-btn-gold{padding:16px 36px;background:linear-gradient(135deg,#c8973a,#e6b55a);color:#0d1b2e;border:none;border-radius:10px;font-family:'Cinzel',serif;font-size:0.72rem;font-weight:600;letter-spacing:0.14em;cursor:pointer;transition:all .25s;text-decoration:none;display:inline-flex;align-items:center;gap:8px;}
 .jny-cta-btn-gold:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(200,151,58,0.4);}
-.jny-cta-btn-outline{padding:16px 32px;background:transparent;color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.15);border-radius:10px;font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.12em;cursor:pointer;transition:all .25s;text-decoration:none;display:inline-flex;align-items:center;gap:8px;}
-.jny-cta-btn-outline:hover{background:rgba(255,255,255,0.07);color:#fff;}
+.jny-cta-btn-outline{padding:16px 32px;background:transparent;color:#0d1b2e;border:1px solid rgba(13,27,46,0.2);border-radius:10px;font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.12em;cursor:pointer;transition:all .25s;text-decoration:none;display:inline-flex;align-items:center;gap:8px;}
+.jny-cta-btn-outline:hover{background:rgba(13,27,46,0.06);color:#0d1b2e;}
 
 @media(max-width:900px){
   .jny-steps{grid-template-columns:repeat(2,1fr);gap:24px;}
@@ -469,7 +470,7 @@
           <button onclick="window.open('https://wa.me/919765711811?text=Hi! I want to discuss my property requirements.','_blank')" class="jny-cta-btn-gold">💬 Start Your Journey</button>
         </div>
         <div class="jny-visual">
-          <img class="jny-visual-img" src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=700&q=85&auto=format&fit=crop" alt="Family planning home"/>
+          <img class="jny-visual-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&q=85&auto=format&fit=crop" alt="Family planning home"/>
           <div class="jny-visual-badge"><span class="jny-visual-badge-num">Free</span><span class="jny-visual-badge-lbl">CONSULTATION</span></div>
         </div>
       </div>
@@ -489,7 +490,7 @@
           <a href="projects.html" class="jny-cta-btn-gold">🏠 Browse All Projects</a>
         </div>
         <div class="jny-visual">
-          <img class="jny-visual-img" src="https://images.unsplash.com/photo-1582407947304-fd86f28f0707?w=700&q=85&auto=format&fit=crop" alt="Property search Nashik"/>
+          <img class="jny-visual-img" src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=700&q=85&auto=format&fit=crop" alt="Property search Nashik"/>
           <div class="jny-visual-badge"><span class="jny-visual-badge-num">30+</span><span class="jny-visual-badge-lbl">VERIFIED PROJECTS</span></div>
         </div>
       </div>
@@ -509,7 +510,7 @@
           <button onclick="window.open('https://wa.me/919765711811?text=Hi! I need help with home loan and booking.','_blank')" class="jny-cta-btn-gold">🏦 Ask About Home Loan</button>
         </div>
         <div class="jny-visual">
-          <img class="jny-visual-img" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&q=85&auto=format&fit=crop" alt="Property documentation"/>
+          <img class="jny-visual-img" src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=700&q=85&auto=format&fit=crop" alt="Property documentation"/>
           <div class="jny-visual-badge"><span class="jny-visual-badge-num">3</span><span class="jny-visual-badge-lbl">BANKS APPROVED</span></div>
         </div>
       </div>
@@ -529,7 +530,7 @@
           <button onclick="window.open('https://wa.me/919765711811?text=Hi! I want to start my home buying journey.','_blank')" class="jny-cta-btn-gold">🏠 Begin Your Journey</button>
         </div>
         <div class="jny-visual">
-          <img class="jny-visual-img" src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=700&q=85&auto=format&fit=crop" alt="Happy family new home"/>
+          <img class="jny-visual-img" src="https://images.unsplash.com/photo-1543269664-647163ef2132?w=700&q=85&auto=format&fit=crop" alt="Happy family new home"/>
           <div class="jny-visual-badge"><span class="jny-visual-badge-num">500+</span><span class="jny-visual-badge-lbl">HAPPY FAMILIES</span></div>
         </div>
       </div>
@@ -565,7 +566,7 @@
       s.a+=s.da;if(s.a>1||s.a<0)s.da*=-1;
       s.y-=s.speed;if(s.y<0)s.y=c.height;
       ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-      ctx.fillStyle='rgba(255,255,255,'+s.a.toFixed(2)+')';ctx.fill();
+      ctx.fillStyle='rgba(200,151,58,'+( s.a*0.25).toFixed(2)+')';ctx.fill();
     });
     requestAnimationFrame(draw);
   }
