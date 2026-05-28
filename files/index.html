@@ -236,342 +236,379 @@
   </div>
 </section>
 
-<!-- ═══ TRUST PULSE — WORLD CLASS ANIMATED SECTION ═══ -->
+<!-- ═══ PROMISE WALL — WORLD FIRST ═══ -->
 <style>
-/* ─── TRUST PULSE SECTION ─── */
-.tp-section{
+/* ══ PROMISE WALL ══ */
+.pw-section{
   position:relative;overflow:hidden;
-  background:linear-gradient(160deg,#0a0f1e 0%,#0d1b2e 40%,#0a1628 70%,#060d18 100%);
-  padding:100px 0 80px;
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;
 }
 
-/* Animated grid lines */
-.tp-grid{
-  position:absolute;inset:0;z-index:0;
-  background-image:
-    linear-gradient(rgba(200,151,58,0.04) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(200,151,58,0.04) 1px,transparent 1px);
-  background-size:60px 60px;
-  animation:tpGridMove 20s linear infinite;
+/* Full bleed photo background slideshow */
+.pw-bg{position:absolute;inset:0;z-index:0;}
+.pw-bg-slide{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  opacity:0;transition:opacity 1.8s ease;
+  transform:scale(1.05);transition:opacity 1.8s ease,transform 8s ease;
 }
-@keyframes tpGridMove{to{background-position:60px 60px;}}
+.pw-bg-slide.on{opacity:1;transform:scale(1);}
+.pw-bg-slide:nth-child(1){background-image:url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1800&q=90&auto=format&fit=crop');}
+.pw-bg-slide:nth-child(2){background-image:url('https://images.unsplash.com/photo-1560185009-5bf9f2849488?w=1800&q=90&auto=format&fit=crop');}
+.pw-bg-slide:nth-child(3){background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1800&q=90&auto=format&fit=crop');}
 
-/* Gold particle canvas */
-#tpCanvas{position:absolute;inset:0;z-index:1;pointer-events:none;}
-
-/* Glow orbs */
-.tp-orb{
-  position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;
-  animation:tpOrb 8s ease-in-out infinite alternate;
+/* Dark gradient overlay */
+.pw-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(
+    135deg,
+    rgba(6,10,20,0.88) 0%,
+    rgba(10,16,30,0.75) 40%,
+    rgba(6,10,20,0.65) 100%
+  );
 }
-.tp-orb-1{width:400px;height:400px;background:rgba(200,151,58,0.08);top:-100px;left:-100px;animation-delay:0s;}
-.tp-orb-2{width:300px;height:300px;background:rgba(30,48,80,0.6);bottom:-80px;right:-80px;animation-delay:3s;}
-.tp-orb-3{width:200px;height:200px;background:rgba(200,151,58,0.06);top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:6s;}
-@keyframes tpOrb{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.3) translate(20px,-20px)}}
 
-.tp-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 32px;}
-
-/* ── TOP LABEL ── */
-.tp-top{text-align:center;margin-bottom:64px;}
-.tp-eyebrow{
-  display:inline-flex;align-items:center;gap:10px;
-  font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.25em;
-  color:rgba(200,151,58,0.7);text-transform:uppercase;margin-bottom:20px;
+/* Gold shimmer top & bottom */
+.pw-shimmer-t,.pw-shimmer-b{
+  position:absolute;left:0;right:0;height:2px;z-index:3;
+  background:linear-gradient(90deg,transparent,rgba(200,151,58,0.7),rgba(230,181,90,1),rgba(200,151,58,0.7),transparent);
+  animation:pwSh 3s infinite;
 }
-.tp-eyebrow::before,.tp-eyebrow::after{content:'';width:40px;height:1px;background:linear-gradient(90deg,transparent,rgba(200,151,58,0.5));}
-.tp-eyebrow::after{transform:scaleX(-1);}
-.tp-main-title{
+.pw-shimmer-t{top:0;}.pw-shimmer-b{bottom:0;}
+@keyframes pwSh{0%{opacity:0.3}50%{opacity:1}100%{opacity:0.3}}
+
+/* Animated noise texture */
+.pw-noise{
+  position:absolute;inset:0;z-index:2;
+  opacity:0.03;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.pw-inner{
+  position:relative;z-index:4;
+  max-width:1200px;margin:0 auto;
+  padding:80px 32px;
+  width:100%;
+}
+
+/* ── HEADER ── */
+.pw-header{text-align:center;margin-bottom:72px;}
+.pw-eyebrow{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:'Cinzel',serif;font-size:0.58rem;
+  letter-spacing:0.28em;color:rgba(200,151,58,0.8);
+  text-transform:uppercase;margin-bottom:20px;
+}
+.pw-eyebrow::before,.pw-eyebrow::after{
+  content:'';width:48px;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(200,151,58,0.6));
+}
+.pw-eyebrow::after{transform:scaleX(-1);}
+.pw-title{
   font-family:'Cormorant Garamond',Georgia,serif;
-  font-size:clamp(2.2rem,5vw,3.8rem);
-  font-weight:300;color:#fff;line-height:1.1;margin-bottom:0;
+  font-size:clamp(2.4rem,5vw,4rem);
+  font-weight:300;color:#fff;line-height:1.1;
 }
-.tp-main-title em{font-style:italic;color:#e6b55a;}
-.tp-main-title strong{font-weight:600;}
+.pw-title em{font-style:italic;color:#e6b55a;}
+.pw-title strong{font-weight:700;}
 
-/* ── TYPEWRITER STRIP ── */
-.tp-typestrip{
-  margin:28px auto 0;
-  font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.18em;
-  color:rgba(255,255,255,0.35);text-align:center;
-  min-height:24px;
-}
-.tp-typestrip span{color:#e6b55a;}
-
-/* ── HEARTBEAT LINE ── */
-.tp-beat-wrap{margin:40px auto;max-width:800px;position:relative;}
-.tp-beat-label{display:flex;justify-content:space-between;margin-bottom:8px;}
-.tp-beat-lbl{font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.15em;color:rgba(200,151,58,0.5);}
-#tpBeatCanvas{width:100%;height:60px;display:block;}
-.tp-beat-dot{
-  position:absolute;right:0;top:50%;transform:translateY(-50%);
-  width:10px;height:10px;border-radius:50%;
-  background:#e6b55a;box-shadow:0 0 16px #e6b55a,0 0 32px rgba(200,151,58,0.6);
-  animation:tpDotPulse 1s ease-in-out infinite;
-}
-@keyframes tpDotPulse{0%,100%{transform:translateY(-50%) scale(1)}50%{transform:translateY(-50%) scale(1.5)}}
-
-/* ── BIG STATS ── */
-.tp-stats{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:2px;margin:56px 0;
-}
-.tp-stat{
-  position:relative;padding:40px 28px;text-align:center;
-  background:rgba(255,255,255,0.02);
-  border:1px solid rgba(200,151,58,0.08);
-  transition:all .4s;cursor:default;overflow:hidden;
-}
-.tp-stat::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(200,151,58,0.06),transparent);
-  opacity:0;transition:opacity .4s;
-}
-.tp-stat:hover::before{opacity:1;}
-.tp-stat:hover{border-color:rgba(200,151,58,0.3);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.3);}
-.tp-stat-icon{font-size:2rem;margin-bottom:12px;display:block;filter:drop-shadow(0 0 8px rgba(200,151,58,0.3));}
-.tp-stat-num{
-  font-family:'Cormorant Garamond',Georgia,serif;
-  font-size:clamp(2.8rem,5vw,4rem);font-weight:600;
-  color:#e6b55a;display:block;line-height:1;
-  text-shadow:0 0 40px rgba(200,151,58,0.3);
-}
-.tp-stat-suffix{font-size:1.8rem;color:rgba(200,151,58,0.6);}
-.tp-stat-label{font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.15em;color:rgba(255,255,255,0.35);margin-top:8px;display:block;text-transform:uppercase;}
-.tp-stat-sub{font-size:0.72rem;color:rgba(255,255,255,0.2);margin-top:4px;display:block;}
-
-/* Divider lines between stats */
-.tp-stat:not(:last-child)::after{
-  content:'';position:absolute;right:0;top:20%;bottom:20%;
-  width:1px;background:linear-gradient(180deg,transparent,rgba(200,151,58,0.2),transparent);
+/* ── BENTO GRID ── */
+.pw-bento{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  grid-template-rows:auto;
+  gap:16px;
+  margin-bottom:64px;
 }
 
-/* ── FLOATING TRUST CARDS ── */
-.tp-cards{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:20px;margin-bottom:56px;
-}
-.tp-card{
-  position:relative;border-radius:16px;
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(200,151,58,0.1);
-  padding:32px 28px;
+/* Base card */
+.pw-card{
+  position:relative;overflow:hidden;
+  border-radius:20px;
+  padding:36px 32px;
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,0.08);
+  background:rgba(255,255,255,0.04);
   transition:all .5s cubic-bezier(.34,1.56,.64,1);
-  overflow:hidden;
-  animation:tpFloat linear infinite;
+  cursor:default;
 }
-.tp-card:nth-child(1){animation-duration:6s;animation-delay:0s;}
-.tp-card:nth-child(2){animation-duration:8s;animation-delay:2s;}
-.tp-card:nth-child(3){animation-duration:7s;animation-delay:4s;}
-@keyframes tpFloat{
-  0%,100%{transform:translateY(0px);}
-  50%{transform:translateY(-10px);}
+.pw-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,0.06),transparent 50%);
+  opacity:0;transition:opacity .4s;border-radius:20px;
 }
-.tp-card:hover{
-  background:rgba(255,255,255,0.06);
+.pw-card:hover::before{opacity:1;}
+.pw-card:hover{
   border-color:rgba(200,151,58,0.35);
-  box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 30px rgba(200,151,58,0.1);
-  animation-play-state:paused;
-  transform:translateY(-12px) scale(1.02) !important;
+  transform:translateY(-6px) scale(1.01);
+  box-shadow:0 24px 64px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.1);
+  background:rgba(255,255,255,0.08);
 }
-.tp-card-glow{
-  position:absolute;top:-30px;right:-30px;
-  width:120px;height:120px;border-radius:50%;
-  filter:blur(40px);opacity:0.6;
-  transition:opacity .4s;
-}
-.tp-card:hover .tp-card-glow{opacity:1;}
-.tp-card-1-glow{background:rgba(200,151,58,0.3);}
-.tp-card-2-glow{background:rgba(26,107,69,0.4);}
-.tp-card-3-glow{background:rgba(30,48,80,0.8);}
-.tp-card-icon{font-size:2.4rem;margin-bottom:16px;display:block;}
-.tp-card-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.25rem;font-weight:600;color:#fff;margin-bottom:8px;}
-.tp-card-text{font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.7;}
-.tp-card-tag{
-  display:inline-flex;align-items:center;gap:6px;
-  margin-top:16px;padding:5px 12px;border-radius:100px;
-  background:rgba(200,151,58,0.1);border:1px solid rgba(200,151,58,0.25);
-  font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.1em;color:rgba(200,151,58,0.8);
-}
-.tp-card-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#e6b55a;animation:tpDotPulse 1.5s infinite;}
 
-/* ── BOTTOM MARQUEE ── */
-.tp-marquee-wrap{
-  border-top:1px solid rgba(200,151,58,0.1);
-  border-bottom:1px solid rgba(200,151,58,0.1);
-  padding:16px 0;overflow:hidden;margin-bottom:56px;
-}
-.tp-marquee{display:flex;gap:0;animation:tpMarquee 25s linear infinite;width:max-content;}
-.tp-marquee-item{
-  display:flex;align-items:center;gap:12px;
-  padding:0 32px;white-space:nowrap;
-  font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.15em;
-  color:rgba(255,255,255,0.3);
-}
-.tp-marquee-item span{color:rgba(200,151,58,0.7);}
-.tp-marquee-dot{width:4px;height:4px;border-radius:50%;background:rgba(200,151,58,0.4);}
-@keyframes tpMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* Grid placements */
+.pw-card-1{grid-column:span 5;grid-row:span 2;}/* Big hero card */
+.pw-card-2{grid-column:span 4;}
+.pw-card-3{grid-column:span 3;}
+.pw-card-4{grid-column:span 4;}
+.pw-card-5{grid-column:span 3;}
+.pw-card-6{grid-column:span 4;}/* wide bottom */
+.pw-card-7{grid-column:span 4;}
+.pw-card-8{grid-column:span 4;}
 
-/* ── CTA ── */
-.tp-bottom{text-align:center;}
-.tp-cta-title{
+/* Gold accent card */
+.pw-card.gold{
+  background:linear-gradient(135deg,rgba(200,151,58,0.18),rgba(200,151,58,0.06));
+  border-color:rgba(200,151,58,0.3);
+}
+/* Dark accent card */
+.pw-card.dark{
+  background:rgba(13,27,46,0.6);
+  border-color:rgba(30,48,80,0.5);
+}
+
+/* Card icon */
+.pw-icon{
+  font-size:2.4rem;margin-bottom:16px;display:block;
+  filter:drop-shadow(0 0 12px rgba(200,151,58,0.4));
+  transition:transform .4s cubic-bezier(.34,1.56,.64,1);
+}
+.pw-card:hover .pw-icon{transform:scale(1.15) rotate(-5deg);}
+
+/* Big number */
+.pw-big-num{
   font-family:'Cormorant Garamond',Georgia,serif;
-  font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;
-  color:rgba(255,255,255,0.8);margin-bottom:28px;
+  font-size:clamp(3rem,6vw,5rem);font-weight:600;
+  color:#e6b55a;line-height:1;display:block;
+  text-shadow:0 0 40px rgba(200,151,58,0.4);
 }
-.tp-cta-title strong{color:#fff;font-weight:600;}
-.tp-cta-title em{color:#e6b55a;font-style:italic;}
-.tp-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-.tp-btn-gold{
-  padding:15px 36px;
+.pw-big-num sup{font-size:0.45em;vertical-align:super;color:rgba(200,151,58,0.7);}
+
+.pw-card-label{
+  font-family:'Cinzel',serif;font-size:0.58rem;
+  letter-spacing:0.16em;color:rgba(255,255,255,0.4);
+  text-transform:uppercase;margin-top:6px;display:block;
+}
+.pw-card-title{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:1.25rem;font-weight:600;color:#fff;
+  margin-bottom:8px;line-height:1.3;
+}
+.pw-card-title em{color:#e6b55a;font-style:italic;}
+.pw-card-text{font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.75;}
+
+/* Verified pill */
+.pw-pill{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 14px;border-radius:100px;
+  background:rgba(200,151,58,0.12);
+  border:1px solid rgba(200,151,58,0.3);
+  font-family:'Cinzel',serif;font-size:0.56rem;
+  letter-spacing:0.1em;color:rgba(200,151,58,0.8);
+  margin-top:14px;
+}
+.pw-pill-dot{width:6px;height:6px;border-radius:50%;background:#e6b55a;animation:pwDot 1.5s infinite;}
+@keyframes pwDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.3;transform:scale(0.5)}}
+
+/* Animated counter */
+.pw-counter-wrap{margin:8px 0;}
+
+/* Promise list */
+.pw-list{display:flex;flex-direction:column;gap:10px;margin-top:14px;}
+.pw-list-item{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:0.8rem;color:rgba(255,255,255,0.6);line-height:1.5;
+}
+.pw-list-check{
+  width:18px;height:18px;border-radius:50%;flex-shrink:0;
   background:linear-gradient(135deg,#c8973a,#e6b55a);
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.55rem;color:#0d1b2e;font-weight:700;margin-top:1px;
+}
+
+/* Scrolling ticker in card */
+.pw-ticker{
+  overflow:hidden;white-space:nowrap;
+  margin-top:12px;
+}
+.pw-ticker-inner{
+  display:inline-flex;gap:32px;
+  animation:pwTick 12s linear infinite;
+  font-family:'Cinzel',serif;font-size:0.6rem;
+  letter-spacing:0.12em;color:rgba(200,151,58,0.6);
+}
+@keyframes pwTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── BOTTOM CTA STRIP ── */
+.pw-cta{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:28px 40px;
+  background:rgba(255,255,255,0.04);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:20px;
+  flex-wrap:wrap;gap:20px;
+}
+.pw-cta-text{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:1.5rem;color:rgba(255,255,255,0.85);font-weight:300;
+}
+.pw-cta-text strong{color:#fff;font-weight:700;}
+.pw-cta-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.pw-btn-g{
+  padding:13px 28px;background:linear-gradient(135deg,#c8973a,#e6b55a);
   color:#0d1b2e;border:none;border-radius:10px;
-  font-family:'Cinzel',serif;font-size:0.7rem;font-weight:700;
-  letter-spacing:0.14em;cursor:pointer;
-  transition:all .3s;text-decoration:none;
+  font-family:'Cinzel',serif;font-size:0.65rem;font-weight:700;
+  letter-spacing:0.12em;cursor:pointer;text-decoration:none;
   display:inline-flex;align-items:center;gap:8px;
-  box-shadow:0 4px 20px rgba(200,151,58,0.3);
+  transition:all .3s;box-shadow:0 4px 16px rgba(200,151,58,0.3);
 }
-.tp-btn-gold:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(200,151,58,0.5);}
-.tp-btn-ghost{
-  padding:15px 32px;
-  background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);
+.pw-btn-g:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(200,151,58,0.5);}
+.pw-btn-o{
+  padding:13px 24px;background:rgba(255,255,255,0.06);
+  color:rgba(255,255,255,0.75);
   border:1px solid rgba(255,255,255,0.12);border-radius:10px;
-  font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.12em;
-  cursor:pointer;transition:all .3s;text-decoration:none;
+  font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.1em;
+  cursor:pointer;text-decoration:none;
   display:inline-flex;align-items:center;gap:8px;
-  backdrop-filter:blur(8px);
+  transition:all .3s;backdrop-filter:blur(8px);
 }
-.tp-btn-ghost:hover{background:rgba(255,255,255,0.1);color:#fff;border-color:rgba(255,255,255,0.25);}
+.pw-btn-o:hover{background:rgba(255,255,255,0.1);color:#fff;border-color:rgba(255,255,255,0.22);}
 
 @media(max-width:900px){
-  .tp-stats{grid-template-columns:repeat(2,1fr);}
-  .tp-cards{grid-template-columns:1fr;}
+  .pw-bento{grid-template-columns:repeat(2,1fr);}
+  .pw-card-1,.pw-card-2,.pw-card-3,.pw-card-4,.pw-card-5,.pw-card-6,.pw-card-7,.pw-card-8{grid-column:span 1;grid-row:span 1;}
+  .pw-card-1{grid-column:span 2;}
+  .pw-cta{flex-direction:column;text-align:center;}
+  .pw-cta-btns{justify-content:center;}
+  .pw-inner{padding:48px 20px;}
 }
 @media(max-width:500px){
-  .tp-stats{grid-template-columns:repeat(2,1fr);}
-  .tp-inner{padding:0 16px;}
-  .tp-section{padding:60px 0 48px;}
+  .pw-bento{grid-template-columns:1fr;}
+  .pw-card-1{grid-column:span 1;}
 }
 </style>
 
-<section class="tp-section">
-  <div class="tp-grid"></div>
-  <canvas id="tpCanvas"></canvas>
-  <div class="tp-orb tp-orb-1"></div>
-  <div class="tp-orb tp-orb-2"></div>
-  <div class="tp-orb tp-orb-3"></div>
+<section class="pw-section">
+  <!-- Animated photo background -->
+  <div class="pw-bg">
+    <div class="pw-bg-slide on"></div>
+    <div class="pw-bg-slide"></div>
+    <div class="pw-bg-slide"></div>
+  </div>
+  <div class="pw-overlay"></div>
+  <div class="pw-noise"></div>
+  <div class="pw-shimmer-t"></div>
+  <div class="pw-shimmer-b"></div>
 
-  <div class="tp-inner">
+  <div class="pw-inner">
 
     <!-- Header -->
-    <div class="tp-top">
-      <div class="tp-eyebrow">Our Legacy in Numbers</div>
-      <h2 class="tp-main-title">
-        <strong>Nashik's Most</strong><br/>
-        <em>Trusted</em> Real Estate Partner
+    <div class="pw-header">
+      <div class="pw-eyebrow">Why Nashik Trusts Us</div>
+      <h2 class="pw-title">
+        <strong>The Jay Bhadra</strong><br/>
+        <em>Promise Wall</em>
       </h2>
-      <div class="tp-typestrip" id="tpTypestrip">
-        <span></span>
-      </div>
     </div>
 
-    <!-- Heartbeat line -->
-    <div class="tp-beat-wrap">
-      <div class="tp-beat-label">
-        <span class="tp-beat-lbl">▶ LIVE TRUST MONITOR</span>
-        <span class="tp-beat-lbl" id="tpBeatLbl">● ACTIVE</span>
+    <!-- Bento Grid -->
+    <div class="pw-bento">
+
+      <!-- Card 1 — Big hero: Our Promise -->
+      <div class="pw-card pw-card-1 gold">
+        <span class="pw-icon">🤝</span>
+        <div class="pw-card-title">Our Promise to<br/><em>Every Family</em></div>
+        <div class="pw-card-text" style="margin-bottom:20px;">We started Jay Bhadra Real Estate because too many families were being misled. Our founding promise is simple and non-negotiable.</div>
+        <div class="pw-list">
+          <div class="pw-list-item"><div class="pw-list-check">✓</div>Price told upfront — zero hidden costs, ever</div>
+          <div class="pw-list-item"><div class="pw-list-check">✓</div>Possession on the date we promised — always</div>
+          <div class="pw-list-item"><div class="pw-list-check">✓</div>Free maintenance support after you move in</div>
+          <div class="pw-list-item"><div class="pw-list-check">✓</div>We pick up every call, reply to every message</div>
+        </div>
+        <div class="pw-pill"><span class="pw-pill-dot"></span>Signed by Mr. Santosh Fatangare — Founder</div>
       </div>
-      <canvas id="tpBeatCanvas" height="60"></canvas>
-      <div class="tp-beat-dot"></div>
+
+      <!-- Card 2 — 6 Active Projects -->
+      <div class="pw-card pw-card-2">
+        <span class="pw-icon">🏗️</span>
+        <span class="pw-big-num">6<sup>+</sup></span>
+        <span class="pw-card-label">Active Projects Right Now</span>
+        <div class="pw-card-text" style="margin-top:10px;">1BHK · 2BHK · 3BHK · Bungalows · Commercial — all in Nashik, all RERA registered.</div>
+      </div>
+
+      <!-- Card 3 — RERA -->
+      <div class="pw-card pw-card-3 dark">
+        <span class="pw-icon">✅</span>
+        <div class="pw-card-title">RERA<br/>Registered</div>
+        <div class="pw-card-text">Maharashtra RERA compliant. Complete legal transparency on every project.</div>
+        <div class="pw-pill"><span class="pw-pill-dot"></span>MahaRERA Verified</div>
+      </div>
+
+      <!-- Card 4 — 100% Transparent -->
+      <div class="pw-card pw-card-4">
+        <span class="pw-icon">💎</span>
+        <span class="pw-big-num">100<sup>%</sup></span>
+        <span class="pw-card-label">Price Transparency</span>
+        <div class="pw-card-text" style="margin-top:10px;">What we quote is what you pay. No hidden charges on registration, maintenance, or parking.</div>
+      </div>
+
+      <!-- Card 5 — Bank Approved -->
+      <div class="pw-card pw-card-5 dark">
+        <span class="pw-icon">🏦</span>
+        <div class="pw-card-title">Bank<br/><em>Approved</em></div>
+        <div class="pw-card-text">SBI · HDFC · Bank of Maharashtra. Home loan sanctioned fast.</div>
+      </div>
+
+      <!-- Card 6 — Maintenance -->
+      <div class="pw-card pw-card-6">
+        <span class="pw-icon">🔧</span>
+        <div class="pw-card-title">Free Maintenance<br/><em>Support</em></div>
+        <div class="pw-card-text">After possession, we stay with you — structural, plumbing, electrical — fully covered, free of cost.</div>
+        <div class="pw-ticker">
+          <div class="pw-ticker-inner">
+            <span>Post Possession Support</span>
+            <span>·</span>
+            <span>Structural Coverage</span>
+            <span>·</span>
+            <span>Plumbing & Electrical</span>
+            <span>·</span>
+            <span>Post Possession Support</span>
+            <span>·</span>
+            <span>Structural Coverage</span>
+            <span>·</span>
+            <span>Plumbing & Electrical</span>
+            <span>·</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7 — Vastu -->
+      <div class="pw-card pw-card-7 gold">
+        <span class="pw-icon">🧭</span>
+        <div class="pw-card-title"><em>Vastu</em><br/>Compliant</div>
+        <div class="pw-card-text">Every floor plan designed with traditional Vastu principles for harmony, positivity and prosperity.</div>
+        <div class="pw-pill"><span class="pw-pill-dot"></span>Expert Architect Certified</div>
+      </div>
+
+      <!-- Card 8 — On-Time -->
+      <div class="pw-card pw-card-8">
+        <span class="pw-icon">⏰</span>
+        <div class="pw-card-title">On-Time<br/><em>Possession</em></div>
+        <div class="pw-card-text">The date we put in the agreement is the date you get your keys. Not a guideline — a guarantee.</div>
+        <div class="pw-pill"><span class="pw-pill-dot"></span>Written in Every Agreement</div>
+      </div>
+
     </div>
 
-    <!-- Big Stats -->
-    <div class="tp-stats">
-      <div class="tp-stat">
-        <span class="tp-stat-icon">🏗️</span>
-        <span class="tp-stat-num"><span class="tp-counter" data-target="6">0</span><span class="tp-stat-suffix">+</span></span>
-        <span class="tp-stat-label">Active Projects</span>
-        <span class="tp-stat-sub">Ongoing in Nashik right now</span>
-      </div>
-      <div class="tp-stat">
-        <span class="tp-stat-icon">👨‍👩‍👧</span>
-        <span class="tp-stat-num"><span class="tp-counter" data-target="100">0</span><span class="tp-stat-suffix">%</span></span>
-        <span class="tp-stat-label">Price Transparency</span>
-        <span class="tp-stat-sub">Zero hidden costs, always</span>
-      </div>
-      <div class="tp-stat">
-        <span class="tp-stat-icon">📅</span>
-        <span class="tp-stat-num"><span class="tp-counter" data-target="3">0</span><span class="tp-stat-suffix">-Yr</span></span>
-        <span class="tp-stat-label">Free Maintenance</span>
-        <span class="tp-stat-sub">After every possession</span>
-      </div>
-      <div class="tp-stat">
-        <span class="tp-stat-icon">🔧</span>
-        <span class="tp-stat-num"><span class="tp-counter" data-target="3">0</span><span class="tp-stat-suffix">-Yr</span></span>
-        <span class="tp-stat-label">Maintenance Support</span>
-        <span class="tp-stat-sub">Free post-possession</span>
-      </div>
-    </div>
-
-    <!-- Floating Trust Cards -->
-    <div class="tp-cards">
-      <div class="tp-card">
-        <div class="tp-card-glow tp-card-1-glow"></div>
-        <span class="tp-card-icon">✅</span>
-        <div class="tp-card-title">RERA Registered</div>
-        <div class="tp-card-text">Every single project is fully RERA compliant under Maharashtra regulations. Complete legal transparency — no surprises, ever.</div>
-        <div class="tp-card-tag">Maharashtra RERA Verified</div>
-      </div>
-      <div class="tp-card">
-        <div class="tp-card-glow tp-card-2-glow"></div>
-        <span class="tp-card-icon">🏦</span>
-        <div class="tp-card-title">Bank Approved</div>
-        <div class="tp-card-text">SBI, HDFC Bank and Bank of Maharashtra have approved all our projects. Get your home loan sanctioned faster with zero hassle.</div>
-        <div class="tp-card-tag">SBI · HDFC · BoM Approved</div>
-      </div>
-      <div class="tp-card">
-        <div class="tp-card-glow tp-card-3-glow"></div>
-        <span class="tp-card-icon">🧭</span>
-        <div class="tp-card-title">Vastu Compliant</div>
-        <div class="tp-card-text">All floor plans designed by expert architects with traditional Vastu principles — ensuring harmony, positivity and prosperity in your home.</div>
-        <div class="tp-card-tag">100% Vastu Certified</div>
-      </div>
-    </div>
-
-    <!-- Marquee -->
-    <div class="tp-marquee-wrap">
-      <div class="tp-marquee">
-        <div class="tp-marquee-item"><span>30+ Projects</span><div class="tp-marquee-dot"></div></div>
-        <div class="tp-marquee-item">500+ Happy Families<div class="tp-marquee-dot"></div></div>
-        <div class="tp-marquee-item"><span>RERA Registered</span><div class="tp-marquee-dot"></div></div>
-        <div class="tp-marquee-item">On-Time Possession<div class="tp-marquee-dot"></div></div>
-        <div class="tp-marquee-item"><span>Bank Approved</span><div class="tp-marquee-dot"></div></div>
-        <div class="tp-marquee-item">3-Year Maintenance<div class="tp-marquee-dot"></div></div>
-        <div class="tp-marquee-item"><span>16+ Years Experience</span><div class="tp-marquee-dot"></div></div>
-        <div class="tp-marquee-item">Vastu Compliant<div class="tp-marquee-dot"></div></div>
-        <div class="tp-marquee-item"><span>Zero Hidden Costs</span><div class="tp-marquee-dot"></div></div>
-        <div class="tp-marquee-item">Nashik's Most Trusted<div class="tp-marquee-dot"></div></div>
-        <!-- duplicate for seamless loop -->
-        <div class="tp-marquee-item"><span>30+ Projects</span><div class="tp-marquee-dot"></div></div>
-        <div class="tp-marquee-item">500+ Happy Families<div class="tp-marquee-dot"></div></div>
-        <div class="tp-marquee-item"><span>RERA Registered</span><div class="tp-marquee-dot"></div></div>
-        <div class="tp-marquee-item">On-Time Possession<div class="tp-marquee-dot"></div></div>
-        <div class="tp-marquee-item"><span>Bank Approved</span><div class="tp-marquee-dot"></div></div>
-        <div class="tp-marquee-item">3-Year Maintenance<div class="tp-marquee-dot"></div></div>
-        <div class="tp-marquee-item"><span>16+ Years Experience</span><div class="tp-marquee-dot"></div></div>
-        <div class="tp-marquee-item">Vastu Compliant<div class="tp-marquee-dot"></div></div>
-        <div class="tp-marquee-item"><span>Zero Hidden Costs</span><div class="tp-marquee-dot"></div></div>
-        <div class="tp-marquee-item">Nashik's Most Trusted<div class="tp-marquee-dot"></div></div>
-      </div>
-    </div>
-
-    <!-- Bottom CTA -->
-    <div class="tp-bottom">
-      <p class="tp-cta-title">Our story is just beginning — <strong>be part of it.</strong><br/><em>Book the first homes today.</em></p>
-      <div class="tp-btns">
-        <a href="tel:+919765711811" class="tp-btn-gold">📞 Call +91-97657-11811</a>
-        <a href="https://wa.me/919765711811?text=Hello%20Jay%20Bhadra!%20I%20want%20to%20know%20more." target="_blank" class="tp-btn-ghost">💬 WhatsApp Now</a>
-        <a href="projects.html" class="tp-btn-ghost">🏠 View Projects</a>
+    <!-- CTA Strip -->
+    <div class="pw-cta">
+      <div class="pw-cta-text">Ready to be part of our <strong>first families?</strong></div>
+      <div class="pw-cta-btns">
+        <a href="tel:+919765711811" class="pw-btn-g">📞 Call Now</a>
+        <a href="https://wa.me/919765711811?text=Hello!%20I%20want%20to%20know%20more%20about%20Jay%20Bhadra%20Real%20Estate." target="_blank" class="pw-btn-o">💬 WhatsApp</a>
+        <a href="projects.html" class="pw-btn-o">🏠 View Projects</a>
       </div>
     </div>
 
@@ -579,117 +616,33 @@
 </section>
 
 <script>
-/* ══ GOLD PARTICLE RAIN ══ */
+/* ── Background slideshow ── */
 (function(){
-  var c=document.getElementById('tpCanvas');
-  if(!c)return;
-  var ctx=c.getContext('2d');
-  var P=[];
-  function resize(){c.width=c.offsetWidth;c.height=c.offsetHeight;}
-  resize();window.addEventListener('resize',resize);
-  for(var i=0;i<80;i++)P.push({x:Math.random()*window.innerWidth,y:Math.random()*window.innerHeight,size:Math.random()*2+0.5,speed:0.3+Math.random()*0.7,opacity:Math.random()*0.4+0.1,drift:Math.random()*0.5-0.25});
-  function draw(){
-    ctx.clearRect(0,0,c.width,c.height);
-    P.forEach(function(p){
-      p.y+=p.speed;p.x+=p.drift;
-      if(p.y>c.height){p.y=-5;p.x=Math.random()*c.width;}
-      if(p.x<0||p.x>c.width)p.x=Math.random()*c.width;
-      ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-      ctx.fillStyle='rgba(200,151,58,'+p.opacity+')';ctx.fill();
-    });
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
-
-/* ══ HEARTBEAT LINE ══ */
-(function(){
-  var c=document.getElementById('tpBeatCanvas');
-  if(!c)return;
-  var ctx=c.getContext('2d');
-  var W,H,points=[],offset=0;
-  function resize(){W=c.offsetWidth;c.width=W;H=c.height=60;}
-  resize();window.addEventListener('resize',resize);
-  // Generate heartbeat pattern
-  function heartbeatY(x){
-    var t=((x+offset)%120)/120;
-    if(t<0.3) return H/2-Math.sin(t/0.3*Math.PI)*4;
-    if(t<0.35) return H/2-Math.sin((t-0.3)/0.05*Math.PI)*22;
-    if(t<0.42) return H/2+Math.sin((t-0.35)/0.07*Math.PI)*12;
-    if(t<0.5) return H/2-Math.sin((t-0.42)/0.08*Math.PI)*18;
-    if(t<0.55) return H/2+Math.sin((t-0.5)/0.05*Math.PI)*6;
-    return H/2-Math.sin((t-0.55)/0.45*Math.PI)*3;
-  }
-  function draw(){
-    ctx.clearRect(0,0,W,H);
-    // Grid
-    ctx.strokeStyle='rgba(200,151,58,0.06)';ctx.lineWidth=1;
-    for(var y=0;y<=H;y+=H/3){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
-    // Beat line
-    ctx.beginPath();ctx.strokeStyle='rgba(200,151,58,0.7)';ctx.lineWidth=1.5;
-    ctx.shadowColor='rgba(200,151,58,0.5)';ctx.shadowBlur=6;
-    for(var x=0;x<W;x++){var y2=heartbeatY(x);if(x===0)ctx.moveTo(x,y2);else ctx.lineTo(x,y2);}
-    ctx.stroke();ctx.shadowBlur=0;
-    // Glow fill
-    var grad=ctx.createLinearGradient(0,0,0,H);
-    grad.addColorStop(0,'rgba(200,151,58,0.12)');grad.addColorStop(1,'rgba(200,151,58,0)');
-    ctx.beginPath();ctx.moveTo(0,H);
-    for(var x=0;x<W;x++){ctx.lineTo(x,heartbeatY(x));}
-    ctx.lineTo(W,H);ctx.closePath();ctx.fillStyle=grad;ctx.fill();
-    offset+=0.8;
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
-
-/* ══ TYPEWRITER ══ */
-(function(){
-  var el=document.getElementById('tpTypestrip');
-  if(!el)return;
-  var msgs=[
-    'We are new. We are honest. We are here for Nashik.',
-    'Starting fresh — zero shortcuts, zero hidden costs, zero compromise.',
-    'Affordable homes for every Nashik family — from ₹15 Lakh onwards',
-    'We are just beginning — and we want you to be part of our story.',
-    'RERA Registered · Bank Approved · 100% Transparent',
-    'Nashik\'s most trusted real estate name since 2010'
-  ];
-  var mi=0,ci=0,typing=true,wait=0;
-  var sp=el.querySelector('span');
+  var slides = document.querySelectorAll('.pw-bg-slide');
+  if(!slides.length) return;
+  var cur = 0;
   setInterval(function(){
-    if(wait>0){wait--;return;}
-    if(typing){
-      if(ci<=msgs[mi].length){sp.textContent=msgs[mi].slice(0,ci++);} 
-      else{typing=false;wait=60;}
-    } else {
-      if(ci>0){sp.textContent=msgs[mi].slice(0,--ci);}
-      else{typing=true;mi=(mi+1)%msgs.length;wait=20;}
-    }
-  },40);
+    slides[cur].classList.remove('on');
+    cur = (cur + 1) % slides.length;
+    slides[cur].classList.add('on');
+  }, 6000);
 })();
 
-/* ══ SCROLL COUNTER ══ */
+/* ── Magnetic card hover effect ── */
 (function(){
-  var done=false;
-  var obs=new IntersectionObserver(function(entries){
-    if(done||!entries[0].isIntersecting)return;
-    done=true;
-    document.querySelectorAll('.tp-counter').forEach(function(el){
-      var target=parseInt(el.getAttribute('data-target'));
-      var start=0,dur=2000,startTime=null;
-      function step(ts){
-        if(!startTime)startTime=ts;
-        var progress=Math.min((ts-startTime)/dur,1);
-        var ease=1-Math.pow(1-progress,3);
-        el.textContent=Math.floor(ease*target);
-        if(progress<1)requestAnimationFrame(step);
-        else el.textContent=target;
-      }
-      requestAnimationFrame(step);
+  document.querySelectorAll('.pw-card').forEach(function(card){
+    card.addEventListener('mousemove', function(e){
+      var r = card.getBoundingClientRect();
+      var x = e.clientX - r.left - r.width/2;
+      var y = e.clientY - r.top - r.height/2;
+      var tiltX = (y / r.height) * 8;
+      var tiltY = -(x / r.width) * 8;
+      card.style.transform = 'translateY(-6px) perspective(600px) rotateX('+tiltX+'deg) rotateY('+tiltY+'deg) scale(1.01)';
     });
-  },{threshold:0.3});
-  var sec=document.querySelector('.tp-section');
-  if(sec)obs.observe(sec);
+    card.addEventListener('mouseleave', function(){
+      card.style.transform = '';
+    });
+  });
 })();
 </script>
 
