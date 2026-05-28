@@ -56,9 +56,129 @@
   <a href="contact.html" style="margin-top:20px;background:var(--gold);color:var(--navy);font-weight:600;border-radius:var(--r-sm);text-align:center;font-family:var(--font-cap);font-size:0.75rem;letter-spacing:0.1em;padding:14px 16px;">ENQUIRE NOW</a>
 </nav>
 
+<style>
+/* ── HERO PHOTO BACKGROUND ── */
+.hero{position:relative;overflow:hidden;}
+
+/* Slideshow container */
+.hero-slides{
+  position:absolute;inset:0;z-index:0;
+}
+.hero-slide{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  opacity:0;
+  animation:jbSlide 24s infinite;
+  transform:scale(1.08);
+}
+.hero-slide:nth-child(1){
+  background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=90&auto=format&fit=crop');
+  animation-delay:0s;
+}
+.hero-slide:nth-child(2){
+  background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1920&q=90&auto=format&fit=crop');
+  animation-delay:8s;
+}
+.hero-slide:nth-child(3){
+  background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=90&auto=format&fit=crop');
+  animation-delay:16s;
+}
+@keyframes jbSlide{
+  0%   {opacity:0;transform:scale(1.08)}
+  8%   {opacity:1;transform:scale(1.08)}
+  30%  {opacity:1;transform:scale(1.0)}
+  38%  {opacity:0;transform:scale(1.0)}
+  100% {opacity:0;transform:scale(1.08)}
+}
+
+/* Light overlay — clean and aesthetic */
+.hero-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(
+    120deg,
+    rgba(8,14,26,0.62) 0%,
+    rgba(13,27,46,0.45) 50%,
+    rgba(13,27,46,0.20) 100%
+  );
+}
+
+/* Gold shimmer line at bottom of hero */
+.hero-overlay::after{
+  content:'';
+  position:absolute;bottom:0;left:0;right:0;
+  height:3px;
+  background:linear-gradient(90deg,transparent,#c8973a,#e6b55a,#c8973a,transparent);
+  animation:jbShimmer 3s infinite;
+}
+@keyframes jbShimmer{
+  0%{opacity:0.4}50%{opacity:1}100%{opacity:0.4}
+}
+
+/* Make sure hero content is above overlay */
+.hero .container{position:relative;z-index:2;}
+
+/* Floating particles effect */
+.hero-particles{
+  position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;
+}
+.hero-particles span{
+  position:absolute;
+  width:2px;height:2px;
+  background:rgba(200,151,58,0.6);
+  border-radius:50%;
+  animation:jbFloat linear infinite;
+}
+.hero-particles span:nth-child(1){left:10%;top:80%;animation-duration:12s;animation-delay:0s;width:3px;height:3px}
+.hero-particles span:nth-child(2){left:25%;top:90%;animation-duration:9s;animation-delay:2s}
+.hero-particles span:nth-child(3){left:40%;top:85%;animation-duration:14s;animation-delay:4s;width:2px;height:2px}
+.hero-particles span:nth-child(4){left:60%;top:88%;animation-duration:10s;animation-delay:1s;width:4px;height:4px;background:rgba(255,255,255,0.3)}
+.hero-particles span:nth-child(5){left:75%;top:92%;animation-duration:11s;animation-delay:3s}
+.hero-particles span:nth-child(6){left:88%;top:82%;animation-duration:13s;animation-delay:5s;width:3px;height:3px}
+@keyframes jbFloat{
+  0%{transform:translateY(0) translateX(0);opacity:0}
+  10%{opacity:1}
+  90%{opacity:0.8}
+  100%{transform:translateY(-600px) translateX(40px);opacity:0}
+}
+
+/* Enhance hero text for photo bg */
+.hero-eyebrow{
+  text-shadow:0 1px 6px rgba(0,0,0,0.25);
+}
+.hero h1{
+  text-shadow:0 2px 12px rgba(0,0,0,0.2);
+}
+.hero-sub{
+  text-shadow:0 1px 6px rgba(0,0,0,0.2);
+  color:rgba(255,255,255,0.95)!important;
+}
+.hero-ribbon{
+  backdrop-filter:blur(12px);
+  background:rgba(255,255,255,0.10)!important;-webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,0.20)!important;
+}
+</style>
+
 <main>
 <!-- HERO -->
 <section class="hero">
+
+  <!-- ANIMATED PHOTO SLIDESHOW BACKGROUND -->
+  <div class="hero-slides">
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+  </div>
+
+  <!-- DARK OVERLAY -->
+  <div class="hero-overlay"></div>
+
+  <!-- FLOATING PARTICLES -->
+  <div class="hero-particles">
+    <span></span><span></span><span></span>
+    <span></span><span></span><span></span>
+  </div>
+
   <div class="container">
     <div class="hero-inner">
       <div class="hero-eyebrow">Nashik's Most Trusted Builder Since 2010</div>
@@ -393,448 +513,97 @@
   </form>
 </div></div>
 <script src="js/main.js"></script>
-<!-- ═══════════════════════════════════════════════════════════
-     JAY BHADRA — FREE AI ASSISTANT (NO API, AUTO-UPDATES)
-     Paste everything below just before </body> in every page
-═══════════════════════════════════════════════════════════ -->
 
+<!-- ═══ AI ASSISTANT — PROP GURU 🤖 ═══ -->
 <style>
-/* ── ROBOT BUTTON — sits ABOVE whatsapp float ── */
-#jb-btn{
-  position:fixed;
-  bottom:162px;          /* above whatsapp button (90px) + gap */
-  right:24px;
-  width:48px;height:48px;
-  border-radius:50%;
-  background:linear-gradient(135deg,#0d1b2e,#1e3050);
-  border:2px solid rgba(200,151,58,0.55);
-  cursor:pointer;z-index:9997;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 18px rgba(13,27,46,0.35);
-  transition:transform .25s,box-shadow .25s;
-  animation:jbp 2.8s infinite;
-}
+#jb-btn{position:fixed;bottom:162px;right:24px;width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#0d1b2e,#1e3050);border:2px solid rgba(200,151,58,0.55);cursor:pointer;z-index:9997;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(13,27,46,0.35);transition:transform .25s,box-shadow .25s;animation:jbp 2.8s infinite}
 #jb-btn:hover{transform:scale(1.12);box-shadow:0 8px 28px rgba(13,27,46,0.45);animation:none}
-@keyframes jbp{
-  0%,100%{box-shadow:0 4px 18px rgba(13,27,46,0.35),0 0 0 0 rgba(200,151,58,0.45)}
-  65%{box-shadow:0 4px 18px rgba(13,27,46,0.35),0 0 0 10px rgba(200,151,58,0)}
-}
+@keyframes jbp{0%,100%{box-shadow:0 4px 18px rgba(13,27,46,0.35),0 0 0 0 rgba(200,151,58,0.45)}65%{box-shadow:0 4px 18px rgba(13,27,46,0.35),0 0 0 10px rgba(200,151,58,0)}}
 #jb-btn .jb-robot{font-size:1.35rem;line-height:1;display:block}
-
-/* notification badge */
-#jb-badge{
-  position:absolute;top:-3px;right:-3px;
-  width:16px;height:16px;border-radius:50%;
-  background:#e74c3c;color:#fff;
-  font-size:0.55rem;font-weight:700;font-family:system-ui;
-  display:flex;align-items:center;justify-content:center;
-  border:2px solid #fff;animation:jbbd .6s ease;
-}
+#jb-badge{position:absolute;top:-3px;right:-3px;width:16px;height:16px;border-radius:50%;background:#e74c3c;color:#fff;font-size:0.55rem;font-weight:700;font-family:system-ui;display:flex;align-items:center;justify-content:center;border:2px solid #fff;animation:jbbd .6s ease}
 @keyframes jbbd{from{transform:scale(0)}to{transform:scale(1)}}
-
-/* tooltip */
-#jb-tip{
-  position:fixed;bottom:176px;right:80px;
-  background:#0d1b2e;color:#fff;
-  font-family:'DM Sans',system-ui,sans-serif;
-  font-size:0.74rem;padding:6px 12px;border-radius:7px;
-  white-space:nowrap;pointer-events:none;
-  opacity:0;transition:opacity .25s;
-  border:1px solid rgba(200,151,58,0.3);
-  box-shadow:0 4px 14px rgba(13,27,46,0.3);
-}
-#jb-tip::after{
-  content:'';position:absolute;right:-5px;top:50%;
-  transform:translateY(-50%);border:5px solid transparent;
-  border-right:none;border-left-color:#0d1b2e;
-}
+#jb-tip{position:fixed;bottom:176px;right:80px;background:#0d1b2e;color:#fff;font-family:'DM Sans',system-ui,sans-serif;font-size:0.74rem;padding:6px 12px;border-radius:7px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .25s;border:1px solid rgba(200,151,58,0.3);box-shadow:0 4px 14px rgba(13,27,46,0.3)}
+#jb-tip::after{content:'';position:absolute;right:-5px;top:50%;transform:translateY(-50%);border:5px solid transparent;border-right:none;border-left-color:#0d1b2e}
 #jb-btn:hover + #jb-tip{opacity:1}
-
-/* ── CHAT WINDOW ── */
-#jb-win{
-  position:fixed;bottom:222px;right:24px;
-  width:345px;max-height:540px;
-  background:#fff;border-radius:20px;
-  box-shadow:0 20px 56px rgba(13,27,46,0.2);
-  border:1px solid rgba(200,151,58,0.2);
-  display:flex;flex-direction:column;
-  z-index:9996;
-  transform:scale(0.85) translateY(20px);
-  transform-origin:bottom right;
-  opacity:0;pointer-events:none;
-  transition:transform .38s cubic-bezier(.34,1.56,.64,1),opacity .28s;
-  font-family:'DM Sans',system-ui,sans-serif;
-}
+#jb-win{position:fixed;bottom:222px;right:24px;width:345px;max-height:540px;background:#fff;border-radius:20px;box-shadow:0 20px 56px rgba(13,27,46,0.2);border:1px solid rgba(200,151,58,0.2);display:flex;flex-direction:column;z-index:9996;transform:scale(0.85) translateY(20px);transform-origin:bottom right;opacity:0;pointer-events:none;transition:transform .38s cubic-bezier(.34,1.56,.64,1),opacity .28s;font-family:'DM Sans',system-ui,sans-serif}
 #jb-win.open{transform:scale(1) translateY(0);opacity:1;pointer-events:all}
-
-/* header */
 .jbh{background:linear-gradient(135deg,#0d1b2e,#1e3050);border-radius:20px 20px 0 0;padding:13px 15px;display:flex;align-items:center;gap:10px}
-.jbh-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#c8973a,#e6b55a);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;box-shadow:0 2px 8px rgba(200,151,58,0.35)}
-.jbh-info{flex:1}
-.jbh-info strong{display:block;color:#fff;font-size:0.87rem;font-weight:600}
+.jbh-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#c8973a,#e6b55a);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.jbh-info{flex:1}.jbh-info strong{display:block;color:#fff;font-size:0.87rem;font-weight:600}
 .jbh-info span{font-size:0.65rem;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:4px}
 .jb-on{width:6px;height:6px;border-radius:50%;background:#2ecc71;box-shadow:0 0 4px #2ecc71;display:inline-block}
-.jbx{background:none;border:none;color:rgba(255,255,255,0.4);cursor:pointer;font-size:1rem;line-height:1;padding:4px;transition:color .2s}
-.jbx:hover{color:#fff}
-
-/* messages */
+.jbx{background:none;border:none;color:rgba(255,255,255,0.4);cursor:pointer;font-size:1rem;line-height:1;padding:4px;transition:color .2s}.jbx:hover{color:#fff}
 .jb-msgs{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}
-.jb-msgs::-webkit-scrollbar{width:3px}
-.jb-msgs::-webkit-scrollbar-thumb{background:rgba(13,27,46,0.08);border-radius:2px}
+.jb-msgs::-webkit-scrollbar{width:3px}.jb-msgs::-webkit-scrollbar-thumb{background:rgba(13,27,46,0.08);border-radius:2px}
 .jbm{display:flex;gap:7px;align-items:flex-end;animation:jbmi .28s}
 @keyframes jbmi{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
 .jbm.u{flex-direction:row-reverse}
 .jbav{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#c8973a,#e6b55a);display:flex;align-items:center;justify-content:center;font-size:0.75rem;flex-shrink:0}
 .jbb{max-width:83%;padding:9px 13px;border-radius:15px 15px 15px 3px;font-size:0.8rem;line-height:1.65;color:#1a2b4a;background:#f0f4f8}
 .jbm.u .jbb{background:linear-gradient(135deg,#0d1b2e,#1e3050);color:#fff;border-radius:15px 15px 3px 15px}
-.jbb a{color:#c8973a;text-decoration:underline}
-.jbb strong{color:#0d1b2e}.jbm.u .jbb strong{color:#e6b55a}
-
-/* typing */
+.jbb a{color:#c8973a;text-decoration:underline}.jbb strong{color:#0d1b2e}.jbm.u .jbb strong{color:#e6b55a}
 .jb-typing{display:flex;gap:4px;padding:10px 13px;background:#f0f4f8;border-radius:15px 15px 15px 3px;width:fit-content}
 .jb-typing span{width:5px;height:5px;background:#9aa7bb;border-radius:50%;animation:jbty 1.2s infinite}
-.jb-typing span:nth-child(2){animation-delay:.2s}
-.jb-typing span:nth-child(3){animation-delay:.4s}
+.jb-typing span:nth-child(2){animation-delay:.2s}.jb-typing span:nth-child(3){animation-delay:.4s}
 @keyframes jbty{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-5px)}}
-
-/* quick replies */
 .jb-qrs{display:flex;flex-wrap:wrap;gap:5px;padding:2px 12px 9px}
 .jbqr{padding:5px 11px;border-radius:100px;border:1px solid rgba(13,27,46,0.13);background:#fff;color:#0d1b2e;font-size:0.71rem;cursor:pointer;font-family:inherit;transition:all .17s;white-space:nowrap}
 .jbqr:hover{background:#0d1b2e;color:#e6b55a;border-color:#0d1b2e}
-
-/* input */
 .jb-inp-row{padding:9px 11px;border-top:1px solid rgba(13,27,46,0.07);display:flex;gap:7px;align-items:center}
 .jb-inp{flex:1;border:1.5px solid rgba(13,27,46,0.11);border-radius:11px;padding:8px 12px;font-size:0.8rem;outline:none;font-family:inherit;color:#0d1b2e;transition:border-color .2s}
-.jb-inp:focus{border-color:#0d1b2e}
-.jb-inp::placeholder{color:#bbb}
+.jb-inp:focus{border-color:#0d1b2e}.jb-inp::placeholder{color:#bbb}
 .jbsnd{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#0d1b2e,#1e3050);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#e6b55a;font-size:0.9rem;flex-shrink:0;transition:transform .2s}
 .jbsnd:hover{transform:scale(1.12)}
-.jbsnd:disabled{opacity:0.4;cursor:not-allowed;transform:none}
-.jb-ft{padding:4px 12px 9px;text-align:center;font-size:0.6rem;color:#ccc}
-.jb-ft a{color:#c8973a}
-
-@media(max-width:420px){
-  #jb-win{width:calc(100vw - 14px);right:7px;bottom:130px;max-height:68vh}
-  #jb-btn{bottom:80px;right:16px}
-  #jb-tip{display:none}
-}
+.jb-ft{padding:4px 12px 9px;text-align:center;font-size:0.6rem;color:#ccc}.jb-ft a{color:#c8973a}
+@media(max-width:420px){#jb-win{width:calc(100vw - 14px);right:7px;bottom:130px;max-height:68vh}#jb-btn{bottom:80px;right:16px}#jb-tip{display:none}}
 </style>
 
-<!-- ROBOT BUTTON -->
-<div id="jb-btn" onclick="jbT()" title="Chat with Prop Guru">
-  <span class="jb-robot">🤖</span>
-  <span id="jb-badge">1</span>
-</div>
+<div id="jb-btn" onclick="jbT()" title="Chat with Prop Guru"><span class="jb-robot">🤖</span><span id="jb-badge">1</span></div>
 <div id="jb-tip">Ask Prop Guru 🤖</div>
-
-<!-- CHAT WINDOW -->
 <div id="jb-win">
-  <div class="jbh">
-    <div class="jbh-av">🤖</div>
-    <div class="jbh-info">
-      <strong>Prop Guru</strong>
-      <span><span class="jb-on"></span>&nbsp;Online — Jay Bhadra Real Estate</span>
-    </div>
-    <button class="jbx" onclick="jbT()">✕</button>
-  </div>
+  <div class="jbh"><div class="jbh-av">🤖</div><div class="jbh-info"><strong>Prop Guru</strong><span><span class="jb-on"></span>&nbsp;Online — Jay Bhadra Real Estate</span></div><button class="jbx" onclick="jbT()">✕</button></div>
   <div class="jb-msgs" id="jb-msgs"></div>
   <div class="jb-qrs" id="jb-qrs"></div>
-  <div class="jb-inp-row">
-    <input type="text" class="jb-inp" id="jb-inp"
-      placeholder="Ask about properties, prices..."
-      onkeydown="if(event.key==='Enter')jbS()"/>
-    <button class="jbsnd" onclick="jbS()">➤</button>
-  </div>
-  <div class="jb-ft">Jay Bhadra Real Estate ·
-    <a href="https://jay-bhadra-real-estate.vercel.app" target="_blank">Visit Website</a>
-  </div>
+  <div class="jb-inp-row"><input type="text" class="jb-inp" id="jb-inp" placeholder="Ask about properties, prices..." onkeydown="if(event.key==='Enter')jbS()"/><button class="jbsnd" onclick="jbS()">➤</button></div>
+  <div class="jb-ft">Jay Bhadra Real Estate · <a href="https://jay-bhadra-real-estate.vercel.app" target="_blank">Visit Website</a></div>
 </div>
 
 <script>
 (function(){
 'use strict';
-var OPEN=false, STARTED=false;
-
-/* ════════════════════════════════════════════════════
-   AUTO-SCAN PAGE FOR PROJECTS
-   Reads .pcard-title, .card-title from the current page
-   AND falls back to the built-in KB below.
-   So when you add a project via upload portal,
-   the bot automatically knows about it! ✅
-════════════════════════════════════════════════════ */
-function scanPageProjects(){
-  var found = [];
-  // New card style (projects.html)
-  document.querySelectorAll('.project-card-v2').forEach(function(card){
-    var name  = (card.querySelector('.pcard-title')||{}).textContent||'';
-    var loc   = (card.querySelector('.pcard-loc')||{}).textContent||'';
-    var price = (card.querySelector('.pcard-price')||{}).textContent||'';
-    var info  = (card.querySelector('.pcard-info')||{}).textContent||'';
-    var tags  = [];
-    card.querySelectorAll('.pcard-tag').forEach(function(t){tags.push(t.textContent.trim());});
-    var status = card.getAttribute('data-filter')||'';
-    var st = status.includes('ongoing')?'ongoing':status.includes('completed')?'completed':'upcoming';
-    if(name.trim()) found.push({name:name.trim(),loc:loc.replace('📍','').trim(),price:price.replace('onwards','').trim(),types:tags,status:st,info:info.trim()});
-  });
-  // Featured cards (index.html)
-  document.querySelectorAll('.project-card').forEach(function(card){
-    var name  = (card.querySelector('.card-title')||{}).textContent||'';
-    var loc   = (card.querySelector('.card-meta')||{}).textContent||'';
-    var price = (card.querySelector('.card-price')||{}).textContent||'';
-    var tags  = [];
-    card.querySelectorAll('.card-tag').forEach(function(t){tags.push(t.textContent.trim());});
-    var badge = (card.querySelector('[class*="status-"]')||{}).textContent||'ongoing';
-    var st = badge.toLowerCase().includes('ongoing')?'ongoing':badge.toLowerCase().includes('completed')?'completed':'upcoming';
-    if(name.trim()) found.push({name:name.trim(),loc:loc.replace('📍','').trim(),price:price.replace('onwards','').trim(),types:tags,status:st,info:''});
-  });
-  return found;
-}
-
-/* ════════════════════════════════════════════════════
-   BUILT-IN KNOWLEDGE BASE (fallback + company info)
-════════════════════════════════════════════════════ */
-var BASE_PROJECTS = [
-  {name:'Jay Bhadra Heights',loc:'Near Shri Ram Chowk, Nashik',status:'ongoing',types:['1BHK','2BHK'],price:'₹28 Lakh+',info:'RCC structure, RERA registered, bank approved. Possession Dec 2025.'},
-  {name:'Golden City Residency',loc:'Golden City Area, Nashik',status:'completed',types:['1BHK','2BHK','3BHK'],price:'₹22 Lakh+',info:'Ready to move in. Handed over 2022. Gated society, park view.'},
-  {name:'Shri Ram Apartments',loc:'Shri Ram Chowk, Nashik',status:'completed',types:['2BHK','3BHK'],price:'₹35 Lakh+',info:'Spacious flats near temple. Ready to move in.'},
-  {name:'Jay Bhadra Commercial Hub',loc:'Main Road, Nashik',status:'ongoing',types:['Shop','Office'],price:'₹15 Lakh+',info:'Commercial shops and offices on main road. Possession Mar 2026.'},
-  {name:'Green Valley Bungalows',loc:'Nashik Outskirts',status:'upcoming',types:['Bungalow'],price:'₹65 Lakh+',info:'Premium gated community bungalows. Pre-booking open.'},
-  {name:'Fatangare Nagar Phase 2',loc:'Fatangare Nagar, Nashik',status:'upcoming',types:['1BHK','2BHK'],price:'₹20 Lakh+',info:'Affordable flats. Pre-launch bookings open.'}
-];
-
-function getProjects(){
-  var live = scanPageProjects();
-  // Merge: live page projects take priority, fill rest from base
-  if(live.length === 0) return BASE_PROJECTS;
-  // Add any base projects not already found on page
-  BASE_PROJECTS.forEach(function(bp){
-    var exists = live.some(function(lp){ return lp.name.toLowerCase().includes(bp.name.toLowerCase().split(' ')[2]||bp.name.toLowerCase().split(' ')[0]); });
-    if(!exists) live.push(bp);
-  });
-  return live;
-}
-
-var CO = {
-  phone:'+91-97657-11811', wa:'919765711811',
-  email:'info@jaybhadrabuilders.com',
-  address:'Near Swadeshkunj, Golden City, Shri Ram Chowk, Nashik – 422005',
-  hours:'Mon–Sat 9AM–7PM, Sunday by appointment',
-  director:'Mr. Santosh Ramesh Fatangare', founded:'2010'
-};
-
-/* ════════════════════════════════════════════════════
-   SMART REPLY ENGINE
-════════════════════════════════════════════════════ */
-function getReply(msg){
-  var m = msg.toLowerCase().trim();
-  var PROJ = getProjects(); // always fresh — reads page every time
-
-  // GREETINGS
-  if(/^(hi|hello|hii|hey|namaste|namaskar|good\s|नमस्|हेलो|helo)/.test(m)){
-    return {t:'Namaste! 🙏 Welcome to <strong>Jay Bhadra Real Estate Solutions</strong>!\n\nI\'m <strong>Prop Guru</strong> 🤖, your property assistant. I can help you find:\n🏠 Flats (1BHK / 2BHK / 3BHK)\n🏡 Bungalows\n🏪 Commercial Shops\n💰 Best prices & home loans\n\nWhat are you looking for?',
-      q:['🏠 All Projects','1BHK Flats','2BHK Flats','🏡 Bungalows','💰 Price Range','📞 Book Visit']};
-  }
-
-  // ALL PROJECTS
-  if(/all project|show|list|available|sab|sabhi|koi project|projects/.test(m)){
-    var list = PROJ.map(function(p){
-      var ic = p.status==='ongoing'?'🟢':p.status==='completed'?'✅':'🔜';
-      return ic+' <strong>'+p.name+'</strong>\n   '+p.price+' | '+p.loc;
-    }).join('\n');
-    return {t:'Here are all our current projects:\n\n'+list+'\n\nAsk me about any project for full details! 😊',
-      q:PROJ.slice(0,4).map(function(p){return p.name.split(' ').slice(0,3).join(' ');}).concat(['📞 Book Visit'])};
-  }
-
-  // INDIVIDUAL PROJECT LOOKUP — auto-detects any project name
-  for(var i=0;i<PROJ.length;i++){
-    var p = PROJ[i];
-    var words = p.name.toLowerCase().split(' ').filter(function(w){return w.length>3;});
-    if(words.some(function(w){return m.includes(w);})){
-      var stTxt = p.status==='ongoing'?'🟢 Ongoing':p.status==='completed'?'✅ Completed':'🔜 Upcoming';
-      var typesTxt = p.types && p.types.length ? p.types.join(', ') : 'Multiple options';
-      return {t:'<strong>'+p.name+'</strong>\n\n📍 '+p.loc+'\n'+stTxt+'\n💰 Starting: <strong>'+p.price+'</strong>\n🛏️ Types: '+typesTxt+'\n\n'+p.info+'\n\n👉 Interested? Book a free site visit!',
-        q:['📞 Call Now','💬 WhatsApp','🏦 Home Loan?','💰 EMI Info','⬅️ All Projects']};
-    }
-  }
-
-  // 1BHK
-  if(/1\s?bhk|1bed|one bhk/.test(m)){
-    var r1 = PROJ.filter(function(p){return p.types&&p.types.some(function(t){return /1bhk|1 bhk/i.test(t);});});
-    var l1 = r1.map(function(p){return '🏠 <strong>'+p.name+'</strong> — '+p.price+'\n   📍 '+p.loc;}).join('\n');
-    return {t:'<strong>1BHK Flats</strong> available:\n\n'+(l1||'No 1BHK listed currently. Call us for latest availability!')+'\n\n✅ RERA registered | 🏦 Bank approved | 🧭 Vastu compliant',
-      q:['Jay Bhadra Heights','Fatangare Nagar','🏦 Home Loan?','💰 Price Details','📞 Book Visit']};
-  }
-
-  // 2BHK
-  if(/2\s?bhk|2bed|two bhk/.test(m)){
-    var r2 = PROJ.filter(function(p){return p.types&&p.types.some(function(t){return /2bhk|2 bhk/i.test(t);});});
-    var l2 = r2.map(function(p){return '🏠 <strong>'+p.name+'</strong> — '+p.price+'\n   📍 '+p.loc;}).join('\n');
-    return {t:'<strong>2BHK Flats</strong> available:\n\n'+(l2||'Call us for 2BHK options!')+'\n\n💡 Home loan available from ₹20 Lakh onwards!',
-      q:['Price Details','Home Loan?','📞 Book Visit','⬅️ All Projects']};
-  }
-
-  // 3BHK
-  if(/3\s?bhk|3bed|three bhk/.test(m)){
-    var r3 = PROJ.filter(function(p){return p.types&&p.types.some(function(t){return /3bhk|3 bhk/i.test(t);});});
-    var l3 = r3.map(function(p){return '🏠 <strong>'+p.name+'</strong> — '+p.price+'\n   📍 '+p.loc;}).join('\n');
-    return {t:'<strong>3BHK Flats</strong> available:\n\n'+(l3||'Call us for 3BHK options!')+'\n\n💡 Spacious homes for growing families!',
-      q:['Golden City Details','Shri Ram Details','🏦 Home Loan?','📞 Book Visit']};
-  }
-
-  // BUNGALOW
-  if(/bungalow|villa|independent|row house/.test(m)){
-    var rb = PROJ.filter(function(p){return p.types&&p.types.some(function(t){return /bungalow|villa/i.test(t);});});
-    var lb = rb.map(function(p){return '🏡 <strong>'+p.name+'</strong> — '+p.price+'\n   📍 '+p.loc;}).join('\n');
-    return {t:'<strong>Bungalow / Villa</strong> options:\n\n'+(lb||'Green Valley Bungalows — ₹65 Lakh+\n📍 Nashik Outskirts\n🔜 Pre-booking open!')+'\n\n✨ Premium gated community with garden!',
-      q:['📞 Book Now','💬 WhatsApp','💰 EMI Details','📅 Possession?']};
-  }
-
-  // COMMERCIAL
-  if(/commercial|shop|office|dukan|business|showroom/.test(m)){
-    var rc = PROJ.filter(function(p){return p.status&&(p.types&&p.types.some(function(t){return /shop|office|commercial/i.test(t);}));});
-    var lc = rc.map(function(p){return '🏪 <strong>'+p.name+'</strong> — '+p.price+'\n   📍 '+p.loc;}).join('\n');
-    return {t:'<strong>Commercial Properties</strong>:\n\n'+(lc||'Jay Bhadra Commercial Hub — ₹15 Lakh+\n📍 Main Road, Nashik\n🟢 Ongoing — Possession Mar 2026')+'\n\n✅ Main road location, high footfall!',
-      q:['📞 Enquire Now','💬 WhatsApp','💰 Price Details','📅 Possession?']};
-  }
-
-  // PRICE / BUDGET
-  if(/price|cost|rate|budget|lakh|kitna|amount|how much|pricing/.test(m)){
-    var prices = PROJ.map(function(p){return '💰 <strong>'+p.name+'</strong> — '+p.price;}).join('\n');
-    return {t:'<strong>Our Property Prices:</strong>\n\n'+prices+'\n\n🏦 Home loan available!\n💡 Call for final negotiated price.',
-      q:['Home Loan Details','EMI Calculator','📞 Get Best Price','All Projects']};
-  }
-
-  // HOME LOAN / EMI
-  if(/loan|emi|finance|bank|hdfc|sbi|mortgage|installment/.test(m)){
-    return {t:'🏦 <strong>Home Loan Information</strong>\n\nAll projects are bank approved by:\n✅ SBI\n✅ HDFC Bank\n✅ Bank of Maharashtra\n✅ And more!\n\n💡 <strong>EMI Examples:</strong>\n₹25L @ 8.5% × 20yrs = ~₹21,700/mo\n₹35L @ 8.5% × 20yrs = ~₹30,400/mo\n₹50L @ 8.5% × 20yrs = ~₹43,400/mo\n\n📞 Call for exact EMI calculation!',
-      q:['📞 Loan Help','💬 WhatsApp','Book Site Visit','View Projects']};
-  }
-
-  // SITE VISIT
-  if(/visit|site visit|dekh|tour|show flat|appointment|meeting/.test(m)){
-    return {t:'🎉 We\'d love to show you our projects!\n\n<strong>Book a FREE site visit:</strong>\n📞 <strong>'+CO.phone+'</strong>\n💬 WhatsApp: <strong>'+CO.phone+'</strong>\n\n⏰ '+CO.hours+'\n\n📍 '+CO.address+'\n\n👉 Our team arranges visits at your convenient time — FREE!',
-      q:['📞 Call Now','💬 WhatsApp','📍 Get Directions','⏰ Office Hours']};
-  }
-
-  // CONTACT
-  if(/contact|phone|number|call|address|office|location|email|where/.test(m)){
-    return {t:'📞 <strong>Contact Us</strong>\n\n📱 Phone: <strong>'+CO.phone+'</strong>\n💬 WhatsApp: <strong>'+CO.phone+'</strong>\n✉️ '+CO.email+'\n\n📍 '+CO.address+'\n\n⏰ '+CO.hours,
-      q:['📞 Call Now','💬 WhatsApp','📍 Directions','Book Site Visit']};
-  }
-
-  // RERA / LEGAL
-  if(/rera|legal|government|approved|verified|document/.test(m)){
-    return {t:'✅ <strong>RERA & Approvals</strong>\n\nAll Jay Bhadra projects are:\n✅ RERA Registered (Maharashtra)\n🏦 Bank Approved (SBI, HDFC, BoM)\n🧭 Vastu Compliant\n📜 Clear Title Documentation\n\n💡 We handle all paperwork transparently!',
-      q:['Home Loan Details','📞 Legal Query','Book Site Visit']};
-  }
-
-  // POSSESSION
-  if(/possession|ready|handover|when|kab|move in/.test(m)){
-    var ready = PROJ.filter(function(p){return p.status==='completed';});
-    var ongoing = PROJ.filter(function(p){return p.status==='ongoing';});
-    var upcoming = PROJ.filter(function(p){return p.status==='upcoming';});
-    return {t:'📅 <strong>Possession Status</strong>\n\n✅ <strong>Ready to Move:</strong>\n'+ready.map(function(p){return '• '+p.name;}).join('\n')+'\n\n🟢 <strong>Ongoing:</strong>\n'+ongoing.map(function(p){return '• '+p.name+' — '+p.info.match(/\d{4}/)?p.info.match(/\w+ \d{4}/)[0]:'check with team';}).join('\n')+'\n\n🔜 <strong>Upcoming:</strong>\n'+upcoming.map(function(p){return '• '+p.name;}).join('\n'),
-      q:['Ready to Move','Ongoing Projects','📞 Call for Update']};
-  }
-
-  // AMENITIES
-  if(/ameniti|facilit|lift|parking|security|gym|garden|feature/.test(m)){
-    return {t:'✨ <strong>Amenities in Our Projects</strong>\n\n🛗 Lift\n🅿️ Covered Parking\n💂 24/7 Security + CCTV\n🌳 Garden & Landscaping\n⚡ Power Backup\n💧 24/7 Water Supply\n🛝 Children\'s Play Area\n🧭 Vastu Compliant\n\n💡 Amenities vary by project. Ask about a specific project for exact details!',
-      q:['Jay Bhadra Heights','Golden City','Green Valley','📞 Full Details']};
-  }
-
-  // ABOUT
-  if(/about|company|who|history|founded|director|fatangare|background/.test(m)){
-    return {t:'🏢 <strong>About Jay Bhadra Real Estate</strong>\n\n👤 Director: <strong>'+CO.director+'</strong>\n📅 Founded: <strong>'+CO.founded+'</strong> (16+ years)\n📍 Nashik, Maharashtra\n\n📊 Our Track Record:\n🏗️ 30+ Projects Completed\n👨‍👩‍👧 500+ Happy Families\n🔧 3-Year Maintenance Support\n✅ RERA Registered\n\nWe believe in quality, transparency & timely possession!',
-      q:['View All Projects','📞 Contact Us','Book Site Visit']};
-  }
-
-  // MAINTENANCE
-  if(/maintenance|support|repair|after|service|warranty/.test(m)){
-    return {t:'🔧 <strong>3-Year Free Maintenance</strong>\n\nAfter possession, Jay Bhadra provides <strong>3 years free maintenance</strong>!\n\nCovers:\n✅ Structural issues\n✅ Plumbing problems\n✅ Electrical faults\n\n📞 Maintenance: <strong>'+CO.phone+'</strong>',
-      q:['📞 Contact','View Projects','About Company']};
-  }
-
-  // THANK YOU / BYE
-  if(/thank|thanks|shukriya|dhanyavad|great|bye|goodbye|done/.test(m)){
-    return {t:'Thank you! 😊🙏 Happy to help!\n\nRemember, we\'re always here:\n📞 <strong>'+CO.phone+'</strong>\n\nHave a great day! — Prop Guru 🤖',
-      q:['View Projects','Book Site Visit','📞 Call Us']};
-  }
-
-  // DEFAULT
-  return {t:'I\'m not sure about that specific question 😊\nBut our team can definitely help!\n\n📞 <strong>'+CO.phone+'</strong>\n💬 WhatsApp same number\n⏰ Mon–Sat 9AM–7PM',
-    q:['🏠 All Projects','💰 Price Range','🏦 Home Loan?','📞 Call Now','💬 WhatsApp']};
-}
-
-/* ════ UI ════ */
-function jbT(){
-  OPEN=!OPEN;
-  document.getElementById('jb-win').classList.toggle('open',OPEN);
-  // Remove notification badge on first open
-  var badge=document.getElementById('jb-badge');
-  if(badge)badge.remove();
-  if(OPEN&&!STARTED){STARTED=true;jbWelcome();}
-  if(OPEN)setTimeout(function(){document.getElementById('jb-inp').focus();},400);
-}
+var OPEN=false,STARTED=false;
+function scanPageProjects(){var found=[];document.querySelectorAll('.project-card-v2').forEach(function(card){var name=(card.querySelector('.pcard-title')||{}).textContent||'';var loc=(card.querySelector('.pcard-loc')||{}).textContent||'';var price=(card.querySelector('.pcard-price')||{}).textContent||'';var info=(card.querySelector('.pcard-info')||{}).textContent||'';var tags=[];card.querySelectorAll('.pcard-tag').forEach(function(t){tags.push(t.textContent.trim());});var status=card.getAttribute('data-filter')||'';var st=status.includes('ongoing')?'ongoing':status.includes('completed')?'completed':'upcoming';if(name.trim())found.push({name:name.trim(),loc:loc.replace('📍','').trim(),price:price.replace('onwards','').trim(),types:tags,status:st,info:info.trim()});});document.querySelectorAll('.project-card').forEach(function(card){var name=(card.querySelector('.card-title')||{}).textContent||'';var loc=(card.querySelector('.card-meta')||{}).textContent||'';var price=(card.querySelector('.card-price')||{}).textContent||'';var tags=[];card.querySelectorAll('.card-tag').forEach(function(t){tags.push(t.textContent.trim());});var badge=(card.querySelector('[class*="status-"]')||{}).textContent||'ongoing';var st=badge.toLowerCase().includes('ongoing')?'ongoing':badge.toLowerCase().includes('completed')?'completed':'upcoming';if(name.trim())found.push({name:name.trim(),loc:loc.replace('📍','').trim(),price:price.replace('onwards','').trim(),types:tags,status:st,info:''});});return found;}
+var BASE=[{name:'Jay Bhadra Heights',loc:'Near Shri Ram Chowk, Nashik',status:'ongoing',types:['1BHK','2BHK'],price:'₹28 Lakh+',info:'RCC structure, RERA registered, bank approved. Possession Dec 2025.'},{name:'Golden City Residency',loc:'Golden City Area, Nashik',status:'completed',types:['1BHK','2BHK','3BHK'],price:'₹22 Lakh+',info:'Ready to move in. Handed over 2022.'},{name:'Shri Ram Apartments',loc:'Shri Ram Chowk, Nashik',status:'completed',types:['2BHK','3BHK'],price:'₹35 Lakh+',info:'Spacious flats near temple. Ready to move in.'},{name:'Jay Bhadra Commercial Hub',loc:'Main Road, Nashik',status:'ongoing',types:['Shop','Office'],price:'₹15 Lakh+',info:'Commercial shops and offices. Possession Mar 2026.'},{name:'Green Valley Bungalows',loc:'Nashik Outskirts',status:'upcoming',types:['Bungalow'],price:'₹65 Lakh+',info:'Premium gated community bungalows. Pre-booking open.'},{name:'Fatangare Nagar Phase 2',loc:'Fatangare Nagar, Nashik',status:'upcoming',types:['1BHK','2BHK'],price:'₹20 Lakh+',info:'Affordable flats. Pre-launch bookings open.'}];
+function getP(){var live=scanPageProjects();if(live.length===0)return BASE;BASE.forEach(function(bp){var ex=live.some(function(lp){return lp.name.toLowerCase().includes(bp.name.toLowerCase().split(' ')[2]||bp.name.toLowerCase().split(' ')[0]);});if(!ex)live.push(bp);});return live;}
+var CO={phone:'+91-97657-11811',wa:'919765711811',email:'info@jaybhadrabuilders.com',address:'Near Swadeshkunj, Golden City, Shri Ram Chowk, Nashik – 422005',hours:'Mon–Sat 9AM–7PM, Sunday by appointment',director:'Mr. Santosh Ramesh Fatangare',founded:'2010'};
+function getReply(msg){var m=msg.toLowerCase().trim();var PROJ=getP();
+if(/^(hi|hello|hii|hey|namaste|namaskar|good\s|नमस्|हेलो|helo)/.test(m))return{t:'Namaste! 🙏 Welcome to <strong>Jay Bhadra Real Estate Solutions</strong>!\n\nI\'m <strong>Prop Guru</strong> 🤖, your property assistant.\n🏠 Flats (1BHK/2BHK/3BHK)\n🏡 Bungalows\n🏪 Commercial\n💰 Prices & home loans\n\nWhat are you looking for?',q:['🏠 All Projects','1BHK Flats','2BHK Flats','🏡 Bungalows','💰 Price Range','📞 Book Visit']};
+if(/all project|show|list|available|sab|sabhi|projects/.test(m)){var list=PROJ.map(function(p){var ic=p.status==='ongoing'?'🟢':p.status==='completed'?'✅':'🔜';return ic+' <strong>'+p.name+'</strong>\n   '+p.price+' | '+p.loc;}).join('\n');return{t:'All our current projects:\n\n'+list+'\n\nAsk me about any project for details! 😊',q:PROJ.slice(0,4).map(function(p){return p.name.split(' ').slice(0,3).join(' ');}).concat(['📞 Book Visit'])};}
+for(var i=0;i<PROJ.length;i++){var p=PROJ[i];var words=p.name.toLowerCase().split(' ').filter(function(w){return w.length>3;});if(words.some(function(w){return m.includes(w);})){var stTxt=p.status==='ongoing'?'🟢 Ongoing':p.status==='completed'?'✅ Completed':'🔜 Upcoming';return{t:'<strong>'+p.name+'</strong>\n\n📍 '+p.loc+'\n'+stTxt+'\n💰 Starting: <strong>'+p.price+'</strong>\n🛏️ Types: '+(p.types&&p.types.length?p.types.join(', '):'Multiple')+'\n\n'+p.info+'\n\n👉 Book a free site visit!',q:['📞 Call Now','💬 WhatsApp','🏦 Home Loan?','⬅️ All Projects']};}}
+if(/1\s?bhk/.test(m)){var r1=PROJ.filter(function(p){return p.types&&p.types.some(function(t){return /1bhk/i.test(t);});});return{t:'<strong>1BHK Flats</strong>:\n\n'+(r1.map(function(p){return '🏠 <strong>'+p.name+'</strong> — '+p.price+'\n   📍 '+p.loc;}).join('\n')||'Call us for availability!')+'\n\n✅ RERA | 🏦 Bank Approved | 🧭 Vastu',q:['💰 Price Details','🏦 Home Loan?','📞 Book Visit']};}
+if(/2\s?bhk/.test(m)){var r2=PROJ.filter(function(p){return p.types&&p.types.some(function(t){return /2bhk/i.test(t);});});return{t:'<strong>2BHK Flats</strong>:\n\n'+(r2.map(function(p){return '🏠 <strong>'+p.name+'</strong> — '+p.price+'\n   📍 '+p.loc;}).join('\n')||'Call for 2BHK options!')+'\n\n💡 Home loan from ₹20L onwards!',q:['Price Details','Home Loan?','📞 Book Visit']};}
+if(/3\s?bhk/.test(m)){var r3=PROJ.filter(function(p){return p.types&&p.types.some(function(t){return /3bhk/i.test(t);});});return{t:'<strong>3BHK Flats</strong>:\n\n'+(r3.map(function(p){return '🏠 <strong>'+p.name+'</strong> — '+p.price+'\n   📍 '+p.loc;}).join('\n')||'Call for options!')+'\n\n💡 Spacious homes for families!',q:['🏦 Home Loan?','📞 Book Visit']};}
+if(/bungalow|villa/.test(m)){var rb=PROJ.filter(function(p){return p.types&&p.types.some(function(t){return /bungalow|villa/i.test(t);});});return{t:'<strong>Bungalows</strong>:\n\n'+(rb.map(function(p){return '🏡 <strong>'+p.name+'</strong> — '+p.price+'\n   📍 '+p.loc;}).join('\n')||'Green Valley Bungalows — ₹65L+\n🔜 Pre-booking open!')+'\n\n✨ Premium gated community!',q:['📞 Book Now','💬 WhatsApp','💰 EMI Details']};}
+if(/commercial|shop|office/.test(m)){var rc=PROJ.filter(function(p){return p.types&&p.types.some(function(t){return /shop|office|commercial/i.test(t);});});return{t:'<strong>Commercial Properties</strong>:\n\n'+(rc.map(function(p){return '🏪 <strong>'+p.name+'</strong> — '+p.price+'\n   📍 '+p.loc;}).join('\n')||'Commercial Hub — ₹15L+')+'\n\n✅ Main road, high footfall!',q:['📞 Enquire','💬 WhatsApp','💰 Price Details']};}
+if(/price|cost|rate|budget|lakh|kitna|how much/.test(m)){return{t:'<strong>Property Prices:</strong>\n\n'+PROJ.map(function(p){return '💰 <strong>'+p.name+'</strong> — '+p.price;}).join('\n')+'\n\n🏦 Home loan available!',q:['Home Loan','EMI Calc','📞 Get Best Price']};}
+if(/loan|emi|finance|bank|hdfc|sbi/.test(m)){return{t:'🏦 <strong>Home Loan</strong>\n\nBank approved by:\n✅ SBI ✅ HDFC ✅ Bank of Maharashtra\n\n💡 EMI Examples:\n₹25L = ~₹21,700/mo\n₹35L = ~₹30,400/mo\n₹50L = ~₹43,400/mo\n\n📞 Call for exact calculation!',q:['📞 Loan Help','💬 WhatsApp','Book Visit']};}
+if(/visit|site visit|tour|appointment/.test(m)){return{t:'🎉 Book a FREE site visit!\n\n📞 <strong>'+CO.phone+'</strong>\n💬 WhatsApp same number\n\n⏰ '+CO.hours+'\n📍 '+CO.address,q:['📞 Call Now','💬 WhatsApp','📍 Directions']};}
+if(/contact|phone|address|office|email|where/.test(m)){return{t:'📞 <strong>Contact Us</strong>\n\n📱 '+CO.phone+'\n💬 WhatsApp: '+CO.phone+'\n✉️ '+CO.email+'\n📍 '+CO.address+'\n⏰ '+CO.hours,q:['📞 Call Now','💬 WhatsApp','Book Visit']};}
+if(/rera|legal|approved|verified/.test(m)){return{t:'✅ All projects:\n✅ RERA Registered\n🏦 Bank Approved\n🧭 Vastu Compliant\n📜 Clear Title\n\n💡 Full paperwork support!',q:['Home Loan','📞 Legal Query','Book Visit']};}
+if(/possession|ready|handover|when|kab/.test(m)){var rdy=PROJ.filter(function(p){return p.status==='completed';});var ong=PROJ.filter(function(p){return p.status==='ongoing';});var upc=PROJ.filter(function(p){return p.status==='upcoming';});return{t:'📅 <strong>Possession Status</strong>\n\n✅ Ready:\n'+rdy.map(function(p){return '• '+p.name;}).join('\n')+'\n\n🟢 Ongoing:\n'+ong.map(function(p){return '• '+p.name;}).join('\n')+'\n\n🔜 Upcoming:\n'+upc.map(function(p){return '• '+p.name;}).join('\n'),q:['Ready Flats','📞 Call for Update']};}
+if(/about|company|director|fatangare|founded/.test(m)){return{t:'🏢 <strong>Jay Bhadra Real Estate Solutions</strong>\n\n👤 Director: <strong>'+CO.director+'</strong>\n📅 Founded: <strong>'+CO.founded+'</strong>\n📍 Nashik, Maharashtra\n\n🏗️ 30+ Projects\n👨‍👩‍👧 500+ Families\n🔧 3-Year Support\n✅ RERA Registered',q:['View Projects','📞 Contact','Book Visit']};}
+if(/thank|thanks|bye|goodbye|done/.test(m)){return{t:'Thank you! 😊🙏\n\nAlways here to help:\n📞 <strong>'+CO.phone+'</strong>\n\nHave a great day! — Prop Guru 🤖',q:['View Projects','📞 Call Us']};}
+return{t:'Our team can help with this!\n\n📞 <strong>'+CO.phone+'</strong>\n💬 WhatsApp same number\n⏰ Mon–Sat 9AM–7PM',q:['🏠 All Projects','💰 Price Range','📞 Call Now','💬 WhatsApp']};}
+function jbT(){OPEN=!OPEN;document.getElementById('jb-win').classList.toggle('open',OPEN);var badge=document.getElementById('jb-badge');if(badge)badge.remove();if(OPEN&&!STARTED){STARTED=true;jbWelcome();}if(OPEN)setTimeout(function(){document.getElementById('jb-inp').focus();},400);}
 window.jbT=jbT;
-
-function jbWelcome(){
-  setTimeout(function(){
-    jbAdd('bot','Namaste! 🙏 I\'m <strong>Prop Guru</strong> 🤖\nYour assistant at <strong>Jay Bhadra Real Estate</strong>.\n\nHow can I help you today?');
-    jbQR(['🏠 All Projects','1BHK Flats','2BHK / 3BHK','🏡 Bungalows','💰 Prices','📞 Book Visit']);
-  },350);
-}
-
-function jbAdd(role,text){
-  var msgs=document.getElementById('jb-msgs');
-  var d=document.createElement('div');d.className='jbm '+(role==='user'?'u':'');
-  var av=document.createElement('div');av.className='jbav';av.textContent=role==='user'?'👤':'🤖';
-  var b=document.createElement('div');b.className='jbb';b.innerHTML=text.replace(/\n/g,'<br/>');
-  d.appendChild(av);d.appendChild(b);msgs.appendChild(d);
-  msgs.scrollTop=msgs.scrollHeight;
-}
-
-function jbTyping(){
-  var msgs=document.getElementById('jb-msgs');
-  var d=document.createElement('div');d.className='jbm';d.id='jbtyp';
-  var av=document.createElement('div');av.className='jbav';av.textContent='🤖';
-  var t=document.createElement('div');t.className='jb-typing';t.innerHTML='<span></span><span></span><span></span>';
-  d.appendChild(av);d.appendChild(t);msgs.appendChild(d);
-  msgs.scrollTop=msgs.scrollHeight;
-}
+function jbWelcome(){setTimeout(function(){jbAdd('bot','Namaste! 🙏 I\'m <strong>Prop Guru</strong> 🤖\nYour assistant at <strong>Jay Bhadra Real Estate</strong>.\n\nHow can I help you today?');jbQR(['🏠 All Projects','1BHK Flats','2BHK / 3BHK','🏡 Bungalows','💰 Prices','📞 Book Visit']);},350);}
+function jbAdd(role,text){var msgs=document.getElementById('jb-msgs');var d=document.createElement('div');d.className='jbm '+(role==='user'?'u':'');var av=document.createElement('div');av.className='jbav';av.textContent=role==='user'?'👤':'🤖';var b=document.createElement('div');b.className='jbb';b.innerHTML=text.replace(/\n/g,'<br/>');d.appendChild(av);d.appendChild(b);msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;}
+function jbTyping(){var msgs=document.getElementById('jb-msgs');var d=document.createElement('div');d.className='jbm';d.id='jbtyp';var av=document.createElement('div');av.className='jbav';av.textContent='🤖';var t=document.createElement('div');t.className='jb-typing';t.innerHTML='<span></span><span></span><span></span>';d.appendChild(av);d.appendChild(t);msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;}
 function jbHideTyping(){var t=document.getElementById('jbtyp');if(t)t.remove();}
-
-function jbQR(opts){
-  var row=document.getElementById('jb-qrs');row.innerHTML='';
-  opts.forEach(function(o){
-    var b=document.createElement('button');b.className='jbqr';b.textContent=o;
-    b.onclick=function(){row.innerHTML='';jbProc(o);};
-    row.appendChild(b);
-  });
-}
-
-function jbS(){
-  var inp=document.getElementById('jb-inp');
-  var t=inp.value.trim();if(!t)return;
-  inp.value='';document.getElementById('jb-qrs').innerHTML='';
-  jbProc(t);
-}
+function jbQR(opts){var row=document.getElementById('jb-qrs');row.innerHTML='';opts.forEach(function(o){var b=document.createElement('button');b.className='jbqr';b.textContent=o;b.onclick=function(){row.innerHTML='';jbProc(o);};row.appendChild(b);});}
+function jbS(){var inp=document.getElementById('jb-inp');var t=inp.value.trim();if(!t)return;inp.value='';document.getElementById('jb-qrs').innerHTML='';jbProc(t);}
 window.jbS=jbS;
-
-function jbProc(text){
-  if(text.includes('Call Now')){window.location.href='tel:+919765711811';return;}
-  if(text.includes('WhatsApp')){window.open('https://wa.me/919765711811?text=Hello!%20I%20need%20help%20with%20a%20property.','_blank');return;}
-  if(text.includes('Directions')){window.open('https://www.google.com/maps/search/Jay+Bhadra+Real+Estate+Nashik','_blank');return;}
-
-  jbAdd('user',text);
-  jbTyping();
-  setTimeout(function(){
-    jbHideTyping();
-    var r=getReply(text);
-    jbAdd('bot',r.t);
-    if(r.q&&r.q.length)jbQR(r.q);
-  }, 300+Math.random()*400);
-}
+function jbProc(text){if(text.includes('Call Now')){window.location.href='tel:+919765711811';return;}if(text.includes('WhatsApp')){window.open('https://wa.me/919765711811?text=Hello!%20I%20need%20help%20with%20a%20property.','_blank');return;}if(text.includes('Directions')){window.open('https://www.google.com/maps/search/Jay+Bhadra+Real+Estate+Nashik','_blank');return;}jbAdd('user',text);jbTyping();setTimeout(function(){jbHideTyping();var r=getReply(text);jbAdd('bot',r.t);if(r.q&&r.q.length)jbQR(r.q);},300+Math.random()*400);}
 })();
 </script>
 </body></html>
