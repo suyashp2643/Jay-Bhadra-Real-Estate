@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
-  <link rel="icon" type="image/png" href="images/logo.png"/>
+  <link rel="icon" type="image/png" href="images/Logo.png"/>
 </head>
 <body>
 
@@ -30,7 +30,7 @@
 <nav class="navbar" role="navigation">
   <div class="container">
     <a href="index.html" class="nav-logo">
-      <div class="nav-logo-icon" style="padding:0;overflow:hidden;background:transparent;"><img src="images/logo.png" alt="Jay Bhadra Real Estate Logo" style="width:100%;height:100%;object-fit:contain;display:block;" onerror="this.style.display='none';this.parentNode.innerHTML='<span>JB</span>'"/></div>
+      <div class="nav-logo-icon" style="padding:0;overflow:hidden;background:linear-gradient(135deg,#c8973a,#8a6420);"><img src="images/Logo.png" alt="JB" style="width:100%;height:100%;object-fit:contain;display:block;" onerror="this.style.display='none';this.parentNode.style.display='flex';this.parentNode.style.alignItems='center';this.parentNode.style.justifyContent='center';this.parentNode.innerHTML='<span style=font-family:Cinzel,serif;font-weight:600;color:#0d1b2e;font-size:1rem;>JB</span>'"/></div>
       <div class="nav-logo-text">
         <strong>Jay Bhadra Real Estate Solutions Pvt. Ltd.</strong>
         <em>Building Dreams, Delivering Trust</em>
@@ -424,7 +424,45 @@
 </section>
 
 <!-- TESTIMONIALS -->
+<style>
+.testi-section{position:relative;overflow:hidden;}
+.testi-bg-slides{position:absolute;inset:0;z-index:0;}
+.testi-bg-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;animation:tbSlide 21s infinite;transform:scale(1.06);}
+.testi-bg-slide:nth-child(1){background-image:url('https://images.unsplash.com/photo-1609220136736-443140cffec6?w=1600&q=85&auto=format&fit=crop');animation-delay:0s;}
+.testi-bg-slide:nth-child(2){background-image:url('https://images.unsplash.com/photo-1581952976147-5a2d15560349?w=1600&q=85&auto=format&fit=crop');animation-delay:7s;}
+.testi-bg-slide:nth-child(3){background-image:url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=1600&q=85&auto=format&fit=crop');animation-delay:14s;}
+@keyframes tbSlide{0%{opacity:0;transform:scale(1.06)}8%{opacity:1;transform:scale(1.06)}30%{opacity:1;transform:scale(1.0)}40%{opacity:0;transform:scale(1.0)}100%{opacity:0;transform:scale(1.06)}}
+.testi-bg-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,16,30,0.85) 0%,rgba(13,24,44,0.90) 50%,rgba(10,16,30,0.85) 100%);}
+.testi-floaters{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden;}
+.testi-floater{position:absolute;opacity:0;animation:tfloat linear infinite;}
+.testi-floater:nth-child(1){left:5%;top:90%;animation-duration:14s;animation-delay:0s;font-size:1.4rem}
+.testi-floater:nth-child(2){left:18%;top:95%;animation-duration:18s;animation-delay:3s;font-size:1rem}
+.testi-floater:nth-child(3){left:38%;top:88%;animation-duration:16s;animation-delay:6s;font-size:1.5rem}
+.testi-floater:nth-child(4){left:58%;top:92%;animation-duration:12s;animation-delay:2s;font-size:1.2rem}
+.testi-floater:nth-child(5){left:74%;top:90%;animation-duration:20s;animation-delay:5s;font-size:1rem}
+.testi-floater:nth-child(6){left:88%;top:94%;animation-duration:15s;animation-delay:8s;font-size:1.4rem}
+@keyframes tfloat{0%{transform:translateY(0) translateX(0) rotate(0deg);opacity:0}10%{opacity:0.4}80%{opacity:0.2}100%{transform:translateY(-700px) translateX(30px) rotate(15deg);opacity:0}}
+.testi-section::before,.testi-section::after{content:'';position:absolute;left:0;right:0;height:2px;z-index:4;background:linear-gradient(90deg,transparent,rgba(200,151,58,0.6),rgba(230,181,90,0.9),rgba(200,151,58,0.6),transparent);animation:shimmer2 4s infinite;}
+.testi-section::before{top:0}.testi-section::after{bottom:0}
+@keyframes shimmer2{0%{opacity:0.3}50%{opacity:1}100%{opacity:0.3}}
+.testi-section .container{position:relative;z-index:3;}
+</style>
+
 <section class="section testi-section">
+  <div class="testi-bg-slides">
+    <div class="testi-bg-slide"></div>
+    <div class="testi-bg-slide"></div>
+    <div class="testi-bg-slide"></div>
+  </div>
+  <div class="testi-bg-overlay"></div>
+  <div class="testi-floaters">
+    <span class="testi-floater">🏠</span>
+    <span class="testi-floater">👨‍👩‍👧</span>
+    <span class="testi-floater">🔑</span>
+    <span class="testi-floater">👪</span>
+    <span class="testi-floater">🏡</span>
+    <span class="testi-floater">⭐</span>
+  </div>
   <div class="container">
     <div class="section-header fade-up">
       <span class="label">Happy Families</span>
@@ -464,7 +502,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="footer-logo"><div class="footer-logo-icon" style="padding:0;overflow:hidden;background:transparent;"><img src="images/logo.png" alt="Jay Bhadra Real Estate Logo" style="width:100%;height:100%;object-fit:contain;display:block;" onerror="this.style.display='none';this.parentNode.innerHTML='<span>JB</span>'"/></div><div class="footer-logo-text"><strong>Jay Bhadra Real Estate Solutions Pvt. Ltd.</strong><em>Building Dreams, Delivering Trust</em></div></div>
+        <div class="footer-logo"><div class="footer-logo-icon" style="padding:0;overflow:hidden;background:linear-gradient(135deg,#c8973a,#8a6420);"><img src="images/Logo.png" alt="JB" style="width:100%;height:100%;object-fit:contain;display:block;" onerror="this.style.display='none';this.parentNode.style.display='flex';this.parentNode.style.alignItems='center';this.parentNode.style.justifyContent='center';this.parentNode.innerHTML='<span style=font-family:Cinzel,serif;font-weight:600;color:#0d1b2e;font-size:1rem;>JB</span>'"/></div><div class="footer-logo-text"><strong>Jay Bhadra Real Estate Solutions Pvt. Ltd.</strong><em>Building Dreams, Delivering Trust</em></div></div>
         <p>Nashik's trusted real estate company since 2010. 30+ projects completed. 500+ families housed. 3-year maintenance commitment.</p>
         <div class="footer-social"><a href="#" class="soc-icon">f</a><a href="#" class="soc-icon">in</a><a href="https://wa.me/919765711811" class="soc-icon" target="_blank">W</a><a href="#" class="soc-icon">▶</a></div>
       </div>
