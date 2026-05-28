@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
-  <link rel="icon" type="image/png" href="images/logo.png"/>
+  <link rel="icon" type="image/png" href="images/Logo.png"/>
 </head>
 <body>
 <div class="top-strip"><div class="container">
@@ -16,11 +16,11 @@
   <button class="strip-dismiss">✕</button>
 </div></div>
 <nav class="navbar"><div class="container">
-  <a href="index.html" class="nav-logo"><div class="nav-logo-icon" style="padding:0;overflow:hidden;background:transparent;"><img src="images/logo.png" alt="Jay Bhadra Real Estate Logo" style="width:100%;height:100%;object-fit:contain;display:block;" onerror="this.style.display='none';this.parentNode.innerHTML='<span>JB</span>'"/></div><div class="nav-logo-text"><strong>Jay Bhadra Real Estate Solutions Pvt. Ltd.</strong><em>Building Dreams, Delivering Trust</em></div></a>
+  <a href="index.html" class="nav-logo"><div class="nav-logo-icon" style="padding:0;overflow:hidden;background:linear-gradient(135deg,#c8973a,#8a6420);"><img src="images/Logo.png" alt="JB" style="width:100%;height:100%;object-fit:contain;display:block;" onerror="this.style.display='none';this.parentNode.style.display='flex';this.parentNode.style.alignItems='center';this.parentNode.style.justifyContent='center';this.parentNode.innerHTML='<span style=font-family:Cinzel,serif;font-weight:600;color:#0d1b2e;font-size:1rem;>JB</span>'"/></div><div class="nav-logo-text"><strong>Jay Bhadra Real Estate Solutions Pvt. Ltd.</strong><em>Building Dreams, Delivering Trust</em></div></a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li>
     <li><a href="search.html">🔍 Search</a></li>
-    <li><a href="about.html">About Us</a></li><li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html">About Us</a></li>
     <li><a href="contact.html" class="active">Contact</a></li>
     <li><a href="contact.html" class="nav-cta">Enquire Now</a></li>
   </ul>
@@ -30,13 +30,33 @@
 <nav class="nav-drawer">
   <a href="index.html">🏠 Home</a><a href="projects.html">🏢 Projects</a>
   <a href="search.html">🔍 Search Properties</a>
-  <a href="about.html">👥 About Us</a><a href="gallery.html">🖼️ Gallery</a>
+  <a href="about.html">👥 About Us</a>
   <a href="contact.html" class="active">📞 Contact</a>
   <a href="contact.html" style="margin-top:20px;background:var(--gold);color:var(--navy);font-weight:600;border-radius:var(--r-sm);text-align:center;font-family:var(--font-cap);font-size:0.75rem;letter-spacing:0.1em;padding:14px 16px;">ENQUIRE NOW</a>
 </nav>
 
 <main>
+<style>
+.page-hero{position:relative;overflow:hidden;}
+.ph-slides{position:absolute;inset:0;z-index:0;}
+.ph-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;animation:phSlide 18s infinite;transform:scale(1.07);}
+.ph-slide:nth-child(1){animation-delay:0s;}
+.ph-slide:nth-child(2){animation-delay:6s;}
+.ph-slide:nth-child(3){animation-delay:12s;}
+@keyframes phSlide{0%{opacity:0;transform:scale(1.07)}8%{opacity:1;transform:scale(1.07)}30%{opacity:1;transform:scale(1.0)}40%{opacity:0;transform:scale(1.0)}100%{opacity:0}}
+.ph-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(8,14,26,0.80) 0%,rgba(13,27,46,0.72) 50%,rgba(8,14,26,0.65) 100%);}
+.ph-overlay::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#c8973a,#e6b55a,#c8973a,transparent);animation:gsh 3s infinite;}
+@keyframes gsh{0%{opacity:0.4}50%{opacity:1}100%{opacity:0.4}}
+.page-hero .container{position:relative;z-index:2;}
+.page-hero h1,.page-hero p,.page-hero nav{text-shadow:0 2px 12px rgba(0,0,0,0.35);}
+</style>
 <section class="page-hero">
+  <div class="ph-slides">
+    <div class="ph-slide" style="background-image:url('https://images.unsplash.com/photo-1553532434-5ab5b6b84993?w=1600&q=85&auto=format&fit=crop')"></div>
+    <div class="ph-slide" style="background-image:url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1600&q=85&auto=format&fit=crop')"></div>
+    <div class="ph-slide" style="background-image:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1600&q=85&auto=format&fit=crop')"></div>
+  </div>
+  <div class="ph-overlay"></div>
   <div class="container">
     <nav class="breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><span>Contact Us</span></nav>
     <h1>Get In <em>Touch</em></h1>
@@ -165,8 +185,8 @@
 </main>
 
 <footer class="footer"><div class="container"><div class="footer-grid">
-  <div class="footer-brand"><div class="footer-logo"><div class="footer-logo-icon" style="padding:0;overflow:hidden;background:transparent;"><img src="images/logo.png" alt="Jay Bhadra Real Estate Logo" style="width:100%;height:100%;object-fit:contain;display:block;" onerror="this.style.display='none';this.parentNode.innerHTML='<span>JB</span>'"/></div><div class="footer-logo-text"><strong>Jay Bhadra Real Estate Solutions Pvt. Ltd.</strong><em>Building Dreams, Delivering Trust</em></div></div><p>Nashik's trusted real estate company since 2010. 30+ projects. 500+ families.</p><div class="footer-social"><a href="#" class="soc-icon">f</a><a href="#" class="soc-icon">in</a><a href="https://wa.me/919765711811" class="soc-icon" target="_blank">W</a><a href="#" class="soc-icon">▶</a></div></div>
-  <div class="footer-col"><h5>Quick Links</h5><ul><li><a href="index.html">→ Home</a></li><li><a href="projects.html">→ Projects</a></li><li><a href="search.html">→ Search Properties</a></li><li><a href="about.html">→ About Us</a></li><li><a href="gallery.html">→ Gallery</a></li><li><a href="contact.html">→ Contact</a></li></ul></div>
+  <div class="footer-brand"><div class="footer-logo"><div class="footer-logo-icon" style="padding:0;overflow:hidden;background:linear-gradient(135deg,#c8973a,#8a6420);"><img src="images/Logo.png" alt="JB" style="width:100%;height:100%;object-fit:contain;display:block;" onerror="this.style.display='none';this.parentNode.style.display='flex';this.parentNode.style.alignItems='center';this.parentNode.style.justifyContent='center';this.parentNode.innerHTML='<span style=font-family:Cinzel,serif;font-weight:600;color:#0d1b2e;font-size:1rem;>JB</span>'"/></div><div class="footer-logo-text"><strong>Jay Bhadra Real Estate Solutions Pvt. Ltd.</strong><em>Building Dreams, Delivering Trust</em></div></div><p>Nashik's trusted real estate company since 2010. 30+ projects. 500+ families.</p><div class="footer-social"><a href="#" class="soc-icon">f</a><a href="#" class="soc-icon">in</a><a href="https://wa.me/919765711811" class="soc-icon" target="_blank">W</a><a href="#" class="soc-icon">▶</a></div></div>
+  <div class="footer-col"><h5>Quick Links</h5><ul><li><a href="index.html">→ Home</a></li><li><a href="projects.html">→ Projects</a></li><li><a href="search.html">→ Search Properties</a></li><li><a href="about.html">→ About Us</a></li><li><a href="contact.html">→ Contact</a></li></ul></div>
   <div class="footer-col"><h5>Our Projects</h5><ul><li><a href="project-detail.html?project=jay-bhadra-heights">→ Jay Bhadra Heights</a></li><li><a href="project-detail.html?project=golden-city-residency">→ Golden City Residency</a></li><li><a href="project-detail.html?project=green-valley-bungalows">→ Green Valley Bungalows</a></li></ul></div>
   <div class="footer-col"><h5>Contact Info</h5><div class="footer-ci"><span class="ic">📍</span><span class="tx">Near Swadeshkunj, Golden City, Shri Ram Chowk, Nashik – 422005</span></div><div class="footer-ci"><span class="ic">📞</span><span class="tx"><a href="tel:+919765711811">+91-97657-11811</a></span></div><div class="footer-ci"><span class="ic">✉️</span><span class="tx"><a href="mailto:info@jaybhadrabuilders.com">info@jaybhadrabuilders.com</a></span></div><div class="footer-ci"><span class="ic">⏰</span><span class="tx">Mon–Sat: 9AM–7PM</span></div></div>
 </div></div>
