@@ -5,8 +5,8 @@
 'use strict';
 
 const CONFIG = {
-  whatsapp: '91919765711811',   // UPDATE: Replace with actual WhatsApp number
-  phone: '+91919765711811',     // UPDATE: Replace with actual phone number
+  whatsapp: '919765711811',   // UPDATE: Replace with actual WhatsApp number
+  phone: '+919765711811',     // UPDATE: Replace with actual phone number
 };
 
 const WA_DEFAULT = encodeURIComponent(
