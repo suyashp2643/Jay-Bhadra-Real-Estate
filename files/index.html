@@ -236,314 +236,342 @@
   </div>
 </section>
 
-<!-- ═══ DREAM HOME JOURNEY — UNIQUE INTERACTIVE SECTION ═══ -->
+<!-- ═══ TRUST PULSE — WORLD CLASS ANIMATED SECTION ═══ -->
 <style>
-/* ── JOURNEY SECTION ── */
-.journey{
+/* ─── TRUST PULSE SECTION ─── */
+.tp-section{
   position:relative;overflow:hidden;
-  background:linear-gradient(180deg,#f8f5f0 0%,#faf7f2 50%,#f0ece4 100%);
-  padding:0;
+  background:linear-gradient(160deg,#0a0f1e 0%,#0d1b2e 40%,#0a1628 70%,#060d18 100%);
+  padding:100px 0 80px;
 }
 
-/* Starfield canvas */
-#jbStars{position:absolute;inset:0;z-index:0;}
+/* Animated grid lines */
+.tp-grid{
+  position:absolute;inset:0;z-index:0;
+  background-image:
+    linear-gradient(rgba(200,151,58,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(200,151,58,0.04) 1px,transparent 1px);
+  background-size:60px 60px;
+  animation:tpGridMove 20s linear infinite;
+}
+@keyframes tpGridMove{to{background-position:60px 60px;}}
 
-/* Gold particle burst canvas */
-#jbBurst{position:absolute;inset:0;z-index:1;pointer-events:none;}
+/* Gold particle canvas */
+#tpCanvas{position:absolute;inset:0;z-index:1;pointer-events:none;}
 
-/* Main layout */
-.journey-inner{
-  position:relative;z-index:2;
-  max-width:1200px;margin:0 auto;
-  padding:80px 32px;
+/* Glow orbs */
+.tp-orb{
+  position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;
+  animation:tpOrb 8s ease-in-out infinite alternate;
+}
+.tp-orb-1{width:400px;height:400px;background:rgba(200,151,58,0.08);top:-100px;left:-100px;animation-delay:0s;}
+.tp-orb-2{width:300px;height:300px;background:rgba(30,48,80,0.6);bottom:-80px;right:-80px;animation-delay:3s;}
+.tp-orb-3{width:200px;height:200px;background:rgba(200,151,58,0.06);top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:6s;}
+@keyframes tpOrb{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.3) translate(20px,-20px)}}
+
+.tp-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 32px;}
+
+/* ── TOP LABEL ── */
+.tp-top{text-align:center;margin-bottom:64px;}
+.tp-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.25em;
+  color:rgba(200,151,58,0.7);text-transform:uppercase;margin-bottom:20px;
+}
+.tp-eyebrow::before,.tp-eyebrow::after{content:'';width:40px;height:1px;background:linear-gradient(90deg,transparent,rgba(200,151,58,0.5));}
+.tp-eyebrow::after{transform:scaleX(-1);}
+.tp-main-title{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:clamp(2.2rem,5vw,3.8rem);
+  font-weight:300;color:#fff;line-height:1.1;margin-bottom:0;
+}
+.tp-main-title em{font-style:italic;color:#e6b55a;}
+.tp-main-title strong{font-weight:600;}
+
+/* ── TYPEWRITER STRIP ── */
+.tp-typestrip{
+  margin:28px auto 0;
+  font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.18em;
+  color:rgba(255,255,255,0.35);text-align:center;
+  min-height:24px;
+}
+.tp-typestrip span{color:#e6b55a;}
+
+/* ── HEARTBEAT LINE ── */
+.tp-beat-wrap{margin:40px auto;max-width:800px;position:relative;}
+.tp-beat-label{display:flex;justify-content:space-between;margin-bottom:8px;}
+.tp-beat-lbl{font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.15em;color:rgba(200,151,58,0.5);}
+#tpBeatCanvas{width:100%;height:60px;display:block;}
+.tp-beat-dot{
+  position:absolute;right:0;top:50%;transform:translateY(-50%);
+  width:10px;height:10px;border-radius:50%;
+  background:#e6b55a;box-shadow:0 0 16px #e6b55a,0 0 32px rgba(200,151,58,0.6);
+  animation:tpDotPulse 1s ease-in-out infinite;
+}
+@keyframes tpDotPulse{0%,100%{transform:translateY(-50%) scale(1)}50%{transform:translateY(-50%) scale(1.5)}}
+
+/* ── BIG STATS ── */
+.tp-stats{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:2px;margin:56px 0;
+}
+.tp-stat{
+  position:relative;padding:40px 28px;text-align:center;
+  background:rgba(255,255,255,0.02);
+  border:1px solid rgba(200,151,58,0.08);
+  transition:all .4s;cursor:default;overflow:hidden;
+}
+.tp-stat::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(200,151,58,0.06),transparent);
+  opacity:0;transition:opacity .4s;
+}
+.tp-stat:hover::before{opacity:1;}
+.tp-stat:hover{border-color:rgba(200,151,58,0.3);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.3);}
+.tp-stat-icon{font-size:2rem;margin-bottom:12px;display:block;filter:drop-shadow(0 0 8px rgba(200,151,58,0.3));}
+.tp-stat-num{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:clamp(2.8rem,5vw,4rem);font-weight:600;
+  color:#e6b55a;display:block;line-height:1;
+  text-shadow:0 0 40px rgba(200,151,58,0.3);
+}
+.tp-stat-suffix{font-size:1.8rem;color:rgba(200,151,58,0.6);}
+.tp-stat-label{font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.15em;color:rgba(255,255,255,0.35);margin-top:8px;display:block;text-transform:uppercase;}
+.tp-stat-sub{font-size:0.72rem;color:rgba(255,255,255,0.2);margin-top:4px;display:block;}
+
+/* Divider lines between stats */
+.tp-stat:not(:last-child)::after{
+  content:'';position:absolute;right:0;top:20%;bottom:20%;
+  width:1px;background:linear-gradient(180deg,transparent,rgba(200,151,58,0.2),transparent);
 }
 
-/* Header */
-.jny-header{text-align:center;margin-bottom:64px;}
-.jny-chip{display:inline-flex;align-items:center;gap:8px;padding:6px 18px;border:1px solid rgba(200,151,58,0.4);border-radius:100px;font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.2em;color:rgba(200,151,58,0.8);margin-bottom:20px;background:rgba(200,151,58,0.05);}
-.jny-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:400;color:#0d1b2e;line-height:1.15;margin-bottom:14px;}
-.jny-title em{font-style:italic;color:#e6b55a;}
-.jny-sub{font-size:0.9rem;color:rgba(13,27,46,0.55);max-width:520px;margin:0 auto;}
-
-/* Journey steps — horizontal timeline */
-.jny-steps{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:0;
-  position:relative;
-  margin-bottom:72px;
+/* ── FLOATING TRUST CARDS ── */
+.tp-cards{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:20px;margin-bottom:56px;
 }
-
-/* Connecting line */
-.jny-steps::before{
-  content:'';position:absolute;
-  top:52px;left:12.5%;right:12.5%;
-  height:1px;
-  background:linear-gradient(90deg,transparent,rgba(200,151,58,0.5),rgba(200,151,58,0.9),rgba(200,151,58,0.5),transparent);
-  z-index:0;
-}
-
-.jny-step{
-  position:relative;z-index:1;
-  display:flex;flex-direction:column;align-items:center;
-  padding:0 16px;
-  cursor:pointer;
-  transition:transform .4s cubic-bezier(.34,1.56,.64,1);
-}
-.jny-step:hover{transform:translateY(-8px);}
-.jny-step.active .jny-icon-wrap{background:linear-gradient(135deg,#c8973a,#e6b55a);box-shadow:0 0 40px rgba(200,151,58,0.6);}
-.jny-step.active .jny-step-num{color:#c8973a;}
-.jny-step.active .jny-step-title{color:#0d1b2e;}
-
-/* Icon circle */
-.jny-icon-wrap{
-  width:80px;height:80px;border-radius:50%;
-  background:rgba(255,255,255,0.9);
-  border:1.5px solid rgba(200,151,58,0.4);box-shadow:0 4px 20px rgba(200,151,58,0.12);
-  display:flex;align-items:center;justify-content:center;
-  font-size:2rem;margin-bottom:16px;
+.tp-card{
+  position:relative;border-radius:16px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(200,151,58,0.1);
+  padding:32px 28px;
   transition:all .5s cubic-bezier(.34,1.56,.64,1);
-  position:relative;
+  overflow:hidden;
+  animation:tpFloat linear infinite;
 }
-.jny-icon-wrap::after{
-  content:'';position:absolute;inset:-4px;border-radius:50%;
-  border:1px dashed rgba(200,151,58,0.2);
-  animation:jnyrot 12s linear infinite;
+.tp-card:nth-child(1){animation-duration:6s;animation-delay:0s;}
+.tp-card:nth-child(2){animation-duration:8s;animation-delay:2s;}
+.tp-card:nth-child(3){animation-duration:7s;animation-delay:4s;}
+@keyframes tpFloat{
+  0%,100%{transform:translateY(0px);}
+  50%{transform:translateY(-10px);}
 }
-@keyframes jnyrot{to{transform:rotate(360deg)}}
-.jny-step.active .jny-icon-wrap::after{border-color:rgba(200,151,58,0.6);animation-duration:4s;}
-
-.jny-step-num{font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.15em;color:rgba(13,27,46,0.35);margin-bottom:6px;transition:color .4s;}
-.jny-step-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.05rem;font-weight:600;color:rgba(13,27,46,0.6);text-align:center;margin-bottom:6px;transition:color .4s;line-height:1.3;}
-.jny-step-desc{font-size:0.72rem;color:rgba(13,27,46,0.4);text-align:center;line-height:1.6;transition:color .4s;}
-.jny-step.active .jny-step-desc{color:rgba(13,27,46,0.6);}
-
-/* Detail panel */
-.jny-panel{
-  border:1px solid rgba(200,151,58,0.25);
-  border-radius:20px;
-  background:rgba(255,255,255,0.95);
-  box-shadow:0 8px 48px rgba(13,27,46,0.1);
-  backdrop-filter:blur(12px);
-  padding:48px;
-  display:none;
-  animation:jnyfade .5s ease;
-  position:relative;overflow:hidden;
+.tp-card:hover{
+  background:rgba(255,255,255,0.06);
+  border-color:rgba(200,151,58,0.35);
+  box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 30px rgba(200,151,58,0.1);
+  animation-play-state:paused;
+  transform:translateY(-12px) scale(1.02) !important;
 }
-.jny-panel.show{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
-@keyframes jnyfade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-
-/* Panel glow */
-.jny-panel::before{
-  content:'';position:absolute;top:-60px;right:-60px;
-  width:200px;height:200px;border-radius:50%;
-  background:radial-gradient(circle,rgba(200,151,58,0.15),transparent 70%);
-  pointer-events:none;
+.tp-card-glow{
+  position:absolute;top:-30px;right:-30px;
+  width:120px;height:120px;border-radius:50%;
+  filter:blur(40px);opacity:0.6;
+  transition:opacity .4s;
 }
-
-.jny-panel-icon{font-size:5rem;line-height:1;margin-bottom:16px;display:block;filter:drop-shadow(0 0 20px rgba(200,151,58,0.4));}
-.jny-panel-label{font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.2em;color:#c8973a;margin-bottom:12px;display:block;}
-.jny-panel-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:2rem;font-weight:400;color:#0d1b2e;margin-bottom:16px;line-height:1.2;}
-.jny-panel-title em{font-style:italic;color:#e6b55a;}
-.jny-panel-text{font-size:0.88rem;color:rgba(13,27,46,0.6);line-height:1.8;margin-bottom:28px;}
-
-/* Checklist */
-.jny-checks{display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
-.jny-check{display:flex;align-items:center;gap:12px;font-size:0.82rem;color:rgba(13,27,46,0.7);}
-.jny-check-icon{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#c8973a,#e6b55a);display:flex;align-items:center;justify-content:center;font-size:0.65rem;flex-shrink:0;color:#0d1b2e;font-weight:700;}
-
-/* Visual side */
-.jny-visual{position:relative;height:300px;border-radius:16px;overflow:hidden;}
-.jny-visual-img{width:100%;height:100%;object-fit:cover;border-radius:16px;filter:brightness(0.92);}
-.jny-visual-badge{
-  position:absolute;bottom:20px;left:20px;
-  background:rgba(8,14,26,0.85);backdrop-filter:blur(8px);
-  border:1px solid rgba(200,151,58,0.3);
-  border-radius:12px;padding:12px 18px;
+.tp-card:hover .tp-card-glow{opacity:1;}
+.tp-card-1-glow{background:rgba(200,151,58,0.3);}
+.tp-card-2-glow{background:rgba(26,107,69,0.4);}
+.tp-card-3-glow{background:rgba(30,48,80,0.8);}
+.tp-card-icon{font-size:2.4rem;margin-bottom:16px;display:block;}
+.tp-card-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.25rem;font-weight:600;color:#fff;margin-bottom:8px;}
+.tp-card-text{font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.7;}
+.tp-card-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:16px;padding:5px 12px;border-radius:100px;
+  background:rgba(200,151,58,0.1);border:1px solid rgba(200,151,58,0.25);
+  font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.1em;color:rgba(200,151,58,0.8);
 }
-.jny-visual-badge-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.8rem;font-weight:600;color:#e6b55a;display:block;line-height:1;}
-.jny-visual-badge-lbl{font-size:0.65rem;font-family:'Cinzel',serif;color:rgba(255,255,255,0.5);letter-spacing:0.1em;}
+.tp-card-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#e6b55a;animation:tpDotPulse 1.5s infinite;}
 
-/* Progress bar */
-.jny-progress{margin-top:48px;position:relative;}
-.jny-progress-bar{height:3px;background:rgba(13,27,46,0.1);border-radius:2px;overflow:hidden;}
-.jny-progress-fill{height:100%;background:linear-gradient(90deg,#c8973a,#e6b55a);border-radius:2px;transition:width 1s cubic-bezier(.77,0,.18,1);}
-.jny-progress-labels{display:flex;justify-content:space-between;margin-top:8px;}
-.jny-prog-lbl{font-size:0.6rem;font-family:'Cinzel',serif;color:rgba(13,27,46,0.3);letter-spacing:0.1em;}
-.jny-prog-lbl.on{color:#c8973a;}
+/* ── BOTTOM MARQUEE ── */
+.tp-marquee-wrap{
+  border-top:1px solid rgba(200,151,58,0.1);
+  border-bottom:1px solid rgba(200,151,58,0.1);
+  padding:16px 0;overflow:hidden;margin-bottom:56px;
+}
+.tp-marquee{display:flex;gap:0;animation:tpMarquee 25s linear infinite;width:max-content;}
+.tp-marquee-item{
+  display:flex;align-items:center;gap:12px;
+  padding:0 32px;white-space:nowrap;
+  font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.15em;
+  color:rgba(255,255,255,0.3);
+}
+.tp-marquee-item span{color:rgba(200,151,58,0.7);}
+.tp-marquee-dot{width:4px;height:4px;border-radius:50%;background:rgba(200,151,58,0.4);}
+@keyframes tpMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* CTA */
-.jny-cta{margin-top:56px;text-align:center;position:relative;}
-.jny-cta-text{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.6rem;color:rgba(13,27,46,0.7);margin-bottom:24px;}
-.jny-cta-text strong{color:#0d1b2e;}
-.jny-cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
-.jny-cta-btn-gold{padding:16px 36px;background:linear-gradient(135deg,#c8973a,#e6b55a);color:#0d1b2e;border:none;border-radius:10px;font-family:'Cinzel',serif;font-size:0.72rem;font-weight:600;letter-spacing:0.14em;cursor:pointer;transition:all .25s;text-decoration:none;display:inline-flex;align-items:center;gap:8px;}
-.jny-cta-btn-gold:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(200,151,58,0.4);}
-.jny-cta-btn-outline{padding:16px 32px;background:transparent;color:#0d1b2e;border:1px solid rgba(13,27,46,0.2);border-radius:10px;font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.12em;cursor:pointer;transition:all .25s;text-decoration:none;display:inline-flex;align-items:center;gap:8px;}
-.jny-cta-btn-outline:hover{background:rgba(13,27,46,0.06);color:#0d1b2e;}
+/* ── CTA ── */
+.tp-bottom{text-align:center;}
+.tp-cta-title{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;
+  color:rgba(255,255,255,0.8);margin-bottom:28px;
+}
+.tp-cta-title strong{color:#fff;font-weight:600;}
+.tp-cta-title em{color:#e6b55a;font-style:italic;}
+.tp-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.tp-btn-gold{
+  padding:15px 36px;
+  background:linear-gradient(135deg,#c8973a,#e6b55a);
+  color:#0d1b2e;border:none;border-radius:10px;
+  font-family:'Cinzel',serif;font-size:0.7rem;font-weight:700;
+  letter-spacing:0.14em;cursor:pointer;
+  transition:all .3s;text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;
+  box-shadow:0 4px 20px rgba(200,151,58,0.3);
+}
+.tp-btn-gold:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(200,151,58,0.5);}
+.tp-btn-ghost{
+  padding:15px 32px;
+  background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);
+  border:1px solid rgba(255,255,255,0.12);border-radius:10px;
+  font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.12em;
+  cursor:pointer;transition:all .3s;text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;
+  backdrop-filter:blur(8px);
+}
+.tp-btn-ghost:hover{background:rgba(255,255,255,0.1);color:#fff;border-color:rgba(255,255,255,0.25);}
 
 @media(max-width:900px){
-  .jny-steps{grid-template-columns:repeat(2,1fr);gap:24px;}
-  .jny-steps::before{display:none;}
-  .jny-panel.show{grid-template-columns:1fr;}
-  .jny-visual{height:200px;}
-  .journey-inner{padding:48px 20px;}
+  .tp-stats{grid-template-columns:repeat(2,1fr);}
+  .tp-cards{grid-template-columns:1fr;}
 }
 @media(max-width:500px){
-  .jny-steps{grid-template-columns:repeat(2,1fr);}
-  .jny-cta-btns{flex-direction:column;align-items:center;}
+  .tp-stats{grid-template-columns:repeat(2,1fr);}
+  .tp-inner{padding:0 16px;}
+  .tp-section{padding:60px 0 48px;}
 }
 </style>
 
-<section class="journey">
-  <canvas id="jbStars"></canvas>
-  <canvas id="jbBurst"></canvas>
+<section class="tp-section">
+  <div class="tp-grid"></div>
+  <canvas id="tpCanvas"></canvas>
+  <div class="tp-orb tp-orb-1"></div>
+  <div class="tp-orb tp-orb-2"></div>
+  <div class="tp-orb tp-orb-3"></div>
 
-  <div class="journey-inner">
+  <div class="tp-inner">
 
     <!-- Header -->
-    <div class="jny-header">
-      <div class="jny-chip">✦ Your Property Journey ✦</div>
-      <h2 class="jny-title">From Dream to <em>Dream Home</em><br/>We Are With You Every Step</h2>
-      <p class="jny-sub">16+ years of guiding Nashik families through the most important journey of their lives</p>
-    </div>
-
-    <!-- 4 Steps -->
-    <div class="jny-steps" id="jnySteps">
-
-      <div class="jny-step active" onclick="jnyShow(0)">
-        <div class="jny-icon-wrap">🌱</div>
-        <span class="jny-step-num">STEP 01</span>
-        <div class="jny-step-title">Dream &amp;<br/>Plan</div>
-        <div class="jny-step-desc">Understand your needs &amp; budget</div>
-      </div>
-
-      <div class="jny-step" onclick="jnyShow(1)">
-        <div class="jny-icon-wrap">🔍</div>
-        <span class="jny-step-num">STEP 02</span>
-        <div class="jny-step-title">Search &amp;<br/>Select</div>
-        <div class="jny-step-desc">Find the perfect property</div>
-      </div>
-
-      <div class="jny-step" onclick="jnyShow(2)">
-        <div class="jny-icon-wrap">📋</div>
-        <span class="jny-step-num">STEP 03</span>
-        <div class="jny-step-title">Book &amp;<br/>Finance</div>
-        <div class="jny-step-desc">Paperwork &amp; home loan help</div>
-      </div>
-
-      <div class="jny-step" onclick="jnyShow(3)">
-        <div class="jny-icon-wrap">🔑</div>
-        <span class="jny-step-num">STEP 04</span>
-        <div class="jny-step-title">Move In &amp;<br/>Live Happy</div>
-        <div class="jny-step-desc">Possession &amp; 3-year support</div>
-      </div>
-
-    </div>
-
-    <!-- Progress bar -->
-    <div class="jny-progress">
-      <div class="jny-progress-bar"><div class="jny-progress-fill" id="jnyFill" style="width:25%"></div></div>
-      <div class="jny-progress-labels">
-        <span class="jny-prog-lbl on" id="jpl0">Dream</span>
-        <span class="jny-prog-lbl" id="jpl1">Search</span>
-        <span class="jny-prog-lbl" id="jpl2">Book</span>
-        <span class="jny-prog-lbl" id="jpl3">Move In</span>
+    <div class="tp-top">
+      <div class="tp-eyebrow">Our Legacy in Numbers</div>
+      <h2 class="tp-main-title">
+        <strong>Nashik's Most</strong><br/>
+        <em>Trusted</em> Real Estate Partner
+      </h2>
+      <div class="tp-typestrip" id="tpTypestrip">
+        <span></span>
       </div>
     </div>
 
-    <!-- Detail panels -->
-    <div style="margin-top:48px;">
-
-      <div class="jny-panel show" id="jpanel0">
-        <div>
-          <span class="jny-panel-icon">🌱</span>
-          <span class="jny-panel-label">STEP 01 — DREAM & PLAN</span>
-          <h3 class="jny-panel-title">Every Home Starts<br/>With a <em>Dream</em></h3>
-          <p class="jny-panel-text">Tell us what you imagine — how many rooms, which area, what budget. Our experts listen first, advise second. No pressure, no sales talk.</p>
-          <div class="jny-checks">
-            <div class="jny-check"><div class="jny-check-icon">✓</div>Free consultation — no commitment needed</div>
-            <div class="jny-check"><div class="jny-check-icon">✓</div>We understand your family's needs first</div>
-            <div class="jny-check"><div class="jny-check-icon">✓</div>Budget planning & EMI calculation</div>
-            <div class="jny-check"><div class="jny-check-icon">✓</div>Available 7 days via WhatsApp or call</div>
-          </div>
-          <button onclick="window.open('https://wa.me/919765711811?text=Hi! I want to discuss my property requirements.','_blank')" class="jny-cta-btn-gold">💬 Start Your Journey</button>
-        </div>
-        <div class="jny-visual">
-          <img class="jny-visual-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&q=85&auto=format&fit=crop" alt="Family planning home"/>
-          <div class="jny-visual-badge"><span class="jny-visual-badge-num">Free</span><span class="jny-visual-badge-lbl">CONSULTATION</span></div>
-        </div>
+    <!-- Heartbeat line -->
+    <div class="tp-beat-wrap">
+      <div class="tp-beat-label">
+        <span class="tp-beat-lbl">▶ LIVE TRUST MONITOR</span>
+        <span class="tp-beat-lbl" id="tpBeatLbl">● ACTIVE</span>
       </div>
+      <canvas id="tpBeatCanvas" height="60"></canvas>
+      <div class="tp-beat-dot"></div>
+    </div>
 
-      <div class="jny-panel" id="jpanel1">
-        <div>
-          <span class="jny-panel-icon">🔍</span>
-          <span class="jny-panel-label">STEP 02 — SEARCH & SELECT</span>
-          <h3 class="jny-panel-title">Find Your <em>Perfect</em><br/>Property in Nashik</h3>
-          <p class="jny-panel-text">We show you only properties that match your budget and lifestyle. No wasted visits. Every project is RERA registered and bank approved.</p>
-          <div class="jny-checks">
-            <div class="jny-check"><div class="jny-check-icon">✓</div>30+ verified projects in Nashik</div>
-            <div class="jny-check"><div class="jny-check-icon">✓</div>Free site visits at your convenience</div>
-            <div class="jny-check"><div class="jny-check-icon">✓</div>1BHK to Bungalows — all budgets</div>
-            <div class="jny-check"><div class="jny-check-icon">✓</div>All projects RERA registered</div>
-          </div>
-          <a href="projects.html" class="jny-cta-btn-gold">🏠 Browse All Projects</a>
-        </div>
-        <div class="jny-visual">
-          <img class="jny-visual-img" src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=700&q=85&auto=format&fit=crop" alt="Property search Nashik"/>
-          <div class="jny-visual-badge"><span class="jny-visual-badge-num">30+</span><span class="jny-visual-badge-lbl">VERIFIED PROJECTS</span></div>
-        </div>
+    <!-- Big Stats -->
+    <div class="tp-stats">
+      <div class="tp-stat">
+        <span class="tp-stat-icon">🏗️</span>
+        <span class="tp-stat-num"><span class="tp-counter" data-target="30">0</span><span class="tp-stat-suffix">+</span></span>
+        <span class="tp-stat-label">Projects Completed</span>
+        <span class="tp-stat-sub">Since 2010 in Nashik</span>
       </div>
-
-      <div class="jny-panel" id="jpanel2">
-        <div>
-          <span class="jny-panel-icon">📋</span>
-          <span class="jny-panel-label">STEP 03 — BOOK & FINANCE</span>
-          <h3 class="jny-panel-title">Paperwork Made<br/><em>Simple</em> for You</h3>
-          <p class="jny-panel-text">We handle all registration, documentation and home loan assistance. SBI, HDFC, Bank of Maharashtra — all approved. You just sign.</p>
-          <div class="jny-checks">
-            <div class="jny-check"><div class="jny-check-icon">✓</div>Complete documentation support</div>
-            <div class="jny-check"><div class="jny-check-icon">✓</div>Home loan assistance — SBI, HDFC, BoM</div>
-            <div class="jny-check"><div class="jny-check-icon">✓</div>Transparent pricing — zero hidden costs</div>
-            <div class="jny-check"><div class="jny-check-icon">✓</div>Registration & legal guidance</div>
-          </div>
-          <button onclick="window.open('https://wa.me/919765711811?text=Hi! I need help with home loan and booking.','_blank')" class="jny-cta-btn-gold">🏦 Ask About Home Loan</button>
-        </div>
-        <div class="jny-visual">
-          <img class="jny-visual-img" src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=700&q=85&auto=format&fit=crop" alt="Property documentation"/>
-          <div class="jny-visual-badge"><span class="jny-visual-badge-num">3</span><span class="jny-visual-badge-lbl">BANKS APPROVED</span></div>
-        </div>
+      <div class="tp-stat">
+        <span class="tp-stat-icon">👨‍👩‍👧</span>
+        <span class="tp-stat-num"><span class="tp-counter" data-target="500">0</span><span class="tp-stat-suffix">+</span></span>
+        <span class="tp-stat-label">Happy Families</span>
+        <span class="tp-stat-sub">Across Nashik & beyond</span>
       </div>
-
-      <div class="jny-panel" id="jpanel3">
-        <div>
-          <span class="jny-panel-icon">🔑</span>
-          <span class="jny-panel-label">STEP 04 — MOVE IN & LIVE HAPPY</span>
-          <h3 class="jny-panel-title">Keys in Hand,<br/><em>Dreams</em> Fulfilled</h3>
-          <p class="jny-panel-text">On possession day we hand you the keys and our promise — 3 years of free maintenance support. We stay with you long after you move in.</p>
-          <div class="jny-checks">
-            <div class="jny-check"><div class="jny-check-icon">✓</div>On-time possession — always kept</div>
-            <div class="jny-check"><div class="jny-check-icon">✓</div>3-year free maintenance support</div>
-            <div class="jny-check"><div class="jny-check-icon">✓</div>500+ happy families already living</div>
-            <div class="jny-check"><div class="jny-check-icon">✓</div>We are just a call away, always</div>
-          </div>
-          <button onclick="window.open('https://wa.me/919765711811?text=Hi! I want to start my home buying journey.','_blank')" class="jny-cta-btn-gold">🏠 Begin Your Journey</button>
-        </div>
-        <div class="jny-visual">
-          <img class="jny-visual-img" src="https://images.unsplash.com/photo-1543269664-647163ef2132?w=700&q=85&auto=format&fit=crop" alt="Happy family new home"/>
-          <div class="jny-visual-badge"><span class="jny-visual-badge-num">500+</span><span class="jny-visual-badge-lbl">HAPPY FAMILIES</span></div>
-        </div>
+      <div class="tp-stat">
+        <span class="tp-stat-icon">📅</span>
+        <span class="tp-stat-num"><span class="tp-counter" data-target="16">0</span><span class="tp-stat-suffix">+</span></span>
+        <span class="tp-stat-label">Years of Excellence</span>
+        <span class="tp-stat-sub">Trusted since 2010</span>
       </div>
+      <div class="tp-stat">
+        <span class="tp-stat-icon">🔧</span>
+        <span class="tp-stat-num"><span class="tp-counter" data-target="3">0</span><span class="tp-stat-suffix">-Yr</span></span>
+        <span class="tp-stat-label">Maintenance Support</span>
+        <span class="tp-stat-sub">Free post-possession</span>
+      </div>
+    </div>
 
+    <!-- Floating Trust Cards -->
+    <div class="tp-cards">
+      <div class="tp-card">
+        <div class="tp-card-glow tp-card-1-glow"></div>
+        <span class="tp-card-icon">✅</span>
+        <div class="tp-card-title">RERA Registered</div>
+        <div class="tp-card-text">Every single project is fully RERA compliant under Maharashtra regulations. Complete legal transparency — no surprises, ever.</div>
+        <div class="tp-card-tag">Maharashtra RERA Verified</div>
+      </div>
+      <div class="tp-card">
+        <div class="tp-card-glow tp-card-2-glow"></div>
+        <span class="tp-card-icon">🏦</span>
+        <div class="tp-card-title">Bank Approved</div>
+        <div class="tp-card-text">SBI, HDFC Bank and Bank of Maharashtra have approved all our projects. Get your home loan sanctioned faster with zero hassle.</div>
+        <div class="tp-card-tag">SBI · HDFC · BoM Approved</div>
+      </div>
+      <div class="tp-card">
+        <div class="tp-card-glow tp-card-3-glow"></div>
+        <span class="tp-card-icon">🧭</span>
+        <div class="tp-card-title">Vastu Compliant</div>
+        <div class="tp-card-text">All floor plans designed by expert architects with traditional Vastu principles — ensuring harmony, positivity and prosperity in your home.</div>
+        <div class="tp-card-tag">100% Vastu Certified</div>
+      </div>
+    </div>
+
+    <!-- Marquee -->
+    <div class="tp-marquee-wrap">
+      <div class="tp-marquee">
+        <div class="tp-marquee-item"><span>30+ Projects</span><div class="tp-marquee-dot"></div></div>
+        <div class="tp-marquee-item">500+ Happy Families<div class="tp-marquee-dot"></div></div>
+        <div class="tp-marquee-item"><span>RERA Registered</span><div class="tp-marquee-dot"></div></div>
+        <div class="tp-marquee-item">On-Time Possession<div class="tp-marquee-dot"></div></div>
+        <div class="tp-marquee-item"><span>Bank Approved</span><div class="tp-marquee-dot"></div></div>
+        <div class="tp-marquee-item">3-Year Maintenance<div class="tp-marquee-dot"></div></div>
+        <div class="tp-marquee-item"><span>16+ Years Experience</span><div class="tp-marquee-dot"></div></div>
+        <div class="tp-marquee-item">Vastu Compliant<div class="tp-marquee-dot"></div></div>
+        <div class="tp-marquee-item"><span>Zero Hidden Costs</span><div class="tp-marquee-dot"></div></div>
+        <div class="tp-marquee-item">Nashik's Most Trusted<div class="tp-marquee-dot"></div></div>
+        <!-- duplicate for seamless loop -->
+        <div class="tp-marquee-item"><span>30+ Projects</span><div class="tp-marquee-dot"></div></div>
+        <div class="tp-marquee-item">500+ Happy Families<div class="tp-marquee-dot"></div></div>
+        <div class="tp-marquee-item"><span>RERA Registered</span><div class="tp-marquee-dot"></div></div>
+        <div class="tp-marquee-item">On-Time Possession<div class="tp-marquee-dot"></div></div>
+        <div class="tp-marquee-item"><span>Bank Approved</span><div class="tp-marquee-dot"></div></div>
+        <div class="tp-marquee-item">3-Year Maintenance<div class="tp-marquee-dot"></div></div>
+        <div class="tp-marquee-item"><span>16+ Years Experience</span><div class="tp-marquee-dot"></div></div>
+        <div class="tp-marquee-item">Vastu Compliant<div class="tp-marquee-dot"></div></div>
+        <div class="tp-marquee-item"><span>Zero Hidden Costs</span><div class="tp-marquee-dot"></div></div>
+        <div class="tp-marquee-item">Nashik's Most Trusted<div class="tp-marquee-dot"></div></div>
+      </div>
     </div>
 
     <!-- Bottom CTA -->
-    <div class="jny-cta">
-      <p class="jny-cta-text">Ready to start your journey? <strong>We're here.</strong></p>
-      <div class="jny-cta-btns">
-        <a href="tel:+919765711811" class="jny-cta-btn-gold">📞 Call Now</a>
-        <a href="https://wa.me/919765711811?text=Hi! I want to buy a home in Nashik." target="_blank" class="jny-cta-btn-outline">💬 WhatsApp Us</a>
-        <a href="projects.html" class="jny-cta-btn-outline">🏠 View Projects</a>
+    <div class="tp-bottom">
+      <p class="tp-cta-title">Your dream home is <strong>one call away</strong> —<br/><em>start today.</em></p>
+      <div class="tp-btns">
+        <a href="tel:+919765711811" class="tp-btn-gold">📞 Call +91-97657-11811</a>
+        <a href="https://wa.me/919765711811?text=Hello%20Jay%20Bhadra!%20I%20want%20to%20know%20more." target="_blank" class="tp-btn-ghost">💬 WhatsApp Now</a>
+        <a href="projects.html" class="tp-btn-ghost">🏠 View Projects</a>
       </div>
     </div>
 
@@ -551,78 +579,120 @@
 </section>
 
 <script>
-/* ── Starfield ── */
+/* ══ GOLD PARTICLE RAIN ══ */
 (function(){
-  var c=document.getElementById('jbStars');
+  var c=document.getElementById('tpCanvas');
   if(!c)return;
   var ctx=c.getContext('2d');
-  var stars=[];
-  function resize(){c.width=c.offsetWidth;c.height=c.offsetHeight;stars=[];for(var i=0;i<180;i++)stars.push({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.5+0.3,a:Math.random(),da:0.003+Math.random()*0.006,speed:0.05+Math.random()*0.1});}
-  resize();
-  window.addEventListener('resize',resize);
+  var P=[];
+  function resize(){c.width=c.offsetWidth;c.height=c.offsetHeight;}
+  resize();window.addEventListener('resize',resize);
+  for(var i=0;i<80;i++)P.push({x:Math.random()*window.innerWidth,y:Math.random()*window.innerHeight,size:Math.random()*2+0.5,speed:0.3+Math.random()*0.7,opacity:Math.random()*0.4+0.1,drift:Math.random()*0.5-0.25});
   function draw(){
     ctx.clearRect(0,0,c.width,c.height);
-    stars.forEach(function(s){
-      s.a+=s.da;if(s.a>1||s.a<0)s.da*=-1;
-      s.y-=s.speed;if(s.y<0)s.y=c.height;
-      ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-      ctx.fillStyle='rgba(200,151,58,'+( s.a*0.25).toFixed(2)+')';ctx.fill();
+    P.forEach(function(p){
+      p.y+=p.speed;p.x+=p.drift;
+      if(p.y>c.height){p.y=-5;p.x=Math.random()*c.width;}
+      if(p.x<0||p.x>c.width)p.x=Math.random()*c.width;
+      ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+      ctx.fillStyle='rgba(200,151,58,'+p.opacity+')';ctx.fill();
     });
     requestAnimationFrame(draw);
   }
   draw();
 })();
 
-/* ── Gold burst on step click ── */
+/* ══ HEARTBEAT LINE ══ */
 (function(){
-  var c=document.getElementById('jbBurst');
+  var c=document.getElementById('tpBeatCanvas');
   if(!c)return;
   var ctx=c.getContext('2d');
-  c.width=window.innerWidth;c.height=window.innerHeight;
-  window.addEventListener('resize',function(){c.width=window.innerWidth;c.height=window.innerHeight;});
-  var particles=[];
-  window.jnyBurst=function(x,y){
-    for(var i=0;i<28;i++){
-      var angle=Math.random()*Math.PI*2;
-      var speed=2+Math.random()*5;
-      particles.push({x:x,y:y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed,life:1,size:2+Math.random()*4});
+  var W,H,points=[],offset=0;
+  function resize(){W=c.offsetWidth;c.width=W;H=c.height=60;}
+  resize();window.addEventListener('resize',resize);
+  // Generate heartbeat pattern
+  function heartbeatY(x){
+    var t=((x+offset)%120)/120;
+    if(t<0.3) return H/2-Math.sin(t/0.3*Math.PI)*4;
+    if(t<0.35) return H/2-Math.sin((t-0.3)/0.05*Math.PI)*22;
+    if(t<0.42) return H/2+Math.sin((t-0.35)/0.07*Math.PI)*12;
+    if(t<0.5) return H/2-Math.sin((t-0.42)/0.08*Math.PI)*18;
+    if(t<0.55) return H/2+Math.sin((t-0.5)/0.05*Math.PI)*6;
+    return H/2-Math.sin((t-0.55)/0.45*Math.PI)*3;
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    // Grid
+    ctx.strokeStyle='rgba(200,151,58,0.06)';ctx.lineWidth=1;
+    for(var y=0;y<=H;y+=H/3){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
+    // Beat line
+    ctx.beginPath();ctx.strokeStyle='rgba(200,151,58,0.7)';ctx.lineWidth=1.5;
+    ctx.shadowColor='rgba(200,151,58,0.5)';ctx.shadowBlur=6;
+    for(var x=0;x<W;x++){var y2=heartbeatY(x);if(x===0)ctx.moveTo(x,y2);else ctx.lineTo(x,y2);}
+    ctx.stroke();ctx.shadowBlur=0;
+    // Glow fill
+    var grad=ctx.createLinearGradient(0,0,0,H);
+    grad.addColorStop(0,'rgba(200,151,58,0.12)');grad.addColorStop(1,'rgba(200,151,58,0)');
+    ctx.beginPath();ctx.moveTo(0,H);
+    for(var x=0;x<W;x++){ctx.lineTo(x,heartbeatY(x));}
+    ctx.lineTo(W,H);ctx.closePath();ctx.fillStyle=grad;ctx.fill();
+    offset+=0.8;
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ══ TYPEWRITER ══ */
+(function(){
+  var el=document.getElementById('tpTypestrip');
+  if(!el)return;
+  var msgs=[
+    '"Building homes, creating families" — Our Promise Since 2010',
+    'Every brick laid with honesty. Every possession on time.',
+    'From ₹15 Lakh to ₹65 Lakh+ — dream homes for every family',
+    '500 families trust us. You can too.',
+    'RERA Registered · Bank Approved · Vastu Compliant',
+    'Nashik\'s most trusted real estate name since 2010'
+  ];
+  var mi=0,ci=0,typing=true,wait=0;
+  var sp=el.querySelector('span');
+  setInterval(function(){
+    if(wait>0){wait--;return;}
+    if(typing){
+      if(ci<=msgs[mi].length){sp.textContent=msgs[mi].slice(0,ci++);} 
+      else{typing=false;wait=60;}
+    } else {
+      if(ci>0){sp.textContent=msgs[mi].slice(0,--ci);}
+      else{typing=true;mi=(mi+1)%msgs.length;wait=20;}
     }
-  };
-  function draw(){
-    ctx.clearRect(0,0,c.width,c.height);
-    particles=particles.filter(function(p){return p.life>0;});
-    particles.forEach(function(p){
-      p.x+=p.vx;p.y+=p.vy;p.vy+=0.12;p.life-=0.025;
-      ctx.beginPath();ctx.arc(p.x,p.y,p.size*p.life,0,Math.PI*2);
-      ctx.fillStyle='rgba(200,151,58,'+p.life.toFixed(2)+')';ctx.fill();
-    });
-    requestAnimationFrame(draw);
-  }
-  draw();
+  },40);
 })();
 
-/* ── Journey steps ── */
-var jnyActive=0;
-var jnyAuto;
-function jnyShow(idx){
-  jnyActive=idx;
-  // Steps
-  document.querySelectorAll('.jny-step').forEach(function(s,i){s.classList.toggle('active',i===idx);});
-  // Panels
-  document.querySelectorAll('.jny-panel').forEach(function(p,i){p.classList.toggle('show',i===idx);});
-  // Progress
-  var widths=['25%','50%','75%','100%'];
-  document.getElementById('jnyFill').style.width=widths[idx];
-  [0,1,2,3].forEach(function(i){document.getElementById('jpl'+i).classList.toggle('on',i<=idx);});
-  // Burst effect
-  var step=document.querySelectorAll('.jny-step')[idx];
-  if(step){var r=step.getBoundingClientRect();window.jnyBurst&&window.jnyBurst(r.left+r.width/2,r.top+r.height/2);}
-  // Reset timer
-  clearInterval(jnyAuto);
-  jnyAuto=setInterval(function(){jnyShow((jnyActive+1)%4);},5000);
-}
-jnyAuto=setInterval(function(){jnyShow((jnyActive+1)%4);},5000);
+/* ══ SCROLL COUNTER ══ */
+(function(){
+  var done=false;
+  var obs=new IntersectionObserver(function(entries){
+    if(done||!entries[0].isIntersecting)return;
+    done=true;
+    document.querySelectorAll('.tp-counter').forEach(function(el){
+      var target=parseInt(el.getAttribute('data-target'));
+      var start=0,dur=2000,startTime=null;
+      function step(ts){
+        if(!startTime)startTime=ts;
+        var progress=Math.min((ts-startTime)/dur,1);
+        var ease=1-Math.pow(1-progress,3);
+        el.textContent=Math.floor(ease*target);
+        if(progress<1)requestAnimationFrame(step);
+        else el.textContent=target;
+      }
+      requestAnimationFrame(step);
+    });
+  },{threshold:0.3});
+  var sec=document.querySelector('.tp-section');
+  if(sec)obs.observe(sec);
+})();
 </script>
+
 
 <!-- WHY CHOOSE US — 6 CARD GRID -->
 <section class="section" style="background:#f7f8fa;">
