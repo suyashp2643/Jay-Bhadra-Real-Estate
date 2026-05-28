@@ -182,7 +182,7 @@
 
   <div class="container">
     <div class="hero-inner">
-      <div class="hero-eyebrow">Nashik's New Real Estate Standard — 2025</div>
+      <div class="hero-eyebrow">Nashik's New Real Estate Standard — 2026</div>
       <h1>A Fresh Start.<br/><em>Real Homes.</em><br/>Nashik.</h1>
       <p class="hero-sub">We are just beginning — and we are doing it right. Honest prices, quality construction, and a team that puts your family first.</p>
       <div class="hero-actions">
@@ -201,10 +201,10 @@
         </div>
         <div class="hero-stat">
           <span class="n" data-counter="3" data-suffix="-Yr">0</span>
-          <span class="l">Free Maintenance</span>
+          <span class="l">Maintenance Support</span>
         </div>
         <div class="hero-stat">
-          <span class="n">2025</span>
+          <span class="n">2026</span>
           <span class="l">Launched in Nashik</span>
         </div>
       </div>
@@ -226,10 +226,10 @@
       </div>
       <div class="stat-item fade-up stagger-2" data-icon="📅">
         <span class="stat-number" data-counter="3" data-suffix="-Yr">0</span>
-        <span class="stat-label">Free Maintenance</span>
+        <span class="stat-label">Maintenance Support</span>
       </div>
       <div class="stat-item fade-up stagger-3" data-icon="🔧">
-        <span class="stat-number">2025</span>
+        <span class="stat-number">2026</span>
         <span class="stat-label">Founded in Nashik</span>
       </div>
     </div>
@@ -353,8 +353,8 @@
 .pw-card-3{grid-column:span 3;}
 .pw-card-4{grid-column:span 4;}
 .pw-card-5{grid-column:span 3;}
-.pw-card-6{grid-column:span 4;}/* wide bottom */
-.pw-card-7{grid-column:span 4;}
+.pw-card-6{grid-column:span 5;}/* wide bottom */
+.pw-card-7{grid-column:span 3;}
 .pw-card-8{grid-column:span 4;}
 
 /* Gold accent card */
@@ -524,7 +524,7 @@
         <div class="pw-list">
           <div class="pw-list-item"><div class="pw-list-check">✓</div>Price told upfront — zero hidden costs, ever</div>
           <div class="pw-list-item"><div class="pw-list-check">✓</div>Possession on the date we promised — always</div>
-          <div class="pw-list-item"><div class="pw-list-check">✓</div>Free maintenance support after you move in</div>
+          <div class="pw-list-item"><div class="pw-list-check">✓</div>Maintenance support after you move in</div>
           <div class="pw-list-item"><div class="pw-list-check">✓</div>We pick up every call, reply to every message</div>
         </div>
         <div class="pw-pill"><span class="pw-pill-dot"></span>Signed by Mr. Santosh Fatangare — Founder</div>
@@ -554,17 +554,11 @@
         <div class="pw-card-text" style="margin-top:10px;">What we quote is what you pay. No hidden charges on registration, maintenance, or parking.</div>
       </div>
 
-      <!-- Card 5 — Bank Approved -->
-      <div class="pw-card pw-card-5 dark">
-        <span class="pw-icon">🏦</span>
-        <div class="pw-card-title">Bank<br/><em>Approved</em></div>
-        <div class="pw-card-text">SBI · HDFC · Bank of Maharashtra. Home loan sanctioned fast.</div>
-      </div>
 
-      <!-- Card 6 — Maintenance -->
+      <!-- Card 6 — Maintenance Support -->
       <div class="pw-card pw-card-6">
         <span class="pw-icon">🔧</span>
-        <div class="pw-card-title">Free Maintenance<br/><em>Support</em></div>
+        <div class="pw-card-title">Maintenance<br/><em>Support</em></div>
         <div class="pw-card-text">After possession, we stay with you — structural, plumbing, electrical — fully covered, free of cost.</div>
         <div class="pw-ticker">
           <div class="pw-ticker-inner">
@@ -744,13 +738,20 @@
   <div class="container">
     <div class="about-snap">
       <div class="about-snap-img-wrap fade-up">
-        <div class="about-snap-img-box">🏢</div>
-        <div class="about-badge"><span class="big">2025</span><span class="small">New Chapter<br/>Nashik</span></div>
+        <div class="about-snap-img-box" style="padding:0;overflow:hidden;border-radius:var(--r-lg);background:transparent;">
+        <img
+          src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=90&auto=format&fit=crop"
+          alt="Jay Bhadra Real Estate Nashik"
+          loading="lazy"
+          style="width:100%;height:100%;object-fit:cover;display:block;border-radius:var(--r-lg);"
+          onerror="this.style.display='none';this.parentNode.innerHTML='🏢'"/>
+      </div>
+        <div class="about-badge"><span class="big">2026</span><span class="small">New Chapter<br/>Nashik</span></div>
       </div>
       <div class="about-content fade-up stagger-1">
         <div class="section-header">
           <span class="label">Our Story</span>
-          <h2>A Fresh Start for<br/>Nashik Families in <em>2025</em></h2>
+          <h2>A Fresh Start for<br/>Nashik Families in <em>2026</em></h2>
           <div class="gold-line left"></div>
         </div>
         <p>Jay Bhadra Real Estate Solutions Pvt. Ltd. is Nashik's newest real estate company — founded with one clear mission: give every Nashik family access to quality homes at honest prices. We are starting fresh, building right, and growing with you.</p>
@@ -954,7 +955,7 @@
 'use strict';
 var OPEN=false,STARTED=false;
 function scanPageProjects(){var found=[];document.querySelectorAll('.project-card-v2').forEach(function(card){var name=(card.querySelector('.pcard-title')||{}).textContent||'';var loc=(card.querySelector('.pcard-loc')||{}).textContent||'';var price=(card.querySelector('.pcard-price')||{}).textContent||'';var info=(card.querySelector('.pcard-info')||{}).textContent||'';var tags=[];card.querySelectorAll('.pcard-tag').forEach(function(t){tags.push(t.textContent.trim());});var status=card.getAttribute('data-filter')||'';var st=status.includes('ongoing')?'ongoing':status.includes('completed')?'completed':'upcoming';if(name.trim())found.push({name:name.trim(),loc:loc.replace('📍','').trim(),price:price.replace('onwards','').trim(),types:tags,status:st,info:info.trim()});});document.querySelectorAll('.project-card').forEach(function(card){var name=(card.querySelector('.card-title')||{}).textContent||'';var loc=(card.querySelector('.card-meta')||{}).textContent||'';var price=(card.querySelector('.card-price')||{}).textContent||'';var tags=[];card.querySelectorAll('.card-tag').forEach(function(t){tags.push(t.textContent.trim());});var badge=(card.querySelector('[class*="status-"]')||{}).textContent||'ongoing';var st=badge.toLowerCase().includes('ongoing')?'ongoing':badge.toLowerCase().includes('completed')?'completed':'upcoming';if(name.trim())found.push({name:name.trim(),loc:loc.replace('📍','').trim(),price:price.replace('onwards','').trim(),types:tags,status:st,info:''});});return found;}
-var BASE=[{name:'Jay Bhadra Heights',loc:'Near Shri Ram Chowk, Nashik',status:'ongoing',types:['1BHK','2BHK'],price:'₹28 Lakh+',info:'RCC structure, RERA registered, bank approved. Possession Dec 2025.'},{name:'Golden City Residency',loc:'Golden City Area, Nashik',status:'completed',types:['1BHK','2BHK','3BHK'],price:'₹22 Lakh+',info:'Ready to move in. Handed over 2022.'},{name:'Shri Ram Apartments',loc:'Shri Ram Chowk, Nashik',status:'completed',types:['2BHK','3BHK'],price:'₹35 Lakh+',info:'Spacious flats near temple. Ready to move in.'},{name:'Jay Bhadra Commercial Hub',loc:'Main Road, Nashik',status:'ongoing',types:['Shop','Office'],price:'₹15 Lakh+',info:'Commercial shops and offices. Possession Mar 2026.'},{name:'Green Valley Bungalows',loc:'Nashik Outskirts',status:'upcoming',types:['Bungalow'],price:'₹65 Lakh+',info:'Premium gated community bungalows. Pre-booking open.'},{name:'Fatangare Nagar Phase 2',loc:'Fatangare Nagar, Nashik',status:'upcoming',types:['1BHK','2BHK'],price:'₹20 Lakh+',info:'Affordable flats. Pre-launch bookings open.'}];
+var BASE=[{name:'Jay Bhadra Heights',loc:'Near Shri Ram Chowk, Nashik',status:'ongoing',types:['1BHK','2BHK'],price:'₹28 Lakh+',info:'RCC structure, RERA registered, bank approved.'},{name:'Golden City Residency',loc:'Golden City Area, Nashik',status:'completed',types:['1BHK','2BHK','3BHK'],price:'₹22 Lakh+',info:'Ready to move in. Handed over 2022.'},{name:'Shri Ram Apartments',loc:'Shri Ram Chowk, Nashik',status:'completed',types:['2BHK','3BHK'],price:'₹35 Lakh+',info:'Spacious flats near temple. Ready to move in.'},{name:'Jay Bhadra Commercial Hub',loc:'Main Road, Nashik',status:'ongoing',types:['Shop','Office'],price:'₹15 Lakh+',info:'Commercial shops and offices. Possession Mar 2026.'},{name:'Green Valley Bungalows',loc:'Nashik Outskirts',status:'upcoming',types:['Bungalow'],price:'₹65 Lakh+',info:'Premium gated community bungalows. Pre-booking open.'},{name:'Fatangare Nagar Phase 2',loc:'Fatangare Nagar, Nashik',status:'upcoming',types:['1BHK','2BHK'],price:'₹20 Lakh+',info:'Affordable flats. Pre-launch bookings open.'}];
 function getP(){var live=scanPageProjects();if(live.length===0)return BASE;BASE.forEach(function(bp){var ex=live.some(function(lp){return lp.name.toLowerCase().includes(bp.name.toLowerCase().split(' ')[2]||bp.name.toLowerCase().split(' ')[0]);});if(!ex)live.push(bp);});return live;}
 var CO={phone:'+91-97657-11811',wa:'919765711811',email:'info@jaybhadrabuilders.com',address:'Near Swadeshkunj, Golden City, Shri Ram Chowk, Nashik – 422005',hours:'Mon–Sat 9AM–7PM, Sunday by appointment',director:'Mr. Santosh Ramesh Fatangare',founded:'2010'};
 function getReply(msg){var m=msg.toLowerCase().trim();var PROJ=getP();
