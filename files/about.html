@@ -496,32 +496,301 @@
   </div>
 </section>
 
-<!-- TIMELINE -->
-<section class="section">
-  <div class="container">
-    <div class="section-header fade-up"><span class="label">Our Journey</span><h2>Milestones &amp; <em>Achievements</em></h2><div class="gold-line"></div></div>
-    <div style="max-width:680px;margin:0 auto;">
-      <div class="timeline fade-up">
-        <div class="timeline-item"><div class="timeline-year">2010</div><div class="timeline-title">🏗️ Jay Bhadra Builders Established</div><div class="timeline-desc">Mr. Santosh Ramesh Fatangare registers Jay Bhadra Real Estate Solutions and launches the first 6 residential and commercial projects in Nashik.</div></div>
-        <div class="timeline-item"><div class="timeline-year">2013</div><div class="timeline-title">🏘️ First Major Project Delivered</div><div class="timeline-desc">Successfully handed over the first 20-unit residential complex on time, earning glowing testimonials and repeat business.</div></div>
-        <div class="timeline-item"><div class="timeline-year">2016</div><div class="timeline-title">📈 10 Projects Milestone</div><div class="timeline-desc">Expanded the team to include dedicated architects, site engineers, and a customer care division. First commercial project launched.</div></div>
-        <div class="timeline-item"><div class="timeline-year">2019</div><div class="timeline-title">⭐ 200+ Families Milestone</div><div class="timeline-desc">Introduced the industry-first 3-Year Maintenance Support program for all completed projects, setting a new benchmark in Sangamner real estate.</div></div>
-        <div class="timeline-item"><div class="timeline-year">2022</div><div class="timeline-title">🏆 500+ Families · RERA Compliance</div><div class="timeline-desc">Completed Golden City Residency — our largest project with 60+ units. All new projects fully RERA-registered.</div></div>
-        <div class="timeline-item"><div class="timeline-year">2024</div><div class="timeline-title">🚀 Premium &amp; Commercial Expansion</div><div class="timeline-desc">Launched Jay Bhadra Heights and Commercial Hub simultaneously. Announced Green Valley Bungalows — first premium bungalow township project.</div></div>
+<!-- ═══ ROADMAP + PEOPLE — UNIQUE REDESIGN ═══ -->
+<style>
+/* ══ ROADMAP SECTION ══ */
+.rm-section{
+  position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#0a0f1e 0%,#0d1b2e 50%,#0a1222 100%);
+  padding:100px 0;
+}
+.rm-section::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(200,151,58,0.05) 1px,transparent 1px);
+  background-size:40px 40px;pointer-events:none;
+}
+/* Glow orb */
+.rm-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(200,151,58,0.07),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
+
+.rm-inner{max-width:1100px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+
+/* Header */
+.rm-header{text-align:center;margin-bottom:72px;}
+.rm-chip{display:inline-flex;align-items:center;gap:8px;padding:6px 18px;border-radius:100px;background:rgba(200,151,58,0.1);border:1px solid rgba(200,151,58,0.3);font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.2em;color:#e6b55a;margin-bottom:20px;}
+.rm-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:#fff;line-height:1.15;}
+.rm-title em{font-style:italic;color:#e6b55a;}
+.rm-sub{font-size:0.88rem;color:rgba(255,255,255,0.35);margin-top:12px;}
+
+/* Horizontal scroll cards */
+.rm-track{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.rm-card{
+  position:relative;border-radius:20px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(200,151,58,0.1);
+  padding:36px 28px 32px;
+  overflow:hidden;
+  transition:all .5s cubic-bezier(.34,1.56,.64,1);
+  cursor:default;
+}
+.rm-card:hover{
+  background:rgba(255,255,255,0.06);
+  border-color:rgba(200,151,58,0.35);
+  transform:translateY(-8px);
+  box-shadow:0 24px 60px rgba(0,0,0,0.4),0 0 40px rgba(200,151,58,0.08);
+}
+
+/* Card top glow */
+.rm-card-glow{
+  position:absolute;top:-40px;left:50%;transform:translateX(-50%);
+  width:150px;height:80px;border-radius:50%;
+  filter:blur(30px);opacity:0;transition:opacity .4s;
+}
+.rm-card:hover .rm-card-glow{opacity:1;}
+.rm-card:nth-child(1) .rm-card-glow{background:rgba(200,151,58,0.4);}
+.rm-card:nth-child(2) .rm-card-glow{background:rgba(26,107,69,0.5);}
+.rm-card:nth-child(3) .rm-card-glow{background:rgba(30,80,180,0.4);}
+.rm-card:nth-child(4) .rm-card-glow{background:rgba(200,151,58,0.4);}
+.rm-card:nth-child(5) .rm-card-glow{background:rgba(180,30,80,0.3);}
+.rm-card:nth-child(6) .rm-card-glow{background:rgba(80,30,180,0.4);}
+
+/* Year badge */
+.rm-year{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:64px;height:64px;border-radius:50%;
+  background:linear-gradient(135deg,rgba(200,151,58,0.15),rgba(200,151,58,0.05));
+  border:1.5px solid rgba(200,151,58,0.3);
+  font-family:'Cinzel',serif;font-size:0.8rem;font-weight:600;
+  color:#e6b55a;margin-bottom:20px;
+  transition:all .4s;
+}
+.rm-card:hover .rm-year{background:linear-gradient(135deg,#c8973a,#e6b55a);color:#0d1b2e;border-color:transparent;box-shadow:0 4px 16px rgba(200,151,58,0.4);}
+
+.rm-card-icon{font-size:1.8rem;margin-bottom:12px;display:block;line-height:1;}
+.rm-card-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.15rem;font-weight:600;color:#fff;margin-bottom:10px;line-height:1.3;}
+.rm-card-desc{font-size:0.8rem;color:rgba(255,255,255,0.4);line-height:1.75;}
+.rm-card-tag{display:inline-flex;margin-top:16px;padding:4px 12px;border-radius:100px;background:rgba(200,151,58,0.08);border:1px solid rgba(200,151,58,0.2);font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.1em;color:rgba(200,151,58,0.7);}
+
+/* Future card */
+.rm-card.future{border-style:dashed;border-color:rgba(200,151,58,0.2);}
+.rm-card.future .rm-year{border-style:dashed;color:rgba(200,151,58,0.5);}
+
+/* ══ PEOPLE SECTION ══ */
+.ppl-section{
+  position:relative;overflow:hidden;
+  background:linear-gradient(180deg,#faf7f2 0%,#f3ede4 100%);
+  padding:100px 0;
+}
+/* Subtle dot pattern */
+.ppl-section::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(200,151,58,0.07) 1px,transparent 1px);
+  background-size:28px 28px;pointer-events:none;
+}
+
+.ppl-inner{max-width:1100px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+
+/* Header */
+.ppl-header{text-align:center;margin-bottom:64px;}
+.ppl-chip{display:inline-flex;align-items:center;gap:8px;padding:6px 18px;border-radius:100px;background:rgba(200,151,58,0.1);border:1px solid rgba(200,151,58,0.3);font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.2em;color:#c8973a;margin-bottom:20px;}
+.ppl-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:#0d1b2e;line-height:1.15;}
+.ppl-title em{font-style:italic;color:#c8973a;}
+.ppl-sub{font-size:0.88rem;color:rgba(13,27,46,0.45);margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto;}
+
+/* People grid */
+.ppl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+
+.ppl-card{
+  position:relative;border-radius:20px;overflow:hidden;
+  background:#fff;
+  border:1px solid rgba(200,151,58,0.12);
+  box-shadow:0 4px 24px rgba(13,27,46,0.07);
+  transition:all .45s cubic-bezier(.34,1.56,.64,1);
+}
+.ppl-card:hover{transform:translateY(-10px);box-shadow:0 20px 56px rgba(13,27,46,0.14);border-color:rgba(200,151,58,0.35);}
+
+/* Top color bar */
+.ppl-card-bar{height:4px;background:linear-gradient(90deg,#c8973a,#e6b55a);}
+.ppl-card:nth-child(2) .ppl-card-bar{background:linear-gradient(90deg,#1a6b45,#2a9b65);}
+.ppl-card:nth-child(3) .ppl-card-bar{background:linear-gradient(90deg,#1e3050,#3a5a80);}
+.ppl-card:nth-child(4) .ppl-card-bar{background:linear-gradient(90deg,#6b2a8a,#9b4abf);}
+
+/* Avatar area */
+.ppl-avatar-wrap{
+  height:180px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f8f4ef,#f0e8dc);
+  position:relative;overflow:hidden;
+}
+.ppl-avatar-wrap::after{
+  content:'';position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);
+  width:80px;height:40px;border-radius:50%;
+  background:rgba(200,151,58,0.1);filter:blur(10px);
+}
+.ppl-avatar-emoji{font-size:4rem;line-height:1;position:relative;z-index:1;transition:transform .4s cubic-bezier(.34,1.56,.64,1);}
+.ppl-card:hover .ppl-avatar-emoji{transform:scale(1.15) translateY(-4px);}
+
+/* Info area */
+.ppl-card-body{padding:20px 20px 24px;}
+.ppl-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.05rem;font-weight:600;color:#0d1b2e;margin-bottom:4px;}
+.ppl-role{font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.14em;color:#c8973a;text-transform:uppercase;display:block;margin-bottom:10px;}
+.ppl-desc{font-size:0.75rem;color:rgba(13,27,46,0.55);line-height:1.7;}
+
+/* Hover reveal tag */
+.ppl-tag{
+  display:inline-flex;align-items:center;gap:5px;
+  margin-top:12px;padding:4px 12px;border-radius:100px;
+  background:linear-gradient(135deg,rgba(200,151,58,0.08),rgba(200,151,58,0.04));
+  border:1px solid rgba(200,151,58,0.2);
+  font-family:'Cinzel',serif;font-size:0.52rem;letter-spacing:0.1em;color:#c8973a;
+  opacity:0;transform:translateY(8px);transition:all .35s .1s;
+}
+.ppl-card:hover .ppl-tag{opacity:1;transform:translateY(0);}
+.ppl-tag::before{content:'';width:5px;height:5px;border-radius:50%;background:#c8973a;animation:tagPulse 1.5s infinite;}
+@keyframes tagPulse{0%,100%{opacity:1}50%{opacity:0.3}}
+
+@media(max-width:900px){
+  .rm-track{grid-template-columns:repeat(2,1fr);}
+  .ppl-grid{grid-template-columns:repeat(2,1fr);}
+  .rm-inner,.ppl-inner{padding:0 20px;}
+  .rm-section,.ppl-section{padding:64px 0;}
+}
+@media(max-width:500px){
+  .rm-track{grid-template-columns:1fr;}
+  .ppl-grid{grid-template-columns:repeat(2,1fr);}
+}
+</style>
+
+<!-- ══ ROADMAP ══ -->
+<section class="rm-section">
+  <div class="rm-glow"></div>
+  <div class="rm-inner">
+
+    <div class="rm-header">
+      <div class="rm-chip">✦ Where We Are Going</div>
+      <h2 class="rm-title">Our Road Ahead —<br/><em>The Jay Bhadra Promise</em></h2>
+      <p class="rm-sub">We are new, ambitious, and fully committed. Here is exactly where we stand and where we are headed.</p>
+    </div>
+
+    <div class="rm-track">
+
+      <div class="rm-card">
+        <div class="rm-card-glow"></div>
+        <div class="rm-year">NOW</div>
+        <span class="rm-card-icon">🚀</span>
+        <div class="rm-card-title">We Launch in Nashik</div>
+        <div class="rm-card-desc">Jay Bhadra Real Estate Solutions officially starts operations in 2026 with 6 active projects across Nashik — residential, commercial, and premium bungalows.</div>
+        <span class="rm-card-tag">✅ Active Right Now</span>
       </div>
+
+      <div class="rm-card">
+        <div class="rm-card-glow"></div>
+        <div class="rm-year">2026</div>
+        <span class="rm-card-icon">🏗️</span>
+        <div class="rm-card-title">First Possessions</div>
+        <div class="rm-card-desc">Jay Bhadra Heights and Commercial Hub reach possession. First families receive their keys on time — exactly as promised. Zero delays, zero surprises.</div>
+        <span class="rm-card-tag">🏠 Keys Handover</span>
+      </div>
+
+      <div class="rm-card">
+        <div class="rm-card-glow"></div>
+        <div class="rm-year">2027</div>
+        <span class="rm-card-icon">🌱</span>
+        <div class="rm-card-title">Green Valley Delivered</div>
+        <div class="rm-card-desc">Green Valley Bungalows — our premium township — handed over. Nashik's first fully sustainable gated community with garden spaces and Vastu design.</div>
+        <span class="rm-card-tag">🏡 Premium Township</span>
+      </div>
+
+      <div class="rm-card future">
+        <div class="rm-card-glow"></div>
+        <div class="rm-year">2028</div>
+        <span class="rm-card-icon">📈</span>
+        <div class="rm-card-title">Expand to 15+ Projects</div>
+        <div class="rm-card-desc">With the trust built from our first families, we expand across more Nashik locations — bringing our zero-hidden-cost promise to every neighbourhood.</div>
+        <span class="rm-card-tag">🎯 Our Commitment</span>
+      </div>
+
+      <div class="rm-card future">
+        <div class="rm-card-glow"></div>
+        <div class="rm-year">2029</div>
+        <span class="rm-card-icon">🏆</span>
+        <div class="rm-card-title">500 Families Milestone</div>
+        <div class="rm-card-desc">Our goal — 500 Nashik families living in Jay Bhadra homes, each one built with honest pricing, on-time delivery, and free maintenance support.</div>
+        <span class="rm-card-tag">💛 Our Dream Goal</span>
+      </div>
+
+      <div class="rm-card future">
+        <div class="rm-card-glow"></div>
+        <div class="rm-year">2030</div>
+        <span class="rm-card-icon">🌟</span>
+        <div class="rm-card-title">Maharashtra's Trusted Name</div>
+        <div class="rm-card-desc">A company recognised across Maharashtra for doing real estate the right way — transparently, honestly, with care for every family we serve.</div>
+        <span class="rm-card-tag">🚩 The Vision</span>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- TEAM -->
-<section class="section bg-cream-2">
-  <div class="container">
-    <div class="section-header fade-up"><span class="label">The People Behind The Projects</span><h2>Meet Our <em>Team</em></h2><div class="gold-line"></div><p>Experienced professionals who bring your dream home to life with skill, care, and dedication.</p></div>
-    <div class="team-grid">
-      <div class="team-card fade-up"><div class="team-av">👨‍💼</div><div class="team-info"><h4>Santosh R. Fatangare</h4><span class="team-role">Founder & Director</span><p>16+ years in real estate. Civil engineering background with expertise in project management and client relations.</p></div></div>
-      <div class="team-card fade-up stagger-1"><div class="team-av">👷</div><div class="team-info"><h4>Rahul Sharma</h4><span class="team-role">Lead Civil Engineer</span><p>16+ years experience in RCC structure design, quality control, and site supervision across 20+ projects.</p></div></div>
-      <div class="team-card fade-up stagger-2"><div class="team-av">🧑‍🎨</div><div class="team-info"><h4>Priya Desai</h4><span class="team-role">Senior Architect</span><p>Award-winning designer specializing in modern, Vastu-compliant floor plans that maximize space and natural light.</p></div></div>
-      <div class="team-card fade-up stagger-3"><div class="team-av">🤝</div><div class="team-info"><h4>Nilesh Kulkarni</h4><span class="team-role">Customer Relations Head</span><p>Dedicated to ensuring every customer's journey — from enquiry to possession — is smooth and stress-free.</p></div></div>
+<!-- ══ PEOPLE ══ -->
+<section class="ppl-section">
+  <div class="ppl-inner">
+
+    <div class="ppl-header fade-up">
+      <div class="ppl-chip">✦ The People Behind Every Project</div>
+      <h2 class="ppl-title">Small Team.<br/><em>Big Commitment.</em></h2>
+      <p class="ppl-sub">A young, passionate team personally dedicated to making your home-buying experience honest, smooth and memorable.</p>
+    </div>
+
+    <div class="ppl-grid">
+
+      <div class="ppl-card fade-up">
+        <div class="ppl-card-bar"></div>
+        <div class="ppl-avatar-wrap"><span class="ppl-avatar-emoji">👨‍💼</span></div>
+        <div class="ppl-card-body">
+          <div class="ppl-name">Santosh R. Fatangare</div>
+          <span class="ppl-role">Founder &amp; Director</span>
+          <p class="ppl-desc">Personally involved in every project. His one rule — never promise something you can't deliver.</p>
+          <div class="ppl-tag">Personally Oversees Every Project</div>
+        </div>
+      </div>
+
+      <div class="ppl-card fade-up stagger-1">
+        <div class="ppl-card-bar"></div>
+        <div class="ppl-avatar-wrap"><span class="ppl-avatar-emoji">👷</span></div>
+        <div class="ppl-card-body">
+          <div class="ppl-name">Site Engineering Team</div>
+          <span class="ppl-role">Construction &amp; Quality</span>
+          <p class="ppl-desc">Certified civil engineers who inspect every floor, every beam, every finish — before and after possession.</p>
+          <div class="ppl-tag">IS-Certified Materials Only</div>
+        </div>
+      </div>
+
+      <div class="ppl-card fade-up stagger-2">
+        <div class="ppl-card-bar"></div>
+        <div class="ppl-avatar-wrap"><span class="ppl-avatar-emoji">🧑‍🎨</span></div>
+        <div class="ppl-card-body">
+          <div class="ppl-name">Design &amp; Architecture</div>
+          <span class="ppl-role">Floor Plans &amp; Vastu</span>
+          <p class="ppl-desc">Every floor plan is Vastu-compliant, space-optimised, and designed for the way modern Nashik families actually live.</p>
+          <div class="ppl-tag">100% Vastu Certified</div>
+        </div>
+      </div>
+
+      <div class="ppl-card fade-up stagger-3">
+        <div class="ppl-card-bar"></div>
+        <div class="ppl-avatar-wrap"><span class="ppl-avatar-emoji">🤝</span></div>
+        <div class="ppl-card-body">
+          <div class="ppl-name">Customer Care Team</div>
+          <span class="ppl-role">Your Dedicated Support</span>
+          <p class="ppl-desc">From your first enquiry to years after possession — we pick up every call, reply to every WhatsApp, solve every problem.</p>
+          <div class="ppl-tag">Available 7 Days a Week</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
