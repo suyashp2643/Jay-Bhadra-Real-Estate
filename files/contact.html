@@ -1,51 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Contact Jay Bhadra Real Estate Solutions | +91-97657-11811</title>
-  <link rel="canonical" href="https://jaybhadrarealestate.com/contact.html"/>
-  <meta name="keywords" content="Jay Bhadra Real Estate contact, Jay Bhadra Real Estate contact, property enquiry, Jay Bhadra office, +91-97657-11811"/>
-  <meta name="description" content="Contact Jay Bhadra Real Estate Solutions. Call +91-97657-11811, WhatsApp, or visit our office at ROOGNTA Shopping Hub, Indira Nagar, Nashik. Mon–Sat 9AM–7PM."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="css/style.css"/>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Search Properties — Jay Bhadra Real Estate | 1BHK 2BHK Flats Bungalows & Commercial</title>
+  <link rel="canonical" href="https://jaybhadrarealestate.com/search.html"/>
+  <meta name="keywords" content="search property, 1BHK flats, 2BHK flats price, bungalow, commercial shop, affordable homes"/>
+<meta name="description" content="Search and filter properties by location, BHK type, budget and status. Find verified 1BHK, 2BHK, 3BHK flats, bungalows and commercial shops with Jay Bhadra Real Estate Solutions."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+/* ═══════════════════════════════════════════
+   99ACRES-STYLE SEARCH ENGINE
+   Jay Bhadra Real Estate Solutions
+═══════════════════════════════════════════ */
+
+/* ── HERO SEARCH ── */
+.search-hero{
+  background:var(--mesh);
+  padding:52px 0 0;
+  position:relative;overflow:hidden;
+}
+.search-hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(200,151,58,0.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(200,151,58,0.05) 1px,transparent 1px);
+  background-size:64px 64px;
+}
+.search-hero .container{position:relative;z-index:2}
+.sh-title{font-family:var(--font-display);color:#fff;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:400;text-align:center;margin-bottom:6px}
+.sh-title em{font-style:italic;color:var(--gold-light)}
+.sh-sub{text-align:center;color:rgba(255,255,255,0.55);font-size:0.88rem;margin-bottom:28px}
+
+/* Big search box */
+.big-search{
+  background:rgba(255,255,255,0.97);
+  border-radius:var(--r-lg);
+  padding:6px;
+  display:flex;
+  gap:0;
+  box-shadow:0 20px 60px rgba(13,27,46,0.35);
+  margin-bottom:0;
+  flex-wrap:wrap;
+}
+.bs-field{
+  flex:1;min-width:180px;
+  display:flex;align-items:center;gap:10px;
+  padding:12px 18px;
+  border-right:1px solid var(--border);
+  position:relative;
+}
+.bs-field:last-of-type{border-right:none}
+.bs-field .ico{font-size:1.1rem;flex-shrink:0;color:var(--text-3)}
+.bs-field-inner{flex:1}
+.bs-field-inner label{display:block;font-size:0.62rem;font-family:var(--font-cap);letter-spacing:0.1em;color:var(--text-3);text-transform:uppercase;margin-bottom:3px}
+.bs-field-inner input,.bs-field-inner select{
+  width:100%;border:none;outline:none;font-size:0.9rem;color:var(--text-1);
+  background:transparent;font-family:var(--font-body);cursor:pointer;
+}
+.bs-field-inner select option{color:var(--text-1)}
+.bs-search-btn{
+  background:var(--gold);color:var(--navy);
+  border:none;border-radius:var(--r-md);
+  padding:14px 32px;font-family:var(--font-cap);
+  font-size:0.72rem;font-weight:600;letter-spacing:0.12em;
+  cursor:pointer;transition:all .25s;white-space:nowrap;
+  margin:4px;
+}
+.bs-search-btn:hover{background:var(--gold-light);transform:translateY(-1px);box-shadow:0 6px 20px rgba(200,151,58,0.4)}
+
+/* Tab strip */
+.search-tabs{
+  display:flex;gap:0;
+  background:rgba(255,255,255,0.08);
+  border-radius:var(--r-md) var(--r-md) 0 0;
+  overflow:hidden;
+  width:fit-content;
+  margin:24px auto 0;
+}
+.s-tab{
+  padding:10px 24px;font-size:0.78rem;font-weight:500;
+  color:rgba(255,255,255,0.55);cursor:pointer;border:none;
+  background:transparent;transition:all .2s;font-family:var(--font-body);
+}
+.s-tab:hover{color:rgba(255,255,255,0.85)}
+.s-tab.active{background:rgba(255,255,255,0.97);color:var(--navy);font-weight:600;border-radius:var(--r-md) var(--r-md) 0 0}
+
+/* ── MAIN LAYOUT ── */
+.search-layout{
+  display:grid;
+  grid-template-columns:300px 1fr;
+  gap:28px;
+  align-items:flex-start;
+  padding:32px 0 60px;
+}
+
+/* ── FILTER SIDEBAR ── */
+.filter-panel{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:0 2px 12px rgba(13,27,46,0.06);
+  position:sticky;
+  top:calc(var(--nav-h) + 16px);
+}
+.fp-header{
+  background:var(--navy);
+  padding:16px 20px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.fp-header h3{font-family:var(--font-cap);font-size:0.68rem;font-weight:600;letter-spacing:0.15em;color:var(--gold-light);text-transform:uppercase}
+.fp-reset{font-size:0.7rem;color:rgba(255,255,255,0.4);cursor:pointer;font-family:var(--font-cap);letter-spacing:0.08em;background:none;border:none;transition:color .2s;padding:0}
+.fp-reset:hover{color:var(--gold-light)}
+.fp-group{padding:18px 20px;border-bottom:1px solid var(--border)}
+.fp-group:last-child{border-bottom:none}
+.fp-group-title{font-family:var(--font-cap);font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-3);margin-bottom:12px;display:flex;align-items:center;gap:7px}
+
+/* Chips */
+.fp-chips{display:flex;flex-wrap:wrap;gap:7px}
+.fp-chip{
+  padding:6px 13px;border-radius:100px;
+  border:1.5px solid var(--border);
+  background:transparent;font-size:0.73rem;font-weight:500;
+  color:var(--text-2);cursor:pointer;transition:all .18s;
+  font-family:var(--font-body);
+}
+.fp-chip:hover{border-color:var(--navy);color:var(--navy)}
+.fp-chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.fp-chip.on.gold-chip{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+
+/* Price slider */
+.price-wrap{padding:4px 0}
+.price-display{display:flex;justify-content:space-between;margin-bottom:10px}
+.price-val{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--navy)}
+.range-track{position:relative;height:4px;background:var(--border);border-radius:2px;margin:14px 0 18px}
+.range-fill{position:absolute;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:2px}
+.range-input{position:absolute;top:50%;transform:translateY(-50%);width:100%;-webkit-appearance:none;appearance:none;background:transparent;pointer-events:none;height:20px}
+.range-input::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--navy);border:2px solid #fff;box-shadow:0 2px 8px rgba(13,27,46,0.25);cursor:pointer;pointer-events:all}
+.range-input::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--navy);border:2px solid #fff;cursor:pointer}
+.price-presets{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.price-preset{font-size:0.68rem;padding:4px 10px;border-radius:100px;border:1px solid var(--border);background:var(--cream);cursor:pointer;color:var(--text-2);transition:all .15s;font-family:var(--font-body)}
+.price-preset:hover,.price-preset.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* ── RESULTS AREA ── */
+.results-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+.results-count{font-size:0.85rem;color:var(--text-3)}
+.results-count strong{font-family:var(--font-display);font-size:1.3rem;color:var(--navy)}
+.sort-row{display:flex;align-items:center;gap:10px}
+.sort-label{font-size:0.78rem;color:var(--text-3)}
+.sort-select{padding:7px 32px 7px 12px;border:1.5px solid var(--border);border-radius:var(--r-sm);font-size:0.78rem;font-family:var(--font-body);color:var(--text-1);background:var(--white);outline:none;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236b7d95' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center}
+.view-toggle{display:flex;gap:4px}
+.view-btn{width:34px;height:34px;border:1.5px solid var(--border);border-radius:var(--r-sm);background:var(--white);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all .2s}
+.view-btn.on{background:var(--navy);border-color:var(--navy);color:var(--gold-light)}
+
+/* Active filter pills */
+.active-pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px;min-height:0}
+.a-pill{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:rgba(13,27,46,0.07);border:1px solid rgba(13,27,46,0.12);border-radius:100px;font-size:0.72rem;font-weight:500;color:var(--navy)}
+.a-pill button{background:none;border:none;cursor:pointer;color:var(--text-3);font-size:0.75rem;padding:0;line-height:1;transition:color .15s}
+.a-pill button:hover{color:#c0392b}
+
+/* ── PROPERTY CARD ── */
+.prop-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.prop-grid.list-view{grid-template-columns:1fr}
+
+.prop-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--r-lg);overflow:hidden;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .3s;
+  cursor:pointer;display:flex;flex-direction:column;
+}
+.prop-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(13,27,46,0.13);border-color:rgba(200,151,58,0.35)}
+
+/* List view card */
+.list-view .prop-card{flex-direction:row}
+.list-view .prop-card .pc-img{width:280px;flex-shrink:0;height:auto;min-height:200px}
+
+.pc-img{height:200px;position:relative;overflow:hidden}
+.pc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.prop-card:hover .pc-img img{transform:scale(1.06)}
+.pc-img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:rgba(255,255,255,0.25);transition:transform .5s}
+.prop-card:hover .pc-img-placeholder{transform:scale(1.06)}
+.pc-badge{position:absolute;top:12px;left:12px;padding:4px 12px;border-radius:100px;font-family:var(--font-cap);font-size:0.58rem;letter-spacing:0.1em;font-weight:600;backdrop-filter:blur(8px)}
+.pc-fav{position:absolute;top:12px;right:12px;width:32px;height:32px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:0.9rem;border:none;transition:all .2s}
+.pc-fav:hover,.pc-fav.on{background:var(--navy);color:var(--gold-light)}
+.pc-verified{position:absolute;bottom:12px;left:12px;background:rgba(26,107,69,0.88);color:#b6f0d5;font-size:0.58rem;font-family:var(--font-cap);letter-spacing:0.08em;padding:3px 10px;border-radius:100px}
+
+.pc-body{padding:16px 18px;flex:1;display:flex;flex-direction:column}
+.pc-price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
+.pc-price{font-family:var(--font-display);font-size:1.2rem;font-weight:600;color:var(--navy)}
+.pc-emi{font-size:0.7rem;color:var(--success);font-weight:500}
+.pc-title{font-family:var(--font-display);font-size:0.95rem;font-weight:600;color:var(--navy);margin-bottom:4px;line-height:1.3}
+.pc-loc{font-size:0.75rem;color:var(--text-3);margin-bottom:10px;display:flex;align-items:center;gap:4px}
+.pc-specs{display:flex;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.pc-spec{font-size:0.73rem;color:var(--text-2);display:flex;align-items:center;gap:4px}
+.pc-spec-divider{color:var(--border);font-size:0.8rem}
+.pc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+.pc-tag{font-size:0.67rem;padding:2px 9px;border-radius:100px;border:1px solid var(--border);background:var(--cream);color:var(--text-2)}
+.pc-actions{display:flex;gap:8px;margin-top:auto}
+.pc-actions .btn{flex:1;justify-content:center;font-size:0.75rem;padding:9px 12px}
+.pc-posted{font-size:0.68rem;color:var(--text-3);text-align:right;margin-top:8px}
+
+/* No results */
+.no-results{text-align:center;padding:60px 20px;display:none}
+.no-results.show{display:block}
+.no-results .nr-icon{font-size:3.5rem;margin-bottom:16px}
+.no-results h3{margin-bottom:8px;font-size:1.2rem}
+.no-results p{color:var(--text-3);font-size:0.88rem;margin-bottom:20px}
+
+/* Mobile filter toggle */
+.mobile-filter-btn{
+  display:none;align-items:center;gap:8px;
+  padding:10px 18px;background:var(--navy);color:var(--gold-light);
+  border:none;border-radius:var(--r-sm);font-family:var(--font-cap);
+  font-size:0.68rem;letter-spacing:0.1em;cursor:pointer;margin-bottom:16px;
+}
+.filter-overlay{display:none;position:fixed;inset:0;background:rgba(13,27,46,0.5);z-index:49;backdrop-filter:blur(4px)}
+.filter-overlay.open{display:block}
+
+/* Pagination */
+.pagination{display:flex;justify-content:center;align-items:center;gap:6px;margin-top:36px;flex-wrap:wrap}
+.page-btn{width:38px;height:38px;border-radius:var(--r-sm);border:1.5px solid var(--border);background:var(--white);color:var(--text-2);font-size:0.85rem;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center}
+.page-btn:hover{border-color:var(--navy);color:var(--navy)}
+.page-btn.on{background:var(--navy);border-color:var(--navy);color:var(--gold-light);font-weight:600}
+.page-btn.prev,.page-btn.next{width:auto;padding:0 14px;font-size:0.78rem;gap:6px}
+
+/* Map toggle */
+.map-toggle-bar{background:var(--white);border-top:1px solid var(--border);padding:14px 0;text-align:center;margin-top:-1px}
+.map-btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;background:var(--navy);color:var(--gold-light);border:none;border-radius:var(--r-sm);font-family:var(--font-cap);font-size:0.68rem;letter-spacing:0.1em;cursor:pointer}
+
+@media(max-width:1000px){
+  .search-layout{grid-template-columns:1fr}
+  .filter-panel{position:fixed;top:0;left:-100%;width:min(300px,88vw);height:100dvh;overflow-y:auto;z-index:50;border-radius:0;transition:left .35s cubic-bezier(.22,1,.36,1)}
+  .filter-panel.open{left:0}
+  .mobile-filter-btn{display:flex}
+  .prop-grid{grid-template-columns:1fr}
+  .list-view .prop-card{flex-direction:column}
+  .list-view .prop-card .pc-img{width:100%;min-height:200px}
+}
+@media(max-width:600px){
+  .big-search{flex-direction:column;gap:0}
+  .bs-field{border-right:none;border-bottom:1px solid var(--border)}
+  .bs-field:last-of-type{border-bottom:none}
+  .bs-search-btn{width:calc(100% - 8px);text-align:center;justify-content:center}
+  .search-tabs{width:100%;overflow-x:auto}
+}
+</style>
   <link rel="icon" type="image/png" href="images/Logo.png"/>
   <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
   <meta property="og:image" content="https://jaybhadrarealestate.com/images/Logo.png"/>
-  <meta property="og:url" content="https://jaybhadrarealestate.com/contact.html"/>
+  <meta property="og:url" content="https://jaybhadrarealestate.com/search.html"/>
   <meta property="og:site_name" content="Jay Bhadra Real Estate Solutions"/>
   <meta name="robots" content="index, follow"/>
   <meta name="author" content="Jay Bhadra Real Estate Solutions Pvt. Ltd."/>
 </head>
 <body>
+
+<!-- TOP STRIP -->
 <div class="top-strip"><div class="container">
   <span>📞 <a href="tel:+919765711811">+91-97657-11811</a> &nbsp;|&nbsp; ⏰ Mon–Sat 9AM–7PM</span>
-  <span>📍 ROOGNTA Shopping Hub, Indira Nagar, Nashik</span>
   <button class="strip-dismiss">✕</button>
 </div></div>
+
+<!-- NAVBAR -->
 <nav class="navbar"><div class="container">
-  <a href="index.html" class="nav-logo"><div class="nav-logo-icon" style="padding:0;overflow:hidden;background:#fff;border-radius:8px;"><img src="images/Logo.png" alt="Jay Bhadra Real Estate Logo" style="width:100%;height:100%;object-fit:contain;display:block;padding:3px;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#c8973a,#8a6420)';this.parentNode.style.display='flex';this.parentNode.style.alignItems='center';this.parentNode.style.justifyContent='center';this.parentNode.innerHTML='<span style=font-family:Cinzel,serif;font-weight:600;color:#0d1b2e;font-size:1rem;>JB</span>'"/></div><div class="nav-logo-text"><strong>Jay Bhadra Real Estate Solutions Pvt. Ltd.</strong><em>New Vision. Real Homes.</em></div></a>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon" style="padding:0;overflow:hidden;background:#fff;border-radius:8px;"><img src="images/Logo.png" alt="Jay Bhadra Real Estate Logo" style="width:100%;height:100%;object-fit:contain;display:block;padding:3px;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#c8973a,#8a6420)';this.parentNode.style.display='flex';this.parentNode.style.alignItems='center';this.parentNode.style.justifyContent='center';this.parentNode.innerHTML='<span style=font-family:Cinzel,serif;font-weight:600;color:#0d1b2e;font-size:1rem;>JB</span>'"/></div>
+    <div class="nav-logo-text"><strong>Jay Bhadra Real Estate Solutions Pvt. Ltd.</strong><em>New Vision. Real Homes.</em></div>
+  </a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li>
-    <li><a href="search.html">🔍 Search</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="search.html" class="active">Search</a></li>
     <li><a href="about.html">About Us</a></li>
-    <li><a href="contact.html" class="active">Contact</a></li>
+    <li><a href="contact.html">Contact</a></li>
     <li><a href="contact.html" class="nav-cta">Enquire Now</a></li>
   </ul>
   <button class="hamburger"><span></span><span></span><span></span></button>
 </div></nav>
 <div class="nav-overlay"></div>
 <nav class="nav-drawer">
-  <a href="index.html">🏠 Home</a><a href="projects.html">🏢 Projects</a>
-  <a href="search.html">🔍 Search Properties</a>
+  <a href="index.html">🏠 Home</a>
+  <a href="projects.html">🏢 Projects</a>
+  <a href="search.html" class="active">🔍 Search</a>
   <a href="about.html">👥 About Us</a>
-  <a href="contact.html" class="active">📞 Contact</a>
+  <a href="contact.html">📞 Contact</a>
   <a href="contact.html" style="margin-top:20px;background:var(--gold);color:var(--navy);font-weight:600;border-radius:var(--r-sm);text-align:center;font-family:var(--font-cap);font-size:0.75rem;letter-spacing:0.1em;padding:14px 16px;">ENQUIRE NOW</a>
 </nav>
 
 <main>
+
+<!-- ══════ HERO SEARCH ══════ -->
 <style>
-.page-hero{position:relative;overflow:hidden;}
+.search-hero{position:relative;overflow:hidden;}
 .ph-slides{position:absolute;inset:0;z-index:0;}
 .ph-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;animation:phSlide 18s infinite;transform:scale(1.07);}
 .ph-slide:nth-child(1){animation-delay:0s;}
@@ -55,157 +303,659 @@
 .ph-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(8,14,26,0.80) 0%,rgba(13,27,46,0.72) 50%,rgba(8,14,26,0.65) 100%);}
 .ph-overlay::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#c8973a,#e6b55a,#c8973a,transparent);animation:gsh 3s infinite;}
 @keyframes gsh{0%{opacity:0.4}50%{opacity:1}100%{opacity:0.4}}
-.page-hero .container{position:relative;z-index:2;}
-.page-hero h1,.page-hero p,.page-hero nav{text-shadow:0 2px 12px rgba(0,0,0,0.35);}
+.search-hero .container{position:relative;z-index:2;}
+.search-hero h1,.search-hero p,.search-hero nav{text-shadow:0 2px 12px rgba(0,0,0,0.35);}
 </style>
-<section class="page-hero">
+<section class="search-hero">
   <div class="ph-slides">
-    <div class="ph-slide" style="background-image:url('https://images.unsplash.com/photo-1553532434-5ab5b6b84993?w=1600&q=85&auto=format&fit=crop')"></div>
-    <div class="ph-slide" style="background-image:url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1600&q=85&auto=format&fit=crop')"></div>
-    <div class="ph-slide" style="background-image:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1600&q=85&auto=format&fit=crop')"></div>
+    <div class="ph-slide" style="background-image:url('https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&q=85&auto=format&fit=crop')"></div>
+    <div class="ph-slide" style="background-image:url('https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1600&q=85&auto=format&fit=crop')"></div>
+    <div class="ph-slide" style="background-image:url('https://images.unsplash.com/photo-1560185009-5bf9f2849488?w=1600&q=85&auto=format&fit=crop')"></div>
   </div>
   <div class="ph-overlay"></div>
   <div class="container">
-    <nav class="breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><span>Contact Us</span></nav>
-    <h1>Get In <em>Touch</em></h1>
-    <p>We are a new company and every enquiry matters to us. Reach out — we respond fast, always.</p>
+    <h1 class="sh-title">Find Your <em>Dream Property</em></h1>
+    <p class="sh-sub">Search from 6 carefully selected projects — flats, bungalows, and commercial spaces</p>
+
+    <!-- Buy / Rent / Commercial tabs -->
+    <div class="search-tabs" id="purposeTabs">
+      <button class="s-tab active" data-purpose="buy">Buy</button>
+      <button class="s-tab" data-purpose="rent">Rent</button>
+      <button class="s-tab" data-purpose="commercial">Commercial</button>
+      <button class="s-tab" data-purpose="plot">Plot / Land</button>
+    </div>
+
+    <!-- Big search bar -->
+    <div class="big-search">
+      <div class="bs-field">
+        <span class="ico">📍</span>
+        <div class="bs-field-inner">
+          <label>Location / Area</label>
+          <input type="text" id="qs-location" placeholder="e.g. Nashik Road, Gangapur…" oninput="liveSearch()"/>
+        </div>
+      </div>
+      <div class="bs-field">
+        <span class="ico">🛏️</span>
+        <div class="bs-field-inner">
+          <label>BHK / Type</label>
+          <select id="qs-bhk" onchange="liveSearch()">
+            <option value="">Any BHK</option>
+            <option value="1bhk">1 BHK</option>
+            <option value="2bhk">2 BHK</option>
+            <option value="3bhk">3 BHK</option>
+            <option value="4bhk">4 BHK</option>
+            <option value="bungalow">Bungalow / Villa</option>
+            <option value="shop">Shop / Office</option>
+            <option value="plot">Plot / Land</option>
+          </select>
+        </div>
+      </div>
+      <div class="bs-field">
+        <span class="ico">💰</span>
+        <div class="bs-field-inner">
+          <label>Budget</label>
+          <select id="qs-budget" onchange="liveSearch()">
+            <option value="">Any Budget</option>
+            <option value="0-20">Under ₹20 Lakh</option>
+            <option value="20-40">₹20 – 40 Lakh</option>
+            <option value="40-60">₹40 – 60 Lakh</option>
+            <option value="60-80">₹60 – 80 Lakh</option>
+            <option value="80-999">Above ₹80 Lakh</option>
+          </select>
+        </div>
+      </div>
+      <div class="bs-field">
+        <span class="ico">🏗️</span>
+        <div class="bs-field-inner">
+          <label>Status</label>
+          <select id="qs-status" onchange="liveSearch()">
+            <option value="">Any Status</option>
+            <option value="ongoing">Ready to Move / Ongoing</option>
+            <option value="upcoming">Under Construction</option>
+            <option value="completed">New Launch</option>
+          </select>
+        </div>
+      </div>
+      <button class="bs-search-btn" onclick="liveSearch()">🔍 SEARCH</button>
+    </div>
+
+    <div class="map-toggle-bar">
+      <button class="map-btn" onclick="alert('Map view coming soon! Contact us for location details.')">🗺️ View on Map &nbsp;→</button>
+    </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="contact-cards-grid">
-      <a href="tel:+919765711811" class="contact-card">
-        <div class="cc-icon">📞</div>
-        <h4>Call Us</h4>
-        <p style="color:var(--navy);font-weight:600;font-size:1rem;">+91-97657-11811</p>
-        <p style="margin-top:4px;font-size:0.8rem;">Mon–Sat, 9AM–7PM</p>
-      </a>
-      <a href="https://wa.me/919765711811?text=Hello%20Jay%20Bhadra%20Real%20Estate%20Solutions!%20I'm%20interested%20in%20your%20properties." target="_blank" rel="noopener" class="contact-card">
-        <div class="cc-icon">💬</div>
-        <h4>WhatsApp</h4>
-        <p style="color:#25d366;font-weight:600;font-size:1rem;">+91-97657-11811</p>
-        <p style="margin-top:4px;font-size:0.8rem;">Chat with us anytime</p>
-      </a>
-      <a href="mailto:jaybhadrarealestate.pvtltd@gmail.com" class="contact-card">
-        <div class="cc-icon">✉️</div>
-        <h4>Email Us</h4>
-        <p style="color:var(--navy);font-weight:600;font-size:0.88rem;">jaybhadrarealestate.pvtltd@gmail.com</p>
-        <p style="margin-top:4px;font-size:0.8rem;">Reply within 24 hours</p>
-      </a>
-      <div class="contact-card">
-        <div class="cc-icon">📍</div>
-        <h4>Visit Office</h4>
-        <p style="font-size:0.8rem;line-height:1.6;">ROOGNTA Shopping Hub,<br/>6106, Kamod Nagar, Indira Nagar, Nashik – 422009</p>
-      </div>
-    </div>
+<!-- ══════ MAIN SEARCH LAYOUT ══════ -->
+<div class="container">
+  <div class="search-layout">
 
-    <div class="contact-layout">
-      <div class="fade-up">
-        <div class="form-card">
-          <div style="margin-bottom:32px;">
-            <span class="label" style="margin-bottom:12px;display:inline-flex;">Send An Enquiry</span>
-            <h2 style="font-size:1.9rem;margin-bottom:8px;">Let's Talk About Your<br/><em>Dream Home</em></h2>
-            <div class="gold-line left"></div>
-            <p style="margin-top:14px;">Fill out the form below and we'll respond via WhatsApp within 30 minutes during business hours.</p>
+    <!-- ── FILTER SIDEBAR ── -->
+    <aside class="filter-panel" id="filterPanel">
+      <div class="fp-header">
+        <h3>🎛️ Refine Search</h3>
+        <button class="fp-reset" onclick="resetAll()">Reset All</button>
+      </div>
+
+      <!-- Property Type -->
+      <div class="fp-group">
+        <div class="fp-group-title">🏠 Property Type</div>
+        <div class="fp-chips">
+          <button class="fp-chip" data-group="proptype" data-val="flat" onclick="toggleChip(this)">Flat / Apartment</button>
+          <button class="fp-chip" data-group="proptype" data-val="bungalow" onclick="toggleChip(this)">Bungalow</button>
+          <button class="fp-chip" data-group="proptype" data-val="villa" onclick="toggleChip(this)">Villa</button>
+          <button class="fp-chip" data-group="proptype" data-val="shop" onclick="toggleChip(this)">Shop</button>
+          <button class="fp-chip" data-group="proptype" data-val="office" onclick="toggleChip(this)">Office</button>
+          <button class="fp-chip" data-group="proptype" data-val="plot" onclick="toggleChip(this)">Plot / Land</button>
+        </div>
+      </div>
+
+      <!-- BHK -->
+      <div class="fp-group">
+        <div class="fp-group-title">🛏️ BHK Configuration</div>
+        <div class="fp-chips">
+          <button class="fp-chip" data-group="bhk" data-val="1bhk" onclick="toggleChip(this)">1 BHK</button>
+          <button class="fp-chip" data-group="bhk" data-val="2bhk" onclick="toggleChip(this)">2 BHK</button>
+          <button class="fp-chip" data-group="bhk" data-val="3bhk" onclick="toggleChip(this)">3 BHK</button>
+          <button class="fp-chip" data-group="bhk" data-val="4bhk" onclick="toggleChip(this)">4 BHK</button>
+          <button class="fp-chip" data-group="bhk" data-val="4plusbhk" onclick="toggleChip(this)">4+ BHK</button>
+        </div>
+      </div>
+
+      <!-- Price Range -->
+      <div class="fp-group">
+        <div class="fp-group-title">💰 Price Range</div>
+        <div class="price-wrap">
+          <div class="price-display">
+            <span class="price-val" id="pmin-label">₹0</span>
+            <span class="price-val" id="pmax-label">₹1 Cr+</span>
           </div>
-          <form data-validate data-action="whatsapp" novalidate>
+          <div class="range-track" id="range-track">
+            <div class="range-fill" id="range-fill"></div>
+            <input type="range" class="range-input" id="rmin" min="0" max="100" value="0" step="5" oninput="updateRange()"/>
+            <input type="range" class="range-input" id="rmax" min="0" max="100" value="100" step="5" oninput="updateRange()"/>
+          </div>
+          <div class="price-presets">
+            <button class="price-preset" onclick="setPreset(0,20)">Under ₹20L</button>
+            <button class="price-preset" onclick="setPreset(20,40)">₹20–40L</button>
+            <button class="price-preset" onclick="setPreset(40,60)">₹40–60L</button>
+            <button class="price-preset" onclick="setPreset(60,80)">₹60–80L</button>
+            <button class="price-preset" onclick="setPreset(80,100)">₹80L+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div class="fp-group">
+        <div class="fp-group-title">📍 Area / Location</div>
+        <div class="fp-chips">
+          <button class="fp-chip" data-group="area" data-val="nashik road" onclick="toggleChip(this)">Nashik Road</button>
+          <button class="fp-chip" data-group="area" data-val="gangapur" onclick="toggleChip(this)">Gangapur Road</button>
+          <button class="fp-chip" data-group="area" data-val="college road" onclick="toggleChip(this)">College Road</button>
+          <button class="fp-chip" data-group="area" data-val="panchavati" onclick="toggleChip(this)">Panchavati</button>
+          <button class="fp-chip" data-group="area" data-val="satpur" onclick="toggleChip(this)">Satpur</button>
+          <button class="fp-chip" data-group="area" data-val="ambad" onclick="toggleChip(this)">Ambad</button>
+          <button class="fp-chip" data-group="area" data-val="cidco" onclick="toggleChip(this)">CIDCO</button>
+          <button class="fp-chip" data-group="area" data-val="trimbak road" onclick="toggleChip(this)">Trimbak Road</button>
+        </div>
+      </div>
+
+      <!-- Status -->
+      <div class="fp-group">
+        <div class="fp-group-title">🏗️ Project Status</div>
+        <div class="fp-chips">
+          <button class="fp-chip" data-group="status" data-val="ongoing" onclick="toggleChip(this)">Ready / Ongoing</button>
+          <button class="fp-chip" data-group="status" data-val="completed" onclick="toggleChip(this)">Completed</button>
+          <button class="fp-chip" data-group="status" data-val="upcoming" onclick="toggleChip(this)">New Launch</button>
+        </div>
+      </div>
+
+      <!-- Amenities -->
+      <div class="fp-group">
+        <div class="fp-group-title">✨ Amenities</div>
+        <div class="fp-chips">
+          <button class="fp-chip" data-group="amenity" data-val="lift" onclick="toggleChip(this)">Lift</button>
+          <button class="fp-chip" data-group="amenity" data-val="parking" onclick="toggleChip(this)">Parking</button>
+          <button class="fp-chip" data-group="amenity" data-val="security" onclick="toggleChip(this)">24/7 Security</button>
+          <button class="fp-chip" data-group="amenity" data-val="garden" onclick="toggleChip(this)">Garden</button>
+          <button class="fp-chip" data-group="amenity" data-val="cctv" onclick="toggleChip(this)">CCTV</button>
+          <button class="fp-chip" data-group="amenity" data-val="power" onclick="toggleChip(this)">Power Backup</button>
+          <button class="fp-chip" data-group="amenity" data-val="water" onclick="toggleChip(this)">24/7 Water</button>
+          <button class="fp-chip" data-group="amenity" data-val="playground" onclick="toggleChip(this)">Play Area</button>
+        </div>
+      </div>
+
+      <!-- Possession -->
+      <div class="fp-group">
+        <div class="fp-group-title">📅 Possession By</div>
+        <div class="fp-chips">
+          <button class="fp-chip" data-group="possession" data-val="immediate" onclick="toggleChip(this)">Immediate</button>
+          <button class="fp-chip" data-group="possession" data-val="2025" onclick="toggleChip(this)">2025</button>
+          <button class="fp-chip" data-group="possession" data-val="2026" onclick="toggleChip(this)">2026</button>
+          <button class="fp-chip" data-group="possession" data-val="2027" onclick="toggleChip(this)">2027+</button>
+        </div>
+      </div>
+
+      <!-- RERA / Bank -->
+      <div class="fp-group">
+        <div class="fp-group-title">✅ Verified</div>
+        <div class="fp-chips">
+          <button class="fp-chip gold-chip" data-group="verified" data-val="rera" onclick="toggleChip(this)">RERA Registered</button>
+          <button class="fp-chip gold-chip" data-group="verified" data-val="bank" onclick="toggleChip(this)">Bank Approved</button>
+          <button class="fp-chip gold-chip" data-group="verified" data-val="vastu" onclick="toggleChip(this)">Vastu Compliant</button>
+        </div>
+      </div>
+
+    </aside>
+    <div class="filter-overlay" id="filterOverlay" onclick="closeMobileFilter()"></div>
+
+    <!-- ── RESULTS ── -->
+    <div>
+      <!-- Mobile filter button -->
+      <button class="mobile-filter-btn" onclick="openMobileFilter()">
+        🎛️ Filters &nbsp;<span id="filter-count-badge" style="background:var(--gold);color:var(--navy);border-radius:100px;padding:1px 7px;font-size:0.65rem;display:none;" id="fbadge">0</span>
+      </button>
+
+      <!-- Active pills -->
+      <div class="active-pills" id="active-pills"></div>
+
+      <!-- Results header -->
+      <div class="results-header">
+        <div class="results-count">
+          <strong id="result-count">6</strong> properties found
+          <span id="result-city"></span>
+        </div>
+        <div class="sort-row">
+          <span class="sort-label">Sort:</span>
+          <select class="sort-select" id="sort-sel" onchange="renderCards()">
+            <option value="default">Relevance</option>
+            <option value="price-asc">Price: Low → High</option>
+            <option value="price-desc">Price: High → Low</option>
+            <option value="newest">Newest First</option>
+            <option value="area-asc">Area: Small → Large</option>
+          </select>
+          <div class="view-toggle">
+            <button class="view-btn on" id="vgrid" onclick="setView('grid')" title="Grid view">⊞</button>
+            <button class="view-btn" id="vlist" onclick="setView('list')" title="List view">☰</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property cards grid -->
+      <div class="prop-grid" id="prop-grid"></div>
+
+      <!-- No results -->
+      <div class="no-results" id="no-results">
+        <div class="nr-icon">🔍</div>
+        <h3>No properties found</h3>
+        <p>Try adjusting your filters or search different keywords.</p>
+        <button class="btn btn-outline-navy btn-sm" onclick="resetAll()">Clear All Filters</button>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination" id="pagination"></div>
+
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer"><div class="container"><div class="footer-grid">
+  <div class="footer-brand">
+    <div class="footer-logo"><div class="footer-logo-icon" style="padding:0;overflow:hidden;background:#fff;border-radius:8px;"><img src="images/Logo.png" alt="Jay Bhadra Real Estate Logo" style="width:100%;height:100%;object-fit:contain;display:block;padding:3px;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#c8973a,#8a6420)';this.parentNode.style.display='flex';this.parentNode.style.alignItems='center';this.parentNode.style.justifyContent='center';this.parentNode.innerHTML='<span style=font-family:Cinzel,serif;font-weight:600;color:#0d1b2e;font-size:1rem;>JB</span>'"/></div>
+      <div class="footer-logo-text"><strong>Jay Bhadra Real Estate Solutions Pvt. Ltd.</strong><em>New Vision. Real Homes.</em></div>
+    </div>
+    <p>India's newest honest real estate company. 6 active projects. 100% transparent pricing.</p>
+    <div class="footer-social"><a href="#" class="soc-icon">f</a><a href="#" class="soc-icon">in</a><a href="https://wa.me/919765711811" class="soc-icon" target="_blank">W</a></div>
+  </div>
+  <div class="footer-col"><h5>Quick Links</h5><ul>
+    <li><a href="index.html">→ Home</a></li><li><a href="projects.html">→ Projects</a></li>
+    <li><a href="search.html">→ Search Properties</a></li><li><a href="about.html">→ About Us</a></li>
+    <li><a href="contact.html">→ Contact</a></li>
+  </ul></div>
+  <div class="footer-col"><h5>Property Types</h5><ul>
+    <li><a href="search.html?bhk=1bhk">→ 1 BHK Flats</a></li>
+    <li><a href="search.html?bhk=2bhk">→ 2 BHK Flats</a></li>
+    <li><a href="search.html?bhk=3bhk">→ 3 BHK Flats</a></li>
+    <li><a href="search.html?bhk=bungalow">→ Bungalows</a></li>
+    <li><a href="search.html?bhk=shop">→ Commercial Shops</a></li>
+  </ul></div>
+  <div class="footer-col"><h5>Contact</h5>
+    <div class="footer-ci"><span class="ic">📞</span><span class="tx"><a href="tel:+919765711811">+91-97657-11811</a></span></div>
+    <div class="footer-ci"><span class="ic">📍</span><span class="tx">ROOGNTA Shopping Hub, Indira Nagar, Nashik – 422009</span></div>
+    <div class="footer-ci"><span class="ic">⏰</span><span class="tx">Mon–Sat: 9AM–7PM</span></div>
+  </div>
+</div></div>
+<div class="container"><div class="footer-bottom">
+  <p>© 2026 Jay Bhadra Real Estate Solutions Pvt. Ltd. All rights reserved.</p>
+  <p>Made with ❤️ in Nashik, Maharashtra</p>
+</div></div></footer>
+
+<div class="whatsapp-float"><span class="wa-tooltip">Chat with us!</span>
+  <a href="https://wa.me/919765711811?text=Hello!%20I%20found%20a%20property%20on%20your%20website%20and%20need%20more%20details." class="whatsapp-btn" target="_blank" rel="noopener">💬</a>
+</div>
+
+<div class="modal-overlay" role="dialog" aria-modal="true"><div class="modal">
+  <button class="modal-close">✕</button>
+  <div class="modal-chip">Quick Enquiry</div>
+  <h3>Get Property Details</h3>
+  <p>We'll call you back within 30 minutes during business hours.</p>
+  <form class="modal-form" novalidate>
       <!-- Honeypot — hidden from humans, catches bots -->
       <div style="display:none;visibility:hidden;position:absolute;left:-9999px;" aria-hidden="true">
         <input type="text" name="website" id="hp_website" tabindex="-1" autocomplete="off" value=""/>
         <input type="text" name="company" id="hp_company" tabindex="-1" autocomplete="off" value=""/>
       </div>
-            <div class="form-row">
-              <div class="form-group"><label for="ct-name">Full Name <span>*</span></label><input type="text" id="ct-name" name="Name" class="form-control" placeholder="Your full name" required/><div class="form-error"></div></div>
-              <div class="form-group"><label for="ct-phone">Phone Number <span>*</span></label><input type="tel" id="ct-phone" name="Phone" class="form-control" placeholder="10-digit number" required/><div class="form-error"></div></div>
-            </div>
-            <div class="form-row">
-              <div class="form-group"><label for="ct-email">Email Address</label><input type="email" id="ct-email" name="Email" class="form-control" placeholder="your@email.com"/><div class="form-error"></div></div>
-              <div class="form-group"><label for="ct-city">Your City</label><input type="text" id="ct-city" name="City" class="form-control" placeholder="e.g. Nashik, Mumbai"/></div>
-            </div>
-            <div class="form-row">
-              <div class="form-group"><label for="ct-type">Property Interest <span>*</span></label>
-                <select id="ct-type" name="Property Interest" class="form-control" required>
-                  <option value="">Select type</option>
-                  <option>1BHK Flat</option><option>2BHK Flat</option><option>3BHK Flat</option>
-                  <option>Bungalow</option><option>Commercial Shop</option><option>Office Space</option><option>Not decided yet</option>
-                </select><div class="form-error"></div>
-              </div>
-              <div class="form-group"><label for="ct-budget">Budget Range</label>
-                <select id="ct-budget" name="Budget Range" class="form-control">
-                  <option value="">Select range</option>
-                  <option>Under ₹20 Lakh</option><option>₹20–35 Lakh</option>
-                  <option>₹35–55 Lakh</option><option>₹55–80 Lakh</option>
-                  <option>Above ₹80 Lakh</option><option>Flexible</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group"><label for="ct-msg">Message / Requirements</label><textarea id="ct-msg" name="Message" class="form-control" placeholder="Tell us more — preferred location, possession timeline, loan requirement, etc."></textarea></div>
-            <button type="submit" class="btn btn-whatsapp form-submit">💬 Send Enquiry via WhatsApp</button>
-            <p style="font-size:0.73rem;color:var(--text-3);text-align:center;margin-top:12px;">🔒 No spam. Your information is only shared with Jay Bhadra Real Estate Solutions.</p>
-          </form>
-        </div>
-      </div>
-
-      <div class="fade-up stagger-1">
-        <div style="border-radius:var(--r-lg);overflow:hidden;box-shadow:0 4px 24px rgba(13,27,46,0.1);border:1px solid var(--border);">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.5!2d73.7898!3d19.9975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddebc97af2aaab%3A0x6f0b9af16f9d5e5e!2sGolden+City%2C+Nashik%2C+Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-            width="100%" height="320" style="border:0;display:block;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade" title="Jay Bhadra Real Estate Solutions office location"></iframe>
-        </div>
-        
-
-        <div class="office-hours">
-          <h4 style="margin-bottom:16px;font-size:1rem;">🕐 Office Hours</h4>
-          <div class="hours-row"><span>Monday – Friday</span><strong>9:00 AM – 7:00 PM</strong></div>
-          <div class="hours-row"><span>Saturday</span><strong>9:00 AM – 6:00 PM</strong></div>
-          <div class="hours-row"><span>Sunday</span><strong style="color:var(--gold-dim);">By Appointment Only</strong></div>
-          <div class="hours-row"><span>Public Holidays</span><strong style="color:var(--text-3);">Closed</strong></div>
-          <div style="margin-top:14px;padding:12px;background:rgba(26,107,69,0.08);border:1px solid rgba(26,107,69,0.2);border-radius:var(--r-sm);font-size:0.8rem;color:var(--success);">
-            💡 For urgent queries on holidays, WhatsApp us and we'll respond as soon as possible.
-          </div>
-        </div>
-
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px;margin-top:20px;">
-          <h4 style="margin-bottom:14px;font-size:1rem;">📍 Office Address</h4>
-          <address style="font-style:normal;font-size:0.9rem;color:var(--text-2);line-height:2;">
-            <strong style="color:var(--navy);font-family:var(--font-display);">Jay Bhadra Real Estate Solutions Pvt. Ltd.</strong><br/>
-            ROOGNTA Shopping Hub,<br/>
-            6106, Kamod Nagar, Indira Nagar,<br/>
-            Nashik – 422009,<br/>
-            Maharashtra, India
-          </address>
-          <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
-            <a href="https://www.google.com/maps/search/ROOGNTA+Shopping+Hub+Indira+Nagar+Nashik+422009" target="_blank" rel="noopener" class="btn btn-outline-navy btn-sm btn-cap">🗺️ Get Directions</a>
-            <a href="https://wa.me/919765711811?text=Hi!%20Can%20you%20share%20your%20exact%20office%20location?" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm">💬 Send Location</a>
-          </div>
-        </div>
-      </div>
+    <input type="hidden" id="modal-project-name"/>
+    <div class="form-group"><label for="modal-name">Your Name <span>*</span></label><input type="text" id="modal-name" class="form-control" placeholder="Full name" required/><div class="form-error"></div></div>
+    <div class="form-group"><label for="modal-phone">Phone Number <span>*</span></label><input type="tel" id="modal-phone" class="form-control" placeholder="10-digit number" required/><div class="form-error"></div></div>
+    <div class="form-group"><label for="modal-bhk">Interested In</label>
+      <select id="modal-bhk" class="form-control"><option value="">Select type</option><option>1BHK</option><option>2BHK</option><option>3BHK</option><option>Bungalow</option><option>Commercial</option></select>
     </div>
-  </div>
-</section>
-
-<section class="cta-banner">
-  <div class="container">
-    <h2 class="fade-up">Can't Wait? <em>Call Us Right Now!</em></h2>
-    <p class="fade-up stagger-1">Our team is available Monday to Saturday, 9AM to 7PM to answer all your property questions.</p>
-    <div class="cta-actions fade-up stagger-2">
-      <a href="tel:+919765711811" class="btn btn-navy">📞 +91-97657-11811</a>
-      <a href="https://wa.me/919765711811?text=Hello%20Jay%20Bhadra%20Real%20Estate%20Solutions!%20I%20have%20a%20query." class="btn btn-whatsapp" target="_blank" rel="noopener">💬 WhatsApp Now</a>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer class="footer"><div class="container"><div class="footer-grid">
-  <div class="footer-brand"><div class="footer-logo"><div class="footer-logo-icon" style="padding:0;overflow:hidden;background:#fff;border-radius:8px;"><img src="images/Logo.png" alt="Jay Bhadra Real Estate Logo" style="width:100%;height:100%;object-fit:contain;display:block;padding:3px;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#c8973a,#8a6420)';this.parentNode.style.display='flex';this.parentNode.style.alignItems='center';this.parentNode.style.justifyContent='center';this.parentNode.innerHTML='<span style=font-family:Cinzel,serif;font-weight:600;color:#0d1b2e;font-size:1rem;>JB</span>'"/></div><div class="footer-logo-text"><strong>Jay Bhadra Real Estate Solutions Pvt. Ltd.</strong><em>New Vision. Real Homes.</em></div></div><p>India's newest honest real estate company. 6 active projects. 100% transparent pricing.</p><div class="footer-social"><a href="#" class="soc-icon">f</a><a href="#" class="soc-icon">in</a><a href="https://wa.me/919765711811" class="soc-icon" target="_blank">W</a><a href="#" class="soc-icon">▶</a></div></div>
-  <div class="footer-col"><h5>Quick Links</h5><ul><li><a href="index.html">→ Home</a></li><li><a href="projects.html">→ Projects</a></li><li><a href="search.html">→ Search Properties</a></li><li><a href="about.html">→ About Us</a></li><li><a href="contact.html">→ Contact</a></li></ul></div>
-  <div class="footer-col"><h5>Our Projects</h5><ul><li><a href="project-detail.html?project=jay-bhadra-heights">→ Jay Bhadra Heights</a></li><li><a href="project-detail.html?project=golden-city-residency">→ Golden City Residency</a></li><li><a href="project-detail.html?project=green-valley-bungalows">→ Green Valley Bungalows</a></li></ul></div>
-  <div class="footer-col"><h5>Contact Info</h5><div class="footer-ci"><span class="ic">📍</span><span class="tx">ROOGNTA Shopping Hub, 6106, Kamod Nagar, Indira Nagar, Nashik – 422009</span></div><div class="footer-ci"><span class="ic">📞</span><span class="tx"><a href="tel:+919765711811">+91-97657-11811</a></span></div><div class="footer-ci"><span class="ic">✉️</span><span class="tx"><a href="mailto:jaybhadrarealestate.pvtltd@gmail.com">jaybhadrarealestate.pvtltd@gmail.com</a></span></div><div class="footer-ci"><span class="ic">⏰</span><span class="tx">Mon–Sat: 9AM–7PM</span></div></div>
+    <button type="submit" class="btn btn-whatsapp form-submit">💬 Send via WhatsApp</button>
+  </form>
 </div></div>
-<div class="container"><div class="footer-bottom"><p>© 2026 Jay Bhadra Real Estate Solutions Pvt. Ltd. All rights reserved. | Director: Mr. Santosh Ramesh Fatangare</p><p>Made with ❤️ in Nashik, Maharashtra</p></div></div></footer>
-<div class="whatsapp-float"><span class="wa-tooltip">Chat with us!</span><a href="https://wa.me/919765711811?text=Hello%20Jay%20Bhadra%20Real%20Estate%20Solutions!" class="whatsapp-btn" target="_blank" rel="noopener">💬</a></div>
+
 <script src="js/main.js"></script>
+<script>
+'use strict';
+/* ═══════════════════════════════════════════════════════
+   PROPERTY DATABASE
+   ─────────────────────────────────────────────────────
+   TO ADD A NEW PROPERTY: copy one object, paste below,
+   change the values. photo: paste your imgbb.com link.
+═══════════════════════════════════════════════════════ */
+var PROPERTIES = [
+  {
+    id:1, name:'Jay Bhadra Heights',
+    location:'Near Shri Ram Chowk, Nashik', area:'nashik road',
+    bhk:['1bhk','2bhk'], proptype:'flat', status:'ongoing',
+    price:28, priceLabel:'₹28 Lakh+', carpet:'450–700 sq.ft.',
+    amenities:['lift','parking','security','cctv','water','power'],
+    possession:'2025', verified:['rera','bank','vastu'],
+    photo:'', color:'linear-gradient(135deg,#0d1b2e,#1e3050)', icon:'🏢',
+    tags:['RCC Structure','Near School','Prime Location'],
+    posted:'2 days ago', emi:'EMI from ₹18,500/mo'
+  },
+  {
+    id:2, name:'Golden City Residency',
+    location:'Golden City Area, Nashik', area:'gangapur',
+    bhk:['1bhk','2bhk','3bhk'], proptype:'flat', status:'completed',
+    price:22, priceLabel:'₹22 Lakh+', carpet:'450–900 sq.ft.',
+    amenities:['lift','parking','security','garden','cctv','water'],
+    possession:'immediate', verified:['rera','bank'],
+    photo:'', color:'linear-gradient(135deg,#1a4a2e,#0d2e1a)', icon:'🏘️',
+    tags:['Ready to Move','Gated Society','Park View'],
+    posted:'1 week ago', emi:'EMI from ₹14,800/mo'
+  },
+  {
+    id:3, name:'Shri Ram Apartments',
+    location:'Shri Ram Chowk, Nashik', area:'panchavati',
+    bhk:['2bhk','3bhk'], proptype:'flat', status:'completed',
+    price:35, priceLabel:'₹35 Lakh+', carpet:'650–950 sq.ft.',
+    amenities:['lift','parking','security','cctv','power','water'],
+    possession:'immediate', verified:['rera','bank','vastu'],
+    photo:'', color:'linear-gradient(135deg,#2e1a1a,#5c2020)', icon:'🏠',
+    tags:['Ready to Move','Vastu','Near Temple'],
+    posted:'3 days ago', emi:'EMI from ₹23,500/mo'
+  },
+  {
+    id:4, name:'Jay Bhadra Commercial Hub',
+    location:'Main Road, Nashik', area:'ambad',
+    bhk:['shop','office'], proptype:'shop', status:'ongoing',
+    price:15, priceLabel:'₹15 Lakh+', carpet:'200–600 sq.ft.',
+    amenities:['parking','security','cctv','power'],
+    possession:'2026', verified:['rera','bank'],
+    photo:'', color:'linear-gradient(135deg,#0d2e3a,#0d4a5c)', icon:'🏪',
+    tags:['Main Road','High Footfall','Commercial'],
+    posted:'5 days ago', emi:'EMI from ₹10,200/mo'
+  },
+  {
+    id:5, name:'Green Valley Bungalows',
+    location:'Nashik Outskirts, Gangapur', area:'gangapur',
+    bhk:['bungalow'], proptype:'bungalow', status:'upcoming',
+    price:65, priceLabel:'₹65 Lakh+', carpet:'1800–2400 sq.ft.',
+    amenities:['parking','security','garden','cctv','water','power','playground'],
+    possession:'2026', verified:['rera','vastu'],
+    photo:'', color:'linear-gradient(135deg,#8a6420,#c8973a)', icon:'🏡',
+    tags:['Gated Community','Premium','Green Zone'],
+    posted:'Today', emi:'EMI from ₹43,500/mo'
+  },
+  {
+    id:6, name:'Fatangare Nagar Phase 2',
+    location:'Fatangare Nagar, Nashik', area:'nashik road',
+    bhk:['1bhk','2bhk'], proptype:'flat', status:'upcoming',
+    price:20, priceLabel:'₹20 Lakh+', carpet:'380–600 sq.ft.',
+    amenities:['parking','security','water','cctv'],
+    possession:'2027', verified:['rera'],
+    photo:'', color:'linear-gradient(135deg,#2a1a4a,#402878)', icon:'🏗️',
+    tags:['Affordable','Pre-Launch Offer','Near Highway'],
+    posted:'Today', emi:'EMI from ₹13,400/mo'
+  }
+];
+
+/* ═══ STATE ═══ */
+var filters = { bhk:[], proptype:[], area:[], status:[], amenity:[], possession:[], verified:[] };
+var priceMin = 0, priceMax = 100;
+var currentView = 'grid';
+var currentPage = 1;
+var perPage = 6;
+
+/* ═══ CHIP TOGGLE ═══ */
+function toggleChip(el){
+  var g = el.getAttribute('data-group');
+  var v = el.getAttribute('data-val');
+  var arr = filters[g] || [];
+  var idx = arr.indexOf(v);
+  if(idx===-1){ arr.push(v); el.classList.add('on'); }
+  else{ arr.splice(idx,1); el.classList.remove('on'); }
+  if(!filters[g]) filters[g]=arr; else filters[g]=arr;
+  currentPage=1; renderCards(); renderPills();
+}
+
+/* ═══ PRICE RANGE ═══ */
+function updateRange(){
+  var mn = parseInt(document.getElementById('rmin').value);
+  var mx = parseInt(document.getElementById('rmax').value);
+  if(mn > mx-5){ if(event&&event.target.id==='rmin') mn=mx-5; else mx=mn+5; }
+  priceMin=mn; priceMax=mx;
+  document.getElementById('rmin').value=mn;
+  document.getElementById('rmax').value=mx;
+  var pv = function(v){ return v===0?'₹0':v>=100?'₹1Cr+':'₹'+v+'L'; };
+  document.getElementById('pmin-label').textContent=pv(mn);
+  document.getElementById('pmax-label').textContent=pv(mx);
+  var fill=document.getElementById('range-fill');
+  fill.style.left=mn+'%'; fill.style.width=(mx-mn)+'%';
+  document.querySelectorAll('.price-preset').forEach(p=>p.classList.remove('on'));
+  currentPage=1; renderCards(); renderPills();
+}
+function setPreset(mn,mx){
+  document.getElementById('rmin').value=mn;
+  document.getElementById('rmax').value=mx;
+  event&&event.target&&event.target.classList.add('on');
+  updateRange();
+}
+
+/* ═══ QUICK SEARCH ═══ */
+function liveSearch(){ currentPage=1; renderCards(); renderPills(); }
+
+/* ═══ FILTER LOGIC ═══ */
+function getFiltered(){
+  var qLoc = (document.getElementById('qs-location')||{value:''}).value.toLowerCase().trim();
+  var qBhk = (document.getElementById('qs-bhk')||{value:''}).value;
+  var qBudget = (document.getElementById('qs-budget')||{value:''}).value;
+  var qStatus = (document.getElementById('qs-status')||{value:''}).value;
+
+  return PROPERTIES.filter(function(p){
+    // Quick search bar
+    if(qLoc && !p.location.toLowerCase().includes(qLoc) && !p.name.toLowerCase().includes(qLoc) && !p.area.includes(qLoc)) return false;
+    if(qBhk && !p.bhk.includes(qBhk)) return false;
+    if(qStatus && p.status !== qStatus) return false;
+    if(qBudget){
+      var parts=qBudget.split('-');
+      var lo=parseInt(parts[0]),hi=parseInt(parts[1]);
+      if(p.price<lo||(hi<999&&p.price>hi)) return false;
+    }
+    // Sidebar filters
+    if(filters.bhk.length && !filters.bhk.some(b=>p.bhk.includes(b))) return false;
+    if(filters.proptype.length && !filters.proptype.includes(p.proptype)) return false;
+    if(filters.area.length && !filters.area.some(a=>p.area.includes(a))) return false;
+    if(filters.status.length && !filters.status.includes(p.status)) return false;
+    if(filters.amenity.length && !filters.amenity.every(a=>p.amenities.includes(a))) return false;
+    if(filters.possession.length && !filters.possession.includes(p.possession)) return false;
+    if(filters.verified.length && !filters.verified.every(v=>p.verified.includes(v))) return false;
+    // Price slider
+    if(p.price < priceMin || (priceMax<100 && p.price>priceMax)) return false;
+    return true;
+  });
+}
+
+/* ═══ SORT ═══ */
+function getSorted(arr){
+  var s = document.getElementById('sort-sel').value;
+  return arr.slice().sort(function(a,b){
+    if(s==='price-asc') return a.price-b.price;
+    if(s==='price-desc') return b.price-a.price;
+    if(s==='area-asc') return parseInt(a.carpet)-parseInt(b.carpet);
+    return 0;
+  });
+}
+
+/* ═══ RENDER CARDS ═══ */
+function renderCards(){
+  var filtered = getFiltered();
+  var sorted   = getSorted(filtered);
+  var total    = sorted.length;
+  var start    = (currentPage-1)*perPage;
+  var page     = sorted.slice(start, start+perPage);
+
+  document.getElementById('result-count').textContent = total;
+  document.getElementById('no-results').classList.toggle('show', total===0);
+
+  var grid = document.getElementById('prop-grid');
+  grid.className = 'prop-grid' + (currentView==='list'?' list-view':'');
+
+  var statusMap = {ongoing:'Ongoing',completed:'Completed',upcoming:'Upcoming'};
+  var badgeMap  = {ongoing:'s-ongoing',completed:'s-completed',upcoming:'s-upcoming'};
+
+  grid.innerHTML = page.map(function(p){
+    var imgHTML = p.photo && p.photo.trim()
+      ? '<img src="'+p.photo+'" alt="'+p.name+'" loading="lazy" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'flex\'"/><div class="pc-img-placeholder" style="display:none;background:'+p.color+'">'+p.icon+'</div>'
+      : '<div class="pc-img-placeholder" style="background:'+p.color+'">'+p.icon+'</div>';
+
+    var verBadge = p.verified.includes('rera')
+      ? '<div class="pc-verified">✅ RERA Verified</div>' : '';
+
+    var tags = p.tags.map(function(t){return '<span class="pc-tag">'+t+'</span>';}).join('');
+    var bhkLabel = p.bhk.map(function(b){return b.replace('bhk',' BHK').replace('shop','Shop').replace('bungalow','Bungalow').replace('office','Office').replace('villa','Villa').replace('plot','Plot');}).join(' · ');
+
+    return '<article class="prop-card">'
+      +'<div class="pc-img">'
+      + imgHTML
+      + '<span class="pc-badge '+badgeMap[p.status]+'">'+statusMap[p.status]+'</span>'
+      + '<button class="pc-fav" title="Save property" onclick="this.classList.toggle(\'on\')">♡</button>'
+      + verBadge
+      +'</div>'
+      +'<div class="pc-body">'
+      +'<div class="pc-price-row"><span class="pc-price">'+p.priceLabel+'</span><span class="pc-emi">'+p.emi+'</span></div>'
+      +'<div class="pc-title">'+p.name+'</div>'
+      +'<div class="pc-loc">📍 '+p.location+'</div>'
+      +'<div class="pc-specs">'
+      +'<span class="pc-spec">🛏️ '+bhkLabel+'</span>'
+      +'<span class="pc-spec-divider">|</span>'
+      +'<span class="pc-spec">📐 '+p.carpet+'</span>'
+      +'</div>'
+      +'<div class="pc-tags">'+tags+'</div>'
+      +'<div class="pc-actions">'
+      +'<a href="project-detail.html?project='+p.name.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'')+'" class="btn btn-navy btn-sm">View Details</a>'
+      +'<button class="btn btn-whatsapp btn-sm" onclick="openWA(\''+p.name+'\')">💬 Enquire</button>'
+      +'</div>'
+      +'<div class="pc-posted">Posted: '+p.posted+'</div>'
+      +'</div>'
+      +'</article>';
+  }).join('');
+
+  renderPagination(total);
+}
+
+function openWA(name){
+  var msg = encodeURIComponent('Hello Jay Bhadra Real Estate Solutions!\n\nI am interested in: '+name+'\nPlease share more details.');
+  window.open('https://wa.me/919765711811?text='+msg,'_blank');
+}
+
+/* ═══ PAGINATION ═══ */
+function renderPagination(total){
+  var pages = Math.ceil(total/perPage);
+  var el = document.getElementById('pagination');
+  if(pages<=1){ el.innerHTML=''; return; }
+  var html = '<button class="page-btn prev" onclick="goPage('+Math.max(1,currentPage-1)+')">← Prev</button>';
+  for(var i=1;i<=pages;i++){
+    html += '<button class="page-btn'+(i===currentPage?' on':'')+'" onclick="goPage('+i+')">'+i+'</button>';
+  }
+  html += '<button class="page-btn next" onclick="goPage('+Math.min(pages,currentPage+1)+')">Next →</button>';
+  el.innerHTML=html;
+}
+function goPage(n){ currentPage=n; renderCards(); window.scrollTo({top:400,behavior:'smooth'}); }
+
+/* ═══ ACTIVE PILLS ═══ */
+function renderPills(){
+  var el = document.getElementById('active-pills');
+  var html = '';
+  var count = 0;
+  var labelMap = {
+    bhk:{'1bhk':'1 BHK','2bhk':'2 BHK','3bhk':'3 BHK','4bhk':'4 BHK','4plusbhk':'4+ BHK','bungalow':'Bungalow','shop':'Shop','office':'Office'},
+    proptype:{flat:'Flat',bungalow:'Bungalow',villa:'Villa',shop:'Shop',office:'Office',plot:'Plot'},
+    area:{'nashik road':'Nashik Road',gangapur:'Gangapur Rd','college road':'College Rd',panchavati:'Panchavati',satpur:'Satpur',ambad:'Ambad',cidco:'CIDCO','trimbak road':'Trimbak Rd'},
+    status:{ongoing:'Ongoing',completed:'Completed',upcoming:'New Launch'},
+    amenity:{lift:'Lift',parking:'Parking',security:'Security',garden:'Garden',cctv:'CCTV',power:'Power Backup',water:'24/7 Water',playground:'Play Area'},
+    possession:{immediate:'Immediate',2025:'By 2025',2026:'By 2026','2027':'By 2027+'},
+    verified:{rera:'RERA Verified',bank:'Bank Approved',vastu:'Vastu'}
+  };
+  Object.keys(filters).forEach(function(g){
+    filters[g].forEach(function(v){
+      count++;
+      var lbl = (labelMap[g]&&labelMap[g][v])||v;
+      html += '<div class="a-pill">'+lbl+'<button onclick="removePill(\''+g+'\',\''+v+'\')">✕</button></div>';
+    });
+  });
+  if(priceMin>0||priceMax<100){
+    count++;
+    var pv=function(v){return v===0?'₹0':v>=100?'₹1Cr+':'₹'+v+'L';};
+    html+='<div class="a-pill">'+pv(priceMin)+' – '+pv(priceMax)+'<button onclick="setPreset(0,100)">✕</button></div>';
+  }
+  el.innerHTML=html;
+  var badge=document.getElementById('fbadge');
+  if(badge){badge.textContent=count;badge.style.display=count>0?'inline':'none';}
+}
+function removePill(g,v){
+  var arr=filters[g];
+  var idx=arr.indexOf(v);
+  if(idx>-1) arr.splice(idx,1);
+  document.querySelectorAll('.fp-chip[data-group="'+g+'"][data-val="'+v+'"]').forEach(function(c){c.classList.remove('on');});
+  currentPage=1; renderCards(); renderPills();
+}
+
+/* ═══ RESET ═══ */
+function resetAll(){
+  filters={bhk:[],proptype:[],area:[],status:[],amenity:[],possession:[],verified:[]};
+  document.querySelectorAll('.fp-chip.on').forEach(function(c){c.classList.remove('on');});
+  document.querySelectorAll('.price-preset.on').forEach(function(p){p.classList.remove('on');});
+  document.getElementById('rmin').value=0;
+  document.getElementById('rmax').value=100;
+  document.getElementById('qs-location').value='';
+  document.getElementById('qs-bhk').value='';
+  document.getElementById('qs-budget').value='';
+  document.getElementById('qs-status').value='';
+  priceMin=0; priceMax=100;
+  updateRange();
+  currentPage=1; renderCards(); renderPills();
+}
+
+/* ═══ VIEW TOGGLE ═══ */
+function setView(v){
+  currentView=v;
+  document.getElementById('vgrid').classList.toggle('on',v==='grid');
+  document.getElementById('vlist').classList.toggle('on',v==='list');
+  renderCards();
+}
+
+/* ═══ MOBILE FILTER ═══ */
+function openMobileFilter(){
+  document.getElementById('filterPanel').classList.add('open');
+  document.getElementById('filterOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeMobileFilter(){
+  document.getElementById('filterPanel').classList.remove('open');
+  document.getElementById('filterOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+/* ═══ PURPOSE TABS ═══ */
+document.querySelectorAll('.s-tab').forEach(function(t){
+  t.addEventListener('click',function(){
+    document.querySelectorAll('.s-tab').forEach(function(x){x.classList.remove('active');});
+    t.classList.add('active');
+  });
+});
+
+/* ═══ URL PARAMS ═══ */
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  var bhk=params.get('bhk');
+  if(bhk){
+    filters.bhk=[bhk];
+    document.querySelectorAll('.fp-chip[data-group="bhk"][data-val="'+bhk+'"]').forEach(function(c){c.classList.add('on');});
+    var sel=document.getElementById('qs-bhk');
+    if(sel) sel.value=bhk;
+  }
+})();
+
+/* ═══ INIT ═══ */
+updateRange();
+renderCards();
+</script>
 
 <!-- ═══ AI ASSISTANT — PROP GURU 🤖 ═══ -->
 <style>
@@ -353,4 +1103,5 @@ function jbProc(text){if(text.includes('Call Now')){window.location.href='tel:+9
 
 })();
 </script>
-</body></html>
+</body>
+</html>
