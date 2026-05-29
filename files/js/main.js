@@ -5,8 +5,8 @@
 'use strict';
 
 const CONFIG = {
-  whatsapp: '919765711811',   // UPDATE: Replace with actual WhatsApp number
-  phone: '+919765711811',     // UPDATE: Replace with actual phone number
+  whatsapp: '919765711811',   // Jay Bhadra Real Estate Solutions
+  phone: '+91-97657-11811',   // Jay Bhadra Real Estate Solutions
 };
 
 const WA_DEFAULT = encodeURIComponent(
@@ -242,7 +242,7 @@ function initForms() {
         } else if (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
           msg = 'Please enter a valid email address.';
         } else if (field.type === 'tel' && !/^\d{10}$/.test(val.replace(/\D/g, ''))) {
-          msg = 'Please enter a valid 10-digit phone number.';
+          msg = 'Please enter a valid 10-digit phone number. (e.g. 9876543210)';
         }
 
         field.classList.toggle('error', !!msg);
@@ -266,11 +266,45 @@ function initForms() {
 function submitToWhatsApp(form) {
   const data = {};
   new FormData(form).forEach((v, k) => { if (v) data[k] = v; });
-  const lines = Object.entries(data).map(([k, v]) =>
-    `${k.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}: ${v}`
-  );
-  const msg = encodeURIComponent('Hello Jay Bhadra Builders!\n\n' + lines.join('\n') + '\n\nPlease get in touch with me.');
-  window.open(`https://wa.me/${CONFIG.whatsapp}?text=${msg}`, '_blank');
+
+  // Get project name from page — hidden field, URL param, heading or page title
+  const projectField = form.querySelector('[name="Project"], [name="project"], #project-name');
+  let projectName = projectField ? projectField.value : '';
+
+  if (!projectName) {
+    // Try URL param
+    const urlParam = new URLSearchParams(window.location.search).get('project');
+    if (urlParam) projectName = urlParam.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  }
+  if (!projectName) {
+    // Try page heading
+    const h1 = document.querySelector('.pd-title, .project-name, h1');
+    if (h1) projectName = h1.textContent.trim();
+  }
+
+  // Validate phone is exactly 10 digits
+  const phoneVal = (data['Phone'] || '').replace(/\D/g, '');
+  if (phoneVal.length !== 10) {
+    alert('Please enter a valid 10-digit phone number.');
+    return;
+  }
+
+  // Build clean message
+  let msg = 'Hello Jay Bhadra Real Estate Solutions!\n';
+  msg += '─────────────────────\n';
+  if (projectName) msg += `📌 Project Interest: ${projectName}\n`;
+  msg += '─────────────────────\n';
+  if (data['Name'] || data['Full Name']) msg += `👤 Name: ${data['Name'] || data['Full Name']}\n`;
+  if (data['Phone']) msg += `📱 Phone: ${data['Phone']}\n`;
+  if (data['Email']) msg += `✉️ Email: ${data['Email']}\n`;
+  if (data['City']) msg += `📍 City: ${data['City']}\n`;
+  if (data['BHK'] || data['BHK Preference'] || data['Property Interest']) msg += `🏠 BHK/Type: ${data['BHK'] || data['BHK Preference'] || data['Property Interest']}\n`;
+  if (data['Budget'] || data['Budget Range']) msg += `💰 Budget: ${data['Budget'] || data['Budget Range']}\n`;
+  if (data['Message'] || data['Requirements']) msg += `📝 Message: ${data['Message'] || data['Requirements']}\n`;
+  msg += '─────────────────────\n';
+  msg += 'Please get in touch with me.';
+
+  window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank');
   showSuccess(form);
 }
 
