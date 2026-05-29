@@ -147,15 +147,48 @@ function initModal() {
   if (form) {
     form.addEventListener('submit', e => {
       e.preventDefault();
-      const name    = form.querySelector('#modal-name')?.value || '';
-      const phone   = form.querySelector('#modal-phone')?.value || '';
-      const project = form.querySelector('#modal-project-name')?.value || 'your properties';
+      const name    = form.querySelector('#modal-name')?.value.trim() || '';
+      const phone   = form.querySelector('#modal-phone')?.value.trim() || '';
+      const project = form.querySelector('#modal-project-name')?.value || 'General Enquiry';
       const bhk     = form.querySelector('#modal-bhk')?.value || '';
+
+      // Validate name
+      if (!name) {
+        const nf = form.querySelector('#modal-name');
+        const er = nf?.closest('.form-group')?.querySelector('.form-error');
+        if (er) { er.textContent = 'Please enter your name.'; er.classList.add('show'); }
+        if (nf) nf.classList.add('error');
+        return;
+      }
+
+      // Validate phone — exactly 10 digits
+      const clean = phone.replace(/\D/g, '');
+      if (clean.length !== 10) {
+        const pf = form.querySelector('#modal-phone');
+        const er = pf?.closest('.form-group')?.querySelector('.form-error');
+        if (er) { er.textContent = 'Please enter a valid 10-digit phone number.'; er.classList.add('show'); }
+        if (pf) pf.classList.add('error');
+        return;
+      }
+
       const msg = encodeURIComponent(
-        `Hello Jay Bhadra Builders!\n\nName: ${name}\nPhone: ${phone}\nInterested In: ${project}${bhk ? '\nBHK: ' + bhk : ''}\n\nPlease share more details.`
+        `Hello Jay Bhadra Real Estate Solutions!\n─────────────────────\n📌 Project: ${project}\n─────────────────────\n👤 Name: ${name}\n📱 Phone: ${phone}${bhk ? '\n🏠 BHK/Type: ' + bhk : ''}\n─────────────────────\nPlease get in touch with me.`
       );
       window.open(`https://wa.me/${CONFIG.whatsapp}?text=${msg}`, '_blank');
+      form.reset();
+      // Clear errors
+      form.querySelectorAll('.form-error').forEach(e => e.classList.remove('show'));
+      form.querySelectorAll('.form-control').forEach(f => f.classList.remove('error'));
       close();
+    });
+
+    // Clear errors on typing
+    form.querySelectorAll('.form-control').forEach(field => {
+      field.addEventListener('input', () => {
+        field.classList.remove('error');
+        const er = field.closest('.form-group')?.querySelector('.form-error');
+        if (er) er.classList.remove('show');
+      });
     });
   }
 
