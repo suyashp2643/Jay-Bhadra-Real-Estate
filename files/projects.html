@@ -430,9 +430,9 @@ function jbProc(text){if(text.includes('Call Now')){window.location.href='tel:+9
     var d = getRateData();
     var now = Date.now();
     if(now > d.reset){ d = {count:0, reset: now + 10*60*1000}; }
-    if(d.count >= 3){
+    if(d.count >= 10){
       var mins = Math.ceil((d.reset - now) / 60000);
-      alert('Too many submissions. Please wait ' + mins + ' minute(s) before trying again.');
+      alert('You have reached the submission limit. Please wait ' + mins + ' minute(s) or call us directly on +91-97657-11811.');
       return false;
     }
     d.count++;
@@ -465,5 +465,116 @@ function jbProc(text){if(text.includes('Call Now')){window.location.href='tel:+9
   }, true);
 
 })();
+</script>
+
+<script>
+/* ══ LEAD AUTO-CAPTURE SYSTEM ══ */
+/* Saves every form submission to GitHub leads.json */
+(function(){
+  'use strict';
+
+  var LEAD_REPO  = 'suyashp2643/Jay-Bhadra-Real-Estate';
+  var LEAD_FILE  = 'files/leads.json';
+
+  function getToken(){
+    return localStorage.getItem('jb_gh_token') || '';
+  }
+
+  function getProjectName(){
+    var urlParam = new URLSearchParams(window.location.search).get('project');
+    if(urlParam) return urlParam.replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase();});
+    var h = document.querySelector('.pd-title, .project-title, h1');
+    if(h) return h.textContent.trim().split('\n')[0];
+    return 'General Enquiry';
+  }
+
+  function getPageName(){
+    var p = window.location.pathname.split('/').pop() || 'index.html';
+    return p.replace('.html','').replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase();});
+  }
+
+  async function saveLead(leadData){
+    var token = getToken();
+    if(!token) return; // no token — just WhatsApp, no save
+
+    try {
+      // 1. Get existing leads.json (or start fresh)
+      var getResp = await fetch('https://api.github.com/repos/'+LEAD_REPO+'/contents/'+LEAD_FILE, {
+        headers:{'Authorization':'token '+token,'Accept':'application/vnd.github.v3+json'}
+      });
+
+      var sha = null;
+      var leads = [];
+
+      if(getResp.ok){
+        var fileData = await getResp.json();
+        sha = fileData.sha;
+        leads = JSON.parse(atob(fileData.content.replace(/\n/g,'')));
+      }
+
+      // 2. Add new lead
+      leads.unshift({
+        id: Date.now(),
+        date: new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}),
+        time: new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'}),
+        ...leadData,
+        status: 'New',
+        page: getPageName()
+      });
+
+      // 3. Save back
+      var body = {
+        message: 'New lead: '+leadData.name+' — '+new Date().toLocaleDateString(),
+        content: btoa(unescape(encodeURIComponent(JSON.stringify(leads, null, 2)))),
+      };
+      if(sha) body.sha = sha;
+
+      await fetch('https://api.github.com/repos/'+LEAD_REPO+'/contents/'+LEAD_FILE, {
+        method:'PUT',
+        headers:{'Authorization':'token '+token,'Content-Type':'application/json'},
+        body: JSON.stringify(body)
+      });
+
+    } catch(err){
+      console.log('Lead save skipped:', err.message);
+    }
+  }
+
+  // Hook into all form submits — capture lead BEFORE opening WhatsApp
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.form-submit, .btn-whatsapp[type="submit"], button[type="submit"]');
+    if(!btn) return;
+    var form = btn.closest('form');
+    if(!form) return;
+
+    // Collect form data
+    var data = {};
+    new FormData(form).forEach(function(v,k){ if(v) data[k.toLowerCase().replace(/\s+/g,'_')] = v; });
+
+    var lead = {
+      name:    data.name || data.full_name || data.your_name || 'Not provided',
+      phone:   data.phone || data.phone_number || 'Not provided',
+      email:   data.email || data.email_address || '',
+      city:    data.city || data.your_city || '',
+      bhk:     data.bhk || data.bhk_preference || data.property_interest || data.interested_in || '',
+      budget:  data.budget || data.budget_range || '',
+      message: data.message || data.requirements || '',
+      project: getProjectName(),
+    };
+
+    // Only save if phone looks valid
+    if(lead.phone !== 'Not provided' && lead.phone.replace(/\D/g,'').length >= 10){
+      saveLead(lead);
+    }
+  }, true);
+
+  // Expose for dashboard to set token
+  window.JBLeads = {
+    setToken: function(t){ localStorage.setItem('jb_gh_token', t); },
+    getToken: getToken,
+    save: saveLead
+  };
+})();
+
 </script>
 </body></html>
