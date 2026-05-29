@@ -19,6 +19,165 @@
     .project-meta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
     .map-note { font-size:0.73rem; color:var(--text-3); margin-top:8px; padding:8px 12px; background:var(--cream-2); border-radius:var(--r-sm); }
   </style>
+
+<script>
+/* ══ DYNAMIC PROJECT DETAIL LOADER ══ */
+/* Reads project data from projects.html based on URL ?project= param */
+(function(){
+  var urlParam = new URLSearchParams(window.location.search).get('project') || '';
+  var projectName = urlParam.replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase();});
+
+  // Update page title immediately
+  if(projectName){
+    document.title = projectName + ' — Jay Bhadra Real Estate Solutions';
+    var titleEl = document.getElementById('project-title');
+    var breadEl = document.getElementById('breadcrumb-name');
+    if(titleEl) titleEl.innerHTML = projectName;
+    if(breadEl) breadEl.textContent = projectName;
+  }
+
+  // Load from projects.html
+  fetch('projects.html?t='+Date.now())
+    .then(function(r){ return r.text(); })
+    .then(function(html){
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(html,'text/html');
+      var cards = doc.querySelectorAll('.project-card-v2');
+      var found = null;
+
+      cards.forEach(function(card){
+        var name = (card.querySelector('.pcard-title')||{}).textContent||'';
+        var slug = name.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-');
+        if(slug === urlParam || name.trim().toLowerCase() === projectName.toLowerCase()){
+          found = card;
+        }
+      });
+
+      if(!found){
+        // Project not found — redirect to projects page
+        if(urlParam) window.location.href = 'projects.html';
+        return;
+      }
+
+      // ── Extract data ──
+      var name    = (found.querySelector('.pcard-title')||{}).textContent||'';
+      var locEl   = (found.querySelector('.pcard-loc')||{}).textContent||'';
+      var priceEl = (found.querySelector('.pcard-price')||{}).textContent||'';
+      var filter  = found.getAttribute('data-filter')||'';
+      var photo   = found.getAttribute('data-photo')||'';
+      var tags    = [];
+      found.querySelectorAll('.pcard-tag').forEach(function(t){tags.push(t.textContent.trim());});
+
+      var loc = locEl.replace(/&#\d+;/g,'').replace(/[📍]/g,'').trim();
+      var status = filter.includes('ongoing')?'ongoing':filter.includes('completed')?'completed':'upcoming';
+      var statusLabel = status.charAt(0).toUpperCase()+status.slice(1);
+      var statusClass = 'status-'+status;
+
+      // ── Update DOM ──
+      // Title & breadcrumb
+      var titleEl = document.getElementById('project-title');
+      if(titleEl) titleEl.innerHTML = name;
+      var breadEl = document.getElementById('breadcrumb-name');
+      if(breadEl) breadEl.textContent = name;
+
+      // Status badge
+      var badge = document.getElementById('project-status-badge');
+      if(badge){ badge.textContent = statusLabel; badge.className = 'card-status '+statusClass; }
+
+      // Location
+      var locSpan = document.getElementById('project-location');
+      if(locSpan) locSpan.textContent = loc;
+      else {
+        // find the location span near status badge
+        var locEls = document.querySelectorAll('.page-hero span');
+        locEls.forEach(function(el){
+          if(el.textContent.includes('Shri Ram') || el.textContent.includes('Nashik') || el.textContent.includes('Road')){
+            el.textContent = '📍 ' + loc;
+          }
+        });
+      }
+
+      // Main photo
+      var mainImg = document.getElementById('main-img');
+      if(mainImg && photo && photo !== 'ADD_PHOTO_LINK_HERE'){
+        mainImg.innerHTML = '<img src="'+photo+'" alt="'+name+'" style="width:100%;height:100%;object-fit:cover;"/>';
+        // Update thumbnails too
+        var thumbs = mainImg.closest('.detail-section')?.querySelectorAll('[onclick]') || [];
+        thumbs.forEach(function(t){
+          t.style.backgroundImage = 'url('+photo+')';
+          t.style.backgroundSize = 'cover';
+          t.innerHTML = '';
+        });
+      }
+
+      // Overview text
+      var overviewP = document.querySelectorAll('.detail-section p');
+      if(overviewP.length > 0){
+        overviewP[0].textContent = name + ' is a quality ' +
+          (filter.includes('commercial')?'commercial':'residential') +
+          ' project by Jay Bhadra Real Estate Solutions. Located at ' + loc +
+          '. ' + (tags.length ? 'Key features: ' + tags.join(', ') + '.' : '') +
+          ' Contact us for full details and site visits.';
+        if(overviewP[1]) overviewP[1].textContent = '';
+      }
+
+      // Hidden project name in forms
+      document.querySelectorAll('input[name="Project"]').forEach(function(inp){
+        inp.value = name;
+      });
+
+      // WhatsApp link in sidebar
+      document.querySelectorAll('a[href*="wa.me"]').forEach(function(a){
+        if(a.href.includes('interested+in+')){
+          a.href = 'https://wa.me/919765711811?text=Hello!%20I%20am%20interested%20in%20'+encodeURIComponent(name)+'.%20Please%20share%20more%20details.';
+        }
+      });
+
+      // Update meta title
+      document.title = name + ' | Jay Bhadra Real Estate Solutions';
+
+      // Update BHK options in forms
+      var bhkTypes = tags.filter(function(t){return /bhk|shop|office|bungalow/i.test(t);});
+      document.querySelectorAll('select[id*="bhk"], select[id*="type"]').forEach(function(sel){
+        var cur = sel.innerHTML;
+        if(bhkTypes.length > 0){
+          sel.innerHTML = '<option value="">Select type</option>';
+          bhkTypes.forEach(function(t){
+            var opt = document.createElement('option');
+            opt.value = t; opt.textContent = t;
+            sel.appendChild(opt);
+          });
+          var notDecided = document.createElement('option');
+          notDecided.value = 'Not decided yet';
+          notDecided.textContent = 'Not decided yet';
+          sel.appendChild(notDecided);
+        }
+      });
+
+      // Update related projects footer list
+      var relList = document.querySelector('.footer-col ul');
+      if(relList){
+        relList.innerHTML = '';
+        cards.forEach(function(card){
+          var n = (card.querySelector('.pcard-title')||{}).textContent||'';
+          if(n.trim() && n.trim() !== name.trim()){
+            var slug = n.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-');
+            var li = document.createElement('li');
+            li.innerHTML = '<a href="project-detail.html?project='+slug+'">→ '+n.trim()+'</a>';
+            relList.appendChild(li);
+          }
+        });
+        if(!relList.children.length){
+          relList.innerHTML = '<li><a href="projects.html">→ View All Projects</a></li>';
+        }
+      }
+
+    })
+    .catch(function(e){
+      console.log('Could not load project data:', e);
+    });
+})();
+</script>
 </head>
 <body>
 <div class="top-strip"><div class="container">
@@ -49,7 +208,7 @@
     <h1 id="project-title">Jay Bhadra <em>Heights</em></h1>
     <div style="display:flex;gap:12px;align-items:center;margin-top:14px;flex-wrap:wrap;">
       <span class="card-status status-ongoing" id="project-status-badge">Ongoing</span>
-      <span style="color:var(--text-inv-2);font-size:0.9rem;">📍 Near Shri Ram Chowk, Nashik</span>
+      <span id="project-location" style="color:var(--text-inv-2);font-size:0.9rem;">📍 Near Shri Ram Chowk, Nashik</span>
     </div>
   </div>
 </section>
@@ -183,7 +342,7 @@
           <ul style="display:flex;flex-direction:column;gap:12px;">
             <li style="display:flex;gap:10px;font-size:0.84rem;color:var(--text-2);align-items:flex-start;"><span style="color:var(--success);flex-shrink:0;margin-top:2px;">✓</span><span>RERA registered project</span></li>
             <li style="display:flex;gap:10px;font-size:0.84rem;color:var(--text-2);align-items:flex-start;"><span style="color:var(--success);flex-shrink:0;margin-top:2px;">✓</span><span>Bank loan approved (SBI, HDFC, BoM)</span></li>
-            <li style="display:flex;gap:10px;font-size:0.84rem;color:var(--text-2);align-items:flex-start;"><span style="color:var(--success);flex-shrink:0;margin-top:2px;">✓</span><span>3-year maintenance support</span></li>
+            <li style="display:flex;gap:10px;font-size:0.84rem;color:var(--text-2);align-items:flex-start;"><span style="color:var(--success);flex-shrink:0;margin-top:2px;">✓</span><span>Maintenance support included</span></li>
             <li style="display:flex;gap:10px;font-size:0.84rem;color:var(--text-2);align-items:flex-start;"><span style="color:var(--success);flex-shrink:0;margin-top:2px;">✓</span><span>Vastu-compliant floor plans</span></li>
             <li style="display:flex;gap:10px;font-size:0.84rem;color:var(--text-2);align-items:flex-start;"><span style="color:var(--success);flex-shrink:0;margin-top:2px;">✓</span><span>No hidden charges</span></li>
             <li style="display:flex;gap:10px;font-size:0.84rem;color:var(--text-2);align-items:flex-start;"><span style="color:var(--success);flex-shrink:0;margin-top:2px;">✓</span><span>Flexible payment plans</span></li>
