@@ -626,74 +626,118 @@
    TO ADD A NEW PROPERTY: copy one object, paste below,
    change the values. photo: paste your imgbb.com link.
 ═══════════════════════════════════════════════════════ */
-var PROPERTIES = [
-  {
-    id:1, name:'Jay Bhadra Heights',
-    location:'Near Shri Ram Chowk, Nashik', area:'nashik road',
-    bhk:['1bhk','2bhk'], proptype:'flat', status:'ongoing',
-    price:28, priceLabel:'₹28 Lakh+', carpet:'450–700 sq.ft.',
-    amenities:['lift','parking','security','cctv','water','power'],
-    possession:'2025', verified:['rera','bank','vastu'],
-    photo:'', color:'linear-gradient(135deg,#0d1b2e,#1e3050)', icon:'🏢',
-    tags:['RCC Structure','Near School','Prime Location'],
-    posted:'2 days ago', emi:'EMI from ₹18,500/mo'
-  },
-  {
-    id:2, name:'Golden City Residency',
-    location:'Golden City Area, Nashik', area:'gangapur',
-    bhk:['1bhk','2bhk','3bhk'], proptype:'flat', status:'completed',
-    price:22, priceLabel:'₹22 Lakh+', carpet:'450–900 sq.ft.',
-    amenities:['lift','parking','security','garden','cctv','water'],
-    possession:'immediate', verified:['rera','bank'],
-    photo:'', color:'linear-gradient(135deg,#1a4a2e,#0d2e1a)', icon:'🏘️',
-    tags:['Ready to Move','Gated Society','Park View'],
-    posted:'1 week ago', emi:'EMI from ₹14,800/mo'
-  },
-  {
-    id:3, name:'Shri Ram Apartments',
-    location:'Shri Ram Chowk, Nashik', area:'panchavati',
-    bhk:['2bhk','3bhk'], proptype:'flat', status:'completed',
-    price:35, priceLabel:'₹35 Lakh+', carpet:'650–950 sq.ft.',
-    amenities:['lift','parking','security','cctv','power','water'],
-    possession:'immediate', verified:['rera','bank','vastu'],
-    photo:'', color:'linear-gradient(135deg,#2e1a1a,#5c2020)', icon:'🏠',
-    tags:['Ready to Move','Vastu','Near Temple'],
-    posted:'3 days ago', emi:'EMI from ₹23,500/mo'
-  },
-  {
-    id:4, name:'Jay Bhadra Commercial Hub',
-    location:'Main Road, Nashik', area:'ambad',
-    bhk:['shop','office'], proptype:'shop', status:'ongoing',
-    price:15, priceLabel:'₹15 Lakh+', carpet:'200–600 sq.ft.',
-    amenities:['parking','security','cctv','power'],
-    possession:'2026', verified:['rera','bank'],
-    photo:'', color:'linear-gradient(135deg,#0d2e3a,#0d4a5c)', icon:'🏪',
-    tags:['Main Road','High Footfall','Commercial'],
-    posted:'5 days ago', emi:'EMI from ₹10,200/mo'
-  },
-  {
-    id:5, name:'Green Valley Bungalows',
-    location:'Nashik Outskirts, Gangapur', area:'gangapur',
-    bhk:['bungalow'], proptype:'bungalow', status:'upcoming',
-    price:65, priceLabel:'₹65 Lakh+', carpet:'1800–2400 sq.ft.',
-    amenities:['parking','security','garden','cctv','water','power','playground'],
-    possession:'2026', verified:['rera','vastu'],
-    photo:'', color:'linear-gradient(135deg,#8a6420,#c8973a)', icon:'🏡',
-    tags:['Gated Community','Premium','Green Zone'],
-    posted:'Today', emi:'EMI from ₹43,500/mo'
-  },
-  {
-    id:6, name:'Fatangare Nagar Phase 2',
-    location:'Fatangare Nagar, Nashik', area:'nashik road',
-    bhk:['1bhk','2bhk'], proptype:'flat', status:'upcoming',
-    price:20, priceLabel:'₹20 Lakh+', carpet:'380–600 sq.ft.',
-    amenities:['parking','security','water','cctv'],
-    possession:'2027', verified:['rera'],
-    photo:'', color:'linear-gradient(135deg,#2a1a4a,#402878)', icon:'🏗️',
-    tags:['Affordable','Pre-Launch Offer','Near Highway'],
-    posted:'Today', emi:'EMI from ₹13,400/mo'
-  }
-];
+var PROPERTIES = [];
+
+/* ═══ FULLY DYNAMIC — LOADS FROM projects.html ═══ */
+/* Projects are ALWAYS read live from projects.html  */
+/* Add project via upload portal → appears here auto  */
+/* Remove project from projects.html → gone from here */
+
+function loadProjectsFromPage(){
+  fetch('projects.html?t=' + Date.now())
+    .then(function(r){ return r.text(); })
+    .then(function(html){
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(html, 'text/html');
+      var cards = doc.querySelectorAll('.project-card-v2');
+
+      PROPERTIES = []; // Reset every time
+
+      cards.forEach(function(card, i){
+        var name    = (card.querySelector('.pcard-title') || {}).textContent || '';
+        var locEl   = (card.querySelector('.pcard-loc') || {}).textContent || '';
+        var priceEl = (card.querySelector('.pcard-price') || {}).textContent || '';
+        var filter  = card.getAttribute('data-filter') || '';
+        var photo   = card.getAttribute('data-photo') || '';
+        var tags    = [];
+        card.querySelectorAll('.pcard-tag').forEach(function(t){ tags.push(t.textContent.trim()); });
+
+        if(!name.trim()) return; // skip empty
+
+        // Parse price
+        var priceMatch = priceEl.replace(/[₹&#;\d;]+/g, ' ').match(/(\d+)/);
+        var priceNum = priceMatch ? parseInt(priceMatch[1]) : 0;
+        // Handle HTML entity &#8377; = ₹
+        var priceFull = priceEl.match(/(\d+)\s*Lakh/);
+        if(priceFull) priceNum = parseInt(priceFull[1]);
+
+        // Status
+        var status = filter.includes('ongoing') ? 'ongoing' :
+                     filter.includes('completed') ? 'completed' : 'upcoming';
+
+        // BHK types
+        var bhkList = tags
+          .filter(function(t){ return /1bhk|2bhk|3bhk|4bhk/i.test(t); })
+          .map(function(t){ return t.toLowerCase().replace(/\s/g,''); });
+
+        // Property type
+        var proptype = /shop|office|commercial/i.test(tags.join(' ')) ? 'commercial' :
+                       /bungalow|villa/i.test(tags.join(' ')) ? 'plot' : 'flat';
+
+        // Location area
+        var locClean = locEl.replace(/&#\d+;/g,'').replace(/[📍]/g,'').trim();
+        var area = locClean.toLowerCase().replace(/[^a-z0-9\s]/g,'').trim();
+
+        // Amenities from tags
+        var amenities = tags.filter(function(t){
+          return /rera|parking|lift|security|water|power|garden|cctv|vastu/i.test(t);
+        }).map(function(t){ return t.toLowerCase().replace(/\s/g,''); });
+
+        PROPERTIES.push({
+          id:       i + 1,
+          name:     name.trim(),
+          location: locClean,
+          area:     area,
+          bhk:      bhkList.length ? bhkList : ['1bhk','2bhk'],
+          proptype: proptype,
+          status:   status,
+          price:    priceNum,
+          priceLabel: (priceNum ? '&#8377;' + priceNum + ' Lakh+' : 'Call for Price'),
+          carpet:   '',
+          amenities: amenities,
+          certified: tags.some(function(t){ return /rera/i.test(t); }) ? ['rera'] : [],
+          photo:    (photo && photo !== 'ADD_PHOTO_LINK_HERE') ? photo : '',
+          color:    ['linear-gradient(135deg,#0d1b2e,#1e3050)',
+                     'linear-gradient(135deg,#1a4a2e,#0d2e1a)',
+                     'linear-gradient(135deg,#8a6420,#c8973a)',
+                     'linear-gradient(135deg,#2e1a1a,#5c2020)',
+                     'linear-gradient(135deg,#0d2e3a,#0d4a5c)',
+                     'linear-gradient(135deg,#2a1a4a,#402878)'][i % 6],
+          icon:     ['&#127968;','&#127961;','&#127960;','&#127975;','&#127963;','&#127959;'][i % 6],
+          tags:     tags,
+          posted:   'Live',
+          emi:      priceNum ? 'EMI from &#8377;' + Math.round(priceNum * 870) + '/mo' : ''
+        });
+      });
+
+      // Update result count
+      var countEl = document.getElementById('result-count');
+      if(countEl) countEl.textContent = PROPERTIES.length;
+
+      // Render results
+      if(typeof renderResults === 'function') renderResults();
+      if(typeof updateResultCount === 'function') updateResultCount();
+    })
+    .catch(function(err){
+      console.log('Could not load projects:', err);
+      showEmptySearchState();
+    });
+}
+
+function showEmptySearchState(){
+  var grid = document.getElementById('results-grid') || document.getElementById('search-results');
+  if(!grid) return;
+  grid.innerHTML = '<div style="text-align:center;padding:60px 20px;grid-column:1/-1;">' +
+    '<div style="font-size:3rem;margin-bottom:16px;">&#127959;</div>' +
+    '<h3 style="font-family:var(--font-display,serif);color:#0d1b2e;margin-bottom:8px;">No Projects Yet</h3>' +
+    '<p style="color:rgba(13,27,46,0.5);font-size:0.9rem;">Projects will appear here as soon as they are added.</p>' +
+    '</div>';
+}
+
+/* Load on DOM ready */
+document.addEventListener('DOMContentLoaded', function(){
+  loadProjectsFromPage();
+});
 
 /* ═══ STATE ═══ */
 var filters = { bhk:[], proptype:[], area:[], status:[], amenity:[], possession:[], verified:[] };
@@ -1014,7 +1058,7 @@ renderCards();
 'use strict';
 var OPEN=false,STARTED=false;
 function scanPageProjects(){var found=[];document.querySelectorAll('.project-card-v2').forEach(function(card){var name=(card.querySelector('.pcard-title')||{}).textContent||'';var loc=(card.querySelector('.pcard-loc')||{}).textContent||'';var price=(card.querySelector('.pcard-price')||{}).textContent||'';var info=(card.querySelector('.pcard-info')||{}).textContent||'';var tags=[];card.querySelectorAll('.pcard-tag').forEach(function(t){tags.push(t.textContent.trim());});var status=card.getAttribute('data-filter')||'';var st=status.includes('ongoing')?'ongoing':status.includes('completed')?'completed':'upcoming';if(name.trim())found.push({name:name.trim(),loc:loc.replace('📍','').trim(),price:price.replace('onwards','').trim(),types:tags,status:st,info:info.trim()});});document.querySelectorAll('.project-card').forEach(function(card){var name=(card.querySelector('.card-title')||{}).textContent||'';var loc=(card.querySelector('.card-meta')||{}).textContent||'';var price=(card.querySelector('.card-price')||{}).textContent||'';var tags=[];card.querySelectorAll('.card-tag').forEach(function(t){tags.push(t.textContent.trim());});var badge=(card.querySelector('[class*="status-"]')||{}).textContent||'ongoing';var st=badge.toLowerCase().includes('ongoing')?'ongoing':badge.toLowerCase().includes('completed')?'completed':'upcoming';if(name.trim())found.push({name:name.trim(),loc:loc.replace('📍','').trim(),price:price.replace('onwards','').trim(),types:tags,status:st,info:''});});return found;}
-var BASE=[{name:'Jay Bhadra Heights',loc:'Near Shri Ram Chowk, Nashik',status:'ongoing',types:['1BHK','2BHK'],price:'₹28 Lakh+',info:'RCC structure, RERA registered, bank approved. Possession Dec 2025.'},{name:'Golden City Residency',loc:'Golden City Area, Nashik',status:'completed',types:['1BHK','2BHK','3BHK'],price:'₹22 Lakh+',info:'Ready to move in. Handed over 2022.'},{name:'Shri Ram Apartments',loc:'Shri Ram Chowk, Nashik',status:'completed',types:['2BHK','3BHK'],price:'₹35 Lakh+',info:'Spacious flats near temple. Ready to move in.'},{name:'Jay Bhadra Commercial Hub',loc:'Main Road, Nashik',status:'ongoing',types:['Shop','Office'],price:'₹15 Lakh+',info:'Commercial shops and offices. Possession Mar 2026.'},{name:'Green Valley Bungalows',loc:'Nashik Outskirts',status:'upcoming',types:['Bungalow'],price:'₹65 Lakh+',info:'Premium gated community bungalows. Pre-booking open.'},{name:'Fatangare Nagar Phase 2',loc:'Fatangare Nagar, Nashik',status:'upcoming',types:['1BHK','2BHK'],price:'₹20 Lakh+',info:'Affordable flats. Pre-launch bookings open.'}];
+var BASE=[]; /* Projects loaded dynamically from page */
 function getP(){var live=scanPageProjects();if(live.length===0)return BASE;BASE.forEach(function(bp){var ex=live.some(function(lp){return lp.name.toLowerCase().includes(bp.name.toLowerCase().split(' ')[2]||bp.name.toLowerCase().split(' ')[0]);});if(!ex)live.push(bp);});return live;}
 var CO={phone:'+91-97657-11811',wa:'919765711811',email:'jaybhadrarealestate.pvtltd@gmail.com',address:'ROOGNTA Shopping Hub, 6106, Kamod Nagar, Indira Nagar, Nashik – 422009',hours:'Mon–Sat 9AM–7PM, Sunday by appointment',director:'Mr. Santosh Ramesh Fatangare',founded:'2010'};
 function getReply(msg){var m=msg.toLowerCase().trim();var PROJ=getP();
