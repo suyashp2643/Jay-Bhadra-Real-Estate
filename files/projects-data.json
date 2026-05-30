@@ -1,5 +1,30 @@
 [
   {
+    "id": 1780165231164,
+    "name": "Jay Bhadra Commercial's",
+    "location": "Sangamner, Maharashtra",
+    "price": 15,
+    "priceLabel": "15 Lakhs Lakh+",
+    "photo": "https://i.ibb.co/ZprBWnWL/jaybhadra-commercial-jpg.jpg",
+    "status": "ongoing",
+    "proptype": "commercial",
+    "tags": [
+      "Commercial",
+      "Shop",
+      "Office",
+      "Lift",
+      "Parking",
+      "24/7 Security",
+      "Power Backup",
+      "CCTV",
+      "24/7 Water"
+    ],
+    "carpet": "",
+    "possession": "",
+    "description": "",
+    "added": "30/5/2026"
+  },
+  {
     "id": 1780129079658,
     "name": "Golden City Sangamner",
     "location": "Sangamner, Maharashtra",
