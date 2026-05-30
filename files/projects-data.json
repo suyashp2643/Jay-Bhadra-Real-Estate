@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "id": 1780129079658,
+    "name": "Golden City Sangamner",
+    "location": "Sangamner, Maharashtra",
+    "price": 21,
+    "priceLabel": "21 Lakhs Lakh+",
+    "photo": "https://i.ibb.co/GQV8mzWz/Golden-City-Sangamner.jpg",
+    "status": "ongoing",
+    "proptype": "residential",
+    "tags": [
+      "1BHK",
+      "2BHK",
+      "3BHK",
+      "Lift",
+      "Parking",
+      "24/7 Security",
+      "Power Backup",
+      "Garden",
+      "CCTV",
+      "24/7 Water",
+      "Play Area",
+      "Gym",
+      "Temple",
+      "Vastu"
+    ],
+    "carpet": "",
+    "possession": "",
+    "description": "",
+    "added": "30/5/2026"
+  }
+]
