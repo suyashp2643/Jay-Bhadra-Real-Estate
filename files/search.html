@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Search Properties &mdash; Jay Bhadra Real Estate | 1BHK 2BHK Flats Bungalows & Commercial</title>
+  <link rel="canonical" href="https://jaybhadrarealestate.com/search.html"/>
+  <meta name="keywords" content="search property, 1BHK flats, 2BHK flats price, bungalow, commercial shop, affordable homes"/>
+<meta name="description" content="Search and filter properties by location, BHK type, budget and status. Find verified 1BHK, 2BHK, 3BHK flats, bungalows and commercial shops with Jay Bhadra Real Estate Solutions."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+/* &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;
+   99ACRES-STYLE SEARCH ENGINE
+   Jay Bhadra Real Estate Solutions
+&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; */
+
+/* &#9472;&#9472; HERO SEARCH &#9472;&#9472; */
+.search-hero{
+  background:var(--mesh);
+  padding:52px 0 0;
+  position:relative;overflow:hidden;
+}
+.search-hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(200,151,58,0.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(200,151,58,0.05) 1px,transparent 1px);
+  background-size:64px 64px;
+}
+.search-hero .container{position:relative;z-index:2}
+.sh-title{font-family:var(--font-display);color:#fff;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:400;text-align:center;margin-bottom:6px}
+.sh-title em{font-style:italic;color:var(--gold-light)}
+.sh-sub{text-align:center;color:rgba(255,255,255,0.55);font-size:0.88rem;margin-bottom:28px}
+
+/* Big search box */
+.big-search{
+  background:rgba(255,255,255,0.97);
+  border-radius:var(--r-lg);
+  padding:6px;
+  display:flex;
+  gap:0;
+  box-shadow:0 20px 60px rgba(13,27,46,0.35);
+  margin-bottom:0;
+  flex-wrap:wrap;
+}
+.bs-field{
+  flex:1;min-width:180px;
+  display:flex;align-items:center;gap:10px;
+  padding:12px 18px;
+  border-right:1px solid var(--border);
+  position:relative;
+}
+.bs-field:last-of-type{border-right:none}
+.bs-field .ico{font-size:1.1rem;flex-shrink:0;color:var(--text-3)}
+.bs-field-inner{flex:1}
+.bs-field-inner label{display:block;font-size:0.62rem;font-family:var(--font-cap);letter-spacing:0.1em;color:var(--text-3);text-transform:uppercase;margin-bottom:3px}
+.bs-field-inner input,.bs-field-inner select{
+  width:100%;border:none;outline:none;font-size:0.9rem;color:var(--text-1);
+  background:transparent;font-family:var(--font-body);cursor:pointer;
+}
+.bs-field-inner select option{color:var(--text-1)}
+.bs-search-btn{
+  background:var(--gold);color:var(--navy);
+  border:none;border-radius:var(--r-md);
+  padding:14px 32px;font-family:var(--font-cap);
+  font-size:0.72rem;font-weight:600;letter-spacing:0.12em;
+  cursor:pointer;transition:all .25s;white-space:nowrap;
+  margin:4px;
+}
+.bs-search-btn:hover{background:var(--gold-light);transform:translateY(-1px);box-shadow:0 6px 20px rgba(200,151,58,0.4)}
+
+/* Tab strip */
+.search-tabs{
+  display:flex;gap:0;
+  background:rgba(255,255,255,0.08);
+  border-radius:var(--r-md) var(--r-md) 0 0;
+  overflow:hidden;
+  width:fit-content;
+  margin:24px auto 0;
+}
+.s-tab{
+  padding:10px 24px;font-size:0.78rem;font-weight:500;
+  color:rgba(255,255,255,0.55);cursor:pointer;border:none;
+  background:transparent;transition:all .2s;font-family:var(--font-body);
+}
+.s-tab:hover{color:rgba(255,255,255,0.85)}
+.s-tab.active{background:rgba(255,255,255,0.97);color:var(--navy);font-weight:600;border-radius:var(--r-md) var(--r-md) 0 0}
+
+/* &#9472;&#9472; MAIN LAYOUT &#9472;&#9472; */
+.search-layout{
+  display:grid;
+  grid-template-columns:300px 1fr;
+  gap:28px;
+  align-items:flex-start;
+  padding:32px 0 60px;
+}
+
+/* &#9472;&#9472; FILTER SIDEBAR &#9472;&#9472; */
+.filter-panel{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:0 2px 12px rgba(13,27,46,0.06);
+  position:sticky;
+  top:calc(var(--nav-h) + 16px);
+}
+.fp-header{
+  background:var(--navy);
+  padding:16px 20px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.fp-header h3{font-family:var(--font-cap);font-size:0.68rem;font-weight:600;letter-spacing:0.15em;color:var(--gold-light);text-transform:uppercase}
+.fp-reset{font-size:0.7rem;color:rgba(255,255,255,0.4);cursor:pointer;font-family:var(--font-cap);letter-spacing:0.08em;background:none;border:none;transition:color .2s;padding:0}
+.fp-reset:hover{color:var(--gold-light)}
+.fp-group{padding:18px 20px;border-bottom:1px solid var(--border)}
+.fp-group:last-child{border-bottom:none}
+.fp-group-title{font-family:var(--font-cap);font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-3);margin-bottom:12px;display:flex;align-items:center;gap:7px}
+
+/* Chips */
+.fp-chips{display:flex;flex-wrap:wrap;gap:7px}
+.fp-chip{
+  padding:6px 13px;border-radius:100px;
+  border:1.5px solid var(--border);
+  background:transparent;font-size:0.73rem;font-weight:500;
+  color:var(--text-2);cursor:pointer;transition:all .18s;
+  font-family:var(--font-body);
+}
+.fp-chip:hover{border-color:var(--navy);color:var(--navy)}
+.fp-chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.fp-chip.on.gold-chip{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+
+/* Price slider */
+.price-wrap{padding:4px 0}
+.price-display{display:flex;justify-content:space-between;margin-bottom:10px}
+.price-val{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--navy)}
+.range-track{position:relative;height:4px;background:var(--border);border-radius:2px;margin:14px 0 18px}
+.range-fill{position:absolute;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:2px}
+.range-input{position:absolute;top:50%;transform:translateY(-50%);width:100%;-webkit-appearance:none;appearance:none;background:transparent;pointer-events:none;height:20px}
+.range-input::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--navy);border:2px solid #fff;box-shadow:0 2px 8px rgba(13,27,46,0.25);cursor:pointer;pointer-events:all}
+.range-input::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--navy);border:2px solid #fff;cursor:pointer}
+.price-presets{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.price-preset{font-size:0.68rem;padding:4px 10px;border-radius:100px;border:1px solid var(--border);background:var(--cream);cursor:pointer;color:var(--text-2);transition:all .15s;font-family:var(--font-body)}
+.price-preset:hover,.price-preset.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* &#9472;&#9472; RESULTS AREA &#9472;&#9472; */
+.results-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+.results-count{font-size:0.85rem;color:var(--text-3)}
+.results-count strong{font-family:var(--font-display);font-size:1.3rem;color:var(--navy)}
+.sort-row{display:flex;align-items:center;gap:10px}
+.sort-label{font-size:0.78rem;color:var(--text-3)}
+.sort-select{padding:7px 32px 7px 12px;border:1.5px solid var(--border);border-radius:var(--r-sm);font-size:0.78rem;font-family:var(--font-body);color:var(--text-1);background:var(--white);outline:none;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236b7d95' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center}
+.view-toggle{display:flex;gap:4px}
+.view-btn{width:34px;height:34px;border:1.5px solid var(--border);border-radius:var(--r-sm);background:var(--white);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all .2s}
+.view-btn.on{background:var(--navy);border-color:var(--navy);color:var(--gold-light)}
+
+/* Active filter pills */
+.active-pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px;min-height:0}
+.a-pill{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:rgba(13,27,46,0.07);border:1px solid rgba(13,27,46,0.12);border-radius:100px;font-size:0.72rem;font-weight:500;color:var(--navy)}
+.a-pill button{background:none;border:none;cursor:pointer;color:var(--text-3);font-size:0.75rem;padding:0;line-height:1;transition:color .15s}
+.a-pill button:hover{color:#c0392b}
+
+/* &#9472;&#9472; PROPERTY CARD &#9472;&#9472; */
+.prop-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.prop-grid.list-view{grid-template-columns:1fr}
+
+.prop-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--r-lg);overflow:hidden;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .3s;
+  cursor:pointer;display:flex;flex-direction:column;
+}
+.prop-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(13,27,46,0.13);border-color:rgba(200,151,58,0.35)}
+
+/* List view card */
+.list-view .prop-card{flex-direction:row}
+.list-view .prop-card .pc-img{width:280px;flex-shrink:0;height:auto;min-height:200px}
+
+.pc-img{height:200px;position:relative;overflow:hidden}
+.pc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.prop-card:hover .pc-img img{transform:scale(1.06)}
+.pc-img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:rgba(255,255,255,0.25);transition:transform .5s}
+.prop-card:hover .pc-img-placeholder{transform:scale(1.06)}
+.pc-badge{position:absolute;top:12px;left:12px;padding:4px 12px;border-radius:100px;font-family:var(--font-cap);font-size:0.58rem;letter-spacing:0.1em;font-weight:600;backdrop-filter:blur(8px)}
+.pc-fav{position:absolute;top:12px;right:12px;width:32px;height:32px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:0.9rem;border:none;transition:all .2s}
+.pc-fav:hover,.pc-fav.on{background:var(--navy);color:var(--gold-light)}
+.pc-verified{position:absolute;bottom:12px;left:12px;background:rgba(26,107,69,0.88);color:#b6f0d5;font-size:0.58rem;font-family:var(--font-cap);letter-spacing:0.08em;padding:3px 10px;border-radius:100px}
+
+.pc-body{padding:16px 18px;flex:1;display:flex;flex-direction:column}
+.pc-price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
+.pc-price{font-family:var(--font-display);font-size:1.2rem;font-weight:600;color:var(--navy)}
+.pc-emi{font-size:0.7rem;color:var(--success);font-weight:500}
+.pc-title{font-family:var(--font-display);font-size:0.95rem;font-weight:600;color:var(--navy);margin-bottom:4px;line-height:1.3}
+.pc-loc{font-size:0.75rem;color:var(--text-3);margin-bottom:10px;display:flex;align-items:center;gap:4px}
+.pc-specs{display:flex;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.pc-spec{font-size:0.73rem;color:var(--text-2);display:flex;align-items:center;gap:4px}
+.pc-spec-divider{color:var(--border);font-size:0.8rem}
+.pc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+.pc-tag{font-size:0.67rem;padding:2px 9px;border-radius:100px;border:1px solid var(--border);background:var(--cream);color:var(--text-2)}
+.pc-actions{display:flex;gap:8px;margin-top:auto}
+.pc-actions .btn{flex:1;justify-content:center;font-size:0.75rem;padding:9px 12px}
+.pc-posted{font-size:0.68rem;color:var(--text-3);text-align:right;margin-top:8px}
+
+/* No results */
+.no-results{text-align:center;padding:60px 20px;display:none}
+.no-results.show{display:block}
+.no-results .nr-icon{font-size:3.5rem;margin-bottom:16px}
+.no-results h3{margin-bottom:8px;font-size:1.2rem}
+.no-results p{color:var(--text-3);font-size:0.88rem;margin-bottom:20px}
+
+/* Mobile filter toggle */
+.mobile-filter-btn{
+  display:none;align-items:center;gap:8px;
+  padding:10px 18px;background:var(--navy);color:var(--gold-light);
+  border:none;border-radius:var(--r-sm);font-family:var(--font-cap);
+  font-size:0.68rem;letter-spacing:0.1em;cursor:pointer;margin-bottom:16px;
+}
+.filter-overlay{display:none;position:fixed;inset:0;background:rgba(13,27,46,0.5);z-index:49;backdrop-filter:blur(4px)}
+.filter-overlay.open{display:block}
+
+/* Pagination */
+.pagination{display:flex;justify-content:center;align-items:center;gap:6px;margin-top:36px;flex-wrap:wrap}
+.page-btn{width:38px;height:38px;border-radius:var(--r-sm);border:1.5px solid var(--border);background:var(--white);color:var(--text-2);font-size:0.85rem;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center}
+.page-btn:hover{border-color:var(--navy);color:var(--navy)}
+.page-btn.on{background:var(--navy);border-color:var(--navy);color:var(--gold-light);font-weight:600}
+.page-btn.prev,.page-btn.next{width:auto;padding:0 14px;font-size:0.78rem;gap:6px}
+
+/* Map toggle */
+.map-toggle-bar{background:var(--white);border-top:1px solid var(--border);padding:14px 0;text-align:center;margin-top:-1px}
+.map-btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;background:var(--navy);color:var(--gold-light);border:none;border-radius:var(--r-sm);font-family:var(--font-cap);font-size:0.68rem;letter-spacing:0.1em;cursor:pointer}
+
+@media(max-width:1000px){
+  .search-layout{grid-template-columns:1fr}
+  .filter-panel{position:fixed;top:0;left:-100%;width:min(300px,88vw);height:100dvh;overflow-y:auto;z-index:50;border-radius:0;transition:left .35s cubic-bezier(.22,1,.36,1)}
+  .filter-panel.open{left:0}
+  .mobile-filter-btn{display:flex}
+  .prop-grid{grid-template-columns:1fr}
+  .list-view .prop-card{flex-direction:column}
+  .list-view .prop-card .pc-img{width:100%;min-height:200px}
+}
+@media(max-width:600px){
+  .big-search{flex-direction:column;gap:0}
+  .bs-field{border-right:none;border-bottom:1px solid var(--border)}
+  .bs-field:last-of-type{border-bottom:none}
+  .bs-search-btn{width:calc(100% - 8px);text-align:center;justify-content:center}
+  .search-tabs{width:100%;overflow-x:auto}
+}
+</style>
+  <link rel="icon" type="image/png" href="images/Logo.png"/>
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
+  <meta property="og:image" content="https://jaybhadrarealestate.com/images/Logo.png"/>
+  <meta property="og:url" content="https://jaybhadrarealestate.com/search.html"/>
+  <meta property="og:site_name" content="Jay Bhadra Real Estate Solutions"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="author" content="Jay Bhadra Real Estate Solutions Pvt. Ltd."/>
+</head>
+<body>
+
+<!-- TOP STRIP -->
+<div class="top-strip"><div class="container">
+  <span>&#128222; <a href="tel:+919765711811">+91-97657-11811</a> &nbsp;|&nbsp; &#9200; Mon&ndash;Sat 9AM&ndash;7PM</span>
+  <button class="strip-dismiss">&#10005;</button>
+</div></div>
+
+<!-- NAVBAR -->
+<nav class="navbar"><div class="container">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon" style="padding:0;overflow:hidden;background:#fff;border-radius:8px;"><img src="images/Logo.png" alt="Jay Bhadra Real Estate Logo" style="width:100%;height:100%;object-fit:contain;display:block;padding:3px;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#c8973a,#8a6420)';this.parentNode.style.display='flex';this.parentNode.style.alignItems='center';this.parentNode.style.justifyContent='center';this.parentNode.innerHTML='<span style=font-family:Cinzel,serif;font-weight:600;color:#0d1b2e;font-size:1rem;>JB</span>'"/></div>
+    <div class="nav-logo-text"><strong>Jay Bhadra Real Estate Solutions Pvt. Ltd.</strong><em>New Vision. Real Homes.</em></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    
+    <li><a href="search.html" class="active">Search</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Enquire Now</a></li>
+  </ul>
+  <button class="hamburger"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="nav-overlay"></div>
+<nav class="nav-drawer">
+  <a href="index.html">Home</a>
+  <a href="projects.html">&#127970; Projects</a>
+  <a href="search.html" class="active">Search</a>
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" style="margin-top:20px;background:var(--gold);color:var(--navy);font-weight:600;border-radius:var(--r-sm);text-align:center;font-family:var(--font-cap);font-size:0.75rem;letter-spacing:0.1em;padding:14px 16px;">ENQUIRE NOW</a>
+</nav>
+
+<main>
+
+<!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552; HERO SEARCH &#9552;&#9552;&#9552;&#9552;&#9552;&#9552; -->
+<style>
+.search-hero{position:relative;overflow:hidden;}
+.ph-slides{position:absolute;inset:0;z-index:0;}
+.ph-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;animation:phSlide 18s infinite;transform:scale(1.07);}
+.ph-slide:nth-child(1){animation-delay:0s;}
+.ph-slide:nth-child(2){animation-delay:6s;}
+.ph-slide:nth-child(3){animation-delay:12s;}
+@keyframes phSlide{0%{opacity:0;transform:scale(1.07)}8%{opacity:1;transform:scale(1.07)}30%{opacity:1;transform:scale(1.0)}40%{opacity:0;transform:scale(1.0)}100%{opacity:0}}
+.ph-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(8,14,26,0.80) 0%,rgba(13,27,46,0.72) 50%,rgba(8,14,26,0.65) 100%);}
+.ph-overlay::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#c8973a,#e6b55a,#c8973a,transparent);animation:gsh 3s infinite;}
+@keyframes gsh{0%{opacity:0.4}50%{opacity:1}100%{opacity:0.4}}
+.search-hero .container{position:relative;z-index:2;}
+.search-hero h1,.search-hero p,.search-hero nav{text-shadow:0 2px 12px rgba(0,0,0,0.35);}
+</style>
+<section class="search-hero">
+  <div class="ph-slides">
+    <div class="ph-slide" style="background-image:url('https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&q=85&auto=format&fit=crop')"></div>
+    <div class="ph-slide" style="background-image:url('https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1600&q=85&auto=format&fit=crop')"></div>
+    <div class="ph-slide" style="background-image:url('https://images.unsplash.com/photo-1560185009-5bf9f2849488?w=1600&q=85&auto=format&fit=crop')"></div>
+  </div>
+  <div class="ph-overlay"></div>
+  <div class="container">
+    <h1 class="sh-title">Find Your <em>Dream Property</em></h1>
+    <p class="sh-sub">Search our verified projects &mdash; flats, bungalows, and commercial spaces</p>
+
+    <!-- Buy / Rent / Commercial tabs -->
+    <div class="search-tabs" id="purposeTabs">
+      <button class="s-tab active" data-purpose="buy">Buy</button>
+      <button class="s-tab" data-purpose="rent">Rent</button>
+      <button class="s-tab" data-purpose="commercial">Commercial</button>
+      <button class="s-tab" data-purpose="plot">Plot / Land</button>
+    </div>
+
+    <!-- Big search bar -->
+    <div class="big-search">
+      <div class="bs-field">
+        <span class="ico">&#128205;</span>
+        <div class="bs-field-inner">
+          <label>Location / Area</label>
+          <input type="text" id="qs-location" placeholder="e.g. Nashik Road, Gangapur&#8230;" oninput="liveSearch()"/>
+        </div>
+      </div>
+      <div class="bs-field">
+        <span class="ico">&#128715;&#65039;</span>
+        <div class="bs-field-inner">
+          <label>BHK / Type</label>
+          <select id="qs-bhk" onchange="liveSearch()">
+            <option value="">Any BHK</option>
+            <option value="1bhk">1 BHK</option>
+            <option value="2bhk">2 BHK</option>
+            <option value="3bhk">3 BHK</option>
+            <option value="4bhk">4 BHK</option>
+            <option value="bungalow">Bungalow / Villa</option>
+            <option value="shop">Shop / Office</option>
+            <option value="plot">Plot / Land</option>
+          </select>
+        </div>
+      </div>
+      <div class="bs-field">
+        <span class="ico">&#128176;</span>
+        <div class="bs-field-inner">
+          <label>Budget</label>
+          <select id="qs-budget" onchange="liveSearch()">
+            <option value="">Any Budget</option>
+            <option value="0-20">Under &#8377;20 Lakh</option>
+            <option value="20-40">&#8377;20 &ndash; 40 Lakh</option>
+            <option value="40-60">&#8377;40 &ndash; 60 Lakh</option>
+            <option value="60-80">&#8377;60 &ndash; 80 Lakh</option>
+            <option value="80-999">Above &#8377;80 Lakh</option>
+          </select>
+        </div>
+      </div>
+      <div class="bs-field">
+        <span class="ico">&#127959;&#65039;</span>
+        <div class="bs-field-inner">
+          <label>Status</label>
+          <select id="qs-status" onchange="liveSearch()">
+            <option value="">Any Status</option>
+            <option value="ongoing">Ready to Move / Ongoing</option>
+            <option value="upcoming">Under Construction</option>
+            <option value="completed">New Launch</option>
+          </select>
+        </div>
+      </div>
+      <button class="bs-search-btn" onclick="liveSearch()">&#128269; SEARCH</button>
+    </div>
+
+    <div class="map-toggle-bar">
+      <button class="map-btn" onclick="alert('Map view coming soon! Contact us for location details.')">&#128506; View on Map &nbsp;&rarr;</button>
+    </div>
+  </div>
+</section>
+
+<!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552; MAIN SEARCH LAYOUT &#9552;&#9552;&#9552;&#9552;&#9552;&#9552; -->
+<div class="container">
+  <div class="search-layout">
+
+    <!-- &#9472;&#9472; FILTER SIDEBAR &#9472;&#9472; -->
+    <aside class="filter-panel" id="filterPanel">
+      <div class="fp-header">
+        <h3>&#127899;&#65039; Refine Search</h3>
+        <button class="fp-reset" onclick="resetAll()">Reset All</button>
+      </div>
+
+      <!-- Property Type -->
+      <div class="fp-group">
+        <div class="fp-group-title">&#127968; Property Type</div>
+        <div class="fp-chips">
+          <button class="fp-chip" data-group="proptype" data-val="flat" onclick="toggleChip(this)">Flat / Apartment</button>
+          <button class="fp-chip" data-group="proptype" data-val="bungalow" onclick="toggleChip(this)">Bungalow</button>
+          <button class="fp-chip" data-group="proptype" data-val="villa" onclick="toggleChip(this)">Villa</button>
+          <button class="fp-chip" data-group="proptype" data-val="shop" onclick="toggleChip(this)">Shop</button>
+          <button class="fp-chip" data-group="proptype" data-val="office" onclick="toggleChip(this)">Office</button>
+          <button class="fp-chip" data-group="proptype" data-val="plot" onclick="toggleChip(this)">Plot / Land</button>
+        </div>
+      </div>
+
+      <!-- BHK -->
+      <div class="fp-group">
+        <div class="fp-group-title">&#128715;&#65039; BHK Configuration</div>
+        <div class="fp-chips">
+          <button class="fp-chip" data-group="bhk" data-val="1bhk" onclick="toggleChip(this)">1 BHK</button>
+          <button class="fp-chip" data-group="bhk" data-val="2bhk" onclick="toggleChip(this)">2 BHK</button>
+          <button class="fp-chip" data-group="bhk" data-val="3bhk" onclick="toggleChip(this)">3 BHK</button>
+          <button class="fp-chip" data-group="bhk" data-val="4bhk" onclick="toggleChip(this)">4 BHK</button>
+          <button class="fp-chip" data-group="bhk" data-val="4plusbhk" onclick="toggleChip(this)">4+ BHK</button>
+        </div>
+      </div>
+
+      <!-- Price Range -->
+      <div class="fp-group">
+        <div class="fp-group-title">&#128176; Price Range</div>
+        <div class="price-wrap">
+          <div class="price-display">
+            <span class="price-val" id="pmin-label">&#8377;0</span>
+            <span class="price-val" id="pmax-label">&#8377;1 Cr+</span>
+          </div>
+          <div class="range-track" id="range-track">
+            <div class="range-fill" id="range-fill"></div>
+            <input type="range" class="range-input" id="rmin" min="0" max="100" value="0" step="5" oninput="updateRange()"/>
+            <input type="range" class="range-input" id="rmax" min="0" max="100" value="100" step="5" oninput="updateRange()"/>
+          </div>
+          <div class="price-presets">
+            <button class="price-preset" onclick="setPreset(0,20)">Under &#8377;20L</button>
+            <button class="price-preset" onclick="setPreset(20,40)">&#8377;20&ndash;40L</button>
+            <button class="price-preset" onclick="setPreset(40,60)">&#8377;40&ndash;60L</button>
+            <button class="price-preset" onclick="setPreset(60,80)">&#8377;60&ndash;80L</button>
+            <button class="price-preset" onclick="setPreset(80,100)">&#8377;80L+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div class="fp-group">
+        <div class="fp-group-title">Area / Location</div>
+        <div class="fp-chips">
+          <button class="fp-chip" data-group="area" data-val="nashik road" onclick="toggleChip(this)">Nashik Road</button>
+          <button class="fp-chip" data-group="area" data-val="gangapur" onclick="toggleChip(this)">Gangapur Road</button>
+          <button class="fp-chip" data-group="area" data-val="college road" onclick="toggleChip(this)">College Road</button>
+          <button class="fp-chip" data-group="area" data-val="panchavati" onclick="toggleChip(this)">Panchavati</button>
+          <button class="fp-chip" data-group="area" data-val="satpur" onclick="toggleChip(this)">Satpur</button>
+          <button class="fp-chip" data-group="area" data-val="ambad" onclick="toggleChip(this)">Ambad</button>
+          <button class="fp-chip" data-group="area" data-val="cidco" onclick="toggleChip(this)">CIDCO</button>
+          <button class="fp-chip" data-group="area" data-val="trimbak road" onclick="toggleChip(this)">Trimbak Road</button>
+        </div>
+      </div>
+
+      <!-- Status -->
+      <div class="fp-group">
+        <div class="fp-group-title">&#127959;&#65039; Project Status</div>
+        <div class="fp-chips">
+          <button class="fp-chip" data-group="status" data-val="ongoing" onclick="toggleChip(this)">Ready / Ongoing</button>
+          <button class="fp-chip" data-group="status" data-val="completed" onclick="toggleChip(this)">Completed</button>
+          <button class="fp-chip" data-group="status" data-val="upcoming" onclick="toggleChip(this)">New Launch</button>
+        </div>
+      </div>
+
+      <!-- Amenities -->
+      <div class="fp-group">
+        <div class="fp-group-title">&#10024; Amenities</div>
+        <div class="fp-chips">
+          <button class="fp-chip" data-group="amenity" data-val="lift" onclick="toggleChip(this)">Lift</button>
+          <button class="fp-chip" data-group="amenity" data-val="parking" onclick="toggleChip(this)">Parking</button>
+          <button class="fp-chip" data-group="amenity" data-val="security" onclick="toggleChip(this)">24/7 Security</button>
+          <button class="fp-chip" data-group="amenity" data-val="garden" onclick="toggleChip(this)">Garden</button>
+          <button class="fp-chip" data-group="amenity" data-val="cctv" onclick="toggleChip(this)">CCTV</button>
+          <button class="fp-chip" data-group="amenity" data-val="power" onclick="toggleChip(this)">Power Backup</button>
+          <button class="fp-chip" data-group="amenity" data-val="water" onclick="toggleChip(this)">24/7 Water</button>
+          <button class="fp-chip" data-group="amenity" data-val="playground" onclick="toggleChip(this)">Play Area</button>
+        </div>
+      </div>
+
+      <!-- Possession -->
+      <div class="fp-group">
+        <div class="fp-group-title">&#128197; Possession By</div>
+        <div class="fp-chips">
+          <button class="fp-chip" data-group="possession" data-val="immediate" onclick="toggleChip(this)">Immediate</button>
+          <button class="fp-chip" data-group="possession" data-val="2025" onclick="toggleChip(this)">2025</button>
+          <button class="fp-chip" data-group="possession" data-val="2026" onclick="toggleChip(this)">2026</button>
+          <button class="fp-chip" data-group="possession" data-val="2027" onclick="toggleChip(this)">2027+</button>
+        </div>
+      </div>
+
+      <!-- RERA / Bank -->
+      <div class="fp-group">
+        <div class="fp-group-title">&#9989; Verified</div>
+        <div class="fp-chips">
+          <button class="fp-chip gold-chip" data-group="verified" data-val="rera" onclick="toggleChip(this)">RERA Registered</button>
+          <button class="fp-chip gold-chip" data-group="verified" data-val="bank" onclick="toggleChip(this)">Bank Approved</button>
+          <button class="fp-chip gold-chip" data-group="verified" data-val="vastu" onclick="toggleChip(this)">Vastu Compliant</button>
+        </div>
+      </div>
+
+    </aside>
+    <div class="filter-overlay" id="filterOverlay" onclick="closeMobileFilter()"></div>
+
+    <!-- &#9472;&#9472; RESULTS &#9472;&#9472; -->
+    <div>
+      <!-- Mobile filter button -->
+      <button class="mobile-filter-btn" onclick="openMobileFilter()">
+        &#127899;&#65039; Filters &nbsp;<span id="filter-count-badge" style="background:var(--gold);color:var(--navy);border-radius:100px;padding:1px 7px;font-size:0.65rem;display:none;" id="fbadge">0</span>
+      </button>
+
+      <!-- Active pills -->
+      <div class="active-pills" id="active-pills"></div>
+
+      <!-- Results header -->
+      <div class="results-header">
+        <div class="results-count">
+          <strong id="result-count">0</strong> properties found
+          <span id="result-city"></span>
+        </div>
+        <div class="sort-row">
+          <span class="sort-label">Sort:</span>
+          <select class="sort-select" id="sort-sel" onchange="renderCards()">
+            <option value="default">Relevance</option>
+            <option value="price-asc">Price: Low &rarr; High</option>
+            <option value="price-desc">Price: High &rarr; Low</option>
+            <option value="newest">Newest First</option>
+            <option value="area-asc">Area: Small &rarr; Large</option>
+          </select>
+          <div class="view-toggle">
+            <button class="view-btn on" id="vgrid" onclick="setView('grid')" title="Grid view">&#8862;</button>
+            <button class="view-btn" id="vlist" onclick="setView('list')" title="List view">&#9776;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property cards grid -->
+      <div class="prop-grid" id="prop-grid"><div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:rgba(13,27,46,0.4);font-size:0.9rem;">Loading projects...</div></div>
+
+      <!-- No results -->
+      <div class="no-results" id="no-results">
+        <div class="nr-icon">&#128269;</div>
+        <h3>No properties found</h3>
+        <p>Try adjusting your filters or search different keywords.</p>
+        <button class="btn btn-outline-navy btn-sm" onclick="resetAll()">Clear All Filters</button>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination" id="pagination"></div>
+
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer"><div class="container"><div class="footer-grid">
+  <div class="footer-brand">
+    <div class="footer-logo"><div class="footer-logo-icon" style="padding:0;overflow:hidden;background:#fff;border-radius:8px;"><img src="images/Logo.png" alt="Jay Bhadra Real Estate Logo" style="width:100%;height:100%;object-fit:contain;display:block;padding:3px;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#c8973a,#8a6420)';this.parentNode.style.display='flex';this.parentNode.style.alignItems='center';this.parentNode.style.justifyContent='center';this.parentNode.innerHTML='<span style=font-family:Cinzel,serif;font-weight:600;color:#0d1b2e;font-size:1rem;>JB</span>'"/></div>
+      <div class="footer-logo-text"><strong>Jay Bhadra Real Estate Solutions Pvt. Ltd.</strong><em>New Vision. Real Homes.</em></div>
+    </div>
+    <p>India's newest honest real estate company. 6 active projects. 100% transparent pricing.</p>
+    <div class="footer-social"><a href="#" class="soc-icon">f</a><a href="#" class="soc-icon">in</a><a href="https://wa.me/919765711811" class="soc-icon" target="_blank">W</a></div>
+  </div>
+  <div class="footer-col"><h5>Quick Links</h5><ul>
+    <li><a href="index.html">&rarr; Home</a></li><li><a href="projects.html">&rarr; Projects</a></li>
+    <li><a href="search.html">&rarr; Search Properties</a></li><li><a href="about.html">&rarr; About Us</a></li>
+    <li><a href="contact.html">&rarr; Contact</a></li>
+  </ul></div>
+  <div class="footer-col"><h5>Property Types</h5><ul>
+    <li><a href="search.html?bhk=1bhk">&rarr; 1 BHK Flats</a></li>
+    <li><a href="search.html?bhk=2bhk">&rarr; 2 BHK Flats</a></li>
+    <li><a href="search.html?bhk=3bhk">&rarr; 3 BHK Flats</a></li>
+    <li><a href="search.html?bhk=bungalow">&rarr; Bungalows</a></li>
+    <li><a href="search.html?bhk=shop">&rarr; Commercial Shops</a></li>
+  </ul></div>
+  <div class="footer-col"><h5>Contact</h5>
+    <div class="footer-ci"><span class="ic">&#128222;</span><span class="tx"><a href="tel:+919765711811">+91-97657-11811</a></span></div>
+    <div class="footer-ci"><span class="ic">&#128205;</span><span class="tx">ROOGNTA Shopping Hub, Indira Nagar, Nashik &ndash; 422009</span></div>
+    <div class="footer-ci"><span class="ic">&#9200;</span><span class="tx">Mon&ndash;Sat: 9AM&ndash;7PM</span></div>
+  </div>
+</div></div>
+<div class="container"><div class="footer-bottom">
+  <p>&#169; 2026 Jay Bhadra Real Estate Solutions Pvt. Ltd. All rights reserved.</p>
+  <p>Made with &#10084;&#65039; in Nashik, Maharashtra</p>
+</div></div></footer>
+
+<div class="whatsapp-float"><span class="wa-tooltip">Chat with us!</span>
+  <a href="https://wa.me/919765711811?text=Hello!%20I%20found%20a%20property%20on%20your%20website%20and%20need%20more%20details." class="whatsapp-btn" target="_blank" rel="noopener">&#128172;</a>
+</div>
+
+<div class="modal-overlay" role="dialog" aria-modal="true"><div class="modal">
+  <button class="modal-close">&#10005;</button>
+  <div class="modal-chip">Quick Enquiry</div>
+  <h3>Get Property Details</h3>
+  <p>We'll call you back within 30 minutes during business hours.</p>
+  <form class="modal-form" novalidate>
+      <!-- Honeypot &mdash; hidden from humans, catches bots -->
+      <div style="display:none;visibility:hidden;position:absolute;left:-9999px;" aria-hidden="true">
+        <input type="text" name="website" id="hp_website" tabindex="-1" autocomplete="off" value=""/>
+        <input type="text" name="company" id="hp_company" tabindex="-1" autocomplete="off" value=""/>
+      </div>
+    <input type="hidden" id="modal-project-name"/>
+    <div class="form-group"><label for="modal-name">Your Name <span>*</span></label><input type="text" id="modal-name" class="form-control" placeholder="Full name" required/><div class="form-error"></div></div>
+    <div class="form-group"><label for="modal-phone">Phone Number <span>*</span></label><input type="tel" id="modal-phone" class="form-control" placeholder="10-digit number" required/><div class="form-error"></div></div>
+    <div class="form-group"><label for="modal-bhk">Interested In</label>
+      <select id="modal-bhk" class="form-control"><option value="">Select type</option><option>1BHK</option><option>2BHK</option><option>3BHK</option><option>Bungalow</option><option>Commercial</option></select>
+    </div>
+    <button type="submit" class="btn btn-whatsapp form-submit">Send via WhatsApp</button>
+  </form>
+</div></div>
+
+<script src="js/main.js"></script>
+<script>
+'use strict';
+/* &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;
+   PROPERTY DATABASE
+   &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;
+   TO ADD A NEW PROPERTY: copy one object, paste below,
+   change the values. photo: paste your imgbb.com link.
+&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; */
+var PROPERTIES = [];
+
+/* &#9552;&#9552;&#9552; FULLY DYNAMIC &#8212; LOADS FROM projects.html &#9552;&#9552;&#9552; */
+/* Projects are ALWAYS read live from projects.html  */
+/* Add project via upload portal &#8594; appears here auto  */
+/* Remove project from projects.html &#8594; gone from here */
+
+function loadProjectsFromPage(){
+  fetch('projects-data.json?t=' + Date.now())
+    .then(function(r){
+      if(!r.ok) throw new Error('no data');
+      return r.json();
+    })
+    .then(function(projects){
+      PROPERTIES = [];
+
+      projects.forEach(function(p, i){
+        if(!p.name) return;
+
+        // BHK list from tags
+        var bhkList = (p.tags||[])
+          .filter(function(t){ return /\d\s*bhk/i.test(t); })
+          .map(function(t){ return t.toLowerCase().replace(/\s/g,''); });
+
+        var proptype = /shop|office|commercial/i.test((p.tags||[]).join(' ')) ? 'commercial' :
+                       /bungalow|villa/i.test((p.tags||[]).join(' ')) ? 'plot' : 'flat';
+
+        var colors = [
+          'linear-gradient(135deg,#0d1b2e,#1e3050)',
+          'linear-gradient(135deg,#1a4a2e,#0d2e1a)',
+          'linear-gradient(135deg,#8a6420,#c8973a)',
+          'linear-gradient(135deg,#2e1a1a,#5c2020)',
+          'linear-gradient(135deg,#0d2e3a,#0d4a5c)',
+          'linear-gradient(135deg,#2a1a4a,#402878)'
+        ];
+
+        PROPERTIES.push({
+          id:        p.id || i+1,
+          name:      p.name,
+          location:  p.location || 'Nashik',
+          area:      (p.location||'').toLowerCase().replace(/[^a-z0-9 ]/g,'').trim(),
+          bhk:       bhkList.length ? bhkList : ['1bhk','2bhk'],
+          proptype:  proptype,
+          status:    p.status || 'ongoing',
+          price:     p.price || 0,
+          priceLabel: p.price ? '&#8377;'+p.price+' Lakh+' : 'Call for Price',
+          carpet:    p.carpet || '',
+          amenities: (p.tags||[]).filter(function(t){ return /rera|parking|lift|security|water|power|garden|cctv|vastu/i.test(t); }),
+          certified: (p.tags||[]).some(function(t){ return /rera/i.test(t); }) ? ['rera'] : [],
+          verified:  (p.tags||[]).some(function(t){ return /rera/i.test(t); }) ? ['rera'] : [],
+          photo:     p.photo || '',
+          color:     colors[i % colors.length],
+          icon:      '&#127968;',
+          tags:      p.tags || [],
+          posted:    p.added || 'Live',
+          emi:       p.price ? 'EMI from &#8377;'+Math.round(p.price*870)+'/mo' : '',
+          description: p.description || ''
+        });
+      });
+
+      var countEl = document.getElementById('result-count');
+      if(countEl) countEl.textContent = PROPERTIES.length;
+
+      if(PROPERTIES.length === 0){
+        var grid = document.getElementById('prop-grid');
+        if(grid) grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px 20px;">'
+          + '<div style="font-size:3rem;margin-bottom:16px;">&#127959;</div>'
+          + '<h3 style="font-family:var(--font-display,serif);color:#0d1b2e;margin-bottom:8px;">No Projects Yet</h3>'
+          + '<p style="color:rgba(13,27,46,0.5);font-size:0.9rem;">Add projects using the Upload Portal</p>'
+          + '</div>';
+        return;
+      }
+
+      // Try rendering with retries
+      function tryRender(n){
+        if(typeof renderCards === 'function'){ renderCards(); }
+        else if(n>0){ setTimeout(function(){ tryRender(n-1); }, 100); }
+      }
+      tryRender(20);
+    })
+    .catch(function(){
+      var grid = document.getElementById('prop-grid');
+      if(grid) grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px 20px;">'
+        + '<p style="color:rgba(13,27,46,0.5);">No projects found. Add some using the Upload Portal.</p>'
+        + '</div>';
+      var c = document.getElementById('result-count');
+      if(c) c.textContent = '0';
+    });
+}
+
+
+function showEmptySearchState(){
+  var grid = document.getElementById('results-grid') || document.getElementById('search-results');
+  if(!grid) return;
+  grid.innerHTML = '<div style="text-align:center;padding:60px 20px;grid-column:1/-1;">' +
+    '<div style="font-size:3rem;margin-bottom:16px;">&#127959;</div>' +
+    '<h3 style="font-family:var(--font-display,serif);color:#0d1b2e;margin-bottom:8px;">No Projects Yet</h3>' +
+    '<p style="color:rgba(13,27,46,0.5);font-size:0.9rem;">Projects will appear here as soon as they are added.</p>' +
+    '</div>';
+}
+
+/* DOMContentLoaded moved to after renderCards */
+
+/* &#9552;&#9552;&#9552; STATE &#9552;&#9552;&#9552; */
+var filters = { bhk:[], proptype:[], area:[], status:[], amenity:[], possession:[], verified:[] };
+var priceMin = 0, priceMax = 100;
+var currentView = 'grid';
+var currentPage = 1;
+var perPage = 6;
+
+/* &#9552;&#9552;&#9552; CHIP TOGGLE &#9552;&#9552;&#9552; */
+function toggleChip(el){
+  var g = el.getAttribute('data-group');
+  var v = el.getAttribute('data-val');
+  var arr = filters[g] || [];
+  var idx = arr.indexOf(v);
+  if(idx===-1){ arr.push(v); el.classList.add('on'); }
+  else{ arr.splice(idx,1); el.classList.remove('on'); }
+  if(!filters[g]) filters[g]=arr; else filters[g]=arr;
+  currentPage=1; renderCards(); renderPills();
+}
+
+/* &#9552;&#9552;&#9552; PRICE RANGE &#9552;&#9552;&#9552; */
+function updateRange(){
+  var mn = parseInt(document.getElementById('rmin').value);
+  var mx = parseInt(document.getElementById('rmax').value);
+  if(mn > mx-5){ if(event&&event.target.id==='rmin') mn=mx-5; else mx=mn+5; }
+  priceMin=mn; priceMax=mx;
+  document.getElementById('rmin').value=mn;
+  document.getElementById('rmax').value=mx;
+  var pv = function(v){ return v===0?'&#8377;0':v>=100?'&#8377;1Cr+':'&#8377;'+v+'L'; };
+  document.getElementById('pmin-label').textContent=pv(mn);
+  document.getElementById('pmax-label').textContent=pv(mx);
+  var fill=document.getElementById('range-fill');
+  fill.style.left=mn+'%'; fill.style.width=(mx-mn)+'%';
+  document.querySelectorAll('.price-preset').forEach(p=>p.classList.remove('on'));
+  currentPage=1; renderCards(); renderPills();
+}
+function setPreset(mn,mx){
+  document.getElementById('rmin').value=mn;
+  document.getElementById('rmax').value=mx;
+  event&&event.target&&event.target.classList.add('on');
+  updateRange();
+}
+
+/* &#9552;&#9552;&#9552; QUICK SEARCH &#9552;&#9552;&#9552; */
+function liveSearch(){ currentPage=1; renderCards(); renderPills(); }
+
+/* &#9552;&#9552;&#9552; FILTER LOGIC &#9552;&#9552;&#9552; */
+function getFiltered(){
+  var qLoc = (document.getElementById('qs-location')||{value:''}).value.toLowerCase().trim();
+  var qBhk = (document.getElementById('qs-bhk')||{value:''}).value;
+  var qBudget = (document.getElementById('qs-budget')||{value:''}).value;
+  var qStatus = (document.getElementById('qs-status')||{value:''}).value;
+
+  return PROPERTIES.filter(function(p){
+    // Quick search bar
+    if(qLoc && !p.location.toLowerCase().includes(qLoc) && !p.name.toLowerCase().includes(qLoc) && !p.area.includes(qLoc)) return false;
+    if(qBhk && !p.bhk.includes(qBhk)) return false;
+    if(qStatus && p.status !== qStatus) return false;
+    if(qBudget){
+      var parts=qBudget.split('-');
+      var lo=parseInt(parts[0]),hi=parseInt(parts[1]);
+      if(p.price<lo||(hi<999&&p.price>hi)) return false;
+    }
+    // Sidebar filters
+    if(filters.bhk.length && !filters.bhk.some(b=>p.bhk.includes(b))) return false;
+    if(filters.proptype.length && !filters.proptype.includes(p.proptype)) return false;
+    if(filters.area.length && !filters.area.some(a=>p.area.includes(a))) return false;
+    if(filters.status.length && !filters.status.includes(p.status)) return false;
+    if(filters.amenity.length && !filters.amenity.every(a=>p.amenities.includes(a))) return false;
+    if(filters.possession.length && !filters.possession.includes(p.possession)) return false;
+    if(filters.verified.length && !filters.verified.every(v=>p.verified.includes(v))) return false;
+    // Price slider
+    if(p.price < priceMin || (priceMax<100 && p.price>priceMax)) return false;
+    return true;
+  });
+}
+
+/* &#9552;&#9552;&#9552; SORT &#9552;&#9552;&#9552; */
+function getSorted(arr){
+  var s = document.getElementById('sort-sel').value;
+  return arr.slice().sort(function(a,b){
+    if(s==='price-asc') return a.price-b.price;
+    if(s==='price-desc') return b.price-a.price;
+    if(s==='area-asc') return parseInt(a.carpet)-parseInt(b.carpet);
+    return 0;
+  });
+}
+
+/* &#9552;&#9552;&#9552; RENDER CARDS &#9552;&#9552;&#9552; */
+function renderCards(){
+  var filtered = getFiltered();
+  var sorted   = getSorted(filtered);
+  var total    = sorted.length;
+  var start    = (currentPage-1)*perPage;
+  var page     = sorted.slice(start, start+perPage);
+
+  document.getElementById('result-count').textContent = total;
+  document.getElementById('no-results').classList.toggle('show', total===0);
+
+  var grid = document.getElementById('prop-grid');
+  grid.className = 'prop-grid' + (currentView==='list'?' list-view':'');
+
+  var statusMap = {ongoing:'Ongoing',completed:'Completed',upcoming:'Upcoming'};
+  var badgeMap  = {ongoing:'s-ongoing',completed:'s-completed',upcoming:'s-upcoming'};
+
+  grid.innerHTML = page.map(function(p){
+    var imgHTML = p.photo && p.photo.trim()
+      ? '<img src="'+p.photo+'" alt="'+p.name+'" loading="lazy" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'flex\'"/><div class="pc-img-placeholder" style="display:none;background:'+p.color+'">'+p.icon+'</div>'
+      : '<div class="pc-img-placeholder" style="background:'+p.color+'">'+p.icon+'</div>';
+
+    var verBadge = (p.certified||p.verified||[]).includes('rera')
+      ? '<div class="pc-verified">&#9989; RERA Verified</div>' : '';
+
+    var tags = p.tags.map(function(t){return '<span class="pc-tag">'+t+'</span>';}).join('');
+    var bhkLabel = (p.bhk||['N/A']).map(function(b){
+      return b.toString()
+        .replace(/(\d)(bhk)/i,'$1 BHK')
+        .replace('shop','Shop')
+        .replace('bungalow','Bungalow')
+        .replace('office','Office')
+        .replace('villa','Villa')
+        .replace('plot','Plot');
+    }).join(' &#183; ');
+
+    return '<article class="prop-card">'
+      +'<div class="pc-img">'
+      + imgHTML
+      + '<span class="pc-badge '+badgeMap[p.status]+'">'+statusMap[p.status]+'</span>'
+      + '<button class="pc-fav" title="Save property" onclick="this.classList.toggle(\'on\')">&#9825;</button>'
+      + verBadge
+      +'</div>'
+      +'<div class="pc-body">'
+      +'<div class="pc-price-row"><span class="pc-price">'+p.priceLabel+'</span><span class="pc-emi">'+p.emi+'</span></div>'
+      +'<div class="pc-title">'+p.name+'</div>'
+      +'<div class="pc-loc"> '+p.location+'</div>'
+      +'<div class="pc-specs">'
+      +'<span class="pc-spec">&#128715;&#65039; '+bhkLabel+'</span>'
+      +'<span class="pc-spec-divider">|</span>'
+      +'<span class="pc-spec">&#128208; '+p.carpet+'</span>'
+      +'</div>'
+      +'<div class="pc-tags">'+tags+'</div>'
+      +'<div class="pc-actions">'
+      +'<a href="project-detail.html?project='+p.name.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'')+'" class="btn btn-navy btn-sm">View Details</a>'
+      +'<button class="btn btn-whatsapp btn-sm" onclick="openWA(\''+p.name+'\')">&#128172; Enquire</button>'
+      +'</div>'
+      +'<div class="pc-posted">Posted: '+p.posted+'</div>'
+      +'</div>'
+      +'</article>';
+  }).join('');
+
+  renderPagination(total);
+}
+
+/* &#9552;&#9552;&#9552; INIT &#9552;&#9552;&#9552; */
+/* Load on DOM ready &#8212; AFTER renderCards is defined */
+document.addEventListener('DOMContentLoaded', function(){
+  loadProjectsFromPage();
+});
+/* Reload when page becomes visible */
+document.addEventListener('visibilitychange', function(){
+  if(!document.hidden) loadProjectsFromPage();
+});
+
+function openWA(name){
+  var msg = encodeURIComponent('Hello Jay Bhadra Real Estate Solutions!\n\nI am interested in: '+name+'\nPlease share more details.');
+  window.open('https://wa.me/919765711811?text='+msg,'_blank');
+}
+
+/* &#9552;&#9552;&#9552; PAGINATION &#9552;&#9552;&#9552; */
+function renderPagination(total){
+  var pages = Math.ceil(total/perPage);
+  var el = document.getElementById('pagination');
+  if(pages<=1){ el.innerHTML=''; return; }
+  var html = '<button class="page-btn prev" onclick="goPage('+Math.max(1,currentPage-1)+')">&#8592; Prev</button>';
+  for(var i=1;i<=pages;i++){
+    html += '<button class="page-btn'+(i===currentPage?' on':'')+'" onclick="goPage('+i+')">'+i+'</button>';
+  }
+  html += '<button class="page-btn next" onclick="goPage('+Math.min(pages,currentPage+1)+')">Next &#8594;</button>';
+  el.innerHTML=html;
+}
+function goPage(n){ currentPage=n; renderCards(); window.scrollTo({top:400,behavior:'smooth'}); }
+
+/* &#9552;&#9552;&#9552; ACTIVE PILLS &#9552;&#9552;&#9552; */
+function renderPills(){
+  var el = document.getElementById('active-pills');
+  var html = '';
+  var count = 0;
+  var labelMap = {
+    bhk:{'1bhk':'1 BHK','2bhk':'2 BHK','3bhk':'3 BHK','4bhk':'4 BHK','4plusbhk':'4+ BHK','bungalow':'Bungalow','shop':'Shop','office':'Office'},
+    proptype:{flat:'Flat',bungalow:'Bungalow',villa:'Villa',shop:'Shop',office:'Office',plot:'Plot'},
+    area:{'nashik road':'Nashik Road',gangapur:'Gangapur Rd','college road':'College Rd',panchavati:'Panchavati',satpur:'Satpur',ambad:'Ambad',cidco:'CIDCO','trimbak road':'Trimbak Rd'},
+    status:{ongoing:'Ongoing',completed:'Completed',upcoming:'New Launch'},
+    amenity:{lift:'Lift',parking:'Parking',security:'Security',garden:'Garden',cctv:'CCTV',power:'Power Backup',water:'24/7 Water',playground:'Play Area'},
+    possession:{immediate:'Immediate',2025:'By 2025',2026:'By 2026','2027':'By 2027+'},
+    verified:{rera:'RERA Verified',bank:'Bank Approved',vastu:'Vastu'}
+  };
+  Object.keys(filters).forEach(function(g){
+    filters[g].forEach(function(v){
+      count++;
+      var lbl = (labelMap[g]&&labelMap[g][v])||v;
+      html += '<div class="a-pill">'+lbl+'<button onclick="removePill(\''+g+'\',\''+v+'\')">&#10005;</button></div>';
+    });
+  });
+  if(priceMin>0||priceMax<100){
+    count++;
+    var pv=function(v){return v===0?'&#8377;0':v>=100?'&#8377;1Cr+':'&#8377;'+v+'L';};
+    html+='<div class="a-pill">'+pv(priceMin)+' &#8211; '+pv(priceMax)+'<button onclick="setPreset(0,100)">&#10005;</button></div>';
+  }
+  el.innerHTML=html;
+  var badge=document.getElementById('fbadge');
+  if(badge){badge.textContent=count;badge.style.display=count>0?'inline':'none';}
+}
+function removePill(g,v){
+  var arr=filters[g];
+  var idx=arr.indexOf(v);
+  if(idx>-1) arr.splice(idx,1);
+  document.querySelectorAll('.fp-chip[data-group="'+g+'"][data-val="'+v+'"]').forEach(function(c){c.classList.remove('on');});
+  currentPage=1; renderCards(); renderPills();
+}
+
+/* &#9552;&#9552;&#9552; RESET &#9552;&#9552;&#9552; */
+function resetAll(){
+  filters={bhk:[],proptype:[],area:[],status:[],amenity:[],possession:[],verified:[]};
+  document.querySelectorAll('.fp-chip.on').forEach(function(c){c.classList.remove('on');});
+  document.querySelectorAll('.price-preset.on').forEach(function(p){p.classList.remove('on');});
+  document.getElementById('rmin').value=0;
+  document.getElementById('rmax').value=100;
+  document.getElementById('qs-location').value='';
+  document.getElementById('qs-bhk').value='';
+  document.getElementById('qs-budget').value='';
+  document.getElementById('qs-status').value='';
+  priceMin=0; priceMax=100;
+  updateRange();
+  currentPage=1; renderCards(); renderPills();
+}
+
+/* &#9552;&#9552;&#9552; VIEW TOGGLE &#9552;&#9552;&#9552; */
+function setView(v){
+  currentView=v;
+  document.getElementById('vgrid').classList.toggle('on',v==='grid');
+  document.getElementById('vlist').classList.toggle('on',v==='list');
+  renderCards();
+}
+
+/* &#9552;&#9552;&#9552; MOBILE FILTER &#9552;&#9552;&#9552; */
+function openMobileFilter(){
+  document.getElementById('filterPanel').classList.add('open');
+  document.getElementById('filterOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeMobileFilter(){
+  document.getElementById('filterPanel').classList.remove('open');
+  document.getElementById('filterOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+/* &#9552;&#9552;&#9552; PURPOSE TABS &#9552;&#9552;&#9552; */
+document.querySelectorAll('.s-tab').forEach(function(t){
+  t.addEventListener('click',function(){
+    document.querySelectorAll('.s-tab').forEach(function(x){x.classList.remove('active');});
+    t.classList.add('active');
+  });
+});
+
+/* &#9552;&#9552;&#9552; URL PARAMS &#9552;&#9552;&#9552; */
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  var bhk=params.get('bhk');
+  if(bhk){
+    filters.bhk=[bhk];
+    document.querySelectorAll('.fp-chip[data-group="bhk"][data-val="'+bhk+'"]').forEach(function(c){c.classList.add('on');});
+    var sel=document.getElementById('qs-bhk');
+    if(sel) sel.value=bhk;
+  }
+})();
+
+/* &#9552;&#9552;&#9552; INIT &#9552;&#9552;&#9552; */
+updateRange();
+/* Cards render after loadProjectsFromPage() finishes */
+</script>
+
+<!-- &#9552;&#9552;&#9552; AI ASSISTANT &mdash; PROP GURU &#129302; &#9552;&#9552;&#9552; -->
+<style>
+#jb-btn{position:fixed;bottom:162px;right:24px;width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#0d1b2e,#1e3050);border:2px solid rgba(200,151,58,0.55);cursor:pointer;z-index:9997;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(13,27,46,0.35);transition:transform .25s,box-shadow .25s;animation:jbp 2.8s infinite}
+#jb-btn:hover{transform:scale(1.12);box-shadow:0 8px 28px rgba(13,27,46,0.45);animation:none}
+@keyframes jbp{0%,100%{box-shadow:0 4px 18px rgba(13,27,46,0.35),0 0 0 0 rgba(200,151,58,0.45)}65%{box-shadow:0 4px 18px rgba(13,27,46,0.35),0 0 0 10px rgba(200,151,58,0)}}
+#jb-btn .jb-robot{font-size:1.35rem;line-height:1;display:block}
+#jb-badge{position:absolute;top:-3px;right:-3px;width:16px;height:16px;border-radius:50%;background:#e74c3c;color:#fff;font-size:0.55rem;font-weight:700;font-family:system-ui;display:flex;align-items:center;justify-content:center;border:2px solid #fff;animation:jbbd .6s ease}
+@keyframes jbbd{from{transform:scale(0)}to{transform:scale(1)}}
+#jb-tip{position:fixed;bottom:176px;right:80px;background:#0d1b2e;color:#fff;font-family:'DM Sans',system-ui,sans-serif;font-size:0.74rem;padding:6px 12px;border-radius:7px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .25s;border:1px solid rgba(200,151,58,0.3);box-shadow:0 4px 14px rgba(13,27,46,0.3)}
+#jb-tip::after{content:'';position:absolute;right:-5px;top:50%;transform:translateY(-50%);border:5px solid transparent;border-right:none;border-left-color:#0d1b2e}
+#jb-btn:hover + #jb-tip{opacity:1}
+#jb-win{position:fixed;bottom:222px;right:24px;width:345px;max-height:540px;background:#fff;border-radius:20px;box-shadow:0 20px 56px rgba(13,27,46,0.2);border:1px solid rgba(200,151,58,0.2);display:flex;flex-direction:column;z-index:9996;transform:scale(0.85) translateY(20px);transform-origin:bottom right;opacity:0;pointer-events:none;transition:transform .38s cubic-bezier(.34,1.56,.64,1),opacity .28s;font-family:'DM Sans',system-ui,sans-serif}
+#jb-win.open{transform:scale(1) translateY(0);opacity:1;pointer-events:all}
+.jbh{background:linear-gradient(135deg,#0d1b2e,#1e3050);border-radius:20px 20px 0 0;padding:13px 15px;display:flex;align-items:center;gap:10px}
+.jbh-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#c8973a,#e6b55a);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.jbh-info{flex:1}.jbh-info strong{display:block;color:#fff;font-size:0.87rem;font-weight:600}
+.jbh-info span{font-size:0.65rem;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:4px}
+.jb-on{width:6px;height:6px;border-radius:50%;background:#2ecc71;box-shadow:0 0 4px #2ecc71;display:inline-block}
+.jbx{background:none;border:none;color:rgba(255,255,255,0.4);cursor:pointer;font-size:1rem;line-height:1;padding:4px;transition:color .2s}.jbx:hover{color:#fff}
+.jb-msgs{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}
+.jb-msgs::-webkit-scrollbar{width:3px}.jb-msgs::-webkit-scrollbar-thumb{background:rgba(13,27,46,0.08);border-radius:2px}
+.jbm{display:flex;gap:7px;align-items:flex-end;animation:jbmi .28s}
+@keyframes jbmi{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.jbm.u{flex-direction:row-reverse}
+.jbav{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#c8973a,#e6b55a);display:flex;align-items:center;justify-content:center;font-size:0.75rem;flex-shrink:0}
+.jbb{max-width:83%;padding:9px 13px;border-radius:15px 15px 15px 3px;font-size:0.8rem;line-height:1.65;color:#1a2b4a;background:#f0f4f8}
+.jbm.u .jbb{background:linear-gradient(135deg,#0d1b2e,#1e3050);color:#fff;border-radius:15px 15px 3px 15px}
+.jbb a{color:#c8973a;text-decoration:underline}.jbb strong{color:#0d1b2e}.jbm.u .jbb strong{color:#e6b55a}
+.jb-typing{display:flex;gap:4px;padding:10px 13px;background:#f0f4f8;border-radius:15px 15px 15px 3px;width:fit-content}
+.jb-typing span{width:5px;height:5px;background:#9aa7bb;border-radius:50%;animation:jbty 1.2s infinite}
+.jb-typing span:nth-child(2){animation-delay:.2s}.jb-typing span:nth-child(3){animation-delay:.4s}
+@keyframes jbty{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-5px)}}
+.jb-qrs{display:flex;flex-wrap:wrap;gap:5px;padding:2px 12px 9px}
+.jbqr{padding:5px 11px;border-radius:100px;border:1px solid rgba(13,27,46,0.13);background:#fff;color:#0d1b2e;font-size:0.71rem;cursor:pointer;font-family:inherit;transition:all .17s;white-space:nowrap}
+.jbqr:hover{background:#0d1b2e;color:#e6b55a;border-color:#0d1b2e}
+.jb-inp-row{padding:9px 11px;border-top:1px solid rgba(13,27,46,0.07);display:flex;gap:7px;align-items:center}
+.jb-inp{flex:1;border:1.5px solid rgba(13,27,46,0.11);border-radius:11px;padding:8px 12px;font-size:0.8rem;outline:none;font-family:inherit;color:#0d1b2e;transition:border-color .2s}
+.jb-inp:focus{border-color:#0d1b2e}.jb-inp::placeholder{color:#bbb}
+.jbsnd{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#0d1b2e,#1e3050);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#e6b55a;font-size:0.9rem;flex-shrink:0;transition:transform .2s}
+.jbsnd:hover{transform:scale(1.12)}
+.jb-ft{padding:4px 12px 9px;text-align:center;font-size:0.6rem;color:#ccc}.jb-ft a{color:#c8973a}
+@media(max-width:420px){#jb-win{width:calc(100vw - 14px);right:7px;bottom:130px;max-height:68vh}#jb-btn{bottom:80px;right:16px}#jb-tip{display:none}}
+</style>
+<div id="jb-btn" onclick="jbT()" title="Chat with Prop Guru"><span class="jb-robot">&#129302;</span><span id="jb-badge">1</span></div>
+<div id="jb-tip">Ask Prop Guru &#129302;</div>
+<div id="jb-win">
+  <div class="jbh"><div class="jbh-av">&#129302;</div><div class="jbh-info"><strong>Prop Guru</strong><span><span class="jb-on"></span>&nbsp;Online &mdash; Jay Bhadra Real Estate</span></div><button class="jbx" onclick="jbT()">&#10005;</button></div>
+  <div class="jb-msgs" id="jb-msgs"></div>
+  <div class="jb-qrs" id="jb-qrs"></div>
+  <div class="jb-inp-row"><input type="text" class="jb-inp" id="jb-inp" placeholder="Ask about properties, prices..." onkeydown="if(event.key==='Enter')jbS()"/><button class="jbsnd" onclick="jbS()">&#10148;</button></div>
+  <div class="jb-ft">Jay Bhadra Real Estate &#183; <a href="https://jay-bhadra-real-estate.vercel.app" target="_blank">Visit Website</a></div>
+</div>
+<script>
+(function(){
+'use strict';
+var OPEN=false,STARTED=false;
+function scanPageProjects(){var found=[];document.querySelectorAll('.project-card-v2').forEach(function(card){var name=(card.querySelector('.pcard-title')||{}).textContent||'';var loc=(card.querySelector('.pcard-loc')||{}).textContent||'';var price=(card.querySelector('.pcard-price')||{}).textContent||'';var info=(card.querySelector('.pcard-info')||{}).textContent||'';var tags=[];card.querySelectorAll('.pcard-tag').forEach(function(t){tags.push(t.textContent.trim());});var status=card.getAttribute('data-filter')||'';var st=status.includes('ongoing')?'ongoing':status.includes('completed')?'completed':'upcoming';if(name.trim())found.push({name:name.trim(),loc:loc.replace('','').trim(),price:price.replace('onwards','').trim(),types:tags,status:st,info:info.trim()});});document.querySelectorAll('.project-card').forEach(function(card){var name=(card.querySelector('.card-title')||{}).textContent||'';var loc=(card.querySelector('.card-meta')||{}).textContent||'';var price=(card.querySelector('.card-price')||{}).textContent||'';var tags=[];card.querySelectorAll('.card-tag').forEach(function(t){tags.push(t.textContent.trim());});var badge=(card.querySelector('[class*="status-"]')||{}).textContent||'ongoing';var st=badge.toLowerCase().includes('ongoing')?'ongoing':badge.toLowerCase().includes('completed')?'completed':'upcoming';if(name.trim())found.push({name:name.trim(),loc:loc.replace('','').trim(),price:price.replace('onwards','').trim(),types:tags,status:st,info:''});});return found;}
+var BASE=[]; /* Projects loaded dynamically from page */
+function getP(){var live=scanPageProjects();if(live.length===0)return BASE;BASE.forEach(function(bp){var ex=live.some(function(lp){return lp.name.toLowerCase().includes(bp.name.toLowerCase().split(' ')[2]||bp.name.toLowerCase().split(' ')[0]);});if(!ex)live.push(bp);});return live;}
+var CO={phone:'+91-97657-11811',wa:'919765711811',email:'jaybhadrarealestate.pvtltd@gmail.com',address:'ROOGNTA Shopping Hub, 6106, Kamod Nagar, Indira Nagar, Nashik &#8211; 422009',hours:'Mon&#8211;Sat 9AM&#8211;7PM, Sunday by appointment',director:'Mr. Santosh Ramesh Fatangare',founded:'2010'};
+function getReply(msg){var m=msg.toLowerCase().trim();var PROJ=getP();
+if(/^(hi|hello|hii|hey|namaste|namaskar|good\s|&#2344;&#2350;&#2360;&#2381;|&#2361;&#2375;&#2354;&#2379;|helo)/.test(m))return{t:'Namaste! &#128591; Welcome to <strong>Jay Bhadra Real Estate Solutions</strong>!\n\nI\'m <strong>Prop Guru</strong> &#129302;, your property assistant.\n&#127968; Flats (1BHK/2BHK/3BHK)\n&#127969; Bungalows\n&#127978; Commercial\n&#128176; Prices & home loans\n\nWhat are you looking for?',q:['&#127968; All Projects','1BHK Flats','2BHK Flats','&#127969; Bungalows','&#128176; Price Range','&#128222; Book Visit']};
+if(/all project|show|list|available|sab|sabhi|projects/.test(m)){var list=PROJ.map(function(p){var ic=p.status==='ongoing'?'&#129002;':p.status==='completed'?'&#9989;':'&#128284;';return ic+' <strong>'+p.name+'</strong>\n   '+p.price+' | '+p.loc;}).join('\n');return{t:'All our current projects:\n\n'+list+'\n\nAsk me about any project for details! &#128522;',q:PROJ.slice(0,4).map(function(p){return p.name.split(' ').slice(0,3).join(' ');}).concat(['&#128222; Book Visit'])};}
+for(var i=0;i<PROJ.length;i++){var p=PROJ[i];var words=p.name.toLowerCase().split(' ').filter(function(w){return w.length>3;});if(words.some(function(w){return m.includes(w);})){var stTxt=p.status==='ongoing'?'&#129002; Ongoing':p.status==='completed'?'&#9989; Completed':'&#128284; Upcoming';return{t:'<strong>'+p.name+'</strong>\n\n '+p.loc+'\n'+stTxt+'\n&#128176; Starting: <strong>'+p.price+'</strong>\n&#128715;&#65039; Types: '+(p.types&&p.types.length?p.types.join(', '):'Multiple')+'\n\n'+p.info+'\n\n&#128073; Book a free site visit!',q:['&#128222; Call Now','&#128172; WhatsApp','&#127974; Home Loan?','&#11013; All Projects']};}}
+if(/1\s?bhk/.test(m)){var r1=PROJ.filter(function(p){return p.types&&p.types.some(function(t){return /1bhk/i.test(t);});});return{t:'<strong>1BHK Flats</strong>:\n\n'+(r1.map(function(p){return '&#127968; <strong>'+p.name+'</strong> &#8212; '+p.price+'\n    '+p.loc;}).join('\n')||'Call us for availability!')+'\n\n&#9989; RERA | &#127974; Bank Approved | &#129517; Vastu',q:['&#128176; Price Details','&#127974; Home Loan?','&#128222; Book Visit']};}
+if(/2\s?bhk/.test(m)){var r2=PROJ.filter(function(p){return p.types&&p.types.some(function(t){return /2bhk/i.test(t);});});return{t:'<strong>2BHK Flats</strong>:\n\n'+(r2.map(function(p){return '&#127968; <strong>'+p.name+'</strong> &#8212; '+p.price+'\n    '+p.loc;}).join('\n')||'Call for 2BHK options!')+'\n\n&#128161; Home loan from &#8377;20L onwards!',q:['Price Details','Home Loan?','&#128222; Book Visit']};}
+if(/3\s?bhk/.test(m)){var r3=PROJ.filter(function(p){return p.types&&p.types.some(function(t){return /3bhk/i.test(t);});});return{t:'<strong>3BHK Flats</strong>:\n\n'+(r3.map(function(p){return '&#127968; <strong>'+p.name+'</strong> &#8212; '+p.price+'\n    '+p.loc;}).join('\n')||'Call for options!')+'\n\n&#128161; Spacious homes for families!',q:['&#127974; Home Loan?','&#128222; Book Visit']};}
+if(/bungalow|villa/.test(m)){var rb=PROJ.filter(function(p){return p.types&&p.types.some(function(t){return /bungalow|villa/i.test(t);});});return{t:'<strong>Bungalows</strong>:\n\n'+(rb.map(function(p){return '&#127969; <strong>'+p.name+'</strong> &#8212; '+p.price+'\n    '+p.loc;}).join('\n')||'Green Valley Bungalows &#8212; &#8377;65L+\n&#128284; Pre-booking open!')+'\n\n&#10024; Premium gated community!',q:['&#128222; Book Now','&#128172; WhatsApp','&#128176; EMI Details']};}
+if(/commercial|shop|office/.test(m)){var rc=PROJ.filter(function(p){return p.types&&p.types.some(function(t){return /shop|office|commercial/i.test(t);});});return{t:'<strong>Commercial Properties</strong>:\n\n'+(rc.map(function(p){return '&#127978; <strong>'+p.name+'</strong> &#8212; '+p.price+'\n    '+p.loc;}).join('\n')||'Commercial Hub &#8212; &#8377;15L+')+'\n\n&#9989; Main road, high footfall!',q:['&#128222; Enquire','&#128172; WhatsApp','&#128176; Price Details']};}
+if(/price|cost|rate|budget|lakh|kitna|how much/.test(m)){return{t:'<strong>Property Prices:</strong>\n\n'+PROJ.map(function(p){return '&#128176; <strong>'+p.name+'</strong> &#8212; '+p.price;}).join('\n')+'\n\n&#127974; Home loan available!',q:['Home Loan','EMI Calc','&#128222; Get Best Price']};}
+if(/loan|emi|finance|bank|hdfc|sbi/.test(m)){return{t:'&#127974; <strong>Home Loan</strong>\n\nBank approved by:\n&#9989; SBI &#9989; HDFC &#9989; Bank of Maharashtra\n\n&#128161; EMI Examples:\n&#8377;25L = ~&#8377;21,700/mo\n&#8377;35L = ~&#8377;30,400/mo\n&#8377;50L = ~&#8377;43,400/mo\n\n&#128222; Call for exact calculation!',q:['&#128222; Loan Help','&#128172; WhatsApp','Book Visit']};}
+if(/visit|site visit|tour|appointment/.test(m)){return{t:'&#127881; Book a FREE site visit!\n\n&#128222; <strong>'+CO.phone+'</strong>\n&#128172; WhatsApp same number\n\n&#9200; '+CO.hours+'\n '+CO.address,q:['&#128222; Call Now','&#128172; WhatsApp',' Directions']};}
+if(/contact|phone|address|office|email|where/.test(m)){return{t:'&#128222; <strong>Contact Us</strong>\n\n&#128241; '+CO.phone+'\n&#128172; WhatsApp: '+CO.phone+'\n&#9993; '+CO.email+'\n '+CO.address+'\n&#9200; '+CO.hours,q:['&#128222; Call Now','&#128172; WhatsApp','Book Visit']};}
+if(/rera|legal|approved|verified/.test(m)){return{t:'&#9989; All projects:\n&#9989; RERA Registered\n&#127974; Bank Approved\n&#129517; Vastu Compliant\n&#128220; Clear Title\n\n&#128161; Full paperwork support!',q:['Home Loan','&#128222; Legal Query','Book Visit']};}
+if(/possession|ready|handover|when|kab/.test(m)){var rdy=PROJ.filter(function(p){return p.status==='completed';});var ong=PROJ.filter(function(p){return p.status==='ongoing';});var upc=PROJ.filter(function(p){return p.status==='upcoming';});return{t:'&#128197; <strong>Possession Status</strong>\n\n&#9989; Ready:\n'+rdy.map(function(p){return '&#8226; '+p.name;}).join('\n')+'\n\n&#129002; Ongoing:\n'+ong.map(function(p){return '&#8226; '+p.name;}).join('\n')+'\n\n&#128284; Upcoming:\n'+upc.map(function(p){return '&#8226; '+p.name;}).join('\n'),q:['Ready Flats','&#128222; Call for Update']};}
+if(/about|company|director|fatangare|founded/.test(m)){return{t:'&#127968; <strong>Jay Bhadra Real Estate Solutions</strong>\n\n&#128100; Director: <strong>'+CO.director+'</strong>\n&#128197; Founded: <strong>'+CO.founded+'</strong>\n Nashik, Maharashtra\n\n&#127959; 30+ Projects\n&#128106; 500+ Families\n&#128295; 3-Year Support\n&#9989; RERA Registered',q:['View Projects','&#128222; Contact','Book Visit']};}
+if(/thank|thanks|bye|goodbye|done/.test(m)){return{t:'Thank you! &#128522;&#128591;\n\nAlways here to help:\n&#128222; <strong>'+CO.phone+'</strong>\n\nHave a great day! &#8212; Prop Guru &#129302;',q:['View Projects','&#128222; Call Us']};}
+return{t:'Our team can help with this!\n\n&#128222; <strong>'+CO.phone+'</strong>\n&#128172; WhatsApp same number\nMon&#8211;Sat 9AM&#8211;7PM',q:['&#127968; All Projects','&#128176; Price Range','&#128222; Call Now','&#128172; WhatsApp']};}
+function jbT(){OPEN=!OPEN;document.getElementById('jb-win').classList.toggle('open',OPEN);var badge=document.getElementById('jb-badge');if(badge)badge.remove();if(OPEN&&!STARTED){STARTED=true;jbWelcome();}if(OPEN)setTimeout(function(){document.getElementById('jb-inp').focus();},400);}
+window.jbT=jbT;
+function jbWelcome(){setTimeout(function(){jbAdd('bot','Namaste! &#128591; I\'m <strong>Prop Guru</strong> &#129302;\nYour assistant at <strong>Jay Bhadra Real Estate</strong>.\n\nHow can I help you today?');jbQR(['&#127968; All Projects','1BHK Flats','2BHK / 3BHK','&#127969; Bungalows','&#128176; Prices','&#128222; Book Visit']);},350);}
+function jbAdd(role,text){var msgs=document.getElementById('jb-msgs');var d=document.createElement('div');d.className='jbm '+(role==='user'?'u':'');var av=document.createElement('div');av.className='jbav';av.textContent=role==='user'?'&#128100;':'&#129302;';var b=document.createElement('div');b.className='jbb';b.innerHTML=text.replace(/\n/g,'<br/>');d.appendChild(av);d.appendChild(b);msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;}
+function jbTyping(){var msgs=document.getElementById('jb-msgs');var d=document.createElement('div');d.className='jbm';d.id='jbtyp';var av=document.createElement('div');av.className='jbav';av.textContent='&#129302;';var t=document.createElement('div');t.className='jb-typing';t.innerHTML='<span></span><span></span><span></span>';d.appendChild(av);d.appendChild(t);msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;}
+function jbHideTyping(){var t=document.getElementById('jbtyp');if(t)t.remove();}
+function jbQR(opts){var row=document.getElementById('jb-qrs');row.innerHTML='';opts.forEach(function(o){var b=document.createElement('button');b.className='jbqr';b.textContent=o;b.onclick=function(){row.innerHTML='';jbProc(o);};row.appendChild(b);});}
+function jbS(){var inp=document.getElementById('jb-inp');var t=inp.value.trim();if(!t)return;inp.value='';document.getElementById('jb-qrs').innerHTML='';jbProc(t);}
+window.jbS=jbS;
+function jbProc(text){if(text.includes('Call Now')){window.location.href='tel:+919765711811';return;}if(text.includes('WhatsApp')){window.open('https://wa.me/919765711811?text=Hello!%20I%20need%20help%20with%20a%20property.','_blank');return;}if(text.includes('Directions')){window.open('https://www.google.com/maps/search/ROOGNTA+Shopping+Hub+Indira+Nagar+Nashik+422009','_blank');return;}jbAdd('user',text);jbTyping();setTimeout(function(){jbHideTyping();var r=getReply(text);jbAdd('bot',r.t);if(r.q&&r.q.length)jbQR(r.q);},300+Math.random()*400);}
+})();
+</script>
+
+
+<script>
+/* &#9552;&#9552; SECURITY: Honeypot + Rate Limiting &#9552;&#9552; */
+(function(){
+  'use strict';
+
+  /* Rate limiter &#8212; max 3 form submissions per 10 minutes */
+  function getRateData(){
+    try {
+      var d = JSON.parse(sessionStorage.getItem('jb_rl') || '{"count":0,"reset":0}');
+      return d;
+    } catch(e){ return {count:0,reset:0}; }
+  }
+  function setRateData(d){ sessionStorage.setItem('jb_rl', JSON.stringify(d)); }
+
+  function checkRateLimit(){
+    var d = getRateData();
+    var now = Date.now();
+    if(now > d.reset){ d = {count:0, reset: now + 10*60*1000}; }
+    if(d.count >= 10){
+      var mins = Math.ceil((d.reset - now) / 60000);
+      alert('You have reached the submission limit. Please wait ' + mins + ' minute(s) or call us directly on +91-97657-11811.');
+      return false;
+    }
+    d.count++;
+    setRateData(d);
+    return true;
+  }
+
+  function checkHoneypot(){
+    var hp1 = document.getElementById('hp_website');
+    var hp2 = document.getElementById('hp_company');
+    if((hp1 && hp1.value !== '') || (hp2 && hp2.value !== '')){
+      console.warn('Bot detected &#8212; form blocked');
+      return false;
+    }
+    return true;
+  }
+
+  /* Intercept all form submits */
+  document.addEventListener('submit', function(e){
+    if(!checkHoneypot()){ e.preventDefault(); return false; }
+    if(!checkRateLimit()){ e.preventDefault(); return false; }
+  }, true);
+
+  /* Intercept WhatsApp submit buttons */
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.form-submit');
+    if(!btn) return;
+    if(!checkHoneypot()){ e.preventDefault(); e.stopPropagation(); return false; }
+    if(!checkRateLimit()){ e.preventDefault(); e.stopPropagation(); return false; }
+  }, true);
+
+})();
+</script>
+
+<script>
+/* &#9552;&#9552; LEAD AUTO-CAPTURE SYSTEM &#9552;&#9552; */
+/* Saves every form submission to GitHub leads.json */
+(function(){
+  'use strict';
+
+  var LEAD_REPO  = 'suyashp2643/Jay-Bhadra-Real-Estate';
+  var LEAD_FILE  = 'files/leads.json';
+
+  function getToken(){
+    return localStorage.getItem('jb_gh_token') || '';
+  }
+
+  function getProjectName(){
+    var urlParam = new URLSearchParams(window.location.search).get('project');
+    if(urlParam) return urlParam.replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase();});
+    var h = document.querySelector('.pd-title, .project-title, h1');
+    if(h) return h.textContent.trim().split('\n')[0];
+    return 'General Enquiry';
+  }
+
+  function getPageName(){
+    var p = window.location.pathname.split('/').pop() || 'index.html';
+    return p.replace('.html','').replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase();});
+  }
+
+  async function saveLead(leadData){
+    var token = getToken();
+    if(!token) return; // no token &#8212; just WhatsApp, no save
+
+    try {
+      // 1. Get existing leads.json (or start fresh)
+      var getResp = await fetch('https://api.github.com/repos/'+LEAD_REPO+'/contents/'+LEAD_FILE, {
+        headers:{'Authorization':'token '+token,'Accept':'application/vnd.github.v3+json'}
+      });
+
+      var sha = null;
+      var leads = [];
+
+      if(getResp.ok){
+        var fileData = await getResp.json();
+        sha = fileData.sha;
+        leads = JSON.parse(atob(fileData.content.replace(/\n/g,'')));
+      }
+
+      // 2. Add new lead
+      leads.unshift({
+        id: Date.now(),
+        date: new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}),
+        time: new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'}),
+        ...leadData,
+        status: 'New',
+        page: getPageName()
+      });
+
+      // 3. Save back
+      var body = {
+        message: 'New lead: '+leadData.name+' &#8212; '+new Date().toLocaleDateString(),
+        content: btoa(unescape(encodeURIComponent(JSON.stringify(leads, null, 2)))),
+      };
+      if(sha) body.sha = sha;
+
+      await fetch('https://api.github.com/repos/'+LEAD_REPO+'/contents/'+LEAD_FILE, {
+        method:'PUT',
+        headers:{'Authorization':'token '+token,'Content-Type':'application/json'},
+        body: JSON.stringify(body)
+      });
+
+    } catch(err){
+      console.log('Lead save skipped:', err.message);
+    }
+  }
+
+  // Hook into all form submits &#8212; capture lead BEFORE opening WhatsApp
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.form-submit, .btn-whatsapp[type="submit"], button[type="submit"]');
+    if(!btn) return;
+    var form = btn.closest('form');
+    if(!form) return;
+
+    // Collect form data
+    var data = {};
+    new FormData(form).forEach(function(v,k){ if(v) data[k.toLowerCase().replace(/\s+/g,'_')] = v; });
+
+    var lead = {
+      name:    data.name || data.full_name || data.your_name || 'Not provided',
+      phone:   data.phone || data.phone_number || 'Not provided',
+      email:   data.email || data.email_address || '',
+      city:    data.city || data.your_city || '',
+      bhk:     data.bhk || data.bhk_preference || data.property_interest || data.interested_in || '',
+      budget:  data.budget || data.budget_range || '',
+      message: data.message || data.requirements || '',
+      project: getProjectName(),
+    };
+
+    // Only save if phone looks valid
+    if(lead.phone !== 'Not provided' && lead.phone.replace(/\D/g,'').length >= 10){
+      saveLead(lead);
+    }
+  }, true);
+
+  // Expose for dashboard to set token
+  window.JBLeads = {
+    setToken: function(t){ localStorage.setItem('jb_gh_token', t); },
+    getToken: getToken,
+    save: saveLead
+  };
+})();
+
+</script>
+</body>
+</html>
