@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Project Details | Jay Bhadra Real Estate Solutions</title>
+<meta name="description" content="View project details, pricing, amenities and enquire about properties by Jay Bhadra Real Estate Solutions."/>
+<link rel="canonical" href="https://jaybhadrarealestate.com/project-detail.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&family=Cinzel:wght@400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+.detail-layout{display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:flex-start}
+.detail-sidebar{position:sticky;top:100px}
+.sidebar-card{background:#fff;border:1px solid var(--border);border-radius:var(--r-xl);padding:28px;box-shadow:0 2px 16px rgba(13,27,46,0.07)}
+.detail-section{margin-bottom:36px}
+.detail-section-title{font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--navy);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.detail-section-title span{flex:1;height:1px;background:var(--border)}
+.project-meta-row{display:flex;flex-wrap:wrap;gap:12px}
+.meta-chip{background:var(--cream-2);border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 16px;font-size:0.82rem}
+.meta-chip strong{display:block;font-family:var(--font-cap);font-size:0.58rem;letter-spacing:0.1em;color:var(--gold);text-transform:uppercase;margin-bottom:3px}
+.config-table{width:100%;border-collapse:collapse;font-size:0.88rem}
+.config-table th{background:var(--navy);color:#fff;padding:12px 16px;text-align:left;font-family:var(--font-cap);font-size:0.62rem;letter-spacing:0.1em}
+.config-table td{padding:12px 16px;border-bottom:1px solid var(--border)}
+.config-table tr:last-child td{border-bottom:none}
+.amenities-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.amenity-item{background:var(--cream-2);border:1px solid var(--border);border-radius:var(--r-md);padding:16px 12px;text-align:center;font-size:0.8rem;color:var(--text-2)}
+.amenity-icon{font-size:1.5rem;display:block;margin-bottom:6px}
+@media(max-width:900px){
+  .detail-layout{grid-template-columns:1fr}
+  .detail-sidebar{position:static}
+  .amenities-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP STRIP -->
+<div class="top-strip" id="top-strip">
+  <div class="strip-left">
+    <span><a href="tel:+919765711811">&#128222; +91-97657-11811</a></span>
+    <span>&#128197; Mon&#8211;Sat 9AM&#8211;7PM</span>
+  </div>
+  <div class="strip-right" id="strip-address">ROOGNTA Shopping Hub, Indira Nagar, Nashik</div>
+  <button class="strip-close" onclick="document.getElementById('top-strip').style.display='none'">&#10005;</button>
+</div>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-logo-icon" style="padding:0;overflow:hidden;background:#fff;border-radius:8px;">
+        <img src="images/Logo.png" alt="Jay Bhadra Real Estate Logo" style="width:100%;height:100%;object-fit:contain;display:block;padding:3px;"
+          onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#c8973a,#8a6420)';this.parentNode.style.display='flex';this.parentNode.style.alignItems='center';this.parentNode.style.justifyContent='center';this.parentNode.innerHTML='<span style=font-family:Cinzel,serif;font-weight:600;color:#0d1b2e;font-size:1rem;>JB</span>'"/>
+      </div>
+      <div class="nav-brand-text">
+        <span class="nav-name">Jay Bhadra Real Estate Solutions</span>
+        <span class="nav-tagline"><em>New Vision. Real Homes.</em></span>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-navy btn-cap nav-cta">Enquire Now</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="index.html">&#127968;&#65039; Home</a>
+  <a href="search.html">&#128269; Search Properties</a>
+  <a href="about.html">&#128101; About Us</a>
+  <a href="contact.html">&#128222; Contact</a>
+  <a href="contact.html" style="margin-top:20px;background:var(--gold);color:var(--navy);font-weight:600;border-radius:var(--r-sm);text-align:center;font-family:var(--font-cap);font-size:0.75rem;letter-spacing:0.1em;padding:14px 16px;">ENQUIRE NOW</a>
+</nav>
+
+<main>
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="ph-slides">
+    <div class="ph-slide" style="background-image:url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1600&q=85&auto=format&fit=crop')"></div>
+    <div class="ph-slide" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=85&auto=format&fit=crop')"></div>
+  </div>
+  <div class="ph-overlay"></div>
+  <div class="container">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span class="sep">&#8250;</span><a href="search.html">Search</a><span class="sep">&#8250;</span><span id="breadcrumb-name">Project Details</span></nav>
+    <h1 id="project-title">Project <em>Details</em></h1>
+    <div style="display:flex;gap:12px;align-items:center;margin-top:14px;flex-wrap:wrap;">
+      <span class="card-status status-ongoing" id="project-status-badge">Ongoing</span>
+      <span id="project-location" style="color:var(--text-inv-2);font-size:0.9rem;">Loading...</span>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="section">
+  <div class="container">
+    <div class="detail-layout">
+
+      <!-- LEFT -->
+      <div>
+
+        <!-- MAIN PHOTO -->
+        <div class="detail-section">
+          <div style="width:100%;aspect-ratio:16/9;border-radius:var(--r-lg);overflow:hidden;margin-bottom:12px;box-shadow:0 8px 32px rgba(13,27,46,0.12);">
+            <div id="main-img" style="width:100%;height:100%;background:linear-gradient(135deg,#0d1b2e,#1e3050);display:flex;align-items:center;justify-content:center;font-size:5rem;color:rgba(255,255,255,0.15);">&#127968;</div>
+          </div>
+        </div>
+
+        <!-- OVERVIEW -->
+        <div class="detail-section fade-up">
+          <div class="detail-section-title">&#127962; Project Overview <span></span></div>
+          <p id="project-overview" style="line-height:1.85;color:var(--text-2);">Loading project details...</p>
+        </div>
+
+        <!-- AMENITIES -->
+        <div class="detail-section fade-up" id="amenities-section">
+          <div class="detail-section-title">&#10024; Amenities &amp; Features <span></span></div>
+          <div class="amenities-grid" id="amenities-grid"></div>
+        </div>
+
+        <!-- ENQUIRY FORM -->
+        <div class="detail-section fade-up">
+          <div id="enquiry-form" class="detail-section-title">&#128221; Send an Enquiry <span></span></div>
+          <div style="background:var(--cream-2);border:1px solid var(--border);border-radius:var(--r-xl);padding:36px;">
+            <form data-validate data-action="whatsapp" novalidate>
+              <input type="hidden" id="enq-project-name" name="Project" value="This Project"/>
+              <div class="form-row">
+                <div class="form-group"><label for="enq-name">Full Name <span>*</span></label><input type="text" id="enq-name" name="Name" class="form-control" placeholder="Your full name" required/><div class="form-error"></div></div>
+                <div class="form-group"><label for="enq-phone">Phone Number <span>*</span></label><input type="tel" id="enq-phone" name="Phone" class="form-control" placeholder="10-digit number" required/><div class="form-error"></div></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label for="enq-email">Email Address</label><input type="email" id="enq-email" name="Email" class="form-control" placeholder="your@email.com"/><div class="form-error"></div></div>
+                <div class="form-group"><label for="enq-bhk">BHK Preference</label><select id="enq-bhk" name="BHK" class="form-control"><option value="">Select type</option><option>1BHK</option><option>2BHK</option><option>3BHK</option><option>Bungalow</option><option>Not decided yet</option></select><div class="form-error"></div></div>
+              </div>
+              <div class="form-group"><label for="enq-msg">Message (Optional)</label><textarea id="enq-msg" name="Message" class="form-control" placeholder="Any specific requirements..."></textarea></div>
+              <button type="submit" class="btn btn-whatsapp form-submit">&#128172; Send Enquiry via WhatsApp</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+      <!-- END LEFT -->
+
+      <!-- SIDEBAR -->
+      <aside class="detail-sidebar">
+        <div class="sidebar-card">
+          <div style="font-family:var(--font-cap);font-size:0.62rem;color:var(--gold);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">Get In Touch</div>
+          <h4 style="margin-bottom:6px;">Interested in This Project?</h4>
+          <p style="font-size:0.83rem;margin-bottom:22px;">Fill the enquiry form or contact us directly.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <a href="#enquiry-form" class="btn btn-navy btn-cap" style="justify-content:center;" onclick="document.getElementById('enquiry-form').scrollIntoView({behavior:'smooth'});return false;">&#128203; Fill Enquiry Form</a>
+            <a id="sb-wa-btn" href="https://wa.me/919765711811?text=Hello!%20I%20am%20interested%20in%20this%20project.%20Please%20share%20more%20details." class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener" style="justify-content:center;">&#128172; WhatsApp Now</a>
+            <a href="tel:+919765711811" class="btn btn-outline-navy btn-sm" style="justify-content:center;">&#128222; +91-97657-11811</a>
+          </div>
+        </div>
+
+        <div class="sidebar-card" style="margin-top:20px;">
+          <h4 style="margin-bottom:18px;font-size:1rem;">&#127942; Project Highlights</h4>
+          <ul style="display:flex;flex-direction:column;gap:12px;">
+            <li style="display:flex;gap:10px;font-size:0.84rem;color:var(--text-2);align-items:flex-start;"><span style="color:var(--success);flex-shrink:0;margin-top:2px;">&#10003;</span><span>RERA registered project</span></li>
+            <li style="display:flex;gap:10px;font-size:0.84rem;color:var(--text-2);align-items:flex-start;"><span style="color:var(--success);flex-shrink:0;margin-top:2px;">&#10003;</span><span>Bank loan approved (SBI, HDFC, BoM)</span></li>
+            <li style="display:flex;gap:10px;font-size:0.84rem;color:var(--text-2);align-items:flex-start;"><span style="color:var(--success);flex-shrink:0;margin-top:2px;">&#10003;</span><span>Maintenance support included</span></li>
+            <li style="display:flex;gap:10px;font-size:0.84rem;color:var(--text-2);align-items:flex-start;"><span style="color:var(--success);flex-shrink:0;margin-top:2px;">&#10003;</span><span>Vastu-compliant floor plans</span></li>
+            <li style="display:flex;gap:10px;font-size:0.84rem;color:var(--text-2);align-items:flex-start;"><span style="color:var(--success);flex-shrink:0;margin-top:2px;">&#10003;</span><span>No hidden charges</span></li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer"><div class="container"><div class="footer-grid">
+  <div class="footer-brand">
+    <div class="footer-logo"><div class="footer-logo-icon" style="padding:0;overflow:hidden;background:#fff;border-radius:8px;"><img src="images/Logo.png" alt="Logo" style="width:100%;height:100%;object-fit:contain;display:block;padding:3px;" onerror="this.style.display='none';this.parentNode.innerHTML='<span style=font-family:Cinzel,serif;font-weight:600;color:#0d1b2e;font-size:1rem;>JB</span>'"/></div><div class="footer-logo-text"><strong>Jay Bhadra Real Estate Solutions Pvt. Ltd.</strong><em>New Vision. Real Homes.</em></div></div>
+    <p>Honest real estate. 6 active projects. 100% transparent pricing. Maintenance support included.</p>
+  </div>
+  <div class="footer-col"><h5>Quick Links</h5><ul>
+    <li><a href="index.html">&#8594; Home</a></li>
+    <li><a href="search.html">&#8594; Search Properties</a></li>
+    <li><a href="about.html">&#8594; About Us</a></li>
+    <li><a href="contact.html">&#8594; Contact</a></li>
+  </ul></div>
+  <div class="footer-col"><h5>Contact</h5>
+    <div class="footer-ci"><span class="ic">&#128222;</span><span class="tx"><a href="tel:+919765711811">+91-97657-11811</a></span></div>
+    <div class="footer-ci"><span class="ic">&#128205;</span><span class="tx">ROOGNTA Shopping Hub, Indira Nagar, Nashik &#8211; 422009</span></div>
+    <div class="footer-ci"><span class="ic">&#9200;</span><span class="tx">Mon&#8211;Sat: 9AM&#8211;7PM</span></div>
+  </div>
+</div>
+<div class="footer-bottom"><p>&#169; 2026 Jay Bhadra Real Estate Solutions Pvt. Ltd. All rights reserved.</p></div>
+</div></footer>
+
+<script src="js/main.js"></script>
+
+<!-- DYNAMIC PROJECT LOADER -->
+<script>
+(function(){
+  var urlParam = new URLSearchParams(window.location.search).get('project') || '';
+  var projectName = urlParam.replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase();});
+
+  if(projectName){
+    document.title = projectName + ' | Jay Bhadra Real Estate Solutions';
+    var titleEl = document.getElementById('project-title');
+    var breadEl = document.getElementById('breadcrumb-name');
+    if(titleEl) titleEl.innerHTML = projectName;
+    if(breadEl) breadEl.textContent = projectName;
+    document.getElementById('enq-project-name').value = projectName;
+    document.getElementById('project-overview').textContent = projectName + ' is a quality project by Jay Bhadra Real Estate Solutions. Contact us for full details, floor plans and site visit.';
+  }
+
+  fetch('projects-data.json?t='+Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(projects){
+      var found = projects.find(function(p){
+        var slug = (p.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-');
+        return slug === urlParam || (p.name||'').toLowerCase() === projectName.toLowerCase();
+      });
+      if(!found && projects.length > 0) found = projects[0];
+      if(!found) return;
+
+      var name = found.name || projectName;
+      document.title = name + ' | Jay Bhadra Real Estate Solutions';
+      var t = document.getElementById('project-title');
+      if(t) t.innerHTML = name;
+      var b = document.getElementById('breadcrumb-name');
+      if(b) b.textContent = name;
+
+      // Status badge
+      var badge = document.getElementById('project-status-badge');
+      var status = found.status || 'ongoing';
+      if(badge){ badge.textContent = status.charAt(0).toUpperCase()+status.slice(1); badge.className = 'card-status status-'+status; }
+
+      // Location
+      var locEl = document.getElementById('project-location');
+      if(locEl) locEl.textContent = '&#128205; ' + (found.location || 'Nashik');
+
+      // Photo
+      if(found.photo && found.photo !== 'ADD_PHOTO_LINK_HERE'){
+        var mainImg = document.getElementById('main-img');
+        if(mainImg) mainImg.innerHTML = '<img src="'+found.photo+'" alt="'+name+'" style="width:100%;height:100%;object-fit:cover;display:block;"/>';
+      }
+
+      // Overview
+      var ov = document.getElementById('project-overview');
+      if(ov) ov.textContent = found.description || (name + ' — a quality project by Jay Bhadra Real Estate Solutions located at ' + (found.location||'Nashik') + '. Contact us for pricing, floor plans and site visit.');
+
+      // Amenities
+      var grid = document.getElementById('amenities-grid');
+      if(grid && found.tags && found.tags.length){
+        var amenityIcons = {lift:'&#128727;',parking:'&#128664;',security:'&#128274;',water:'&#128167;',power:'&#9889;',garden:'&#127807;',cctv:'&#128249;',vastu:'&#129517;',rera:'&#9989;','play area':'&#9917;',temple:'&#128703;',gym:'&#127947;'};
+        grid.innerHTML = found.tags.map(function(tag){
+          var key = tag.toLowerCase();
+          var icon = amenityIcons[key] || '&#10024;';
+          return '<div class="amenity-item"><span class="amenity-icon">'+icon+'</span>'+tag+'</div>';
+        }).join('');
+      } else if(grid){
+        document.getElementById('amenities-section').style.display='none';
+      }
+
+      // Update form and WhatsApp buttons
+      document.getElementById('enq-project-name').value = name;
+      var waBtn = document.getElementById('sb-wa-btn');
+      if(waBtn) waBtn.href = 'https://wa.me/919765711811?text=Hello!%20I%20am%20interested%20in%20'+encodeURIComponent(name)+'.%20Please%20share%20more%20details.';
+
+      // Update BHK select
+      var bhkSel = document.getElementById('enq-bhk');
+      if(bhkSel && found.tags){
+        var bhks = found.tags.filter(function(t){ return /bhk|bungalow|shop|office/i.test(t); });
+        if(bhks.length){
+          bhkSel.innerHTML = '<option value="">Select type</option>';
+          bhks.forEach(function(b){ bhkSel.innerHTML += '<option>'+b+'</option>'; });
+          bhkSel.innerHTML += '<option>Not decided yet</option>';
+        }
+      }
+    })
+    .catch(function(){ /* use defaults */ });
+})();
+</script>
+
+<!-- AI BOT -->
+<style>
+#jb-btn{position:fixed;bottom:162px;right:24px;width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#0d1b2e,#1e3050);border:2px solid rgba(200,151,58,0.55);cursor:pointer;z-index:9997;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(13,27,46,0.35);transition:transform .25s;animation:jbp 2.8s infinite}
+#jb-btn:hover{transform:scale(1.12);animation:none}
+@keyframes jbp{0%,100%{box-shadow:0 4px 18px rgba(13,27,46,0.35),0 0 0 0 rgba(200,151,58,0.45)}65%{box-shadow:0 4px 18px rgba(13,27,46,0.35),0 0 0 10px rgba(200,151,58,0)}}
+#jb-win{position:fixed;bottom:222px;right:24px;width:320px;max-height:420px;background:#fff;border-radius:20px;box-shadow:0 20px 56px rgba(13,27,46,0.2);border:1px solid rgba(200,151,58,0.2);display:flex;flex-direction:column;z-index:9996;transform:scale(0.85) translateY(20px);transform-origin:bottom right;opacity:0;pointer-events:none;transition:transform .38s,opacity .28s;font-family:'DM Sans',system-ui}
+#jb-win.open{transform:scale(1) translateY(0);opacity:1;pointer-events:all}
+.jbh{background:linear-gradient(135deg,#0d1b2e,#1e3050);border-radius:20px 20px 0 0;padding:13px 15px;display:flex;align-items:center;gap:10px}
+.jbh-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#c8973a,#e6b55a);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.jbh-info strong{color:#fff;font-size:0.85rem;display:block}.jbh-info span{font-size:0.62rem;color:rgba(255,255,255,0.5)}
+.jbx{background:none;border:none;color:rgba(255,255,255,0.4);cursor:pointer;font-size:1rem;padding:4px;margin-left:auto}
+.jb-msgs{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.jbm{display:flex;gap:6px;align-items:flex-end}
+.jbm.u{flex-direction:row-reverse}
+.jbav{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#c8973a,#e6b55a);display:flex;align-items:center;justify-content:center;font-size:0.7rem;flex-shrink:0}
+.jbb{max-width:85%;padding:8px 12px;border-radius:14px 14px 14px 3px;font-size:0.79rem;line-height:1.6;color:#1a2b4a;background:#f0f4f8}
+.jbm.u .jbb{background:linear-gradient(135deg,#0d1b2e,#1e3050);color:#fff;border-radius:14px 14px 3px 14px}
+.jb-qrs{display:flex;flex-wrap:wrap;gap:5px;padding:2px 12px 8px}
+.jbqr{padding:4px 10px;border-radius:100px;border:1px solid rgba(13,27,46,0.13);background:#fff;color:#0d1b2e;font-size:0.7rem;cursor:pointer;font-family:inherit}
+.jbqr:hover{background:#0d1b2e;color:#e6b55a}
+.jb-inp-row{padding:8px 10px;border-top:1px solid rgba(13,27,46,0.07);display:flex;gap:6px}
+.jb-inp{flex:1;border:1.5px solid rgba(13,27,46,0.11);border-radius:10px;padding:7px 11px;font-size:0.79rem;outline:none;font-family:inherit}
+.jbsnd{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#0d1b2e,#1e3050);border:none;cursor:pointer;color:#e6b55a;font-size:0.85rem}
+@media(max-width:420px){#jb-win{width:calc(100vw - 14px);right:7px}#jb-btn{bottom:80px;right:16px}}
+</style>
+<div id="jb-btn" onclick="jbT()">&#129302;<span id="jb-badge" style="position:absolute;top:-3px;right:-3px;width:16px;height:16px;border-radius:50%;background:#e74c3c;color:#fff;font-size:0.55rem;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid #fff;">1</span></div>
+<div id="jb-win">
+  <div class="jbh"><div class="jbh-av">&#129302;</div><div class="jbh-info"><strong>Prop Guru</strong><span>&#128994; Online &#8212; Jay Bhadra Real Estate</span></div><button class="jbx" onclick="jbT()">&#10005;</button></div>
+  <div class="jb-msgs" id="jb-msgs"></div>
+  <div class="jb-qrs" id="jb-qrs"></div>
+  <div class="jb-inp-row"><input class="jb-inp" id="jb-inp" placeholder="Ask about this project..." onkeydown="if(event.key==='Enter')jbS()"/><button class="jbsnd" onclick="jbS()">&#10148;</button></div>
+</div>
+<script>
+(function(){
+  var OPEN=false,STARTED=false;
+  var pName = new URLSearchParams(window.location.search).get('project')||'';
+  pName = pName.replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase();}) || 'this project';
+  function jbT(){OPEN=!OPEN;document.getElementById('jb-win').classList.toggle('open',OPEN);var b=document.getElementById('jb-badge');if(b)b.remove();if(OPEN&&!STARTED){STARTED=true;setTimeout(function(){jbAdd('bot','Hi! &#128075; I can help with <strong>'+pName+'</strong>. Ask me about price, BHK or book a visit!');jbQR(['&#128176; Price','&#127968; BHK Types','&#128222; Book Visit','&#128172; WhatsApp']);},350);}if(OPEN)setTimeout(function(){document.getElementById('jb-inp').focus();},400);}
+  window.jbT=jbT;
+  function jbAdd(r,t){var m=document.getElementById('jb-msgs'),d=document.createElement('div');d.className='jbm '+(r==='user'?'u':'');var av=document.createElement('div');av.className='jbav';av.textContent=r==='user'?'&#128100;':'&#129302;';var b=document.createElement('div');b.className='jbb';b.innerHTML=t.replace(/\n/g,'<br/>');d.appendChild(av);d.appendChild(b);m.appendChild(d);m.scrollTop=m.scrollHeight;}
+  function jbQR(opts){var row=document.getElementById('jb-qrs');row.innerHTML='';opts.forEach(function(o){var btn=document.createElement('button');btn.className='jbqr';btn.innerHTML=o;btn.onclick=function(){row.innerHTML='';jbProc(btn.textContent);};row.appendChild(btn);});}
+  function jbS(){var inp=document.getElementById('jb-inp'),t=inp.value.trim();if(!t)return;inp.value='';jbProc(t);}
+  window.jbS=jbS;
+  function jbProc(t){
+    if(/whatsapp/i.test(t)){window.open('https://wa.me/919765711811?text=Hi! I am interested in '+encodeURIComponent(pName)+'.','_blank');return;}
+    if(/call|visit|book/i.test(t)){window.location.href='tel:+919765711811';return;}
+    jbAdd('user',t);
+    setTimeout(function(){jbAdd('bot','For <strong>'+pName+'</strong>:\n\n&#128222; Call: <strong>+91-97657-11811</strong>\n&#128172; WhatsApp same number\n\nOr scroll down to fill the enquiry form!');jbQR(['&#128172; WhatsApp Now','&#128222; Call Now']);},400);
+  }
+})();
+</script>
+
+</body>
+</html>
