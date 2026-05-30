@@ -21,7 +21,7 @@
   </style>
 
 <script>
-/* ══ DYNAMIC PROJECT DETAIL LOADER ══ */
+/* &#9552;&#9552; DYNAMIC PROJECT DETAIL LOADER &#9552;&#9552; */
 /* Reads project data from projects.html based on URL ?project= param */
 (function(){
   var urlParam = new URLSearchParams(window.location.search).get('project') || '';
@@ -29,7 +29,7 @@
 
   // Update page title immediately
   if(projectName){
-    document.title = projectName + ' — Jay Bhadra Real Estate Solutions';
+    document.title = projectName + ' &#8212; Jay Bhadra Real Estate Solutions';
     var titleEl = document.getElementById('project-title');
     var breadEl = document.getElementById('breadcrumb-name');
     if(titleEl) titleEl.innerHTML = projectName;
@@ -54,12 +54,12 @@
       });
 
       if(!found){
-        // Project not found — redirect to projects page
+        // Project not found &#8212; redirect to projects page
         if(urlParam) window.location.href = 'projects.html';
         return;
       }
 
-      // ── Extract data ──
+      // &#9472;&#9472; Extract data &#9472;&#9472;
       var name    = (found.querySelector('.pcard-title')||{}).textContent||'';
       var locEl   = (found.querySelector('.pcard-loc')||{}).textContent||'';
       var priceEl = (found.querySelector('.pcard-price')||{}).textContent||'';
@@ -73,7 +73,7 @@
       var statusLabel = status.charAt(0).toUpperCase()+status.slice(1);
       var statusClass = 'status-'+status;
 
-      // ── Update DOM ──
+      // &#9472;&#9472; Update DOM &#9472;&#9472;
       // Title & breadcrumb
       var titleEl = document.getElementById('project-title');
       if(titleEl) titleEl.innerHTML = name;
@@ -163,12 +163,12 @@
           if(n.trim() && n.trim() !== name.trim()){
             var slug = n.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-');
             var li = document.createElement('li');
-            li.innerHTML = '<a href="project-detail.html?project='+slug+'">→ '+n.trim()+'</a>';
+            li.innerHTML = '<a href="project-detail.html?project='+slug+'">&#8594; '+n.trim()+'</a>';
             relList.appendChild(li);
           }
         });
         if(!relList.children.length){
-          relList.innerHTML = '<li><a href="projects.html">→ View All Projects</a></li>';
+          relList.innerHTML = '<li><a href="projects.html">&#8594; View All Projects</a></li>';
         }
       }
 
@@ -181,8 +181,8 @@
 </head>
 <body>
 <div class="top-strip"><div class="container">
-  <span>📞 <a href="tel:+919765711811">+91-97657-11811</a> &nbsp;|&nbsp; &#9200; Mon&ndash;Sat 9AM&ndash;7PM</span>
-  <button class="strip-dismiss">✕</button>
+  <span>&#128222; <a href="tel:+919765711811">+91-97657-11811</a> &nbsp;|&nbsp; &#9200; Mon&ndash;Sat 9AM&ndash;7PM</span>
+  <button class="strip-dismiss">&#10005;</button>
 </div></div>
 <nav class="navbar"><div class="container">
   <a href="index.html" class="nav-logo"><div class="nav-logo-icon"><span>JB</span></div><div class="nav-logo-text"><strong>Jay Bhadra Real Estate Solutions</strong><em>New Vision. Real Homes.</em></div></a>
@@ -195,8 +195,8 @@
 </div></nav>
 <div class="nav-overlay"></div>
 <nav class="nav-drawer">
-  <a href="index.html">🏠 Home</a><a href="projects.html" class="active">&#127970; Projects</a>
-  <a href="about.html">👥 About Us</a><a href="contact.html">📞 Contact</a>
+  <a href="index.html">Home</a><a href="projects.html" class="active">&#127970; Projects</a>
+  <a href="about.html">About Us</a><a href="contact.html">Contact</a>
   <a href="contact.html" style="margin-top:20px;background:var(--gold);color:var(--navy);font-weight:600;border-radius:var(--r-sm);text-align:center;font-family:var(--font-cap);font-size:0.75rem;letter-spacing:0.1em;padding:14px 16px;">ENQUIRE NOW</a>
 </nav>
 
@@ -204,11 +204,11 @@
 <!-- PAGE HERO -->
 <section class="page-hero">
   <div class="container">
-    <nav class="breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><a href="projects.html">Projects</a><span class="sep">›</span><span id="breadcrumb-name">Jay Bhadra Heights</span></nav>
+    <nav class="breadcrumb"><a href="index.html">Home</a><span class="sep">&#8250;</span><a href="projects.html">Projects</a><span class="sep">&#8250;</span><span id="breadcrumb-name">Jay Bhadra Heights</span></nav>
     <h1 id="project-title">Jay Bhadra <em>Heights</em></h1>
     <div style="display:flex;gap:12px;align-items:center;margin-top:14px;flex-wrap:wrap;">
       <span class="card-status status-ongoing" id="project-status-badge">Ongoing</span>
-      <span id="project-location" style="color:var(--text-inv-2);font-size:0.9rem;">📍 Near Shri Ram Chowk, Nashik</span>
+      <span id="project-location" style="color:var(--text-inv-2);font-size:0.9rem;">Near Shri Ram Chowk, Nashik</span>
     </div>
   </div>
 </section>
@@ -228,8 +228,8 @@
           </div>
           <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
             <div onclick="swapImg(this,'linear-gradient(135deg,#0d1b2e,#1e3050)','&#127970;')" style="aspect-ratio:4/3;border-radius:var(--r-sm);overflow:hidden;cursor:pointer;border:2px solid var(--gold);background:linear-gradient(135deg,#0d1b2e,#1e3050);display:flex;align-items:center;justify-content:center;font-size:2rem;color:rgba(255,255,255,0.3);">&#127970;</div>
-            <div onclick="swapImg(this,'linear-gradient(135deg,#1a4a2e,#0d2e1a)','🏗️')" style="aspect-ratio:4/3;border-radius:var(--r-sm);overflow:hidden;cursor:pointer;border:2px solid transparent;background:linear-gradient(135deg,#1a4a2e,#0d2e1a);display:flex;align-items:center;justify-content:center;font-size:2rem;color:rgba(255,255,255,0.3);">🏗️</div>
-            <div onclick="swapImg(this,'linear-gradient(135deg,#8a6420,#c8973a)','🏠')" style="aspect-ratio:4/3;border-radius:var(--r-sm);overflow:hidden;cursor:pointer;border:2px solid transparent;background:linear-gradient(135deg,#8a6420,#c8973a);display:flex;align-items:center;justify-content:center;font-size:2rem;color:rgba(255,255,255,0.3);">🏠</div>
+            <div onclick="swapImg(this,'linear-gradient(135deg,#1a4a2e,#0d2e1a)','&#127959;&#65039;')" style="aspect-ratio:4/3;border-radius:var(--r-sm);overflow:hidden;cursor:pointer;border:2px solid transparent;background:linear-gradient(135deg,#1a4a2e,#0d2e1a);display:flex;align-items:center;justify-content:center;font-size:2rem;color:rgba(255,255,255,0.3);">&#127959;&#65039;</div>
+            <div onclick="swapImg(this,'linear-gradient(135deg,#8a6420,#c8973a)','&#127968;')" style="aspect-ratio:4/3;border-radius:var(--r-sm);overflow:hidden;cursor:pointer;border:2px solid transparent;background:linear-gradient(135deg,#8a6420,#c8973a);display:flex;align-items:center;justify-content:center;font-size:2rem;color:rgba(255,255,255,0.3);">&#127968;</div>
           </div>
         </div>
 
@@ -253,15 +253,15 @@
 
         <!-- CONFIGURATION TABLE -->
         <div class="detail-section fade-up">
-          <div class="detail-section-title">📐 Unit Configuration &amp; Pricing <span></span></div>
+          <div class="detail-section-title">&#128208; Unit Configuration &amp; Pricing <span></span></div>
           <div style="overflow-x:auto;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--border);box-shadow:0 2px 12px rgba(13,27,46,0.06);">
             <table class="config-table">
               <thead><tr><th>Type</th><th>Carpet Area</th><th>Price</th><th>Availability</th></tr></thead>
               <tbody>
-                <tr><td><strong>1BHK</strong></td><td>450&ndash;500 sq.ft.</td><td>₹28&ndash;32 Lakh</td><td><span style="color:var(--success);font-weight:600;">Available</span></td></tr>
-                <tr><td><strong>2BHK Standard</strong></td><td>650&ndash;700 sq.ft.</td><td>₹38&ndash;44 Lakh</td><td><span style="color:var(--success);font-weight:600;">Available</span></td></tr>
-                <tr><td><strong>2BHK Premium</strong></td><td>720&ndash;780 sq.ft.</td><td>₹46&ndash;52 Lakh</td><td><span style="color:#92610a;font-weight:600;">Limited Units</span></td></tr>
-                <tr><td><strong>2BHK Corner</strong></td><td>800 sq.ft.</td><td>₹55 Lakh</td><td><span style="color:#c0392b;font-weight:600;">Sold Out</span></td></tr>
+                <tr><td><strong>1BHK</strong></td><td>450&ndash;500 sq.ft.</td><td>&#8377;28&ndash;32 Lakh</td><td><span style="color:var(--success);font-weight:600;">Available</span></td></tr>
+                <tr><td><strong>2BHK Standard</strong></td><td>650&ndash;700 sq.ft.</td><td>&#8377;38&ndash;44 Lakh</td><td><span style="color:var(--success);font-weight:600;">Available</span></td></tr>
+                <tr><td><strong>2BHK Premium</strong></td><td>720&ndash;780 sq.ft.</td><td>&#8377;46&ndash;52 Lakh</td><td><span style="color:#92610a;font-weight:600;">Limited Units</span></td></tr>
+                <tr><td><strong>2BHK Corner</strong></td><td>800 sq.ft.</td><td>&#8377;55 Lakh</td><td><span style="color:#c0392b;font-weight:600;">Sold Out</span></td></tr>
               </tbody>
             </table>
           </div>
@@ -270,10 +270,10 @@
 
         <!-- AMENITIES -->
         <div class="detail-section fade-up">
-          <div class="detail-section-title">✨ Amenities &amp; Features <span></span></div>
+          <div class="detail-section-title">&#10024; Amenities &amp; Features <span></span></div>
           <div class="amenities-grid">
             <div class="amenity-item"><span class="amenity-icon">&#128663;</span><span>Covered Parking</span></div>
-            <div class="amenity-item"><span class="amenity-icon">🔒</span><span>24/7 Security</span></div>
+            <div class="amenity-item"><span class="amenity-icon">&#128274;</span><span>24/7 Security</span></div>
             <div class="amenity-item"><span class="amenity-icon">&#128663;</span><span>Passenger Lift</span></div>
             <div class="amenity-item"><span class="amenity-icon">&#128167;</span><span>24/7 Water Supply</span></div>
             <div class="amenity-item"><span class="amenity-icon">&#9889;</span><span>Power Backup</span></div>
@@ -285,12 +285,12 @@
 
         <!-- MAP -->
         <div class="detail-section fade-up">
-          <div class="detail-section-title">📍 Project Location <span></span></div>
+          <div class="detail-section-title">Project Location <span></span></div>
           <div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);box-shadow:0 4px 20px rgba(13,27,46,0.08);">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.2!2d73.8397!3d20.0059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddc1b3fa4a7c3d%3A0x984c20b9b6b8b559!2sIndira+Nagar%2C+Nashik%2C+Maharashtra+422009!5e0!3m2!1sen!2sin!4v1700000000001!5m2!1sen!2sin"
               width="100%" height="340" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Project location"></iframe>
           </div>
-          <p class="map-note">📌 Replace the iframe src above with your exact project location embed from Google Maps.</p>
+          <p class="map-note">&#128204; Replace the iframe src above with your exact project location embed from Google Maps.</p>
         </div>
 
         <!-- ENQUIRY FORM -->
@@ -307,8 +307,8 @@
                 <div class="form-group"><label for="enq-email">Email Address</label><input type="email" id="enq-email" name="Email" class="form-control" placeholder="your@email.com"/><div class="form-error"></div></div>
                 <div class="form-group"><label for="enq-bhk">Preferred BHK <span>*</span></label><select id="enq-bhk" name="Preferred BHK" class="form-control" required><option value="">Select type</option><option>1BHK</option><option>2BHK Standard</option><option>2BHK Premium</option><option>Not decided yet</option></select><div class="form-error"></div></div>
               </div>
-              <div class="form-group"><label for="enq-msg">Message (Optional)</label><textarea id="enq-msg" name="Message" class="form-control" placeholder="Any specific requirements or questions…"></textarea></div>
-              <button type="submit" class="btn btn-whatsapp form-submit">💬 Send Enquiry via WhatsApp</button>
+              <div class="form-group"><label for="enq-msg">Message (Optional)</label><textarea id="enq-msg" name="Message" class="form-control" placeholder="Any specific requirements or questions&#8230;"></textarea></div>
+              <button type="submit" class="btn btn-whatsapp form-submit">&#128172; Send Enquiry via WhatsApp</button>
             </form>
           </div>
         </div>
@@ -327,12 +327,12 @@
             <div class="form-group"><label for="sb-name">Your Name <span>*</span></label><input type="text" id="sb-name" name="Name" class="form-control" placeholder="Full name" required/><div class="form-error"></div></div>
             <div class="form-group"><label for="sb-phone">Phone Number <span>*</span></label><input type="tel" id="sb-phone" name="Phone" class="form-control" placeholder="10-digit number" required/><div class="form-error"></div></div>
             <div class="form-group"><label for="sb-type">BHK Preference</label><select id="sb-type" name="BHK Preference" class="form-control"><option value="">Select type</option><option>1BHK</option><option>2BHK Standard</option><option>2BHK Premium</option><option>Not decided yet</option></select></div>
-            <button type="submit" class="btn btn-navy form-submit btn-cap">📞 Request Callback</button>
+            <button type="submit" class="btn btn-navy form-submit btn-cap">Request Callback</button>
           </form>
           <hr style="border:none;border-top:1px solid var(--border);margin:22px 0;"/>
           <div style="display:flex;flex-direction:column;gap:10px;">
-            <a href="https://wa.me/919765711811?text=Hello!%20I%20am%20interested%20in%20Jay%20Bhadra%20Heights." class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener" style="justify-content:center;">💬 WhatsApp Now</a>
-            <a href="tel:+919765711811" class="btn btn-outline-navy btn-sm" style="justify-content:center;">📞 +91-97657-11811</a>
+            <a href="https://wa.me/919765711811?text=Hello!%20I%20am%20interested%20in%20Jay%20Bhadra%20Heights." class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener" style="justify-content:center;">WhatsApp Now</a>
+            <a href="tel:+919765711811" class="btn btn-outline-navy btn-sm" style="justify-content:center;">+91-97657-11811</a>
           </div>
         </div>
 
@@ -360,16 +360,16 @@
     <div class="section-header fade-up"><span class="label">Explore More</span><h2>Other <em>Projects</em></h2><div class="gold-line"></div></div>
     <div class="projects-grid">
       <article class="project-card fade-up">
-        <div class="card-image"><div class="card-image-placeholder" style="background:linear-gradient(135deg,#1a4a2e,#0d2e1a);">🏘️</div><span class="card-status status-completed">Completed</span></div>
-        <div class="card-body"><h3 class="card-title">Golden City Residency</h3><div class="card-meta">📍 Golden City, Nashik</div><div class="card-price">₹22 Lakh+</div><div class="card-actions"><a href="project-detail.html?project=golden-city-residency" class="btn btn-navy btn-sm" style="flex:1;justify-content:center;">Know More</a></div></div>
+        <div class="card-image"><div class="card-image-placeholder" style="background:linear-gradient(135deg,#1a4a2e,#0d2e1a);">&#127960;&#65039;</div><span class="card-status status-completed">Completed</span></div>
+        <div class="card-body"><h3 class="card-title">Golden City Residency</h3><div class="card-meta">Golden City, Nashik</div><div class="card-price">&#8377;22 Lakh+</div><div class="card-actions"><a href="project-detail.html?project=golden-city-residency" class="btn btn-navy btn-sm" style="flex:1;justify-content:center;">Know More</a></div></div>
       </article>
       <article class="project-card fade-up stagger-1">
-        <div class="card-image"><div class="card-image-placeholder" style="background:linear-gradient(135deg,#8a6420,#c8973a);">🏡</div><span class="card-status status-upcoming">Upcoming</span></div>
-        <div class="card-body"><h3 class="card-title">Green Valley Bungalows</h3><div class="card-meta">📍 Nashik Outskirts</div><div class="card-price">₹65 Lakh+</div><div class="card-actions"><a href="project-detail.html?project=green-valley-bungalows" class="btn btn-navy btn-sm" style="flex:1;justify-content:center;">Know More</a></div></div>
+        <div class="card-image"><div class="card-image-placeholder" style="background:linear-gradient(135deg,#8a6420,#c8973a);">&#127969;</div><span class="card-status status-upcoming">Upcoming</span></div>
+        <div class="card-body"><h3 class="card-title">Green Valley Bungalows</h3><div class="card-meta">Nashik Outskirts</div><div class="card-price">&#8377;65 Lakh+</div><div class="card-actions"><a href="project-detail.html?project=green-valley-bungalows" class="btn btn-navy btn-sm" style="flex:1;justify-content:center;">Know More</a></div></div>
       </article>
       <article class="project-card fade-up stagger-2">
-        <div class="card-image"><div class="card-image-placeholder" style="background:linear-gradient(135deg,#0d2e3a,#0d4a5c);">🏪</div><span class="card-status status-ongoing">Ongoing</span></div>
-        <div class="card-body"><h3 class="card-title">Jay Bhadra Commercial Hub</h3><div class="card-meta">📍 Main Road, Nashik</div><div class="card-price">₹15 Lakh+</div><div class="card-actions"><a href="project-detail.html?project=commercial-hub" class="btn btn-navy btn-sm" style="flex:1;justify-content:center;">Know More</a></div></div>
+        <div class="card-image"><div class="card-image-placeholder" style="background:linear-gradient(135deg,#0d2e3a,#0d4a5c);">&#127978;</div><span class="card-status status-ongoing">Ongoing</span></div>
+        <div class="card-body"><h3 class="card-title">Jay Bhadra Commercial Hub</h3><div class="card-meta">Main Road, Nashik</div><div class="card-price">&#8377;15 Lakh+</div><div class="card-actions"><a href="project-detail.html?project=commercial-hub" class="btn btn-navy btn-sm" style="flex:1;justify-content:center;">Know More</a></div></div>
       </article>
     </div>
     <div style="text-align:center;margin-top:36px;"><a href="projects.html" class="btn btn-outline-navy btn-cap">View All Projects &rarr;</a></div>
@@ -381,11 +381,11 @@
   <div class="footer-brand"><div class="footer-logo"><div class="footer-logo-icon"><span>JB</span></div><div class="footer-logo-text"><strong>Jay Bhadra Real Estate Solutions</strong><em>New Vision. Real Homes.</em></div></div><p>Honest real estate. 6 active projects. Maintenance support included.</p><div class="footer-social"><a href="#" class="soc-icon">f</a><a href="#" class="soc-icon">in</a><a href="https://wa.me/919765711811" class="soc-icon" target="_blank">W</a></div></div>
   <div class="footer-col"><h5>Quick Links</h5><ul><li><a href="index.html">&rarr; Home</a></li><li><a href="projects.html">&rarr; All Projects</a></li><li><a href="about.html">&rarr; About Us</a></li><li><a href="contact.html">&rarr; Contact</a></li></ul></div>
   <div class="footer-col"><h5>Projects</h5><ul><li><a href="project-detail.html?project=jay-bhadra-heights">&rarr; Jay Bhadra Heights</a></li><li><a href="project-detail.html?project=golden-city-residency">&rarr; Golden City Residency</a></li><li><a href="project-detail.html?project=green-valley-bungalows">&rarr; Green Valley Bungalows</a></li></ul></div>
-  <div class="footer-col"><h5>Contact</h5><div class="footer-ci"><span class="ic">📞</span><span class="tx"><a href="tel:+919765711811">+91-97657-11811</a></span></div><div class="footer-ci"><span class="ic">📍</span><span class="tx">Shri Ram Chowk, Nashik &ndash; 422605</span></div></div>
+  <div class="footer-col"><h5>Contact</h5><div class="footer-ci"><span class="ic">&#128222;</span><span class="tx"><a href="tel:+919765711811">+91-97657-11811</a></span></div><div class="footer-ci"><span class="ic">&#128205;</span><span class="tx">Shri Ram Chowk, Nashik &ndash; 422605</span></div></div>
 </div></div>
-<div class="container"><div class="footer-bottom"><p>© 2026 Jay Bhadra Real Estate Solutions. All rights reserved.</p></div></div></footer>
+<div class="container"><div class="footer-bottom"><p>&#169; 2026 Jay Bhadra Real Estate Solutions. All rights reserved.</p></div></div></footer>
 
-<div class="whatsapp-float"><span class="wa-tooltip">Enquire about this project!</span><a href="https://wa.me/919765711811?text=Hello!%20I%20am%20interested%20in%20Jay%20Bhadra%20Heights." class="whatsapp-btn" id="wa-project-btn" target="_blank" rel="noopener">💬</a></div>
+<div class="whatsapp-float"><span class="wa-tooltip">Enquire about this project!</span><a href="https://wa.me/919765711811?text=Hello!%20I%20am%20interested%20in%20Jay%20Bhadra%20Heights." class="whatsapp-btn" id="wa-project-btn" target="_blank" rel="noopener">&#128172;</a></div>
 
 <script src="js/main.js"></script>
 <script>
@@ -412,7 +412,7 @@ function swapImg(el, bg, icon) {
   const name = names[project] || 'Project Detail';
   document.querySelector('#project-title').innerHTML = name;
   document.querySelector('#breadcrumb-name').textContent = name;
-  document.title = name + ' — Jay Bhadra Real Estate Solutions';
+  document.title = name + ' &#8212; Jay Bhadra Real Estate Solutions';
   document.querySelectorAll('input[name="Project"]').forEach(el => el.value = name);
   document.getElementById('wa-project-btn').href =
     'https://wa.me/919765711811?text=' + encodeURIComponent('Hello! I am interested in ' + name + '. Please share details.');
@@ -420,7 +420,7 @@ function swapImg(el, bg, icon) {
 </script>
 
 <script>
-/* ══ LEAD AUTO-CAPTURE SYSTEM ══ */
+/* &#9552;&#9552; LEAD AUTO-CAPTURE SYSTEM &#9552;&#9552; */
 /* Saves every form submission to GitHub leads.json */
 (function(){
   'use strict';
@@ -447,7 +447,7 @@ function swapImg(el, bg, icon) {
 
   async function saveLead(leadData){
     var token = getToken();
-    if(!token) return; // no token — just WhatsApp, no save
+    if(!token) return; // no token &#8212; just WhatsApp, no save
 
     try {
       // 1. Get existing leads.json (or start fresh)
@@ -476,7 +476,7 @@ function swapImg(el, bg, icon) {
 
       // 3. Save back
       var body = {
-        message: 'New lead: '+leadData.name+' — '+new Date().toLocaleDateString(),
+        message: 'New lead: '+leadData.name+' &#8212; '+new Date().toLocaleDateString(),
         content: btoa(unescape(encodeURIComponent(JSON.stringify(leads, null, 2)))),
       };
       if(sha) body.sha = sha;
@@ -492,7 +492,7 @@ function swapImg(el, bg, icon) {
     }
   }
 
-  // Hook into all form submits — capture lead BEFORE opening WhatsApp
+  // Hook into all form submits &#8212; capture lead BEFORE opening WhatsApp
   document.addEventListener('click', function(e){
     var btn = e.target.closest('.form-submit, .btn-whatsapp[type="submit"], button[type="submit"]');
     if(!btn) return;
@@ -561,12 +561,12 @@ function swapImg(el, bg, icon) {
 @media(max-width:420px){#jb-win{width:calc(100vw - 14px);right:7px;bottom:130px}#jb-btn{bottom:80px;right:16px}}
 </style>
 
-<div id="jb-btn" onclick="jbT()">🤖<span id="jb-badge">1</span></div>
+<div id="jb-btn" onclick="jbT()">&#129302;<span id="jb-badge">1</span></div>
 <div id="jb-win">
-  <div class="jbh"><div class="jbh-av">🤖</div><div class="jbh-info"><strong>Prop Guru</strong><span><span class="jb-on"></span>&nbsp;Online</span></div><button class="jbx" onclick="jbT()">✕</button></div>
+  <div class="jbh"><div class="jbh-av">&#129302;</div><div class="jbh-info"><strong>Prop Guru</strong><span><span class="jb-on"></span>&nbsp;Online</span></div><button class="jbx" onclick="jbT()">&#10005;</button></div>
   <div class="jb-msgs" id="jb-msgs"></div>
   <div class="jb-qrs" id="jb-qrs"></div>
-  <div class="jb-inp-row"><input class="jb-inp" id="jb-inp" placeholder="Ask about this project..." onkeydown="if(event.key==='Enter')jbS()"/><button class="jbsnd" onclick="jbS()">➤</button></div>
+  <div class="jb-inp-row"><input class="jb-inp" id="jb-inp" placeholder="Ask about this project..." onkeydown="if(event.key==='Enter')jbS()"/><button class="jbsnd" onclick="jbS()">&#10148;</button></div>
   <div class="jb-ft">Jay Bhadra Real Estate Solutions</div>
 </div>
 
@@ -576,11 +576,11 @@ function swapImg(el, bg, icon) {
   var pName = new URLSearchParams(window.location.search).get('project')||'this project';
   pName = pName.replace(/-/g,' ').replace(/\w/g,function(c){return c.toUpperCase();});
   var WA = '919765711811';
-  function jbT(){OPEN=!OPEN;document.getElementById('jb-win').classList.toggle('open',OPEN);var b=document.getElementById('jb-badge');if(b)b.remove();if(OPEN&&!STARTED){STARTED=true;setTimeout(function(){jbAdd('bot','Hi! 👋 I can help you with <strong>'+pName+'</strong>.
+  function jbT(){OPEN=!OPEN;document.getElementById('jb-win').classList.toggle('open',OPEN);var b=document.getElementById('jb-badge');if(b)b.remove();if(OPEN&&!STARTED){STARTED=true;setTimeout(function(){jbAdd('bot','Hi! &#128075; I can help you with <strong>'+pName+'</strong>.
 
-Ask me about price, BHK types, amenities or book a site visit!');jbQR(['💰 Price','🏠 BHK Types','✅ Amenities','📞 Book Visit','💬 WhatsApp']);},350);}if(OPEN)setTimeout(function(){document.getElementById('jb-inp').focus();},400);}
+Ask me about price, BHK types, amenities or book a site visit!');jbQR(['&#128176; Price','&#127968; BHK Types','&#9989; Amenities','&#128222; Book Visit','&#128172; WhatsApp']);},350);}if(OPEN)setTimeout(function(){document.getElementById('jb-inp').focus();},400);}
   window.jbT=jbT;
-  function jbAdd(r,t){var m=document.getElementById('jb-msgs'),d=document.createElement('div');d.className='jbm '+(r==='user'?'u':'');var av=document.createElement('div');av.className='jbav';av.textContent=r==='user'?'👤':'🤖';var b=document.createElement('div');b.className='jbb';b.innerHTML=t.replace(/
+  function jbAdd(r,t){var m=document.getElementById('jb-msgs'),d=document.createElement('div');d.className='jbm '+(r==='user'?'u':'');var av=document.createElement('div');av.className='jbav';av.textContent=r==='user'?'&#128100;':'&#129302;';var b=document.createElement('div');b.className='jbb';b.innerHTML=t.replace(/
 /g,'<br/>');d.appendChild(av);d.appendChild(b);m.appendChild(d);m.scrollTop=m.scrollHeight;}
   function jbQR(opts){var row=document.getElementById('jb-qrs');row.innerHTML='';opts.forEach(function(o){var b=document.createElement('button');b.className='jbqr';b.textContent=o;b.onclick=function(){row.innerHTML='';jbProc(o);};row.appendChild(b);});}
   function jbS(){var inp=document.getElementById('jb-inp'),t=inp.value.trim();if(!t)return;inp.value='';jbProc(t);}
@@ -592,16 +592,16 @@ Ask me about price, BHK types, amenities or book a site visit!');jbQR(['💰 Pri
     setTimeout(function(){
       var r='For details about <strong>'+pName+'</strong>, please:
 
-📞 Call: <strong>+91-97657-11811</strong>
-💬 WhatsApp same number
+&#128222; Call: <strong>+91-97657-11811</strong>
+&#128172; WhatsApp same number
 
 We respond within 30 minutes!';
-      jbAdd('bot',r);jbQR(['💬 WhatsApp Now','📞 Call Now','⬅️ All Projects']);
+      jbAdd('bot',r);jbQR(['&#128172; WhatsApp Now','&#128222; Call Now','&#11013;&#65039; All Projects']);
     },400);
   }
 })();
 
-/* ══ Security: Rate Limiting ══ */
+/* &#9552;&#9552; Security: Rate Limiting &#9552;&#9552; */
 (function(){
   function getRateData(){try{return JSON.parse(sessionStorage.getItem('jb_rl')||'{"count":0,"reset":0}');}catch(e){return{count:0,reset:0};}}
   function setRateData(d){sessionStorage.setItem('jb_rl',JSON.stringify(d));}
