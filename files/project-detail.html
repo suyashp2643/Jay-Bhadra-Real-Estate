@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Project Details | Jay Bhadra Real Estate Solutions</title>
+<meta name="description" content="View project details, pricing, amenities and enquire."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&family=Cinzel:wght@400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+/* &#9472;&#9472; DETAIL PAGE &#9472;&#9472; */
+.detail-wrap{max-width:1100px;margin:0 auto;padding:40px 28px 80px;display:grid;grid-template-columns:1fr 320px;gap:40px;align-items:start}
+.detail-sidebar{position:sticky;top:90px;display:flex;flex-direction:column;gap:20px}
+.sc{background:#fff;border:1px solid var(--border,#e8e4dc);border-radius:16px;padding:24px;box-shadow:0 2px 16px rgba(13,27,46,0.07)}
+
+/* Photo */
+.pd-photo{width:100%;border-radius:16px;overflow:hidden;margin-bottom:28px;box-shadow:0 8px 32px rgba(13,27,46,0.12);aspect-ratio:16/9;background:linear-gradient(135deg,#0d1b2e,#1e3050);display:flex;align-items:center;justify-content:center;font-size:4rem;color:rgba(255,255,255,0.15)}
+.pd-photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Meta chips */
+.pd-meta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.pd-chip{background:var(--cream-2,#f7f4ef);border:1px solid var(--border,#e8e4dc);border-radius:10px;padding:10px 16px;min-width:110px}
+.pd-chip-label{font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.12em;color:#c8973a;text-transform:uppercase;display:block;margin-bottom:4px}
+.pd-chip-val{font-size:0.9rem;font-weight:600;color:#0d1b2e}
+
+/* Section */
+.pd-sec{margin-bottom:32px}
+.pd-sec-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.1rem;font-weight:600;color:#0d1b2e;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border,#e8e4dc);display:flex;align-items:center;gap:8px}
+
+/* Description */
+.pd-desc{font-size:0.92rem;color:rgba(13,27,46,0.65);line-height:1.85}
+
+/* Tags / BHK */
+.pd-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:0}
+.pd-tag{padding:6px 14px;border-radius:100px;border:1px solid rgba(13,27,46,0.12);background:#fff;font-size:0.78rem;color:#0d1b2e}
+.pd-tag.bhk{background:#0d1b2e;color:#e6b55a;border-color:#0d1b2e}
+.pd-tag.amenity{background:rgba(200,151,58,0.07);border-color:rgba(200,151,58,0.25);color:#8a6420}
+
+/* Price box */
+.pd-price-box{background:linear-gradient(135deg,#0d1b2e,#1e3050);border-radius:14px;padding:20px 24px;margin-bottom:20px;color:#fff}
+.pd-price-label{font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.15em;color:rgba(200,151,58,0.7);text-transform:uppercase;margin-bottom:6px}
+.pd-price-val{font-family:'Cormorant Garamond',Georgia,serif;font-size:2.4rem;font-weight:600;color:#e6b55a;line-height:1}
+.pd-price-sub{font-size:0.75rem;color:rgba(255,255,255,0.4);margin-top:4px}
+
+/* Buttons */
+.pd-btns{display:flex;flex-direction:column;gap:10px}
+.pd-btn-wa{padding:13px;background:#25d366;color:#fff;border:none;border-radius:10px;font-family:'Cinzel',serif;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .25s}
+.pd-btn-wa:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,211,102,0.35)}
+.pd-btn-call{padding:13px;background:#fff;color:#0d1b2e;border:1.5px solid rgba(13,27,46,0.15);border-radius:10px;font-family:'Cinzel',serif;font-size:0.68rem;font-weight:600;letter-spacing:0.1em;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .25s}
+.pd-btn-call:hover{background:#f0f4f8;border-color:rgba(13,27,46,0.3)}
+.pd-btn-form{padding:13px;background:linear-gradient(135deg,#c8973a,#e6b55a);color:#0d1b2e;border:none;border-radius:10px;font-family:'Cinzel',serif;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .25s}
+.pd-btn-form:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(200,151,58,0.4)}
+
+/* Highlights */
+.pd-highlights{display:flex;flex-direction:column;gap:10px}
+.pd-hl{display:flex;align-items:center;gap:10px;font-size:0.82rem;color:rgba(13,27,46,0.7)}
+.pd-hl-dot{width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#c8973a,#e6b55a);display:flex;align-items:center;justify-content:center;font-size:0.6rem;color:#0d1b2e;flex-shrink:0}
+
+/* Enquiry form */
+.enq-form{background:var(--cream-2,#f7f4ef);border:1px solid var(--border,#e8e4dc);border-radius:16px;padding:32px}
+.enq-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.enq-group{display:flex;flex-direction:column;gap:5px}
+.enq-group.full{grid-column:span 2}
+.enq-label{font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.1em;color:rgba(13,27,46,0.6);text-transform:uppercase}
+.enq-input{padding:11px 14px;border:1.5px solid rgba(13,27,46,0.12);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;background:#fff;transition:border-color .2s;color:#0d1b2e}
+.enq-input:focus{border-color:#c8973a}
+.enq-err{font-size:0.72rem;color:#e74c3c;display:none;margin-top:3px}
+.enq-err.show{display:block}
+.enq-input.error{border-color:#e74c3c}
+.enq-submit{width:100%;padding:14px;background:#25d366;color:#fff;border:none;border-radius:10px;font-family:'Cinzel',serif;font-size:0.7rem;font-weight:700;letter-spacing:0.12em;cursor:pointer;transition:all .25s;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:8px}
+.enq-submit:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,211,102,0.35)}
+
+/* Loading skeleton */
+.pd-loading{text-align:center;padding:80px 20px;color:rgba(13,27,46,0.35)}
+.pd-spinner{width:36px;height:36px;border:3px solid rgba(200,151,58,0.2);border-top-color:#c8973a;border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Not found */
+.pd-notfound{text-align:center;padding:80px 20px}
+
+@media(max-width:900px){
+  .detail-wrap{grid-template-columns:1fr;gap:24px;padding:24px 16px 60px}
+  .detail-sidebar{position:static}
+  .enq-row{grid-template-columns:1fr}
+  .enq-group.full{grid-column:span 1}
+}
+</style>
+<style>
+/* &#9552;&#9552;&#9552; GLOBAL MOBILE FIXES &#9552;&#9552;&#9552; */
+@media(max-width:600px){
+  /* Navbar */
+  .nav-tagline{display:none !important;}
+  .nav-name{font-size:0.75rem !important;}
+  .nav-cta{display:none !important;}
+  /* Container */
+  .container{padding-left:16px !important;padding-right:16px !important;}
+  .section{padding:48px 0 !important;}
+  /* Page hero */
+  .page-hero .container{padding-bottom:32px !important;}
+  .page-hero h1{font-size:clamp(1.8rem,8vw,3rem) !important;}
+  /* AI bot + WA separation */
+  #jb-btn{bottom:90px !important;right:16px !important;width:44px !important;height:44px !important;}
+  /* Buttons */
+  .btn{padding:12px 18px !important;font-size:0.68rem !important;}
+}
+/* Detail layout */
+@media(max-width:900px){
+  .detail-wrap{grid-template-columns:1fr !important;padding:20px 16px 40px !important;}
+  .detail-sidebar{position:static !important;}
+  .enq-row{grid-template-columns:1fr !important;}
+  .enq-group.full{grid-column:span 1 !important;}
+}
+/* Search page */
+@media(max-width:600px){
+  .search-layout{grid-template-columns:1fr !important;}
+  .filter-panel{display:none;}
+  .filter-panel.open{display:block;}
+  .sh-title{font-size:1.8rem !important;}
+  .search-tabs{gap:4px !important;}
+  .s-tab{padding:8px 12px !important;font-size:0.65rem !important;}
+  .search-bar-wrap{flex-direction:column !important;gap:8px !important;border-radius:14px !important;}
+  .sb-field{border-right:none !important;border-bottom:1px solid rgba(13,27,46,0.1) !important;padding:12px !important;}
+  .sb-search-btn{border-radius:10px !important;width:100% !important;}
+}
+/* About page */
+@media(max-width:600px){
+  .ab-split{grid-template-columns:1fr !important;gap:32px !important;}
+  .ab-split-right{height:260px !important;}
+  .ab-stats-strip{grid-template-columns:repeat(2,1fr) !important;}
+  .ab-dir-inner{grid-template-columns:1fr !important;gap:32px !important;padding:0 16px !important;}
+  .ab-dir-photo{height:300px !important;}
+  .rm-track,.ppl-grid{grid-template-columns:1fr !important;}
+  .ab-story-inner,.ab-inner{padding:0 16px !important;}
+}
+/* Contact page */
+@media(max-width:600px){
+  .contact-grid{grid-template-columns:1fr !important;}
+  .contact-cards{grid-template-columns:1fr 1fr !important;}
+  .form-row{grid-template-columns:1fr !important;}
+  .map-section{padding:0 16px !important;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP STRIP -->
+<div class="top-strip" id="top-strip">
+  <div class="strip-left">
+    <span><a href="tel:+919765711811">&#128222; +91-97657-11811</a></span>
+    <span>&#128197; Mon&#8211;Sat 9AM&#8211;7PM</span>
+  </div>
+  <div class="strip-right">ROOGNTA Shopping Hub, Indira Nagar, Nashik</div>
+  <button class="strip-close" onclick="document.getElementById('top-strip').style.display='none'">&#10005;</button>
+</div>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-logo-icon" style="padding:0;overflow:hidden;background:#fff;border-radius:8px;">
+        <img src="images/Logo.png" alt="Logo" style="width:100%;height:100%;object-fit:contain;display:block;padding:3px;"
+          onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#c8973a,#8a6420)';this.parentNode.style.display='flex';this.parentNode.style.alignItems='center';this.parentNode.style.justifyContent='center';this.parentNode.innerHTML='<span style=font-family:Cinzel,serif;font-weight:600;color:#0d1b2e;>JB</span>'"/>
+      </div>
+      <div class="nav-brand-text">
+        <span class="nav-name">Jay Bhadra Real Estate Solutions</span>
+        <span class="nav-tagline"><em>New Vision. Real Homes.</em></span>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-navy btn-cap nav-cta">Enquire Now</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle">&#9776;</button>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="search.html">Search Properties</a>
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="ph-slides">
+    <div class="ph-slide" style="background-image:url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1600&q=85&auto=format&fit=crop')"></div>
+    <div class="ph-slide" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=85&auto=format&fit=crop')"></div>
+  </div>
+  <div class="ph-overlay"></div>
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">&#8250;</span>
+      <a href="search.html">Search</a>
+      <span class="sep">&#8250;</span>
+      <span id="bc-name">Project Details</span>
+    </nav>
+    <h1 id="pd-hero-title" style="font-size:clamp(1.8rem,4vw,3rem);">Loading...</h1>
+    <div style="display:flex;gap:12px;align-items:center;margin-top:14px;flex-wrap:wrap;">
+      <span id="pd-status-badge" class="card-status status-ongoing">Ongoing</span>
+      <span id="pd-hero-loc" style="color:rgba(255,255,255,0.7);font-size:0.9rem;"></span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section style="padding:0 0 60px;">
+  <div id="pd-loading" class="detail-wrap" style="grid-template-columns:1fr;">
+    <div class="pd-loading"><div class="pd-spinner"></div><p>Loading project details...</p></div>
+  </div>
+
+  <div id="pd-content" class="detail-wrap" style="display:none;">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <!-- MAIN PHOTO -->
+      <div id="pd-photo" class="pd-photo">&#127968;</div>
+
+      <!-- META CHIPS -->
+      <div class="pd-meta" id="pd-meta"></div>
+
+      <!-- DESCRIPTION -->
+      <div class="pd-sec" id="pd-desc-sec">
+        <div class="pd-sec-title">&#128196; Project Overview</div>
+        <p class="pd-desc" id="pd-desc">Loading...</p>
+      </div>
+
+      <!-- BHK TYPES -->
+      <div class="pd-sec" id="pd-bhk-sec">
+        <div class="pd-sec-title">&#127968; BHK / Property Types</div>
+        <div class="pd-tags" id="pd-bhk-tags"></div>
+      </div>
+
+      <!-- AMENITIES -->
+      <div class="pd-sec" id="pd-amenities-sec">
+        <div class="pd-sec-title">&#10024; Amenities &amp; Features</div>
+        <div class="pd-tags" id="pd-amenity-tags"></div>
+      </div>
+
+      <!-- ENQUIRY FORM -->
+      <div class="pd-sec" id="enquiry-section">
+        <div class="pd-sec-title" id="enquiry-form">&#128221; Send an Enquiry</div>
+        <div class="enq-form">
+          <input type="hidden" id="enq-project-name" value=""/>
+          <div class="enq-row">
+            <div class="enq-group">
+              <label class="enq-label">Full Name *</label>
+              <input type="text" id="enq-name" class="enq-input" placeholder="Your full name"/>
+              <div class="enq-err" id="enq-name-err">Please enter your name.</div>
+            </div>
+            <div class="enq-group">
+              <label class="enq-label">Phone Number *</label>
+              <input type="tel" id="enq-phone" class="enq-input" placeholder="10-digit number" maxlength="10"/>
+              <div class="enq-err" id="enq-phone-err">Please enter a valid 10-digit number.</div>
+            </div>
+          </div>
+          <div class="enq-row">
+            <div class="enq-group">
+              <label class="enq-label">Email (Optional)</label>
+              <input type="email" id="enq-email" class="enq-input" placeholder="your@email.com"/>
+            </div>
+            <div class="enq-group">
+              <label class="enq-label">BHK Preference</label>
+              <select id="enq-bhk" class="enq-input">
+                <option value="">Select type</option>
+                <option>1BHK</option><option>2BHK</option><option>3BHK</option>
+                <option>Bungalow</option><option>Not decided yet</option>
+              </select>
+            </div>
+          </div>
+          <div class="enq-group" style="margin-bottom:8px;">
+            <label class="enq-label">Message (Optional)</label>
+            <textarea id="enq-msg" class="enq-input" placeholder="Any specific requirements..." style="resize:vertical;min-height:80px;"></textarea>
+          </div>
+          <button class="enq-submit" onclick="submitEnquiry()">&#128172; Send via WhatsApp</button>
+          <p style="text-align:center;font-size:0.72rem;color:rgba(13,27,46,0.4);margin-top:8px;">&#128274; No spam. Your info is only shared with Jay Bhadra Real Estate.</p>
+        </div>
+      </div>
+
+    </div>
+    <!-- END LEFT -->
+
+    <!-- SIDEBAR -->
+    <aside class="detail-sidebar">
+
+      <!-- Price -->
+      <div class="sc">
+        <div class="pd-price-box">
+          <div class="pd-price-label">Starting Price</div>
+          <div class="pd-price-val" id="sd-price">Loading...</div>
+          <div class="pd-price-sub" id="sd-emi"></div>
+        </div>
+        <div class="pd-btns">
+          <a id="sd-wa" href="https://wa.me/919765711811" target="_blank" class="pd-btn-wa">&#128172; WhatsApp Now</a>
+          <a href="tel:+919765711811" class="pd-btn-call">&#128222; +91-97657-11811</a>
+          <a href="#enquiry-form" onclick="document.getElementById('enquiry-section').scrollIntoView({behavior:'smooth'});return false;" class="pd-btn-form">&#128203; Fill Enquiry Form</a>
+        </div>
+      </div>
+
+      <!-- Highlights -->
+      <div class="sc">
+        <div style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.12em;color:#c8973a;text-transform:uppercase;margin-bottom:16px;">Project Highlights</div>
+        <div class="pd-highlights">
+          <div class="pd-hl"><div class="pd-hl-dot">&#10003;</div>RERA Registered</div>
+          <div class="pd-hl"><div class="pd-hl-dot">&#10003;</div>Bank Approved &#8212; SBI, HDFC, BoM</div>
+          <div class="pd-hl"><div class="pd-hl-dot">&#10003;</div>Maintenance Support Included</div>
+          <div class="pd-hl"><div class="pd-hl-dot">&#10003;</div>Vastu-Compliant Design</div>
+          <div class="pd-hl"><div class="pd-hl-dot">&#10003;</div>Zero Hidden Charges</div>
+          <div class="pd-hl" id="sd-possession-row" style="display:none;"><div class="pd-hl-dot">&#127959;</div><span id="sd-possession-text"></span></div>
+          <div class="pd-hl" id="sd-carpet-row" style="display:none;"><div class="pd-hl-dot">&#128207;</div><span id="sd-carpet-text"></span></div>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div class="sc">
+        <div style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.12em;color:#c8973a;text-transform:uppercase;margin-bottom:12px;">Location</div>
+        <p id="sd-location" style="font-size:0.88rem;color:rgba(13,27,46,0.7);margin-bottom:14px;"></p>
+        <a id="sd-map" href="https://www.google.com/maps/search/Nashik" target="_blank" style="font-size:0.78rem;color:#c8973a;text-decoration:underline;">View on Google Maps &#8594;</a>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <!-- Not found state -->
+  <div id="pd-notfound" style="display:none;" class="detail-wrap" style="grid-template-columns:1fr;">
+    <div class="pd-notfound">
+      <div style="font-size:3rem;margin-bottom:16px;">&#127959;</div>
+      <h3 style="font-family:serif;color:#0d1b2e;margin-bottom:8px;">Project Not Found</h3>
+      <p style="color:rgba(13,27,46,0.5);margin-bottom:20px;">This project may have been removed or the link is incorrect.</p>
+      <a href="search.html" style="padding:12px 28px;background:#0d1b2e;color:#e6b55a;border-radius:8px;text-decoration:none;font-size:0.8rem;">&#8592; Back to Search</a>
+    </div>
+  </div>
+
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon" style="padding:0;overflow:hidden;background:#fff;border-radius:8px;">
+            <img src="images/Logo.png" alt="Logo" style="width:100%;height:100%;object-fit:contain;display:block;padding:3px;" onerror="this.style.display='none';this.parentNode.innerHTML='<span style=font-family:Cinzel,serif;font-weight:600;color:#0d1b2e;font-size:1rem;>JB</span>'"/>
+          </div>
+          <div class="footer-logo-text"><strong>Jay Bhadra Real Estate Solutions Pvt. Ltd.</strong><em>New Vision. Real Homes.</em></div>
+        </div>
+        <p>Honest real estate. Quality homes. Transparent pricing. Maintenance support included.</p>
+      </div>
+      <div class="footer-col"><h5>Quick Links</h5><ul>
+        <li><a href="index.html">&#8594; Home</a></li>
+        <li><a href="search.html">&#8594; Search Properties</a></li>
+        <li><a href="about.html">&#8594; About Us</a></li>
+        <li><a href="contact.html">&#8594; Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Contact Us</h5>
+        <div class="footer-ci"><span class="ic">&#128222;</span><span class="tx"><a href="tel:+919765711811">+91-97657-11811</a></span></div>
+        <div class="footer-ci"><span class="ic">&#9993;</span><span class="tx"><a href="mailto:jaybhadrarealestate.pvtltd@gmail.com">jaybhadrarealestate.pvtltd@gmail.com</a></span></div>
+        <div class="footer-ci"><span class="ic">&#128205;</span><span class="tx">ROOGNTA Shopping Hub, Indira Nagar, Nashik &#8211; 422009</span></div>
+        <div class="footer-ci"><span class="ic">&#9200;</span><span class="tx">Mon&#8211;Sat: 9AM&#8211;7PM</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>&#169; 2026 Jay Bhadra Real Estate Solutions Pvt. Ltd. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+<script>
+/* &#9552;&#9552; LOAD PROJECT FROM JSON &#9552;&#9552; */
+(function(){
+  var urlParam = new URLSearchParams(window.location.search).get('project') || '';
+
+  fetch('projects-data.json?t=' + Date.now())
+    .then(function(r){ if(!r.ok) throw new Error('no json'); return r.json(); })
+    .then(function(projects){
+      if(!projects.length){ showNotFound(); return; }
+
+      // Find matching project by slug
+      var project = null;
+      projects.forEach(function(p){
+        var slug = (p.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+        if(slug === urlParam) project = p;
+      });
+      // If not found by slug, show first project
+      if(!project) project = projects[0];
+
+      renderProject(project);
+    })
+    .catch(function(){ showNotFound(); });
+
+  function renderProject(p){
+    var name    = p.name || 'Project';
+    var loc     = p.location || 'Nashik';
+    var price   = p.price || 0;
+    var status  = p.status || 'ongoing';
+    var photo   = p.photo || '';
+    var desc    = p.description || '';
+    var tags    = p.tags || [];
+    var carpet  = p.carpet || '';
+    var possess = p.possession || '';
+    var added   = p.added || '';
+
+    // BHK types and amenities from tags
+    var bhkTypes   = tags.filter(function(t){ return /\d\s*bhk|bungalow|villa|shop|office/i.test(t); });
+    var amenities  = tags.filter(function(t){ return !/\d\s*bhk|bungalow|villa|shop|office/i.test(t); });
+
+    // &#9472;&#9472; Page title &#9472;&#9472;
+    document.title = name + ' | Jay Bhadra Real Estate Solutions';
+
+    // &#9472;&#9472; Hero &#9472;&#9472;
+    document.getElementById('bc-name').textContent  = name;
+    document.getElementById('pd-hero-title').textContent = name;
+    document.getElementById('pd-hero-loc').textContent = '&#128205; ' + loc;
+
+    var badge = document.getElementById('pd-status-badge');
+    badge.textContent = status.charAt(0).toUpperCase() + status.slice(1);
+    badge.className = 'card-status status-' + status;
+
+    // &#9472;&#9472; Photo &#9472;&#9472;
+    var photoEl = document.getElementById('pd-photo');
+    if(photo && photo !== 'ADD_PHOTO_LINK_HERE'){
+      photoEl.innerHTML = '<img src="'+photo+'" alt="'+name+'"/>';
+    }
+
+    // &#9472;&#9472; Meta chips &#9472;&#9472;
+    var metaHTML = '';
+    if(price) metaHTML += '<div class="pd-chip"><span class="pd-chip-label">Starting Price</span><span class="pd-chip-val">Rs.'+price+' Lakh+</span></div>';
+    metaHTML += '<div class="pd-chip"><span class="pd-chip-label">Status</span><span class="pd-chip-val">'+status.charAt(0).toUpperCase()+status.slice(1)+'</span></div>';
+    if(carpet) metaHTML += '<div class="pd-chip"><span class="pd-chip-label">Carpet Area</span><span class="pd-chip-val">'+carpet+'</span></div>';
+    if(possess) metaHTML += '<div class="pd-chip"><span class="pd-chip-label">Possession</span><span class="pd-chip-val">'+possess+'</span></div>';
+    if(added) metaHTML += '<div class="pd-chip"><span class="pd-chip-label">Added On</span><span class="pd-chip-val">'+added+'</span></div>';
+    document.getElementById('pd-meta').innerHTML = metaHTML;
+
+    // &#9472;&#9472; Description &#9472;&#9472;
+    document.getElementById('pd-desc').textContent = desc || (name + ' is a quality project by Jay Bhadra Real Estate Solutions, located at ' + loc + '. Contact us for floor plans and site visit.');
+
+    // &#9472;&#9472; BHK tags &#9472;&#9472;
+    if(bhkTypes.length){
+      document.getElementById('pd-bhk-tags').innerHTML = bhkTypes.map(function(t){ return '<span class="pd-tag bhk">'+t+'</span>'; }).join('');
+    } else {
+      document.getElementById('pd-bhk-sec').style.display = 'none';
+    }
+
+    // &#9472;&#9472; Amenity tags &#9472;&#9472;
+    if(amenities.length){
+      document.getElementById('pd-amenity-tags').innerHTML = amenities.map(function(t){ return '<span class="pd-tag amenity">'+t+'</span>'; }).join('');
+    } else {
+      document.getElementById('pd-amenities-sec').style.display = 'none';
+    }
+
+    // &#9472;&#9472; BHK select in form &#9472;&#9472;
+    var bhkSel = document.getElementById('enq-bhk');
+    if(bhkTypes.length){
+      bhkSel.innerHTML = '<option value="">Select type</option>';
+      bhkTypes.forEach(function(t){ bhkSel.innerHTML += '<option>'+t+'</option>'; });
+      bhkSel.innerHTML += '<option>Not decided yet</option>';
+    }
+
+    // &#9472;&#9472; Sidebar price &#9472;&#9472;
+    document.getElementById('sd-price').textContent = price ? 'Rs.'+price+' Lakh+' : 'Call for Price';
+    document.getElementById('sd-emi').textContent   = price ? 'EMI from Rs.'+Math.round(price*870)+'/mo' : '';
+
+    // &#9472;&#9472; Sidebar WhatsApp &#9472;&#9472;
+    document.getElementById('sd-wa').href = 'https://wa.me/919765711811?text=Hello!%20I%20am%20interested%20in%20'+encodeURIComponent(name)+'%20at%20'+encodeURIComponent(loc)+'.%20Please%20share%20more%20details.';
+
+    // &#9472;&#9472; Sidebar possession + carpet &#9472;&#9472;
+    if(possess){ document.getElementById('sd-possession-row').style.display='flex'; document.getElementById('sd-possession-text').textContent='Possession: '+possess; }
+    if(carpet){  document.getElementById('sd-carpet-row').style.display='flex';     document.getElementById('sd-carpet-text').textContent='Carpet: '+carpet; }
+
+    // &#9472;&#9472; Location &#9472;&#9472;
+    document.getElementById('sd-location').textContent = loc;
+    document.getElementById('sd-map').href = 'https://www.google.com/maps/search/'+encodeURIComponent(loc+' Nashik');
+
+    // &#9472;&#9472; Enquiry form project name &#9472;&#9472;
+    document.getElementById('enq-project-name').value = name;
+
+    // &#9472;&#9472; Show content &#9472;&#9472;
+    document.getElementById('pd-loading').style.display = 'none';
+    document.getElementById('pd-content').style.display = 'grid';
+  }
+
+  function showNotFound(){
+    document.getElementById('pd-loading').style.display = 'none';
+    document.getElementById('pd-notfound').style.display = 'block';
+  }
+
+  // &#9472;&#9472; Enquiry form submit &#9472;&#9472;
+  window.submitEnquiry = function(){
+    var name  = document.getElementById('enq-name').value.trim();
+    var phone = document.getElementById('enq-phone').value.replace(/\D/g,'');
+    var email = document.getElementById('enq-email').value.trim();
+    var bhk   = document.getElementById('enq-bhk').value;
+    var msg   = document.getElementById('enq-msg').value.trim();
+    var proj  = document.getElementById('enq-project-name').value;
+    var valid = true;
+
+    // Validate name
+    var nameErr = document.getElementById('enq-name-err');
+    var nameInp = document.getElementById('enq-name');
+    if(!name){ nameInp.classList.add('error'); nameErr.classList.add('show'); valid=false; }
+    else { nameInp.classList.remove('error'); nameErr.classList.remove('show'); }
+
+    // Validate phone
+    var phoneErr = document.getElementById('enq-phone-err');
+    var phoneInp = document.getElementById('enq-phone');
+    if(phone.length !== 10){ phoneInp.classList.add('error'); phoneErr.classList.add('show'); valid=false; }
+    else { phoneInp.classList.remove('error'); phoneErr.classList.remove('show'); }
+
+    if(!valid) return;
+
+    // Build WhatsApp message
+    var waMsg = 'Hello Jay Bhadra Real Estate Solutions!\n';
+    waMsg += '&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;\n';
+    waMsg += '&#128205; Project: ' + proj + '\n';
+    waMsg += '&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;\n';
+    waMsg += '&#128100; Name: ' + name + '\n';
+    waMsg += '&#128222; Phone: ' + phone + '\n';
+    if(email) waMsg += '&#9993; Email: ' + email + '\n';
+    if(bhk)   waMsg += '&#127968; BHK: ' + bhk + '\n';
+    if(msg)   waMsg += '&#128221; Note: ' + msg + '\n';
+    waMsg += '&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;\n';
+    waMsg += 'Please get in touch with me.';
+
+    window.open('https://wa.me/919765711811?text='+encodeURIComponent(waMsg), '_blank');
+  };
+
+})();
+</script>
+
+<!-- AI BOT -->
+<style>
+#jb-btn{position:fixed;bottom:162px;right:24px;width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#0d1b2e,#1e3050);border:2px solid rgba(200,151,58,0.55);cursor:pointer;z-index:9997;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(13,27,46,0.35);animation:jbp 2.8s infinite}
+#jb-btn:hover{transform:scale(1.12);animation:none}
+@keyframes jbp{0%,100%{box-shadow:0 4px 18px rgba(13,27,46,0.35),0 0 0 0 rgba(200,151,58,0.45)}65%{box-shadow:0 4px 18px rgba(13,27,46,0.35),0 0 0 10px rgba(200,151,58,0)}}
+#jb-badge{position:absolute;top:-3px;right:-3px;width:16px;height:16px;border-radius:50%;background:#e74c3c;color:#fff;font-size:0.55rem;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid #fff}
+#jb-win{position:fixed;bottom:222px;right:24px;width:320px;max-height:420px;background:#fff;border-radius:20px;box-shadow:0 20px 56px rgba(13,27,46,0.2);border:1px solid rgba(200,151,58,0.2);display:flex;flex-direction:column;z-index:9996;transform:scale(0.85) translateY(20px);transform-origin:bottom right;opacity:0;pointer-events:none;transition:transform .38s,opacity .28s;font-family:'DM Sans',system-ui}
+#jb-win.open{transform:scale(1) translateY(0);opacity:1;pointer-events:all}
+.jbh{background:linear-gradient(135deg,#0d1b2e,#1e3050);border-radius:20px 20px 0 0;padding:13px 15px;display:flex;align-items:center;gap:10px}
+.jbh-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#c8973a,#e6b55a);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.jbh-info strong{color:#fff;font-size:0.85rem;display:block}.jbh-info span{font-size:0.62rem;color:rgba(255,255,255,0.5)}
+.jbx{background:none;border:none;color:rgba(255,255,255,0.4);cursor:pointer;font-size:1rem;padding:4px;margin-left:auto}
+.jb-msgs{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.jbm{display:flex;gap:6px;align-items:flex-end}.jbm.u{flex-direction:row-reverse}
+.jbav{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#c8973a,#e6b55a);display:flex;align-items:center;justify-content:center;font-size:0.7rem;flex-shrink:0}
+.jbb{max-width:85%;padding:8px 12px;border-radius:14px 14px 14px 3px;font-size:0.79rem;line-height:1.6;color:#1a2b4a;background:#f0f4f8}
+.jbm.u .jbb{background:linear-gradient(135deg,#0d1b2e,#1e3050);color:#fff;border-radius:14px 14px 3px 14px}
+.jb-qrs{display:flex;flex-wrap:wrap;gap:5px;padding:2px 12px 8px}
+.jbqr{padding:4px 10px;border-radius:100px;border:1px solid rgba(13,27,46,0.13);background:#fff;color:#0d1b2e;font-size:0.7rem;cursor:pointer;font-family:inherit}
+.jbqr:hover{background:#0d1b2e;color:#e6b55a}
+.jb-inp-row{padding:8px 10px;border-top:1px solid rgba(13,27,46,0.07);display:flex;gap:6px}
+.jb-inp{flex:1;border:1.5px solid rgba(13,27,46,0.11);border-radius:10px;padding:7px 11px;font-size:0.79rem;outline:none;font-family:inherit}
+.jbsnd{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#0d1b2e,#1e3050);border:none;cursor:pointer;color:#e6b55a;font-size:0.85rem}
+@media(max-width:420px){#jb-win{width:calc(100vw - 14px);right:7px}#jb-btn{bottom:80px;right:16px}}
+</style>
+<div id="jb-btn" onclick="jbT()">&#129302;<span id="jb-badge">1</span></div>
+<div id="jb-win">
+  <div class="jbh"><div class="jbh-av">&#129302;</div><div class="jbh-info"><strong>Prop Guru</strong><span>&#128994; Online</span></div><button class="jbx" onclick="jbT()">&#10005;</button></div>
+  <div class="jb-msgs" id="jb-msgs"></div>
+  <div class="jb-qrs" id="jb-qrs"></div>
+  <div class="jb-inp-row"><input class="jb-inp" id="jb-inp" placeholder="Ask about this project..." onkeydown="if(event.key==='Enter')jbS()"/><button class="jbsnd" onclick="jbS()">&#10148;</button></div>
+</div>
+<script>
+(function(){
+  var OPEN=false,STARTED=false;
+  var pName=document.getElementById('enq-project-name')&&document.getElementById('enq-project-name').value||'this project';
+  function jbT(){OPEN=!OPEN;document.getElementById('jb-win').classList.toggle('open',OPEN);var b=document.getElementById('jb-badge');if(b)b.remove();if(OPEN&&!STARTED){STARTED=true;setTimeout(function(){var n=document.getElementById('enq-project-name');pName=n?n.value||pName:pName;jbAdd('bot','Hi! &#128075; I can help with <strong>'+pName+'</strong>.\n\nAsk me anything!');jbQR(['Price','BHK Types','Amenities','&#128222; Call Us','&#128172; WhatsApp']);},400);}if(OPEN)setTimeout(function(){document.getElementById('jb-inp').focus();},400);}
+  window.jbT=jbT;
+  function jbAdd(r,t){var m=document.getElementById('jb-msgs'),d=document.createElement('div');d.className='jbm '+(r==='user'?'u':'');var av=document.createElement('div');av.className='jbav';av.textContent=r==='user'?'U':'&#129302;';var b=document.createElement('div');b.className='jbb';b.innerHTML=t.replace(/\n/g,'<br/>');d.appendChild(av);d.appendChild(b);m.appendChild(d);m.scrollTop=m.scrollHeight;}
+  function jbQR(opts){var row=document.getElementById('jb-qrs');row.innerHTML='';opts.forEach(function(o){var btn=document.createElement('button');btn.className='jbqr';btn.innerHTML=o;btn.onclick=function(){row.innerHTML='';jbProc(btn.textContent);};row.appendChild(btn);});}
+  function jbS(){var inp=document.getElementById('jb-inp'),t=inp.value.trim();if(!t)return;inp.value='';jbProc(t);}
+  window.jbS=jbS;
+  function jbProc(t){
+    if(/whatsapp/i.test(t)){window.open('https://wa.me/919765711811?text=Hi! Interested in '+encodeURIComponent(pName),'_blank');return;}
+    if(/call/i.test(t)){window.location.href='tel:+919765711811';return;}
+    if(/price/i.test(t)){var p=document.getElementById('sd-price');jbAdd('user',t);setTimeout(function(){jbAdd('bot','Price for <strong>'+pName+'</strong>:\n\n&#128176; '+((p&&p.textContent)||'Call for Price')+'\n\n&#128172; WhatsApp for best offer!');jbQR(['&#128172; WhatsApp Now','&#128222; Call Now']);},300);return;}
+    if(/bhk|type/i.test(t)){jbAdd('user',t);setTimeout(function(){var sel=document.getElementById('enq-bhk');var opts=[];if(sel)for(var i=1;i<sel.options.length;i++)opts.push(sel.options[i].text);jbAdd('bot','Available types in <strong>'+pName+'</strong>:\n\n'+(opts.length?opts.join(', '):'Contact us for details')+'\n\nFill the enquiry form below!');jbQR(['&#128203; Enquiry Form','&#128172; WhatsApp']);},300);return;}
+    jbAdd('user',t);
+    setTimeout(function(){jbAdd('bot','For <strong>'+pName+'</strong>:\n\n&#128222; Call: <strong>+91-97657-11811</strong>\n&#128172; WhatsApp same number\n\nOr scroll down and fill the enquiry form!');jbQR(['&#128172; WhatsApp Now','&#128222; Call Now','&#128203; Enquiry Form']);},400);
+  }
+})();
+</script>
+
+</body>
+</html>
