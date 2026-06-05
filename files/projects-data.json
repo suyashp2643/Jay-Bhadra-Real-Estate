@@ -1,5 +1,34 @@
 [
   {
+    "id": 1780653659613,
+    "name": "Amrutdhara",
+    "location": "Indiranagar",
+    "price": 53,
+    "priceLabel": "53 Lakhs Lakh+",
+    "photo": "https://i.ibb.co/JFvYwfCv/Screenshot-5-6-2026-15648.jpg",
+    "status": "ongoing",
+    "proptype": "residential",
+    "tags": [
+      "2BHK",
+      "Lift",
+      "Parking",
+      "24/7 Security",
+      "Power Backup",
+      "Garden",
+      "CCTV",
+      "Temple",
+      "24/7 Water",
+      "Play Area",
+      "RERA Registered",
+      "Vastu",
+      "Gym"
+    ],
+    "carpet": "1060",
+    "possession": "",
+    "description": "",
+    "added": "5/6/2026"
+  },
+  {
     "id": 1780165231164,
     "name": "Jay Bhadra Commercial's",
     "location": "Sangamner, Maharashtra",
