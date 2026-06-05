@@ -5,6 +5,12 @@
     "location": "Govind Nagar, Nashik",
     "price": 99,
     "priceLabel": "99 Lakh+",
+    "photos": [
+      "https://i.ibb.co/yn75yJTn/Screenshot-5-6-2026-154719.jpg",
+      "https://i.ibb.co/05vN0jH/Screenshot-5-6-2026-17759.jpg",
+      "https://i.ibb.co/KjgynfmH/Screenshot-5-6-2026-17828.jpg",
+      "https://i.ibb.co/DgbnN44L/Screenshot-5-6-2026-17846.jpg"
+    ],
     "photo": "https://i.ibb.co/yn75yJTn/Screenshot-5-6-2026-154719.jpg",
     "status": "ongoing",
     "proptype": "residential",
