@@ -1,5 +1,33 @@
 [
   {
+    "id": 1780654840187,
+    "name": "Vakratunda Aroma",
+    "location": "Govind Nagar",
+    "price": 99,
+    "priceLabel": "99 Lakhs Lakh+",
+    "photo": "https://i.ibb.co/yn75yJTn/Screenshot-5-6-2026-154719.jpg",
+    "status": "ongoing",
+    "proptype": "residential",
+    "tags": [
+      "Penthouse",
+      "3BHK",
+      "Lift",
+      "Parking",
+      "24/7 Security",
+      "Power Backup",
+      "Garden",
+      "CCTV",
+      "24/7 Water",
+      "Vastu",
+      "Play Area",
+      "RERA Registered"
+    ],
+    "carpet": "1628-1698",
+    "possession": "November 2026",
+    "description": "Penthouse with terrace of 2276 sqft.",
+    "added": "5/6/2026"
+  },
+  {
     "id": 1780653659613,
     "name": "Amrutdhara",
     "location": "Indiranagar, Nashik",
