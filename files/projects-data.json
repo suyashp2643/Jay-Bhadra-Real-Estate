@@ -2,9 +2,9 @@
   {
     "id": 1780653659613,
     "name": "Amrutdhara",
-    "location": "Indiranagar",
+    "location": "Indiranagar, Nashik",
     "price": 53,
-    "priceLabel": "53 Lakhs Lakh+",
+    "priceLabel": "53 Lakh+",
     "photo": "https://i.ibb.co/JFvYwfCv/Screenshot-5-6-2026-15648.jpg",
     "status": "ongoing",
     "proptype": "residential",
@@ -26,7 +26,8 @@
     "carpet": "1060",
     "possession": "",
     "description": "",
-    "added": "5/6/2026"
+    "added": "5/6/2026",
+    "updatedAt": "5/6/2026"
   },
   {
     "id": 1780165231164,
