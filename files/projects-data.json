@@ -1,5 +1,79 @@
 [
   {
+    "id": 1780999182323,
+    "name": "Prayag Sangam",
+    "location": "near sai baba temple, dindori road ,Mahasrul ,Nashik",
+    "price": 24,
+    "priceLabel": "Rs.24 L+",
+    "priceUnit": "lakh",
+    "units": [
+      {
+        "type": "1BHK",
+        "carpet": "610 sq.fit",
+        "priceFrom": "24",
+        "priceUnit": "lakh",
+        "priceTo": "28",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.24 L – Rs.28 L",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "2BHK",
+        "carpet": "985 sq.fit",
+        "priceFrom": "40",
+        "priceUnit": "lakh",
+        "priceTo": "44.01",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.40 L – Rs.44.01 L",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "3BHK",
+        "carpet": "1155 sq.fit",
+        "priceFrom": "48",
+        "priceUnit": "lakh",
+        "priceTo": "51",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.48 L – Rs.51 L",
+        "availability": "Limited Units"
+      }
+    ],
+    "totalUnits": "54 Units \\ 7 Floor",
+    "photos": [
+      "https://i.ibb.co/wjTsXVF/Screenshot-2026-06-09-151845-1.png",
+      "https://i.ibb.co/R4Tq3s8v/Screenshot-2026-06-09-152036.png",
+      "https://i.ibb.co/W48X2wQL/Screenshot-2026-06-09-151942.png",
+      "https://i.ibb.co/JwFn8Vqt/Screenshot-2026-06-09-152141.png"
+    ],
+    "photo": "https://i.ibb.co/wjTsXVF/Screenshot-2026-06-09-151845-1.png",
+    "video": "",
+    "videoType": "youtube",
+    "videoEmbed": "",
+    "status": "completed",
+    "proptype": "residential",
+    "tags": [
+      "1BHK",
+      "2BHK",
+      "3BHK",
+      "Power Backup",
+      "24/7 Security",
+      "Parking",
+      "Lift",
+      "CCTV",
+      "Garden",
+      "24/7 Water",
+      "Vastu",
+      "Play Area",
+      "RERA Registered",
+      "Solar Power"
+    ],
+    "carpet": "610 sq.fit, 985 sq.fit, 1155 sq.fit",
+    "possession": "ready project",
+    "description": "Prayag Sangam is a quality project of Jay Bhadra Real Estate Solution ,near sai baba temple, dindori road ,Mahasrul , Nashik",
+    "added": "9/6/2026",
+    "updatedAt": "9/6/2026"
+  },
+  {
     "id": 1780997331283,
     "name": "Pragati Vihar",
     "location": "Kamat vada,govind nagar,nashik",
