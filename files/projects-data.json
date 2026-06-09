@@ -1,5 +1,65 @@
 [
   {
+    "id": 1780996112782,
+    "name": "KRUSHNA PRIDE 4",
+    "location": "Near podar international school , pathardi phata",
+    "price": 20,
+    "priceLabel": "Rs.20 L+",
+    "priceUnit": "lakh",
+    "units": [
+      {
+        "type": "2BHK",
+        "carpet": "1150 sq.fit",
+        "priceFrom": "33",
+        "priceUnit": "lakh",
+        "priceTo": "40",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.33 L – Rs.40 L",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "1BHK",
+        "carpet": "660 sq.ft",
+        "priceFrom": "20",
+        "priceUnit": "lakh",
+        "priceTo": "22",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.20 L – Rs.22 L",
+        "availability": "Limited Units"
+      }
+    ],
+    "totalUnits": "56 units / 7 Floor",
+    "photos": [
+      "https://i.ibb.co/YB1TScGh/Screenshot-2026-06-09-140339.png",
+      "https://i.ibb.co/Xr4XshNk/Screenshot-2026-06-09-140944.png"
+    ],
+    "photo": "https://i.ibb.co/YB1TScGh/Screenshot-2026-06-09-140339.png",
+    "video": "",
+    "videoType": "youtube",
+    "videoEmbed": "",
+    "status": "completed",
+    "proptype": "residential",
+    "tags": [
+      "2BHK",
+      "1BHK",
+      "Garden",
+      "CCTV",
+      "Solar Power",
+      "24/7 Water",
+      "Lift",
+      "Parking",
+      "24/7 Security",
+      "Power Backup",
+      "Vastu",
+      "Play Area"
+    ],
+    "carpet": "1150 sq.fit, 660 sq.ft",
+    "possession": "ready project",
+    "description": "Krushna pride 4 is a quality project by Jay Bhadra Real Estate Solution ,Near podar international school , pathardi phata 66,Nashik",
+    "added": "9/6/2026",
+    "updatedAt": "9/6/2026"
+  },
+  {
     "id": 1780654840187,
     "name": "Vakratunda Aroma",
     "location": "Govind Nagar, Nashik",
