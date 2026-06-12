@@ -1,5 +1,69 @@
 [
   {
+    "id": 1781251946834,
+    "name": "Sai Raul, Nashik",
+    "location": "Dnyaneshwar Nagar, Nashik",
+    "price": 0,
+    "priceLabel": "Call for Price",
+    "priceUnit": "lakh",
+    "units": [
+      {
+        "type": "3BHK",
+        "carpet": "1626 sqft.",
+        "priceFrom": "",
+        "priceUnit": "lakh",
+        "priceTo": "",
+        "priceUnitTo": "lakh",
+        "priceRange": "",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "3BHK",
+        "carpet": "1630 sqft",
+        "priceFrom": "",
+        "priceUnit": "lakh",
+        "priceTo": "",
+        "priceUnitTo": "lakh",
+        "priceRange": "",
+        "availability": "Limited Units"
+      }
+    ],
+    "totalUnits": "14 Flats / 7 Floor",
+    "photos": [
+      "https://i.ibb.co/XZq8Xh0p/Screenshot-2026-06-12-133703.png",
+      "https://i.ibb.co/RkyMywxN/Screenshot-2026-06-12-133747.png",
+      "https://i.ibb.co/21pbr2WD/Screenshot-2026-06-12-133821.png"
+    ],
+    "photo": "https://i.ibb.co/XZq8Xh0p/Screenshot-2026-06-12-133703.png",
+    "video": "",
+    "videoType": "youtube",
+    "videoEmbed": "",
+    "status": "ongoing",
+    "proptype": "residential",
+    "tags": [
+      "3BHK",
+      "3BHK",
+      "Lift",
+      "Parking",
+      "24/7 Security",
+      "Power Backup",
+      "Garden",
+      "CCTV",
+      "24/7 Water",
+      "Vastu",
+      "Play Area",
+      "RERA Registered",
+      "Terrace",
+      "Solar Power",
+      "Smart Home"
+    ],
+    "carpet": "1626 sqft., 1630 sqft",
+    "possession": "Octomber 2027",
+    "description": "",
+    "added": "12/6/2026",
+    "updatedAt": "12/6/2026"
+  },
+  {
     "id": 1781250810287,
     "name": "Sai Vandan Society",
     "location": "Kamod Nagar, Nashik",
