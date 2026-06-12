@@ -1,5 +1,79 @@
 [
   {
+    "id": 1781259443458,
+    "name": "Krushna Pride 3",
+    "location": "Gaulane Road, Pathardi Phata, Nashik",
+    "price": 0,
+    "priceLabel": "Call for Price",
+    "priceUnit": "lakh",
+    "units": [
+      {
+        "type": "1BHK",
+        "carpet": "630 sqft",
+        "priceFrom": "",
+        "priceUnit": "lakh",
+        "priceTo": "",
+        "priceUnitTo": "lakh",
+        "priceRange": "",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "1BHK",
+        "carpet": "660 sqft",
+        "priceFrom": "",
+        "priceUnit": "lakh",
+        "priceTo": "",
+        "priceUnitTo": "lakh",
+        "priceRange": "",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "1BHK",
+        "carpet": "1050 sqft",
+        "priceFrom": "",
+        "priceUnit": "lakh",
+        "priceTo": "",
+        "priceUnitTo": "lakh",
+        "priceRange": "",
+        "availability": "Limited Units"
+      }
+    ],
+    "totalUnits": "36 Units / 6 Shops",
+    "photos": [
+      "https://i.ibb.co/JRCXZsr2/Screenshot-2026-06-12-153854.png",
+      "https://i.ibb.co/Csnk39pC/Screenshot-2026-06-12-154134.png",
+      "https://i.ibb.co/KcrTcnG1/Screenshot-2026-06-12-154221.png"
+    ],
+    "photo": "https://i.ibb.co/JRCXZsr2/Screenshot-2026-06-12-153854.png",
+    "video": "",
+    "videoType": "youtube",
+    "videoEmbed": "",
+    "status": "completed",
+    "proptype": "residential",
+    "tags": [
+      "1BHK",
+      "1BHK",
+      "1BHK",
+      "Lift",
+      "Parking",
+      "24/7 Security",
+      "Power Backup",
+      "CCTV",
+      "24/7 Water",
+      "Vastu",
+      "Play Area",
+      "RERA Registered",
+      "Solar Power",
+      "Terrace",
+      "Smart Home"
+    ],
+    "carpet": "630 sqft, 660 sqft, 1050 sqft",
+    "possession": "Ready Project",
+    "description": "",
+    "added": "12/6/2026",
+    "updatedAt": "12/6/2026"
+  },
+  {
     "id": 1781258419519,
     "name": "Shree Hari Krushna Heights",
     "location": "Near Ashoka Medicovet Hospital, Indira Nagar, Nashik",
