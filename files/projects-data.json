@@ -1,5 +1,117 @@
 [
   {
+    "id": 1781258419519,
+    "name": "Shree Hari Krushna Heights",
+    "location": "Near Ashoka Medicovet Hospital, Indira Nagar, Nashik",
+    "price": 0,
+    "priceLabel": "Call for Price",
+    "priceUnit": "lakh",
+    "units": [
+      {
+        "type": "3BHK",
+        "carpet": "1651 sqft",
+        "priceFrom": "",
+        "priceUnit": "lakh",
+        "priceTo": "",
+        "priceUnitTo": "lakh",
+        "priceRange": "",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "3BHK",
+        "carpet": "1742 sqft",
+        "priceFrom": "",
+        "priceUnit": "lakh",
+        "priceTo": "",
+        "priceUnitTo": "lakh",
+        "priceRange": "",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "3BHK",
+        "carpet": "1844 sqft",
+        "priceFrom": "",
+        "priceUnit": "lakh",
+        "priceTo": "",
+        "priceUnitTo": "lakh",
+        "priceRange": "",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "3BHK",
+        "carpet": "1924 sqft",
+        "priceFrom": "",
+        "priceUnit": "lakh",
+        "priceTo": "",
+        "priceUnitTo": "lakh",
+        "priceRange": "",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "4BHK",
+        "carpet": "2110 sqft",
+        "priceFrom": "",
+        "priceUnit": "lakh",
+        "priceTo": "",
+        "priceUnitTo": "lakh",
+        "priceRange": "",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "4BHK",
+        "carpet": "2940 sqft",
+        "priceFrom": "",
+        "priceUnit": "lakh",
+        "priceTo": "",
+        "priceUnitTo": "lakh",
+        "priceRange": "",
+        "availability": "Limited Units"
+      }
+    ],
+    "totalUnits": "276 Units",
+    "photos": [
+      "https://i.ibb.co/844stHXX/Screenshot-2026-06-12-152436.png",
+      "https://i.ibb.co/mrvkWZz4/Screenshot-2026-06-12-152556.png",
+      "https://i.ibb.co/1GBx4wpY/Screenshot-2026-06-12-152635.png"
+    ],
+    "photo": "https://i.ibb.co/844stHXX/Screenshot-2026-06-12-152436.png",
+    "video": "",
+    "videoType": "youtube",
+    "videoEmbed": "",
+    "status": "ongoing",
+    "proptype": "residential",
+    "tags": [
+      "3BHK",
+      "3BHK",
+      "3BHK",
+      "3BHK",
+      "4BHK",
+      "4BHK",
+      "Lift",
+      "Parking",
+      "24/7 Security",
+      "Power Backup",
+      "Garden",
+      "CCTV",
+      "24/7 Water",
+      "Vastu",
+      "Play Area",
+      "RERA Registered",
+      "Temple",
+      "Jogging Track",
+      "Solar Power",
+      "Terrace",
+      "Smart Home",
+      "Club House",
+      "Gym"
+    ],
+    "carpet": "1651 sqft, 1742 sqft, 1844 sqft, 1924 sqft, 2110 sqft, 2940 sqft",
+    "possession": "August 2026",
+    "description": "",
+    "added": "12/6/2026",
+    "updatedAt": "12/6/2026"
+  },
+  {
     "id": 1781251946834,
     "name": "Sai Raul, Nashik",
     "location": "Dnyaneshwar Nagar, Nashik",
