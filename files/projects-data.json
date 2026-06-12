@@ -1,5 +1,92 @@
 [
   {
+    "id": 1781250810287,
+    "name": "Sai Vandan Society",
+    "location": "Kamod Nagar, Nashik",
+    "price": 0,
+    "priceLabel": "Call for Price",
+    "priceUnit": "lakh",
+    "units": [
+      {
+        "type": "2BHK",
+        "carpet": "1100 sqft.",
+        "priceFrom": "",
+        "priceUnit": "lakh",
+        "priceTo": "",
+        "priceUnitTo": "lakh",
+        "priceRange": "",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "2BHK",
+        "carpet": "980 sqft.",
+        "priceFrom": "",
+        "priceUnit": "lakh",
+        "priceTo": "",
+        "priceUnitTo": "lakh",
+        "priceRange": "",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "2BHK",
+        "carpet": "956 sqft.",
+        "priceFrom": "",
+        "priceUnit": "lakh",
+        "priceTo": "",
+        "priceUnitTo": "lakh",
+        "priceRange": "",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "3BHK",
+        "carpet": "1378 sqft",
+        "priceFrom": "",
+        "priceUnit": "lakh",
+        "priceTo": "",
+        "priceUnitTo": "lakh",
+        "priceRange": "",
+        "availability": "Limited Units"
+      }
+    ],
+    "totalUnits": "7 Floor / 54 Unit",
+    "photos": [
+      "https://i.ibb.co/qMYyd7Qg/Screenshot-2026-06-12-131115.png",
+      "https://i.ibb.co/TMmztq9B/Screenshot-2026-06-12-131034.png",
+      "https://i.ibb.co/Jjk8L5rK/Screenshot-2026-06-12-131713.png",
+      "https://i.ibb.co/wHtGTNm/Screenshot-2026-06-12-131938.png",
+      "https://i.ibb.co/Gvr5Qtjc/Screenshot-2026-06-12-131428.png"
+    ],
+    "photo": "https://i.ibb.co/qMYyd7Qg/Screenshot-2026-06-12-131115.png",
+    "video": "",
+    "videoType": "youtube",
+    "videoEmbed": "",
+    "status": "ongoing",
+    "proptype": "residential",
+    "tags": [
+      "2BHK",
+      "2BHK",
+      "2BHK",
+      "3BHK",
+      "24/7 Security",
+      "Parking",
+      "Lift",
+      "Power Backup",
+      "RERA Registered",
+      "Play Area",
+      "Vastu",
+      "24/7 Water",
+      "CCTV",
+      "Garden",
+      "Club House",
+      "Solar Power"
+    ],
+    "carpet": "1100 sqft., 980 sqft., 956 sqft., 1378 sqft",
+    "possession": "March 2027",
+    "description": "Prime Location With Affordable prise....",
+    "added": "12/6/2026",
+    "updatedAt": "12/6/2026"
+  },
+  {
     "id": 1780999182323,
     "name": "Prayag Sangam",
     "location": "near sai baba temple, dindori road ,Mahasrul ,Nashik",
