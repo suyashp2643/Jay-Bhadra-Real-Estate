@@ -1,5 +1,128 @@
 [
   {
+    "id": 1782565044416,
+    "name": "Shivalik Shivanta",
+    "location": "Mahajan Nagar, Nashik",
+    "price": 48,
+    "priceLabel": "Rs.48 L+",
+    "priceUnit": "lakh",
+    "units": [
+      {
+        "type": "2BHK",
+        "carpet": "667 sqft",
+        "priceFrom": "48",
+        "priceUnit": "lakh",
+        "priceTo": "49",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.48 L–Rs.49 L",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "2BHK",
+        "carpet": "781 sqft",
+        "priceFrom": "55",
+        "priceUnit": "lakh",
+        "priceTo": "56",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.55 L–Rs.56 L",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "3BHK",
+        "carpet": "848 sqft",
+        "priceFrom": "61",
+        "priceUnit": "lakh",
+        "priceTo": "62",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.61 L–Rs.62 L",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "3BHK",
+        "carpet": "861 sqft",
+        "priceFrom": "62",
+        "priceUnit": "lakh",
+        "priceTo": "63",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.62 L–Rs.63 L",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "3BHK",
+        "carpet": "887 sqft",
+        "priceFrom": "63",
+        "priceUnit": "lakh",
+        "priceTo": "64",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.63 L–Rs.64 L",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "3BHK",
+        "carpet": "912 sqft",
+        "priceFrom": "65",
+        "priceUnit": "lakh",
+        "priceTo": "66",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.65 L–Rs.66 L",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "Penthouse",
+        "carpet": "1470 sqft",
+        "priceFrom": "74",
+        "priceUnit": "lakh",
+        "priceTo": "75",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.74 L–Rs.75 L",
+        "availability": "Limited Units"
+      }
+    ],
+    "totalUnits": "170 Units/ 7 Floors",
+    "photos": [
+      "https://i.ibb.co/GQw3LrLz/Screenshot-27-6-2026-181956.jpg",
+      "https://i.ibb.co/Gj27XJm/Screenshot-27-6-2026-18211.jpg",
+      "https://i.ibb.co/mV78S6bY/Screenshot-27-6-2026-182029.jpg",
+      "https://i.ibb.co/rfqCqwGD/Screenshot-27-6-2026-182141.jpg"
+    ],
+    "photo": "https://i.ibb.co/GQw3LrLz/Screenshot-27-6-2026-181956.jpg",
+    "video": "",
+    "videoType": "youtube",
+    "videoEmbed": "",
+    "status": "completed",
+    "proptype": "residential",
+    "tags": [
+      "2BHK",
+      "2BHK",
+      "3BHK",
+      "3BHK",
+      "3BHK",
+      "3BHK",
+      "Penthouse",
+      "Lift",
+      "Parking",
+      "24/7 Security",
+      "Power Backup",
+      "Garden",
+      "CCTV",
+      "24/7 Water",
+      "Vastu",
+      "Play Area",
+      "RERA Registered",
+      "Gym",
+      "Club House",
+      "Temple",
+      "Terrace",
+      "Smart Home",
+      "Solar Power"
+    ],
+    "carpet": "667 sqft, 781 sqft, 848 sqft, 861 sqft, 887 sqft, 912 sqft, 1470 sqft",
+    "possession": "Complited",
+    "description": "",
+    "added": "27/6/2026",
+    "updatedAt": "27/6/2026"
+  },
+  {
     "id": 1782563929833,
     "name": "Shivalik Status",
     "location": "Chetana Nagar, Nashik",
