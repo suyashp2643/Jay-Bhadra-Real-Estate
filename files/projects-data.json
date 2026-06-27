@@ -1,5 +1,92 @@
 [
   {
+    "id": 1782559748027,
+    "name": "Shivalik Sky Green",
+    "location": "Pathardi Phata, Nashik",
+    "price": 44,
+    "priceLabel": "Rs.44 L+",
+    "priceUnit": "lakh",
+    "units": [
+      {
+        "type": "2BHK",
+        "carpet": "667 sqft",
+        "priceFrom": "44",
+        "priceUnit": "lakh",
+        "priceTo": "45",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.44 L – Rs.45 L",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "2BHK",
+        "carpet": "690 sqft",
+        "priceFrom": "48",
+        "priceUnit": "lakh",
+        "priceTo": "49",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.48 L – Rs.49 L",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "2BHK",
+        "carpet": "715 sqft",
+        "priceFrom": "50",
+        "priceUnit": "lakh",
+        "priceTo": "51",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.50 L – Rs.51 L",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "3BHK",
+        "carpet": "1011 sqft",
+        "priceFrom": "72",
+        "priceUnit": "lakh",
+        "priceTo": "73",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.72 L – Rs.73 L",
+        "availability": "Limited Units"
+      }
+    ],
+    "totalUnits": "171 Units/ 13 Floors",
+    "photos": [
+      "https://i.ibb.co/N6VVNPNt/Screenshot-27-6-2026-164442.jpg"
+    ],
+    "photo": "https://i.ibb.co/N6VVNPNt/Screenshot-27-6-2026-164442.jpg",
+    "video": "",
+    "videoType": "youtube",
+    "videoEmbed": "",
+    "status": "ongoing",
+    "proptype": "residential",
+    "tags": [
+      "2BHK",
+      "2BHK",
+      "2BHK",
+      "3BHK",
+      "Lift",
+      "Parking",
+      "24/7 Security",
+      "Power Backup",
+      "24/7 Water",
+      "Vastu",
+      "Play Area",
+      "Club House",
+      "RERA Registered",
+      "Gym",
+      "Smart Home",
+      "Garden",
+      "Temple",
+      "CCTV",
+      "Solar Power",
+      "Terrace"
+    ],
+    "carpet": "667 sqft, 690 sqft, 715 sqft, 1011 sqft",
+    "possession": "Dec. 2026",
+    "description": "",
+    "added": "27/6/2026",
+    "updatedAt": "27/6/2026"
+  },
+  {
     "id": 1781259443458,
     "name": "Krushna Pride 3",
     "location": "Pathardi Phata, Nashik",
