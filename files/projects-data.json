@@ -1,5 +1,115 @@
 [
   {
+    "id": 1782563929833,
+    "name": "Shivalik Status",
+    "location": "Chetana Nagar, Nashik",
+    "price": 140,
+    "priceLabel": "Rs.1.4 Cr+",
+    "priceUnit": "crore",
+    "units": [
+      {
+        "type": "2BHK",
+        "carpet": "716 sqft",
+        "priceFrom": "48",
+        "priceUnit": "lakh",
+        "priceTo": "49",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.48 L–Rs.49 L",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "2BHK",
+        "carpet": "730 sqft",
+        "priceFrom": "49",
+        "priceUnit": "lakh",
+        "priceTo": "50",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.49 L–Rs.50 L",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "3BHK",
+        "carpet": "986 sqft",
+        "priceFrom": "74",
+        "priceUnit": "lakh",
+        "priceTo": "75",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.74 L–Rs.75 L",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "3BHK",
+        "carpet": "1012 sqft",
+        "priceFrom": "75",
+        "priceUnit": "lakh",
+        "priceTo": "76",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.75 L–Rs.76 L",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "3BHK",
+        "carpet": "1035 sqft",
+        "priceFrom": "77",
+        "priceUnit": "lakh",
+        "priceTo": "78",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.77 L–Rs.78 L",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "3BHK",
+        "carpet": "1055 sqft+terrace",
+        "priceFrom": "1.4",
+        "priceUnit": "crore",
+        "priceTo": "1.5",
+        "priceUnitTo": "crore",
+        "priceRange": "Rs.1.4 Cr–Rs.1.5 Cr",
+        "availability": "Limited Units"
+      }
+    ],
+    "totalUnits": "96 Units/ 13 Floors",
+    "photos": [
+      "https://i.ibb.co/Mdx6czm/Screenshot-27-6-2026-172210.jpg",
+      "https://i.ibb.co/MxL7qbZh/Screenshot-27-6-2026-173116.jpg",
+      "https://i.ibb.co/wNFQQhjn/Screenshot-27-6-2026-17297.jpg",
+      "https://i.ibb.co/67q0LB4X/Screenshot-27-6-2026-173238.jpg"
+    ],
+    "photo": "https://i.ibb.co/Mdx6czm/Screenshot-27-6-2026-172210.jpg",
+    "video": "",
+    "videoType": "youtube",
+    "videoEmbed": "",
+    "status": "ongoing",
+    "proptype": "residential",
+    "tags": [
+      "2BHK",
+      "2BHK",
+      "3BHK",
+      "3BHK",
+      "3BHK",
+      "3BHK",
+      "Lift",
+      "Parking",
+      "24/7 Security",
+      "Power Backup",
+      "Garden",
+      "CCTV",
+      "24/7 Water",
+      "Vastu",
+      "Play Area",
+      "RERA Registered",
+      "Gym",
+      "Club House",
+      "Smart Home",
+      "Terrace"
+    ],
+    "carpet": "716 sqft, 730 sqft, 986 sqft, 1012 sqft, 1035 sqft, 1055 sqft+terrace",
+    "possession": "Dec.2026",
+    "description": "",
+    "added": "27/6/2026",
+    "updatedAt": "27/6/2026"
+  },
+  {
     "id": 1782559748027,
     "name": "Shivalik Sky Green",
     "location": "Pathardi Phata, Nashik",
