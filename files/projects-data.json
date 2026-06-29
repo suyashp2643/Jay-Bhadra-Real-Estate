@@ -843,8 +843,32 @@
     "id": 1780654840187,
     "name": "Vakratunda Aroma",
     "location": "Govind Nagar, Nashik",
-    "price": 99,
-    "priceLabel": "99 Lakh+",
+    "price": 95,
+    "priceLabel": "Rs.95 L+",
+    "priceUnit": "lakh",
+    "units": [
+      {
+        "type": "3BHK",
+        "buildup": "1628 sqft",
+        "priceFrom": "95",
+        "priceUnit": "lakh",
+        "priceTo": "97",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.95 L–Rs.97 L",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "3BHK",
+        "buildup": "1698 sqft",
+        "priceFrom": "98",
+        "priceUnit": "lakh",
+        "priceTo": "99",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.98 L–Rs.99 L",
+        "availability": "Limited Units"
+      }
+    ],
+    "totalUnits": "12 Units / 6 Floors",
     "photos": [
       "https://i.ibb.co/yn75yJTn/Screenshot-5-6-2026-154719.jpg",
       "https://i.ibb.co/05vN0jH/Screenshot-5-6-2026-17759.jpg",
@@ -852,10 +876,13 @@
       "https://i.ibb.co/DgbnN44L/Screenshot-5-6-2026-17846.jpg"
     ],
     "photo": "https://i.ibb.co/yn75yJTn/Screenshot-5-6-2026-154719.jpg",
+    "video": "",
+    "videoType": "youtube",
+    "videoEmbed": "",
     "status": "ongoing",
     "proptype": "residential",
     "tags": [
-      "Penthouse",
+      "3BHK",
       "3BHK",
       "Lift",
       "Parking",
@@ -866,13 +893,16 @@
       "24/7 Water",
       "Vastu",
       "Play Area",
-      "RERA Registered"
+      "RERA Registered",
+      "Solar Power",
+      "Terrace",
+      "Smart Home"
     ],
-    "carpet": "1628-1698",
+    "buildup": "1628 sqft, 1698 sqft",
     "possession": "November 2026",
     "description": "Penthouse with terrace of 2276 sqft.",
     "added": "5/6/2026",
-    "updatedAt": "5/6/2026"
+    "updatedAt": "29/6/2026"
   },
   {
     "id": 1780653659613,
