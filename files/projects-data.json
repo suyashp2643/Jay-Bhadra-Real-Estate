@@ -508,29 +508,29 @@
   {
     "id": 1781251946834,
     "name": "Sai Raul, Nashik",
-    "location": "Dnyaneshwar Nagar, Nashik",
-    "price": 0,
-    "priceLabel": "Call for Price",
+    "location": "Pathardi Phata, Nashik",
+    "price": 74,
+    "priceLabel": "Rs.74 L+",
     "priceUnit": "lakh",
     "units": [
       {
         "type": "3BHK",
-        "carpet": "1626 sqft.",
-        "priceFrom": "",
+        "buildup": "1626 sqft",
+        "priceFrom": "74",
         "priceUnit": "lakh",
-        "priceTo": "",
+        "priceTo": "75",
         "priceUnitTo": "lakh",
-        "priceRange": "",
+        "priceRange": "Rs.74 L–Rs.75 L",
         "availability": "Limited Units"
       },
       {
         "type": "3BHK",
-        "carpet": "1630 sqft",
-        "priceFrom": "",
+        "buildup": "1630 sqft",
+        "priceFrom": "75",
         "priceUnit": "lakh",
-        "priceTo": "",
+        "priceTo": "76",
         "priceUnitTo": "lakh",
-        "priceRange": "",
+        "priceRange": "Rs.75 L–Rs.76 L",
         "availability": "Limited Units"
       }
     ],
@@ -563,11 +563,11 @@
       "Solar Power",
       "Smart Home"
     ],
-    "carpet": "1626 sqft., 1630 sqft",
+    "buildup": "1626 sqft, 1630 sqft",
     "possession": "Octomber 2027",
     "description": "",
     "added": "12/6/2026",
-    "updatedAt": "12/6/2026"
+    "updatedAt": "29/6/2026"
   },
   {
     "id": 1781250810287,
