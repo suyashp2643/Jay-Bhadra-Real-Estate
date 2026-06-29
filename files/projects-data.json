@@ -242,42 +242,42 @@
     "units": [
       {
         "type": "2BHK",
-        "carpet": "667 sqft",
+        "buildup": "",
         "priceFrom": "44",
         "priceUnit": "lakh",
         "priceTo": "45",
         "priceUnitTo": "lakh",
-        "priceRange": "Rs.44 L – Rs.45 L",
+        "priceRange": "Rs.44 L–Rs.45 L",
         "availability": "Limited Units"
       },
       {
         "type": "2BHK",
-        "carpet": "690 sqft",
+        "buildup": "",
         "priceFrom": "48",
         "priceUnit": "lakh",
         "priceTo": "49",
         "priceUnitTo": "lakh",
-        "priceRange": "Rs.48 L – Rs.49 L",
+        "priceRange": "Rs.48 L–Rs.49 L",
         "availability": "Limited Units"
       },
       {
         "type": "2BHK",
-        "carpet": "715 sqft",
+        "buildup": "",
         "priceFrom": "50",
         "priceUnit": "lakh",
         "priceTo": "51",
         "priceUnitTo": "lakh",
-        "priceRange": "Rs.50 L – Rs.51 L",
+        "priceRange": "Rs.50 L–Rs.51 L",
         "availability": "Limited Units"
       },
       {
         "type": "3BHK",
-        "carpet": "1011 sqft",
+        "buildup": "",
         "priceFrom": "72",
         "priceUnit": "lakh",
         "priceTo": "73",
         "priceUnitTo": "lakh",
-        "priceRange": "Rs.72 L – Rs.73 L",
+        "priceRange": "Rs.72 L–Rs.73 L",
         "availability": "Limited Units"
       }
     ],
@@ -313,11 +313,11 @@
       "Solar Power",
       "Terrace"
     ],
-    "carpet": "667 sqft, 690 sqft, 715 sqft, 1011 sqft",
+    "buildup": "",
     "possession": "Dec. 2026",
     "description": "",
     "added": "27/6/2026",
-    "updatedAt": "27/6/2026"
+    "updatedAt": "29/6/2026"
   },
   {
     "id": 1781259443458,
