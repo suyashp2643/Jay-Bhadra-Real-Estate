@@ -733,19 +733,19 @@
   {
     "id": 1780997331283,
     "name": "Pragati Vihar",
-    "location": "Kamat vada,govind nagar,nashik",
+    "location": "Kamat Wada, Nashik",
     "price": 33,
     "priceLabel": "Rs.33 L+",
     "priceUnit": "lakh",
     "units": [
       {
-        "type": "2BHK",
-        "carpet": "1175 sq.fit",
+        "type": "1BHK",
+        "buildup": "",
         "priceFrom": "33",
         "priceUnit": "lakh",
         "priceTo": "40",
         "priceUnitTo": "lakh",
-        "priceRange": "Rs.33 L – Rs.40 L",
+        "priceRange": "Rs.33 L–Rs.40 L",
         "availability": "Available"
       }
     ],
@@ -760,7 +760,7 @@
     "status": "ongoing",
     "proptype": "residential",
     "tags": [
-      "2BHK",
+      "1BHK",
       "24/7 Security",
       "Power Backup",
       "Parking",
@@ -773,11 +773,11 @@
       "Solar Power",
       "RERA Registered"
     ],
-    "carpet": "1175 sq.fit",
+    "buildup": "",
     "possession": "1 year",
     "description": "Pragati vihar is a quality project by Jay Bhadra Real Estate Solution ,Kamat vada,govind nagar,nashik",
     "added": "9/6/2026",
-    "updatedAt": "9/6/2026"
+    "updatedAt": "29/6/2026"
   },
   {
     "id": 1780996112782,
@@ -857,7 +857,7 @@
     ],
     "buildup": "595 sqft, 680 sqft, 861 sqft, 985 sqft",
     "possession": "Ready Project",
-    "description": "Krushna pride 4 is a quality project by Jay Bhadra Real Estate Solution ,Near podar international school , pathardi phata 66,Nashik",
+    "description": "Krushna pride 4 is a quality project by Jay Bhadra Real Estate Solution pvt ltd.",
     "added": "9/6/2026",
     "updatedAt": "29/6/2026"
   },
