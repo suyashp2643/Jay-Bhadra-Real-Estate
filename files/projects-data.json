@@ -915,26 +915,49 @@
     "id": 1780165231164,
     "name": "Jay Bhadra Commercial's",
     "location": "Sangamner, Maharashtra",
-    "price": 15,
-    "priceLabel": "15 Lakhs Lakh+",
+    "price": 0,
+    "priceLabel": "Call for Price",
+    "priceUnit": "lakh",
+    "units": [
+      {
+        "type": "Office",
+        "buildup": "",
+        "priceFrom": "",
+        "priceUnit": "lakh",
+        "priceTo": "",
+        "priceUnitTo": "lakh",
+        "priceRange": "",
+        "availability": "Limited Units"
+      }
+    ],
+    "totalUnits": "70 Units",
+    "photos": [
+      "https://i.ibb.co/ZprBWnWL/jaybhadra-commercial-jpg.jpg"
+    ],
     "photo": "https://i.ibb.co/ZprBWnWL/jaybhadra-commercial-jpg.jpg",
+    "video": "",
+    "videoType": "youtube",
+    "videoEmbed": "",
     "status": "ongoing",
-    "proptype": "commercial",
+    "proptype": "residential",
     "tags": [
-      "Commercial",
-      "Shop",
       "Office",
+      "Commercial",
       "Lift",
       "Parking",
       "24/7 Security",
       "Power Backup",
       "CCTV",
-      "24/7 Water"
+      "24/7 Water",
+      "Vastu",
+      "RERA Registered",
+      "Solar Power"
     ],
-    "carpet": "",
-    "possession": "",
+    "buildup": "",
+    "possession": "Dec. 2027",
     "description": "",
-    "added": "30/5/2026"
+    "added": "30/5/2026",
+    "updatedAt": "29/6/2026"
   },
   {
     "id": 1780129079658,
