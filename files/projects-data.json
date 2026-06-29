@@ -938,17 +938,46 @@
   },
   {
     "id": 1780129079658,
-    "name": "Golden City Sangamner",
+    "name": "Golden City",
     "location": "Sangamner, Maharashtra",
-    "price": 21,
-    "priceLabel": "21 Lakhs Lakh+",
+    "price": 20,
+    "priceLabel": "Rs.20 L+",
+    "priceUnit": "lakh",
+    "units": [
+      {
+        "type": "1BHK",
+        "buildup": "700 sqft",
+        "priceFrom": "20",
+        "priceUnit": "lakh",
+        "priceTo": "21",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.20 L–Rs.21 L",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "2BHK",
+        "buildup": "938 sqft",
+        "priceFrom": "28",
+        "priceUnit": "lakh",
+        "priceTo": "30",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.28 L–Rs.30 L",
+        "availability": "Limited Units"
+      }
+    ],
+    "totalUnits": "42 Units/ 7 Floors",
+    "photos": [
+      "https://i.ibb.co/GQV8mzWz/Golden-City-Sangamner.jpg"
+    ],
     "photo": "https://i.ibb.co/GQV8mzWz/Golden-City-Sangamner.jpg",
+    "video": "",
+    "videoType": "youtube",
+    "videoEmbed": "",
     "status": "ongoing",
     "proptype": "residential",
     "tags": [
       "1BHK",
       "2BHK",
-      "3BHK",
       "Lift",
       "Parking",
       "24/7 Security",
@@ -961,9 +990,10 @@
       "Temple",
       "Vastu"
     ],
-    "carpet": "",
-    "possession": "",
+    "buildup": "700 sqft, 938 sqft",
+    "possession": "Dec.2026",
     "description": "",
-    "added": "30/5/2026"
+    "added": "30/5/2026",
+    "updatedAt": "29/6/2026"
   }
 ]
