@@ -878,8 +878,42 @@
     "id": 1780653659613,
     "name": "Amrutdhara",
     "location": "Indiranagar, Nashik",
-    "price": 53,
-    "priceLabel": "53 Lakh+",
+    "price": 45,
+    "priceLabel": "Rs.45 L+",
+    "priceUnit": "lakh",
+    "units": [
+      {
+        "type": "2BHK",
+        "buildup": "875 sqft",
+        "priceFrom": "45",
+        "priceUnit": "lakh",
+        "priceTo": "46",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.45 L–Rs.46 L",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "2BHK",
+        "buildup": "935 sqft",
+        "priceFrom": "47",
+        "priceUnit": "lakh",
+        "priceTo": "48",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.47 L–Rs.48 L",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "2BHK",
+        "buildup": "1060 sqft",
+        "priceFrom": "55",
+        "priceUnit": "lakh",
+        "priceTo": "57",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.55 L–Rs.57 L",
+        "availability": "Limited Units"
+      }
+    ],
+    "totalUnits": "150 Units / 14 Floors",
     "photos": [
       "https://i.ibb.co/JFvYwfCv/Screenshot-5-6-2026-15648.jpg",
       "https://i.ibb.co/4RBZTx4c/Screenshot-5-6-2026-171436.jpg",
@@ -888,9 +922,14 @@
       "https://i.ibb.co/nsVHqDSH/Screenshot-5-6-2026-171811.jpg"
     ],
     "photo": "https://i.ibb.co/JFvYwfCv/Screenshot-5-6-2026-15648.jpg",
+    "video": "",
+    "videoType": "youtube",
+    "videoEmbed": "",
     "status": "ongoing",
     "proptype": "residential",
     "tags": [
+      "2BHK",
+      "2BHK",
       "2BHK",
       "Lift",
       "Parking",
@@ -903,13 +942,17 @@
       "Play Area",
       "RERA Registered",
       "Vastu",
-      "Gym"
+      "Jogging Track",
+      "Solar Power",
+      "Terrace",
+      "Smart Home",
+      "Club House"
     ],
-    "carpet": "1060",
-    "possession": "",
+    "buildup": "875 sqft, 935 sqft, 1060 sqft",
+    "possession": "Dec.2026",
     "description": "",
     "added": "5/6/2026",
-    "updatedAt": "5/6/2026"
+    "updatedAt": "29/6/2026"
   },
   {
     "id": 1780165231164,
