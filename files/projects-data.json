@@ -396,68 +396,48 @@
     "id": 1781258419519,
     "name": "Shree Hari Krushna Heights",
     "location": "Indira Nagar, Nashik",
-    "price": 0,
-    "priceLabel": "Call for Price",
+    "price": 85,
+    "priceLabel": "Rs.85 L+",
     "priceUnit": "lakh",
     "units": [
       {
         "type": "3BHK",
-        "carpet": "1651 sqft",
-        "priceFrom": "",
+        "buildup": "1651 sqft",
+        "priceFrom": "85",
         "priceUnit": "lakh",
-        "priceTo": "",
+        "priceTo": "88",
         "priceUnitTo": "lakh",
-        "priceRange": "",
+        "priceRange": "Rs.85 L–Rs.88 L",
         "availability": "Limited Units"
       },
       {
         "type": "3BHK",
-        "carpet": "1742 sqft",
-        "priceFrom": "",
+        "buildup": "1924 sqft",
+        "priceFrom": "88",
         "priceUnit": "lakh",
-        "priceTo": "",
+        "priceTo": "95",
         "priceUnitTo": "lakh",
-        "priceRange": "",
-        "availability": "Limited Units"
-      },
-      {
-        "type": "3BHK",
-        "carpet": "1844 sqft",
-        "priceFrom": "",
-        "priceUnit": "lakh",
-        "priceTo": "",
-        "priceUnitTo": "lakh",
-        "priceRange": "",
-        "availability": "Limited Units"
-      },
-      {
-        "type": "3BHK",
-        "carpet": "1924 sqft",
-        "priceFrom": "",
-        "priceUnit": "lakh",
-        "priceTo": "",
-        "priceUnitTo": "lakh",
-        "priceRange": "",
+        "priceRange": "Rs.88 L–Rs.95 L",
         "availability": "Limited Units"
       },
       {
         "type": "4BHK",
-        "carpet": "2110 sqft",
-        "priceFrom": "",
+        "buildup": "2110 sqft",
+        "priceFrom": "96",
         "priceUnit": "lakh",
-        "priceTo": "",
+        "priceTo": "98",
         "priceUnitTo": "lakh",
-        "priceRange": "",
+        "priceRange": "Rs.96 L–Rs.98 L",
         "availability": "Limited Units"
       },
       {
         "type": "4BHK",
-        "carpet": "2940 sqft",
-        "priceFrom": "",
+        "buildup": "2940 sqft",
+        "priceFrom": "97",
         "priceUnit": "lakh",
-        "priceTo": "",
+        "priceTo": "98",
         "priceUnitTo": "lakh",
-        "priceRange": "",
+        "priceRange": "Rs.97 L–Rs.98 L",
         "availability": "Limited Units"
       }
     ],
@@ -474,8 +454,6 @@
     "status": "ongoing",
     "proptype": "residential",
     "tags": [
-      "3BHK",
-      "3BHK",
       "3BHK",
       "3BHK",
       "4BHK",
@@ -498,11 +476,11 @@
       "Club House",
       "Gym"
     ],
-    "carpet": "1651 sqft, 1742 sqft, 1844 sqft, 1924 sqft, 2110 sqft, 2940 sqft",
+    "buildup": "1651 sqft, 1924 sqft, 2110 sqft, 2940 sqft",
     "possession": "August 2026",
     "description": "",
     "added": "12/6/2026",
-    "updatedAt": "24/6/2026"
+    "updatedAt": "29/6/2026"
   },
   {
     "id": 1781251946834,
