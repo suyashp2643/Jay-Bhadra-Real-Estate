@@ -572,49 +572,49 @@
   {
     "id": 1781250810287,
     "name": "Sai Vandan Society",
-    "location": "Kamod Nagar, Nashik",
-    "price": 0,
-    "priceLabel": "Call for Price",
+    "location": "(Kamod Ngar) Indira Nagar, Nashik",
+    "price": 48.5,
+    "priceLabel": "Rs.48.5 L+",
     "priceUnit": "lakh",
     "units": [
       {
         "type": "2BHK",
-        "carpet": "1100 sqft.",
-        "priceFrom": "",
+        "buildup": "956 sqft",
+        "priceFrom": "48.50",
         "priceUnit": "lakh",
-        "priceTo": "",
+        "priceTo": "50",
         "priceUnitTo": "lakh",
-        "priceRange": "",
+        "priceRange": "Rs.48.5 L–Rs.50 L",
         "availability": "Limited Units"
       },
       {
         "type": "2BHK",
-        "carpet": "980 sqft.",
-        "priceFrom": "",
+        "buildup": "980 sqft",
+        "priceFrom": "49",
         "priceUnit": "lakh",
-        "priceTo": "",
+        "priceTo": "51",
         "priceUnitTo": "lakh",
-        "priceRange": "",
+        "priceRange": "Rs.49 L–Rs.51 L",
         "availability": "Limited Units"
       },
       {
         "type": "2BHK",
-        "carpet": "956 sqft.",
-        "priceFrom": "",
+        "buildup": "1100 sqft",
+        "priceFrom": "55",
         "priceUnit": "lakh",
-        "priceTo": "",
+        "priceTo": "57",
         "priceUnitTo": "lakh",
-        "priceRange": "",
+        "priceRange": "Rs.55 L–Rs.57 L",
         "availability": "Limited Units"
       },
       {
         "type": "3BHK",
-        "carpet": "1378 sqft",
-        "priceFrom": "",
+        "buildup": "1378 sqft",
+        "priceFrom": "68",
         "priceUnit": "lakh",
-        "priceTo": "",
+        "priceTo": "71",
         "priceUnitTo": "lakh",
-        "priceRange": "",
+        "priceRange": "Rs.68 L–Rs.71 L",
         "availability": "Limited Units"
       }
     ],
@@ -647,14 +647,15 @@
       "24/7 Water",
       "CCTV",
       "Garden",
-      "Club House",
-      "Solar Power"
+      "Solar Power",
+      "Terrace",
+      "Smart Home"
     ],
-    "carpet": "1100 sqft., 980 sqft., 956 sqft., 1378 sqft",
+    "buildup": "956 sqft, 980 sqft, 1100 sqft, 1378 sqft",
     "possession": "March 2027",
     "description": "Prime Location With Affordable prise....",
     "added": "12/6/2026",
-    "updatedAt": "12/6/2026"
+    "updatedAt": "29/6/2026"
   },
   {
     "id": 1780999182323,
