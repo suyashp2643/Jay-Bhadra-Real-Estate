@@ -329,7 +329,7 @@
     "units": [
       {
         "type": "1BHK",
-        "carpet": "630 sqft",
+        "buildup": "",
         "priceFrom": "",
         "priceUnit": "lakh",
         "priceTo": "",
@@ -339,7 +339,7 @@
       },
       {
         "type": "1BHK",
-        "carpet": "660 sqft",
+        "buildup": "",
         "priceFrom": "",
         "priceUnit": "lakh",
         "priceTo": "",
@@ -349,7 +349,7 @@
       },
       {
         "type": "1BHK",
-        "carpet": "1050 sqft",
+        "buildup": "",
         "priceFrom": "",
         "priceUnit": "lakh",
         "priceTo": "",
@@ -383,15 +383,14 @@
       "Vastu",
       "Play Area",
       "RERA Registered",
-      "Solar Power",
       "Terrace",
       "Smart Home"
     ],
-    "carpet": "630 sqft, 660 sqft, 1050 sqft",
+    "buildup": "",
     "possession": "Ready Project",
     "description": "",
     "added": "12/6/2026",
-    "updatedAt": "24/6/2026"
+    "updatedAt": "29/6/2026"
   },
   {
     "id": 1781258419519,
