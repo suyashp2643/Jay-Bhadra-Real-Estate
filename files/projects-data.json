@@ -9,7 +9,7 @@
     "units": [
       {
         "type": "2BHK",
-        "carpet": "667 sqft",
+        "buildup": "934 sqft",
         "priceFrom": "48",
         "priceUnit": "lakh",
         "priceTo": "49",
@@ -19,7 +19,7 @@
       },
       {
         "type": "2BHK",
-        "carpet": "781 sqft",
+        "buildup": "1094 sqft",
         "priceFrom": "55",
         "priceUnit": "lakh",
         "priceTo": "56",
@@ -29,7 +29,7 @@
       },
       {
         "type": "3BHK",
-        "carpet": "848 sqft",
+        "buildup": "1188 sqft",
         "priceFrom": "61",
         "priceUnit": "lakh",
         "priceTo": "62",
@@ -39,7 +39,7 @@
       },
       {
         "type": "3BHK",
-        "carpet": "861 sqft",
+        "buildup": "1206 sqft",
         "priceFrom": "62",
         "priceUnit": "lakh",
         "priceTo": "63",
@@ -49,7 +49,7 @@
       },
       {
         "type": "3BHK",
-        "carpet": "887 sqft",
+        "buildup": "1243 sqft",
         "priceFrom": "63",
         "priceUnit": "lakh",
         "priceTo": "64",
@@ -59,7 +59,7 @@
       },
       {
         "type": "3BHK",
-        "carpet": "912 sqft",
+        "buildup": "1278 sqft",
         "priceFrom": "65",
         "priceUnit": "lakh",
         "priceTo": "66",
@@ -69,7 +69,7 @@
       },
       {
         "type": "Penthouse",
-        "carpet": "1470 sqft",
+        "buildup": "1470 sqft",
         "priceFrom": "74",
         "priceUnit": "lakh",
         "priceTo": "75",
@@ -116,11 +116,11 @@
       "Smart Home",
       "Solar Power"
     ],
-    "carpet": "667 sqft, 781 sqft, 848 sqft, 861 sqft, 887 sqft, 912 sqft, 1470 sqft",
+    "buildup": "934 sqft, 1094 sqft, 1188 sqft, 1206 sqft, 1243 sqft, 1278 sqft, 1470 sqft",
     "possession": "Complited",
     "description": "",
     "added": "27/6/2026",
-    "updatedAt": "27/6/2026"
+    "updatedAt": "30/6/2026"
   },
   {
     "id": 1782563929833,
