@@ -125,14 +125,14 @@
   {
     "id": 1782563929833,
     "name": "Shivalik Status",
-    "location": "Chetana Nagar, Nashik",
+    "location": "Rane Nagar(Chetana Nagar) Nashik",
     "price": 140,
     "priceLabel": "Rs.1.4 Cr+",
     "priceUnit": "crore",
     "units": [
       {
         "type": "2BHK",
-        "carpet": "716 sqft",
+        "buildup": "1003 sqft",
         "priceFrom": "48",
         "priceUnit": "lakh",
         "priceTo": "49",
@@ -142,7 +142,7 @@
       },
       {
         "type": "2BHK",
-        "carpet": "730 sqft",
+        "buildup": "1021 sqft",
         "priceFrom": "49",
         "priceUnit": "lakh",
         "priceTo": "50",
@@ -152,7 +152,7 @@
       },
       {
         "type": "3BHK",
-        "carpet": "986 sqft",
+        "buildup": "1377 sqft",
         "priceFrom": "74",
         "priceUnit": "lakh",
         "priceTo": "75",
@@ -162,7 +162,7 @@
       },
       {
         "type": "3BHK",
-        "carpet": "1012 sqft",
+        "buildup": "1417 sqft",
         "priceFrom": "75",
         "priceUnit": "lakh",
         "priceTo": "76",
@@ -172,7 +172,7 @@
       },
       {
         "type": "3BHK",
-        "carpet": "1035 sqft",
+        "buildup": "1449 sqft",
         "priceFrom": "77",
         "priceUnit": "lakh",
         "priceTo": "78",
@@ -182,7 +182,7 @@
       },
       {
         "type": "3BHK",
-        "carpet": "1055 sqft+terrace",
+        "buildup": "1477 sqft + Terrace",
         "priceFrom": "1.4",
         "priceUnit": "crore",
         "priceTo": "1.5",
@@ -224,13 +224,14 @@
       "Gym",
       "Club House",
       "Smart Home",
-      "Terrace"
+      "Terrace",
+      "Solar Power"
     ],
-    "carpet": "716 sqft, 730 sqft, 986 sqft, 1012 sqft, 1035 sqft, 1055 sqft+terrace",
+    "buildup": "1003 sqft, 1021 sqft, 1377 sqft, 1417 sqft, 1449 sqft, 1477 sqft + Terrace",
     "possession": "Dec.2026",
     "description": "",
     "added": "27/6/2026",
-    "updatedAt": "27/6/2026"
+    "updatedAt": "30/6/2026"
   },
   {
     "id": 1782559748027,
