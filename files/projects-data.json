@@ -242,7 +242,7 @@
     "units": [
       {
         "type": "2BHK",
-        "buildup": "",
+        "buildup": "901 sqft",
         "priceFrom": "44",
         "priceUnit": "lakh",
         "priceTo": "45",
@@ -252,7 +252,7 @@
       },
       {
         "type": "2BHK",
-        "buildup": "",
+        "buildup": "932 sqft",
         "priceFrom": "48",
         "priceUnit": "lakh",
         "priceTo": "49",
@@ -262,7 +262,7 @@
       },
       {
         "type": "2BHK",
-        "buildup": "",
+        "buildup": "966 sqft",
         "priceFrom": "50",
         "priceUnit": "lakh",
         "priceTo": "51",
@@ -272,7 +272,7 @@
       },
       {
         "type": "3BHK",
-        "buildup": "",
+        "buildup": "1300 sqft",
         "priceFrom": "72",
         "priceUnit": "lakh",
         "priceTo": "73",
@@ -283,7 +283,10 @@
     ],
     "totalUnits": "171 Units/ 13 Floors",
     "photos": [
-      "https://i.ibb.co/N6VVNPNt/Screenshot-27-6-2026-164442.jpg"
+      "https://i.ibb.co/N6VVNPNt/Screenshot-27-6-2026-164442.jpg",
+      "https://i.ibb.co/nNbdPFvL/Screenshot-30-6-2026-16142.jpg",
+      "https://i.ibb.co/wF9YVr8H/Screenshot-30-6-2026-1625.jpg",
+      "https://i.ibb.co/XZh4JgJj/Screenshot-30-6-2026-1630.jpg"
     ],
     "photo": "https://i.ibb.co/N6VVNPNt/Screenshot-27-6-2026-164442.jpg",
     "video": "",
@@ -313,11 +316,11 @@
       "Solar Power",
       "Terrace"
     ],
-    "buildup": "",
+    "buildup": "901 sqft, 932 sqft, 966 sqft, 1300 sqft",
     "possession": "Dec. 2026",
     "description": "",
     "added": "27/6/2026",
-    "updatedAt": "29/6/2026"
+    "updatedAt": "30/6/2026"
   },
   {
     "id": 1781259443458,
