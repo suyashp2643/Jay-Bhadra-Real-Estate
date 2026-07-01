@@ -49,8 +49,12 @@
       }
     ],
     "totalUnits": "144 Units / 14 Floors",
-    "photos": [],
-    "photo": "",
+    "photos": [
+      "https://i.ibb.co/3mrzgfRz/Screenshot-30-6-2026-16514.jpg",
+      "https://i.ibb.co/MdN3XtP/Screenshot-30-6-2026-165042.jpg",
+      "https://i.ibb.co/Qvw3dvWg/Screenshot-30-6-2026-165120.jpg"
+    ],
+    "photo": "https://i.ibb.co/3mrzgfRz/Screenshot-30-6-2026-16514.jpg",
     "video": "",
     "videoType": "youtube",
     "videoEmbed": "",
@@ -82,7 +86,7 @@
     "possession": "March 2027",
     "description": "",
     "added": "30/6/2026",
-    "updatedAt": "30/6/2026"
+    "updatedAt": "1/7/2026"
   },
   {
     "id": 1782565044416,
