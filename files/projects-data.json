@@ -79,8 +79,12 @@
       }
     ],
     "totalUnits": "42 Units, 7 Floors",
-    "photos": [],
-    "photo": "",
+    "photos": [
+      "https://i.ibb.co/0VKnJmmP/Screenshot-15-7-2026-12529.jpg",
+      "https://i.ibb.co/N25N8qvw/Screenshot-15-7-2026-12516.jpg",
+      "https://i.ibb.co/PGtKXyQf/Screenshot-15-7-2026-12426.jpg"
+    ],
+    "photo": "https://i.ibb.co/0VKnJmmP/Screenshot-15-7-2026-12529.jpg",
     "video": "",
     "videoType": "youtube",
     "videoEmbed": "",
