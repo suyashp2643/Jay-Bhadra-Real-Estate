@@ -1,5 +1,68 @@
 [
   {
+    "id": 1784109764519,
+    "name": "Ragrang Socity",
+    "location": "Gangapur Road, Nashik",
+    "price": 0,
+    "priceLabel": "Call for Price",
+    "priceUnit": "lakh",
+    "units": [
+      {
+        "type": "2BHK",
+        "buildup": "969",
+        "priceFrom": "0",
+        "priceUnit": "lakh",
+        "priceTo": "",
+        "priceUnitTo": "lakh",
+        "priceRange": "",
+        "availability": "Available"
+      },
+      {
+        "type": "3BHK",
+        "buildup": "1393",
+        "priceFrom": "",
+        "priceUnit": "lakh",
+        "priceTo": "",
+        "priceUnitTo": "lakh",
+        "priceRange": "",
+        "availability": "Available"
+      }
+    ],
+    "totalUnits": "36 Units, 6 Floors",
+    "photos": [
+      "https://i.ibb.co/CK1QLKMV/Screenshot-2026-07-15-152455.png",
+      "https://i.ibb.co/yzh1d3X/Screenshot-2026-07-15-152406.png",
+      "https://i.ibb.co/dHpNb1h/Screenshot-2026-07-15-152925.png"
+    ],
+    "photo": "https://i.ibb.co/CK1QLKMV/Screenshot-2026-07-15-152455.png",
+    "video": "",
+    "videoType": "youtube",
+    "videoEmbed": "",
+    "status": "ongoing",
+    "proptype": "residential",
+    "tags": [
+      "2BHK",
+      "3BHK",
+      "Lift",
+      "Parking",
+      "24/7 Security",
+      "Power Backup",
+      "CCTV",
+      "24/7 Water",
+      "Vastu",
+      "Play Area",
+      "RERA Registered",
+      "Solar Power",
+      "Terrace",
+      "Smart Home"
+    ],
+    "buildup": "969, 1393",
+    "possession": "November 2026",
+    "description": "",
+    "added": "15/7/2026",
+    "updatedAt": "15/7/2026"
+  },
+  {
     "id": 1784108695533,
     "name": "SUSMITA  RESIDENCY",
     "location": "Gangapur Road, Nashik",
