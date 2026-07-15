@@ -416,38 +416,18 @@
     "id": 1781259443458,
     "name": "Krushna Pride 3",
     "location": "Pathardi Phata, Nashik",
-    "price": 0,
-    "priceLabel": "Call for Price",
+    "price": 23,
+    "priceLabel": "Rs.23 L+",
     "priceUnit": "lakh",
     "units": [
       {
         "type": "1BHK",
-        "buildup": "",
-        "priceFrom": "",
+        "buildup": "660",
+        "priceFrom": "23",
         "priceUnit": "lakh",
-        "priceTo": "",
+        "priceTo": "24",
         "priceUnitTo": "lakh",
-        "priceRange": "",
-        "availability": "Limited Units"
-      },
-      {
-        "type": "1BHK",
-        "buildup": "",
-        "priceFrom": "",
-        "priceUnit": "lakh",
-        "priceTo": "",
-        "priceUnitTo": "lakh",
-        "priceRange": "",
-        "availability": "Limited Units"
-      },
-      {
-        "type": "1BHK",
-        "buildup": "",
-        "priceFrom": "",
-        "priceUnit": "lakh",
-        "priceTo": "",
-        "priceUnitTo": "lakh",
-        "priceRange": "",
+        "priceRange": "Rs.23 L–Rs.24 L",
         "availability": "Limited Units"
       }
     ],
@@ -465,8 +445,6 @@
     "proptype": "residential",
     "tags": [
       "1BHK",
-      "1BHK",
-      "1BHK",
       "Lift",
       "Parking",
       "24/7 Security",
@@ -479,11 +457,11 @@
       "Terrace",
       "Smart Home"
     ],
-    "buildup": "",
+    "buildup": "660",
     "possession": "Ready Project",
     "description": "",
     "added": "12/6/2026",
-    "updatedAt": "29/6/2026"
+    "updatedAt": "15/7/2026"
   },
   {
     "id": 1781258419519,
