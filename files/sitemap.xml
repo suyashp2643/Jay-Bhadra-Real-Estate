@@ -28,7 +28,13 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- PROJECT PAGES — 17 projects -->
+  <!-- PROJECT PAGES — 18 projects -->
+  <url>
+    <loc>https://jaybhadrarealestate.com/project-detail.html?project=ragrang-socity</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
   <url>
     <loc>https://jaybhadrarealestate.com/project-detail.html?project=susmita-residency</loc>
     <lastmod>2026-07-15</lastmod>
