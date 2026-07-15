@@ -1,5 +1,55 @@
 [
   {
+    "id": 1784108695533,
+    "name": "SUSMITA  RESIDENCY",
+    "location": "Gangapur Road, Nashik",
+    "price": 140,
+    "priceLabel": "Rs.1.4 Cr+",
+    "priceUnit": "crore",
+    "units": [
+      {
+        "type": "3BHK",
+        "buildup": "1869",
+        "priceFrom": "1.40",
+        "priceUnit": "crore",
+        "priceTo": "1.42",
+        "priceUnitTo": "crore",
+        "priceRange": "Rs.1.4 Cr–Rs.1.42 Cr",
+        "availability": "Available"
+      }
+    ],
+    "totalUnits": "7 Units, 7 Floors",
+    "photos": [
+      "https://i.ibb.co/5gxPTncz/Screenshot-2026-07-15-145814.png",
+      "https://i.ibb.co/Kx0ZpKLR/Screenshot-2026-07-15-150033.png"
+    ],
+    "photo": "https://i.ibb.co/5gxPTncz/Screenshot-2026-07-15-145814.png",
+    "video": "",
+    "videoType": "youtube",
+    "videoEmbed": "",
+    "status": "ongoing",
+    "proptype": "residential",
+    "tags": [
+      "3BHK",
+      "Lift",
+      "Parking",
+      "24/7 Security",
+      "Power Backup",
+      "CCTV",
+      "24/7 Water",
+      "Vastu",
+      "Play Area",
+      "RERA Registered",
+      "Terrace",
+      "Smart Home"
+    ],
+    "buildup": "1869",
+    "possession": "September 2026",
+    "description": "",
+    "added": "15/7/2026",
+    "updatedAt": "15/7/2026"
+  },
+  {
     "id": 1784097701537,
     "name": "Sagar Co. Socity",
     "location": "Nashik Road",
