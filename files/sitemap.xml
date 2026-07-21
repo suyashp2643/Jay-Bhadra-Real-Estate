@@ -28,7 +28,13 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- PROJECT PAGES — 20 projects -->
+  <!-- PROJECT PAGES — 21 projects -->
+  <url>
+    <loc>https://jaybhadrarealestate.com/project-detail.html?project=vishvaraj-builders</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
   <url>
     <loc>https://jaybhadrarealestate.com/project-detail.html?project=vishavaraj-builders</loc>
     <lastmod>2026-07-21</lastmod>
