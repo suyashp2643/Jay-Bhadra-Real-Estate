@@ -1,5 +1,50 @@
 [
   {
+    "id": 1784628020255,
+    "name": "Vishvaraj Builders",
+    "location": "Gaulane Road, Nashik",
+    "price": 80,
+    "priceLabel": "Rs.80 L+",
+    "priceUnit": "lakh",
+    "units": [
+      {
+        "type": "Bungalow",
+        "buildup": "2532",
+        "priceFrom": "80",
+        "priceUnit": "lakh",
+        "priceTo": "85",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.80 L–Rs.85 L",
+        "availability": "Available"
+      }
+    ],
+    "totalUnits": "2 Units",
+    "photos": [
+      "https://i.ibb.co/pvbSpzxm/Whats-App-Image-2026-07-21-at-15-27-01.jpg",
+      "https://i.ibb.co/ZzMSg2Qm/Whats-App-Image-2026-07-21-at-15-27-01-1.jpg"
+    ],
+    "photo": "https://i.ibb.co/pvbSpzxm/Whats-App-Image-2026-07-21-at-15-27-01.jpg",
+    "video": "",
+    "videoType": "youtube",
+    "videoEmbed": "",
+    "status": "ongoing",
+    "proptype": "residential",
+    "tags": [
+      "Bungalow",
+      "Parking",
+      "CCTV",
+      "24/7 Water",
+      "Vastu",
+      "Terrace",
+      "Smart Home"
+    ],
+    "buildup": "2532",
+    "possession": "June 2027",
+    "description": "",
+    "added": "21/7/2026",
+    "updatedAt": "21/7/2026"
+  },
+  {
     "id": 1784627334089,
     "name": "Vishavaraj Builders",
     "location": "Makhamalabad Road, Nashik",
@@ -36,7 +81,7 @@
     "video": "",
     "videoType": "youtube",
     "videoEmbed": "",
-    "status": "ongoing",
+    "status": "completed",
     "proptype": "residential",
     "tags": [
       "Row House",
