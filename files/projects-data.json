@@ -1,5 +1,60 @@
 [
   {
+    "id": 1784627334089,
+    "name": "Vishavaraj Builders",
+    "location": "Makhamalabad Road, Nashik",
+    "price": 40,
+    "priceLabel": "Rs.40 L+",
+    "priceUnit": "lakh",
+    "units": [
+      {
+        "type": "Row House",
+        "buildup": "922",
+        "priceFrom": "40",
+        "priceUnit": "lakh",
+        "priceTo": "42",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.40 L–Rs.42 L",
+        "availability": "Available"
+      },
+      {
+        "type": "Row House",
+        "buildup": "1041",
+        "priceFrom": "48",
+        "priceUnit": "lakh",
+        "priceTo": "50",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.48 L–Rs.50 L",
+        "availability": "Available"
+      }
+    ],
+    "totalUnits": "2 Units",
+    "photos": [
+      "https://i.ibb.co/0RcY99C1/Whats-App-Image-2026-07-21-at-14-57-43-1.jpg"
+    ],
+    "photo": "https://i.ibb.co/0RcY99C1/Whats-App-Image-2026-07-21-at-14-57-43-1.jpg",
+    "video": "",
+    "videoType": "youtube",
+    "videoEmbed": "",
+    "status": "ongoing",
+    "proptype": "residential",
+    "tags": [
+      "Row House",
+      "Row House",
+      "Parking",
+      "Garden",
+      "CCTV",
+      "24/7 Water",
+      "Terrace",
+      "Smart Home"
+    ],
+    "buildup": "922, 1041",
+    "possession": "Ready",
+    "description": "",
+    "added": "21/7/2026",
+    "updatedAt": "21/7/2026"
+  },
+  {
     "id": 1784626784320,
     "name": "Lotus Apartment",
     "location": "Ambad Link Road, Nashik",
