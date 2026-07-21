@@ -1,5 +1,62 @@
 [
   {
+    "id": 1784626784320,
+    "name": "Lotus Apartment",
+    "location": "Ambad Link Road, Nashik",
+    "price": 32,
+    "priceLabel": "Rs.32 L+",
+    "priceUnit": "lakh",
+    "units": [
+      {
+        "type": "2BHK",
+        "buildup": "830",
+        "priceFrom": "32",
+        "priceUnit": "lakh",
+        "priceTo": "35",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.32 L–Rs.35 L",
+        "availability": "Limited Units"
+      },
+      {
+        "type": "Penthouse",
+        "buildup": "1706",
+        "priceFrom": "65",
+        "priceUnit": "lakh",
+        "priceTo": "70",
+        "priceUnitTo": "lakh",
+        "priceRange": "Rs.65 L–Rs.70 L",
+        "availability": "Limited Units"
+      }
+    ],
+    "totalUnits": "12 Units, 4 Floors",
+    "photos": [
+      "https://i.ibb.co/5gbN5XPm/Whats-App-Image-2026-07-21-at-14-57-43.jpg"
+    ],
+    "photo": "https://i.ibb.co/5gbN5XPm/Whats-App-Image-2026-07-21-at-14-57-43.jpg",
+    "video": "",
+    "videoType": "youtube",
+    "videoEmbed": "",
+    "status": "ongoing",
+    "proptype": "residential",
+    "tags": [
+      "2BHK",
+      "Penthouse",
+      "Lift",
+      "Parking",
+      "24/7 Security",
+      "Power Backup",
+      "CCTV",
+      "24/7 Water",
+      "Vastu",
+      "Play Area"
+    ],
+    "buildup": "830, 1706",
+    "possession": "Ready",
+    "description": "",
+    "added": "21/7/2026",
+    "updatedAt": "21/7/2026"
+  },
+  {
     "id": 1784109764519,
     "name": "Ragrang Socity",
     "location": "Gangapur Road, Nashik",
